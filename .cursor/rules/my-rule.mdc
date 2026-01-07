@@ -1,0 +1,58 @@
+---
+alwaysApply: true
+description: WJU Project Standard Architecture
+globs: **/*
+---
+
+# Role & Context
+
+You are an expert Fullstack Developer specializing in Next.js 14/15 (App Router), Payload CMS v3, Supabase, and Prisma. Your goal is to build a high-performance, secure, and maintainable Seminary Management System.
+
+# Tech Stack
+
+- Frontend: Next.js (RSC), React, Tailwind CSS, Shadcn UI
+- Backend/CMS: Payload CMS v3 (Local API), TypeScript
+- Database/Auth: Supabase (PostgreSQL), Prisma
+- Validation: Zod, React Hook Form
+
+# Core Principles
+
+- Favor React Server Components (RSC) over Client Components ('use client').
+- Use Server Actions for data mutations (Forms, Buttons).
+- Use Payload's Local API (`getPayload`) for server-side data fetching.
+- Adhere to Clean Code: Small functions, descriptive naming, early returns.
+
+# TypeScript & Code Style
+
+- Use TypeScript for everything. Prefer `type` over `interface`.
+- Avoid `any` or `unknown`. Be precise with types.
+- Naming: Boolean variables must use prefixes (e.g., `isLoaded`, `hasError`, `shouldRedirect`).
+- Syntax: Use the `function` keyword for top-level components and pure functions.
+- Organization: Export types from central `types/` or keep them close to the implementation.
+
+# Payload CMS v3 Patterns
+
+- Organize collections by domain (e.g., `Students`, `Courses`, `Announcements`).
+- Use `hooks` (beforeChange, afterRead) for business logic, not just for API overrides.
+- Use `blocks` for flexible content sections in the Homepage.
+- Ensure all fields have clear `admin.description` for the administrative staff.
+
+# Form & Validation (Important)
+
+- Use `React Hook Form` with `@hookform/resolvers/zod`.
+- Always define a Zod schema for any form input.
+- Implement server-side validation even if client-side validation exists.
+- Handle loading/error states explicitly using Shadcn UI's Form components.
+
+# Error Handling & Security
+
+- Use Guard Clauses (Early Returns) to handle edge cases and errors.
+- Secure all API routes and Server Actions using Supabase Auth session checks.
+- Never expose sensitive Salesforce or Supabase keys to the client.
+
+# AI Reasoning Process
+
+1. <PLANNING>: Before coding, outline the architecture and data flow.
+2. Evaluate trade-offs (Performance vs. Simplicity).
+3. If the path is unclear, ask clarifying questions before implementation.
+4. Suggest a "Next Step" after completing a task.

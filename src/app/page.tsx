@@ -1,64 +1,170 @@
-import Image from "next/image";
+import { CallToAction } from '@/components/CallToAction';
+import { Header } from '@/components/Header';
+import { Hero } from '@/components/Hero';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className='min-h-screen flex flex-col'>
+      <Header />
+      <main className='flex-1' id='maincontent'>
+        <Hero />
+        <CallToAction />
+
+        {/* Dummy Content for Scroll Testing */}
+        <section className='py-20 bg-gray-50'>
+          <div className='container mx-auto px-6'>
+            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+              About Washington Jabez University
+            </h2>
+            <p className='text-lg text-gray-700 mb-6'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+            <p className='text-lg text-gray-700 mb-6'>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit
+              anim id est laborum.
+            </p>
+          </div>
+        </section>
+
+        <section className='py-20 bg-white'>
+          <div className='container mx-auto px-6'>
+            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+              Academic Programs
+            </h2>
+            <div className='grid md:grid-cols-3 gap-8'>
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div key={item} className='bg-gray-50 p-6 rounded-lg'>
+                  <h3 className='text-2xl font-semibold mb-4 text-[#8b1538]'>
+                    Program {item}
+                  </h3>
+                  <p className='text-gray-700'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className='py-20 bg-gray-50'>
+          <div className='container mx-auto px-6'>
+            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+              Campus Life
+            </h2>
+            <p className='text-lg text-gray-700 mb-6'>
+              Our campus provides a vibrant community for students to grow
+              academically, spiritually, and personally. With state-of-the-art
+              facilities and a supportive environment, students thrive in their
+              educational journey.
+            </p>
+            <div className='space-y-4'>
+              {[1, 2, 3, 4].map((item) => (
+                <div key={item} className='bg-white p-6 rounded-lg shadow-sm'>
+                  <h3 className='text-xl font-semibold mb-2 text-[#8b1538]'>
+                    Campus Feature {item}
+                  </h3>
+                  <p className='text-gray-700'>
+                    Detailed description of campus feature {item}. This section
+                    provides information about various aspects of campus life
+                    and facilities available to students.
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className='py-20 bg-white'>
+          <div className='container mx-auto px-6'>
+            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+              Student Testimonials
+            </h2>
+            <div className='grid md:grid-cols-2 gap-8'>
+              {[1, 2, 3, 4].map((item) => (
+                <div key={item} className='bg-gray-50 p-6 rounded-lg'>
+                  <p className='text-gray-700 italic mb-4'>
+                    &quot;Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam.&quot;
+                  </p>
+                  <p className='font-semibold text-[#8b1538]'>
+                    - Student {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className='py-20 bg-gray-50'>
+          <div className='container mx-auto px-6'>
+            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+              News & Events
+            </h2>
+            <div className='space-y-6'>
+              {[1, 2, 3, 4, 5].map((item) => (
+                <article
+                  key={item}
+                  className='bg-white p-6 rounded-lg shadow-sm'
+                >
+                  <h3 className='text-2xl font-semibold mb-3 text-[#8b1538]'>
+                    News Article {item}
+                  </h3>
+                  <p className='text-gray-600 mb-2'>
+                    Published on January {item}, 2024
+                  </p>
+                  <p className='text-gray-700'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris.
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className='py-20 bg-white'>
+          <div className='container mx-auto px-6'>
+            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+              Contact Information
+            </h2>
+            <div className='grid md:grid-cols-2 gap-8'>
+              <div>
+                <h3 className='text-2xl font-semibold mb-4 text-[#8b1538]'>
+                  Address
+                </h3>
+                <p className='text-gray-700'>
+                  123 University Avenue
+                  <br />
+                  Washington, DC 20001
+                  <br />
+                  United States
+                </p>
+              </div>
+              <div>
+                <h3 className='text-2xl font-semibold mb-4 text-[#8b1538]'>
+                  Contact
+                </h3>
+                <p className='text-gray-700'>
+                  Phone: (202) 555-0100
+                  <br />
+                  Email: info@wju.edu
+                  <br />
+                  Fax: (202) 555-0101
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
