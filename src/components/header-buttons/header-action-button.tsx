@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { typoVariant } from '@/lib/typography';
+import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type HeaderActionButtonProps = {
@@ -13,8 +15,7 @@ export function HeaderActionButton({
   className = '',
   ...props
 }: HeaderActionButtonProps) {
-  const topmenuTextSize = 'sm:text-xs lg:text-[12px] xl:text-sm';
-  const menuTextSize = 'sm:text-xs lg:text-[13px] xl:text-sm';
+  const responsiveSize = 'sm:text-xs lg:text-[12px] xl:text-sm';
 
   if (variant === 'secondary') {
     // MY WJU 버튼 (상단 메뉴)
@@ -22,7 +23,13 @@ export function HeaderActionButton({
       <Button
         variant='outline'
         size='sm'
-        className={`border-white bg-transparent text-white hover:bg-white hover:text-primary ${topmenuTextSize} px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none ${className}`}
+        className={cn(
+          typoVariant('button14', 'text-white'),
+          responsiveSize,
+          'border-white bg-transparent hover:bg-white hover:text-primary',
+          'px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none',
+          className,
+        )}
         {...props}
       >
         {children}
@@ -35,7 +42,13 @@ export function HeaderActionButton({
     <Button
       variant='outline'
       size='sm'
-      className={`border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-secondary-foreground ${menuTextSize} px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none ${className}`}
+      className={cn(
+        typoVariant('button14', 'text-secondary'),
+        responsiveSize,
+        'border-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground',
+        'px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none',
+        className,
+      )}
       {...props}
     >
       {children}

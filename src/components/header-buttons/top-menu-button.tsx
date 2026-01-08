@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { typoVariant } from '@/lib/typography';
+import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type TopMenuButtonProps = {
@@ -11,13 +13,18 @@ export function TopMenuButton({
   className = '',
   ...props
 }: TopMenuButtonProps) {
-  const topmenuTextSize = 'sm:text-xs lg:text-[12px] xl:text-sm';
+  const responsiveSize = 'sm:text-xs lg:text-[12px] xl:text-sm';
 
   return (
     <Button
       variant='ghost'
       size='sm'
-      className={`${topmenuTextSize} text-white hover:text-white hover:bg-transparent hover:underline rounded-none h-auto p-0 ${className}`}
+      className={cn(
+        typoVariant('button14', 'text-white'),
+        responsiveSize,
+        'hover:text-white hover:bg-transparent hover:underline rounded-none h-auto p-0',
+        className,
+      )}
       {...props}
     >
       {children}

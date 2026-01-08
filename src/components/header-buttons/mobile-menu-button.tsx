@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { typoVariant } from '@/lib/typography';
+import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type MobileMenuButtonProps = {
@@ -13,19 +15,19 @@ export function MobileMenuButton({
   className = '',
   ...props
 }: MobileMenuButtonProps) {
-  const baseClasses =
-    'w-full justify-start text-sm font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto py-2';
-
   const variantClasses =
-    variant === 'main'
-      ? 'text-black'
-      : 'text-primary';
+    variant === 'main' ? 'text-black' : 'text-primary';
 
   return (
     <Button
       variant='ghost'
       size='sm'
-      className={`${baseClasses} ${variantClasses} ${className}`}
+      className={cn(
+        typoVariant('button14'),
+        'w-full justify-start font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto py-2',
+        variantClasses,
+        className,
+      )}
       {...props}
     >
       {children}

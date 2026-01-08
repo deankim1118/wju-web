@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { typoVariant } from '@/lib/typography';
+import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type MobileActionButtonProps = {
@@ -19,7 +21,11 @@ export function MobileActionButton({
       <Button
         variant='outline'
         size='sm'
-        className={`w-full mt-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground rounded-none ${className}`}
+        className={cn(
+          typoVariant('button14', 'text-primary'),
+          'w-full mt-2 border-primary bg-transparent hover:bg-primary hover:text-primary-foreground rounded-none',
+          className,
+        )}
         {...props}
       >
         {children}
@@ -32,7 +38,11 @@ export function MobileActionButton({
     <Button
       variant='outline'
       size='sm'
-      className={`w-full border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-secondary-foreground rounded-none ${className}`}
+      className={cn(
+        typoVariant('button14', 'text-secondary'),
+        'w-full border-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground rounded-none',
+        className,
+      )}
       {...props}
     >
       {children}

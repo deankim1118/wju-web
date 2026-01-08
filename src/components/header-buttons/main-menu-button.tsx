@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { typoVariant } from '@/lib/typography';
+import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type MainMenuButtonProps = {
@@ -11,13 +13,18 @@ export function MainMenuButton({
   className = '',
   ...props
 }: MainMenuButtonProps) {
-  const menuTextSize = 'sm:text-xs lg:text-[13px] xl:text-sm';
+  const responsiveSize = 'sm:text-xs lg:text-[13px] xl:text-sm';
 
   return (
     <Button
       variant='ghost'
       size='sm'
-      className={`${menuTextSize} font-medium text-black hover:text-secondary hover:bg-transparent rounded-none h-auto p-0 ${className}`}
+      className={cn(
+        typoVariant('button14', 'text-black'),
+        responsiveSize,
+        'font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto p-0',
+        className,
+      )}
       {...props}
     >
       {children}

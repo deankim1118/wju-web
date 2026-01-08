@@ -1,6 +1,8 @@
 'use client';
 
 import { HeroButton } from '@/components/hero-buttons';
+import { typoVariant } from '@/lib/typography';
+import { cn } from '@/lib/utils';
 import { useState } from 'react';
 
 export function Hero() {
@@ -19,7 +21,11 @@ export function Hero() {
 
       {/* Content */}
       <div className='relative z-10 text-center'>
-        <h1 className='mb-12 px-4 font-serif text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl'>
+        <h1
+          className={cn(
+            typoVariant('heroTitle', 'text-white', 'mb-12', 'px-4'),
+          )}
+        >
           <span className='block text-balance'>Your Calling Begins Here</span>
           <span className='block text-balance'>This Spring</span>
         </h1>

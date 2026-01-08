@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { typoVariant } from '@/lib/typography';
+import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
 type HeroButtonProps = {
@@ -17,7 +19,11 @@ export function HeroButton({
     return (
       <Button
         size='lg'
-        className={`bg-secondary text-lg font-medium text-secondary-foreground hover:bg-secondary/90 ${className}`}
+        className={cn(
+          typoVariant('button20', 'text-secondary-foreground'),
+          'bg-secondary hover:bg-secondary/90',
+          className,
+        )}
         {...props}
       >
         {children}
@@ -29,11 +35,14 @@ export function HeroButton({
     <Button
       variant='outline'
       size='lg'
-      className={`border-2 border-white bg-transparent text-lg font-medium text-white hover:bg-white hover:text-gray-800 ${className}`}
+      className={cn(
+        typoVariant('button20', 'text-white'),
+        'border-2 border-white bg-transparent hover:bg-white hover:text-gray-800',
+        className,
+      )}
       {...props}
     >
       {children}
     </Button>
   );
 }
-
