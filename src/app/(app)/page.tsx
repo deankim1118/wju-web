@@ -1,13 +1,30 @@
 import { CallToAction } from '@/components/CallToAction';
 import { Hero } from '@/components/Hero';
 import { Header } from '@/components/layout/header/Header';
+import config from '@payload-config';
+import { getPayload } from 'payload';
 
-export default function Home() {
+export default async function Home() {
+  // 1. Payload 인스턴스를 가져옵니다.
+  const payload = await getPayload({ config });
+
+  // 2. Local API를 사용하여 히어로 데이터를 가져옵니다.
+  // Prisma의 findFirst와 같은 역할을 하지만, 결과값이 훨씬 깔끔합니다.
+  const heroData = await payload.findGlobal({
+    slug: 'hero',
+    // depth: 1을 주면 이미지(Media) 상세 정보까지 한 번에 가져옵니다.
+    depth: 1,
+  });
+
+  if (!heroData)
+    return (
+      <div>데이터가 없습니다. 관리자 페이지에서 먼저 내용을 입력해 주세요.</div>
+    );
   return (
     <div className='min-h-screen flex flex-col'>
       <Header />
       <main className='flex-1' id='maincontent'>
-        <Hero />
+        <Hero data={heroData} />
         <CallToAction />
 
         {/* Dummy Content for Scroll Testing */}

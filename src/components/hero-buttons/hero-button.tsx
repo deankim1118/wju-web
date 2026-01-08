@@ -21,7 +21,7 @@ export function HeroButton({
         size='lg'
         className={cn(
           typoVariant('button20', 'text-secondary-foreground'),
-          'bg-secondary hover:bg-secondary/90',
+          'bg-secondary hover:bg-secondary/90 rounded-none',
           className,
         )}
         {...props}
@@ -37,7 +37,7 @@ export function HeroButton({
       size='lg'
       className={cn(
         typoVariant('button20', 'text-white'),
-        'border-2 border-white bg-transparent hover:bg-white hover:text-gray-800',
+        'border-2 rounded-none border-white bg-transparent hover:bg-white hover:text-gray-800',
         className,
       )}
       {...props}

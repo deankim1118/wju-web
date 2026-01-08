@@ -1,34 +1,39 @@
-import { postgresAdapter } from "@payloadcms/db-postgres";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
-import path from "path";
-import { buildConfig } from "payload";
-import { fileURLToPath } from "url";
-import sharp from "sharp";
+import { postgresAdapter } from '@payloadcms/db-postgres';
+import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import path from 'path';
+import { buildConfig } from 'payload';
+import sharp from 'sharp';
+import { fileURLToPath } from 'url';
 
-import { Users } from "./collections/Users";
-import { Media } from "./collections/Media";
+import { MediaPayload } from './collections-payload/MediaPayload';
+import { HeroPayload } from './globals-payload/HeroPayload';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
   admin: {
-    user: Users.slug,
-    importMap: {
-      baseDir: path.resolve(dirname),
+    user: 'users', // 관리자 계정 컬렉션
+  },
+  collections: [
+    {
+      slug: 'users',
+      auth: true,
+      fields: [],
     },
-  },
-  collections: [Users, Media],
-  editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || "",
-  typescript: {
-    outputFile: path.resolve(dirname, "payload-types.ts"),
-  },
+    MediaPayload,
+  ],
+  // 💡 여기에 아까 상의한 Hero 전역 설정을 나중에 넣을 거예요!
+  globals: [HeroPayload],
+  editor: lexicalEditor({}),
+  secret: process.env.PAYLOAD_SECRET || 'YOUR_SECRET_HERE',
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URL || "",
+      connectionString: process.env.DATABASE_URL || '',
     },
   }),
   sharp,
-  plugins: [],
+  typescript: {
+    outputFile: path.resolve(dirname, 'payload-types.ts'),
+  },
 });
