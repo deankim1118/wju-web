@@ -19,7 +19,7 @@ export function MobileActionButton({
       <Button
         variant='outline'
         size='sm'
-        className={`w-full mt-2 border-[#1e2d3d] bg-transparent text-[#1e2d3d] hover:bg-[#1e2d3d] hover:text-white rounded-none ${className}`}
+        className={`w-full mt-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground rounded-none ${className}`}
         {...props}
       >
         {children}
@@ -32,7 +32,7 @@ export function MobileActionButton({
     <Button
       variant='outline'
       size='sm'
-      className={`w-full border-[#8b1538] bg-transparent text-[#8b1538] hover:bg-[#8b1538] hover:text-white rounded-none ${className}`}
+      className={`w-full border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-secondary-foreground rounded-none ${className}`}
       {...props}
     >
       {children}

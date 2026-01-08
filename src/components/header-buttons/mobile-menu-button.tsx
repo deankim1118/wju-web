@@ -14,12 +14,12 @@ export function MobileMenuButton({
   ...props
 }: MobileMenuButtonProps) {
   const baseClasses =
-    'w-full justify-start text-sm font-medium hover:text-[#8b1538] hover:bg-transparent rounded-none h-auto py-2';
+    'w-full justify-start text-sm font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto py-2';
 
   const variantClasses =
     variant === 'main'
       ? 'text-black'
-      : 'text-[#1e2d3d]';
+      : 'text-primary';
 
   return (
     <Button

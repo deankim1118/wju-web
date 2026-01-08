@@ -17,7 +17,7 @@ export function HeroButton({
     return (
       <Button
         size='lg'
-        className={`bg-[#8b1538] text-lg font-medium text-white hover:bg-[#6d1029] ${className}`}
+        className={`bg-secondary text-lg font-medium text-secondary-foreground hover:bg-secondary/90 ${className}`}
         {...props}
       >
         {children}

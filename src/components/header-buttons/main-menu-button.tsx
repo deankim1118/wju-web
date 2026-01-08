@@ -17,7 +17,7 @@ export function MainMenuButton({
     <Button
       variant='ghost'
       size='sm'
-      className={`${menuTextSize} font-medium text-black hover:text-[#8b1538] hover:bg-transparent rounded-none h-auto p-0 ${className}`}
+      className={`${menuTextSize} font-medium text-black hover:text-secondary hover:bg-transparent rounded-none h-auto p-0 ${className}`}
       {...props}
     >
       {children}

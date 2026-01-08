@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function CallToAction() {
   return (
-    <footer className='bg-[#1e3a5f] text-white py-12'>
+    <footer className='bg-primary text-primary-foreground py-12'>
       <div className='container mx-auto px-4'>
         <div className='flex items-center justify-between flex-wrap gap-8'>
           {/* Left Side */}

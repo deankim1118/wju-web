@@ -22,7 +22,7 @@ export function HeaderActionButton({
       <Button
         variant='outline'
         size='sm'
-        className={`border-white bg-transparent text-white hover:bg-white hover:text-[#1e2d3d] ${topmenuTextSize} px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none ${className}`}
+        className={`border-white bg-transparent text-white hover:bg-white hover:text-primary ${topmenuTextSize} px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none ${className}`}
         {...props}
       >
         {children}
@@ -35,7 +35,7 @@ export function HeaderActionButton({
     <Button
       variant='outline'
       size='sm'
-      className={`border-[#8b1538] bg-transparent text-[#8b1538] hover:bg-[#8b1538] hover:text-white ${menuTextSize} px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none ${className}`}
+      className={`border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-secondary-foreground ${menuTextSize} px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none ${className}`}
       {...props}
     >
       {children}

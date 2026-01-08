@@ -9,7 +9,7 @@ export function Hero() {
     <section className='relative flex flex-1 items-center justify-center overflow-hidden bg-gray-400 h-[70vh]'>
       {/* Geometric Background Pattern */}
       <div className='absolute inset-0'>
-        <div className='absolute inset-0 bg-gradient-to-br from-gray-400 via-gray-500 to-gray-400'>
+        <div className='absolute inset-0 bg-linear-to-br from-gray-400 via-gray-500 to-gray-400'>
           {/* Diagonal Geometric Shapes */}
           <div className='absolute left-0 top-0 h-full w-1/3 bg-gray-500 [clip-path:polygon(0_0,100%_0,0_100%)]' />
           <div className='absolute right-0 top-0 h-full w-1/3 bg-gray-500 [clip-path:polygon(100%_0,100%_100%,0_0)]' />

@@ -1,6 +1,6 @@
 import { CallToAction } from '@/components/CallToAction';
-import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
+import { Header } from '@/components/layout/header/Header';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
         {/* Dummy Content for Scroll Testing */}
         <section className='py-20 bg-gray-50'>
           <div className='container mx-auto px-6'>
-            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+            <h2 className='text-4xl font-bold mb-8 text-primary'>
               About Washington Jabez University
             </h2>
             <p className='text-lg text-gray-700 mb-6'>
@@ -33,13 +33,13 @@ export default function Home() {
 
         <section className='py-20 bg-white'>
           <div className='container mx-auto px-6'>
-            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+            <h2 className='text-4xl font-bold mb-8 text-primary'>
               Academic Programs
             </h2>
             <div className='grid md:grid-cols-3 gap-8'>
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <div key={item} className='bg-gray-50 p-6 rounded-lg'>
-                  <h3 className='text-2xl font-semibold mb-4 text-[#8b1538]'>
+                  <h3 className='text-2xl font-semibold mb-4 text-secondary'>
                     Program {item}
                   </h3>
                   <p className='text-gray-700'>
@@ -55,7 +55,7 @@ export default function Home() {
 
         <section className='py-20 bg-gray-50'>
           <div className='container mx-auto px-6'>
-            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+            <h2 className='text-4xl font-bold mb-8 text-primary'>
               Campus Life
             </h2>
             <p className='text-lg text-gray-700 mb-6'>
@@ -67,7 +67,7 @@ export default function Home() {
             <div className='space-y-4'>
               {[1, 2, 3, 4].map((item) => (
                 <div key={item} className='bg-white p-6 rounded-lg shadow-sm'>
-                  <h3 className='text-xl font-semibold mb-2 text-[#8b1538]'>
+                  <h3 className='text-xl font-semibold mb-2 text-secondary'>
                     Campus Feature {item}
                   </h3>
                   <p className='text-gray-700'>
@@ -83,7 +83,7 @@ export default function Home() {
 
         <section className='py-20 bg-white'>
           <div className='container mx-auto px-6'>
-            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+            <h2 className='text-4xl font-bold mb-8 text-primary'>
               Student Testimonials
             </h2>
             <div className='grid md:grid-cols-2 gap-8'>
@@ -94,7 +94,7 @@ export default function Home() {
                     elit. Sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua. Ut enim ad minim veniam.&quot;
                   </p>
-                  <p className='font-semibold text-[#8b1538]'>
+                  <p className='font-semibold text-secondary'>
                     - Student {item}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function Home() {
 
         <section className='py-20 bg-gray-50'>
           <div className='container mx-auto px-6'>
-            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+            <h2 className='text-4xl font-bold mb-8 text-primary'>
               News & Events
             </h2>
             <div className='space-y-6'>
@@ -114,7 +114,7 @@ export default function Home() {
                   key={item}
                   className='bg-white p-6 rounded-lg shadow-sm'
                 >
-                  <h3 className='text-2xl font-semibold mb-3 text-[#8b1538]'>
+                  <h3 className='text-2xl font-semibold mb-3 text-secondary'>
                     News Article {item}
                   </h3>
                   <p className='text-gray-600 mb-2'>
@@ -134,12 +134,12 @@ export default function Home() {
 
         <section className='py-20 bg-white'>
           <div className='container mx-auto px-6'>
-            <h2 className='text-4xl font-bold mb-8 text-[#1e2d3d]'>
+            <h2 className='text-4xl font-bold mb-8 text-primary'>
               Contact Information
             </h2>
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
-                <h3 className='text-2xl font-semibold mb-4 text-[#8b1538]'>
+                <h3 className='text-2xl font-semibold mb-4 text-secondary'>
                   Address
                 </h3>
                 <p className='text-gray-700'>
@@ -151,7 +151,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <h3 className='text-2xl font-semibold mb-4 text-[#8b1538]'>
+                <h3 className='text-2xl font-semibold mb-4 text-secondary'>
                   Contact
                 </h3>
                 <p className='text-gray-700'>
