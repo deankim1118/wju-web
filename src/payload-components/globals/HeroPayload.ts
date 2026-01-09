@@ -23,6 +23,11 @@ export const HeroPayload: GlobalConfig = {
           label: '메인 제목 (선택)',
         },
         {
+          name: 'subtitle',
+          type: 'text',
+          label: '소제목 / 서브 타이틀 (선택)',
+        },
+        {
           name: 'description',
           type: 'textarea',
           label: '설명 문구 (선택)',

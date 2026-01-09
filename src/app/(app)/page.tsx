@@ -1,20 +1,12 @@
 import { CallToAction } from '@/components/CallToAction';
 import { Hero } from '@/components/Hero';
 import { Header } from '@/components/layout/header/Header';
-import config from '@payload-config';
-import { getPayload } from 'payload';
+import { getHeroData } from '@/lib/payload/queries';
 
 export default async function Home() {
-  // 1. Payload 인스턴스를 가져옵니다.
-  const payload = await getPayload({ config });
-
-  // 2. Local API를 사용하여 히어로 데이터를 가져옵니다.
-  // Prisma의 findFirst와 같은 역할을 하지만, 결과값이 훨씬 깔끔합니다.
-  const heroData = await payload.findGlobal({
-    slug: 'hero',
-    // depth: 1을 주면 이미지(Media) 상세 정보까지 한 번에 가져옵니다.
-    depth: 1,
-  });
+  // Payload CMS에서 Hero 데이터를 가져옵니다.
+  // depth: 1을 주면 이미지(Media) 상세 정보까지 한 번에 가져옵니다.
+  const heroData = await getHeroData({ depth: 1 });
 
   if (!heroData)
     return (

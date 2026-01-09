@@ -151,6 +151,7 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -164,14 +165,6 @@ export interface Media {
   focalY?: number | null;
   sizes?: {
     thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    hero?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -283,6 +276,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -298,16 +292,6 @@ export interface MediaSelect<T extends boolean = true> {
     | T
     | {
         thumbnail?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        hero?:
           | T
           | {
               url?: T;
@@ -369,6 +353,7 @@ export interface Hero {
     | {
         image: number | Media;
         title?: string | null;
+        subtitle?: string | null;
         description?: string | null;
         buttons?:
           | {
@@ -393,6 +378,7 @@ export interface HeroSelect<T extends boolean = true> {
     | {
         image?: T;
         title?: T;
+        subtitle?: T;
         description?: T;
         buttons?:
           | T
