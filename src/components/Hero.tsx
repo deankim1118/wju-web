@@ -1,57 +1,97 @@
 'use client';
 
-import { HeroButton } from '@/components/hero-buttons';
-import { typoVariant } from '@/lib/typography';
-import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { HeroBackground } from '@/components/hero-components/HeroBackground';
+import { HeroContent } from '@/components/hero-components/HeroContent';
+import { HeroControls } from '@/components/hero-components/HeroControls';
+import { HeroOverlay } from '@/components/hero-components/HeroOverlay';
+import { useHeroSlider } from '@/hooks/use-hero-slider';
+import { getHeroImageAlt } from '@/lib/utils/hero';
+import type { HeroProps, HeroSlide } from '@/types/hero';
 
-export function Hero() {
-  const [activeSlide, setActiveSlide] = useState(0);
+/**
+ * Hero 섹션 컴포넌트
+ * Payload CMS에서 가져온 Hero 데이터를 표시하는 메인 히어로 섹션입니다.
+ *
+ * 성능 최적화:
+ * - Next.js Image 컴포넌트가 자동으로 브라우저 캐싱을 활용
+ * - 같은 URL의 이미지는 브라우저가 캐시에서 자동으로 가져옴
+ * - 첫 번째 슬라이드만 priority로 설정하여 초기 로딩 최적화
+ */
+export function Hero({ data }: HeroProps) {
+  // 슬라이드 데이터 가져오기 (타입 단언)
+  const originalSlides = (data?.slides as HeroSlide[]) || [];
+
+  // 슬라이드가 없으면 기본 슬라이드 사용 (기본 이미지 표시)
+  const defaultSlide: HeroSlide = {
+    id: 'default',
+    title: null,
+    subtitle: null,
+    image: null, // HeroBackground에서 wju-hero-img.png로 fallback
+    mobileImage: null,
+    layoutSettings: { isPoster: false },
+    buttons: [],
+  };
+
+  const slides = originalSlides.length > 0 ? originalSlides : [defaultSlide];
+
+  // 슬라이더 훅 사용
+  const { activeSlide, goToSlide, pauseAutoPlay, resumeAutoPlay } =
+    useHeroSlider({
+      totalSlides: slides.length,
+      autoPlayInterval: 500000,
+      enableAutoPlay: true,
+    });
+
+  // 현재 활성 슬라이드의 데이터 가져오기
+  const currentSlide = slides[activeSlide];
+
+  if (!currentSlide) {
+    return null;
+  }
+
+  // title이나 버튼이 있는지 확인
+  const hasContent =
+    Boolean(currentSlide.title) ||
+    Boolean(currentSlide.buttons && currentSlide.buttons.length > 0);
+
+  // 이미지 alt 텍스트 추출
+  const imageAlt = getHeroImageAlt(
+    currentSlide.image,
+    currentSlide.title || 'Hero image',
+  );
+
   return (
-    <section className='relative flex flex-1 items-center justify-center overflow-hidden bg-gray-400 h-[70vh]'>
-      {/* Geometric Background Pattern */}
-      <div className='absolute inset-0'>
-        <div className='absolute inset-0 bg-linear-to-br from-gray-400 via-gray-500 to-gray-400'>
-          {/* Diagonal Geometric Shapes */}
-          <div className='absolute left-0 top-0 h-full w-1/3 bg-gray-500 [clip-path:polygon(0_0,100%_0,0_100%)]' />
-          <div className='absolute right-0 top-0 h-full w-1/3 bg-gray-500 [clip-path:polygon(100%_0,100%_100%,0_0)]' />
-          <div className='absolute bottom-0 left-1/4 h-1/2 w-1/2 bg-gray-600 opacity-30 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]' />
-        </div>
-      </div>
+    <section
+      className='relative flex items-center justify-center overflow-hidden w-full h-[78vh] md:h-[75vh]'
+      onMouseEnter={pauseAutoPlay}
+      onMouseLeave={resumeAutoPlay}
+    >
+      {/* Background Image */}
+      <HeroBackground
+        key={`hero-bg-${currentSlide?.id ?? activeSlide}`}
+        image={currentSlide.image ?? null}
+        mobileImage={currentSlide.mobileImage ?? null}
+        isPoster={currentSlide.layoutSettings?.isPoster ?? false}
+        imageAlt={imageAlt}
+        hasContent={hasContent}
+        priority={activeSlide === 0}
+      />
+
+      {/* Overlay */}
+      <HeroOverlay hasContent={hasContent} />
 
       {/* Content */}
-      <div className='relative z-10 text-center'>
-        <h1
-          className={cn(
-            typoVariant('heroTitle', 'text-white', 'mb-12', 'px-4'),
-          )}
-        >
-          <span className='block text-balance'>Your Calling Begins Here</span>
-          <span className='block text-balance'>This Spring</span>
-        </h1>
-        <div className='flex flex-wrap items-center justify-center gap-4'>
-          <HeroButton variant='outline'>ACADEMIC CALENDAR</HeroButton>
-          <HeroButton variant='primary'>APPLY TODAY</HeroButton>
-        </div>
-      </div>
+      <HeroContent
+        key={`hero-content-${currentSlide?.id ?? activeSlide}`}
+        slide={currentSlide}
+      />
 
-      {/* Carousel Indicators */}
-      <div className='absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-2'>
-        <button
-          onClick={() => setActiveSlide(0)}
-          className={`h-3 w-3 rounded-full transition-colors ${
-            activeSlide === 0 ? 'bg-white' : 'bg-white/50'
-          }`}
-          aria-label='Slide 1'
-        />
-        <button
-          onClick={() => setActiveSlide(1)}
-          className={`h-3 w-3 rounded-full transition-colors ${
-            activeSlide === 1 ? 'bg-white' : 'bg-white/50'
-          }`}
-          aria-label='Slide 2'
-        />
-      </div>
+      {/* Controls */}
+      <HeroControls
+        totalSlides={slides.length}
+        activeSlide={activeSlide}
+        onSlideChange={goToSlide}
+      />
     </section>
   );
 }

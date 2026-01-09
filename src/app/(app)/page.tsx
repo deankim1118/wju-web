@@ -1,13 +1,22 @@
 import { CallToAction } from '@/components/CallToAction';
 import { Hero } from '@/components/Hero';
 import { Header } from '@/components/layout/header/Header';
+import { getHeroData } from '@/lib/payload/queries';
 
-export default function Home() {
+export default async function Home() {
+  // Payload CMS에서 Hero 데이터를 가져옵니다.
+  // depth: 1을 주면 이미지(Media) 상세 정보까지 한 번에 가져옵니다.
+  const heroData = await getHeroData({ depth: 1 });
+
+  if (!heroData)
+    return (
+      <div>데이터가 없습니다. 관리자 페이지에서 먼저 내용을 입력해 주세요.</div>
+    );
   return (
     <div className='min-h-screen flex flex-col'>
       <Header />
       <main className='flex-1' id='maincontent'>
-        <Hero />
+        <Hero data={heroData} />
         <CallToAction />
 
         {/* Dummy Content for Scroll Testing */}
