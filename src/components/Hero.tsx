@@ -2,11 +2,31 @@
 
 import { HeroBackground } from '@/components/hero-components/HeroBackground';
 import { HeroContent } from '@/components/hero-components/HeroContent';
-import { HeroControls } from '@/components/hero-components/HeroControls';
 import { HeroOverlay } from '@/components/hero-components/HeroOverlay';
-import { useHeroSlider } from '@/hooks/use-hero-slider';
+import { HeroPagination } from '@/components/hero-components/HeroPagination';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from '@/components/ui/carousel';
 import { getHeroImageAlt } from '@/lib/utils/hero';
 import type { HeroProps, HeroSlide } from '@/types/hero';
+import Autoplay from 'embla-carousel-autoplay';
+import { useEffect, useRef, useState } from 'react';
+
+/**
+ * 기본 슬라이드 (Payload CMS에서 슬라이드 데이터가 없을 때 사용)
+ */
+const DEFAULT_SLIDE: HeroSlide = {
+  id: 'default',
+  title: null,
+  subtitle: null,
+  image: null, // HeroBackground에서 wju-hero-img.png로 fallback
+  mobileImage: null,
+  layoutSettings: { isPoster: false },
+  buttons: [],
+};
 
 /**
  * Hero 섹션 컴포넌트
@@ -18,80 +38,87 @@ import type { HeroProps, HeroSlide } from '@/types/hero';
  * - 첫 번째 슬라이드만 priority로 설정하여 초기 로딩 최적화
  */
 export function Hero({ data }: HeroProps) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  // Autoplay 플러그인 설정
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 5000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }),
+  );
+
   // 슬라이드 데이터 가져오기 (타입 단언)
   const originalSlides = (data?.slides as HeroSlide[]) || [];
 
   // 슬라이드가 없으면 기본 슬라이드 사용 (기본 이미지 표시)
-  const defaultSlide: HeroSlide = {
-    id: 'default',
-    title: null,
-    subtitle: null,
-    image: null, // HeroBackground에서 wju-hero-img.png로 fallback
-    mobileImage: null,
-    layoutSettings: { isPoster: false },
-    buttons: [],
-  };
+  const slides = originalSlides.length > 0 ? originalSlides : [DEFAULT_SLIDE];
 
-  const slides = originalSlides.length > 0 ? originalSlides : [defaultSlide];
+  // Carousel API를 통한 현재 슬라이드 추적
+  useEffect(() => {
+    if (!api) return;
 
-  // 슬라이더 훅 사용
-  const { activeSlide, goToSlide, pauseAutoPlay, resumeAutoPlay } =
-    useHeroSlider({
-      totalSlides: slides.length,
-      autoPlayInterval: 500000,
-      enableAutoPlay: true,
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
     });
-
-  // 현재 활성 슬라이드의 데이터 가져오기
-  const currentSlide = slides[activeSlide];
-
-  if (!currentSlide) {
-    return null;
-  }
-
-  // title이나 버튼이 있는지 확인
-  const hasContent =
-    Boolean(currentSlide.title) ||
-    Boolean(currentSlide.buttons && currentSlide.buttons.length > 0);
-
-  // 이미지 alt 텍스트 추출
-  const imageAlt = getHeroImageAlt(
-    currentSlide.image,
-    currentSlide.title || 'Hero image',
-  );
+  }, [api]);
 
   return (
-    <section
-      className='relative flex items-center justify-center overflow-hidden w-full h-[78vh] md:h-[75vh]'
-      onMouseEnter={pauseAutoPlay}
-      onMouseLeave={resumeAutoPlay}
+    <Carousel
+      setApi={setApi}
+      opts={{
+        align: 'start',
+        loop: true,
+      }}
+      plugins={slides.length > 1 ? [autoplayPlugin.current] : []}
+      className='relative w-full h-[78vh] md:h-[75vh]'
     >
-      {/* Background Image */}
-      <HeroBackground
-        key={`hero-bg-${currentSlide?.id ?? activeSlide}`}
-        image={currentSlide.image ?? null}
-        mobileImage={currentSlide.mobileImage ?? null}
-        isPoster={currentSlide.layoutSettings?.isPoster ?? false}
-        imageAlt={imageAlt}
-        hasContent={hasContent}
-        priority={activeSlide === 0}
-      />
+      <CarouselContent className='h-full ml-0'>
+        {slides.map((slide, index) => {
+          // title이나 버튼이 있는지 확인
+          const hasContent =
+            Boolean(slide.title) ||
+            Boolean(slide.buttons && slide.buttons.length > 0);
 
-      {/* Overlay */}
-      <HeroOverlay hasContent={hasContent} />
+          // 이미지 alt 텍스트 추출
+          const imageAlt = getHeroImageAlt(
+            slide.image,
+            slide.title || 'Hero image',
+          );
 
-      {/* Content */}
-      <HeroContent
-        key={`hero-content-${currentSlide?.id ?? activeSlide}`}
-        slide={currentSlide}
-      />
+          return (
+            <CarouselItem
+              key={slide.id || index}
+              className='relative flex items-center justify-center overflow-hidden h-full pl-0'
+            >
+              {/* Background Image */}
+              <HeroBackground
+                image={slide.image ?? null}
+                mobileImage={slide.mobileImage ?? null}
+                isPoster={slide.layoutSettings?.isPoster ?? false}
+                imageAlt={imageAlt}
+                hasContent={hasContent}
+                priority={index === 0}
+              />
 
-      {/* Controls */}
-      <HeroControls
-        totalSlides={slides.length}
-        activeSlide={activeSlide}
-        onSlideChange={goToSlide}
-      />
-    </section>
+              {/* Overlay */}
+              <HeroOverlay hasContent={hasContent} />
+
+              {/* Content */}
+              <HeroContent slide={slide} />
+            </CarouselItem>
+          );
+        })}
+      </CarouselContent>
+
+      {/* Pagination Dots */}
+      <HeroPagination api={api} count={count} current={current} />
+    </Carousel>
   );
 }

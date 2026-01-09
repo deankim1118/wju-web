@@ -37,7 +37,7 @@ export function HeroButton({
       size='lg'
       className={cn(
         typoVariant('heroButton', 'text-white'),
-        'border-2 rounded-none border-white bg-transparent hover:bg-white hover:text-gray-800',
+        'border-2 rounded-none border-white bg-transparent hover:bg-white hover:text-primary',
         className,
       )}
       {...props}
