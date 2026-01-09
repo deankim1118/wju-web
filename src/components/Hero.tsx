@@ -6,7 +6,7 @@ import { HeroControls } from '@/components/hero-components/HeroControls';
 import { HeroOverlay } from '@/components/hero-components/HeroOverlay';
 import { useHeroSlider } from '@/hooks/use-hero-slider';
 import { getHeroImageAlt } from '@/lib/utils/hero';
-import type { HeroProps } from '@/types/hero';
+import type { HeroProps, HeroSlide } from '@/types/hero';
 
 /**
  * Hero 섹션 컴포넌트
@@ -18,13 +18,21 @@ import type { HeroProps } from '@/types/hero';
  * - 첫 번째 슬라이드만 priority로 설정하여 초기 로딩 최적화
  */
 export function Hero({ data }: HeroProps) {
-  // 슬라이드 데이터가 없으면 빈 배열로 처리
-  const slides = data?.slides || [];
+  // 슬라이드 데이터 가져오기 (타입 단언)
+  const originalSlides = (data?.slides as HeroSlide[]) || [];
 
-  // 슬라이드가 없으면 빈 화면 반환
-  if (slides.length === 0) {
-    return null;
-  }
+  // 슬라이드가 없으면 기본 슬라이드 사용 (기본 이미지 표시)
+  const defaultSlide: HeroSlide = {
+    id: 'default',
+    title: null,
+    subtitle: null,
+    image: null, // HeroBackground에서 wju-hero-img.png로 fallback
+    mobileImage: null,
+    layoutSettings: { isPoster: false },
+    buttons: [],
+  };
+
+  const slides = originalSlides.length > 0 ? originalSlides : [defaultSlide];
 
   // 슬라이더 훅 사용
   const { activeSlide, goToSlide, pauseAutoPlay, resumeAutoPlay } =
@@ -54,14 +62,16 @@ export function Hero({ data }: HeroProps) {
 
   return (
     <section
-      className='relative flex flex-1 items-center justify-center overflow-hidden h-[70vh]'
+      className='relative flex items-center justify-center overflow-hidden w-full h-[78vh] md:h-[75vh]'
       onMouseEnter={pauseAutoPlay}
       onMouseLeave={resumeAutoPlay}
     >
       {/* Background Image */}
       <HeroBackground
         key={`hero-bg-${currentSlide?.id ?? activeSlide}`}
-        image={currentSlide.image}
+        image={currentSlide.image ?? null}
+        mobileImage={currentSlide.mobileImage ?? null}
+        isPoster={currentSlide.layoutSettings?.isPoster ?? false}
         imageAlt={imageAlt}
         hasContent={hasContent}
         priority={activeSlide === 0}

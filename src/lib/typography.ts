@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge';
 export const typography = {
   // Hero Title - 75px
   heroTitle:
-    'font-serif lg:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold text-center leading-snug',
+    'font-serif lg:text-7xl md:text-6xl text-5xl font-bold text-center leading-snug',
 
   // H1 - 36px
   h1: 'font-serif text-4xl leading-[51px] font-medium tracking-[0.02em]',
@@ -30,6 +30,10 @@ export const typography = {
   // Button SemiBold - 16px
   button16:
     'font-sans text-base leading-[19px] font-semibold tracking-[0.12em] uppercase',
+
+  // Hero Button - 반응형 (모바일 16px, 데스크탑 20px)
+  heroButton:
+    'font-sans text-base md:text-xl leading-[19px] md:leading-[22px] font-semibold md:font-normal tracking-[0.12em] md:tracking-[0em] uppercase',
 
   // Button - 14px
   button14: 'font-sans text-sm leading-[17px] font-normal uppercase',

@@ -351,7 +351,24 @@ export interface Hero {
   id: number;
   slides?:
     | {
+        /**
+         * PC/태블릿에서 표시될 이미지 (16:9 권장)
+         */
         image: number | Media;
+        /**
+         * 모바일에 최적화된 이미지가 있다면 등록하세요. 비워두면 데스크탑 이미지가 자동으로 안전하게 표시됩니다.
+         */
+        mobileImage?: (number | null) | Media;
+        /**
+         * 이미지 표시 방식을 선택하세요.
+         */
+        layoutSettings?: {
+          /**
+           * ✅ 체크: 이미지 전체를 보여주고 여백은 블러 처리 (텍스트/로고가 있는 포스터 권장)
+           * ❌ 미체크: 화면을 꽉 채우고 이미지 일부가 잘릴 수 있음 (배경 사진 권장)
+           */
+          isPoster?: boolean | null;
+        };
         title?: string | null;
         subtitle?: string | null;
         description?: string | null;
@@ -377,6 +394,12 @@ export interface HeroSelect<T extends boolean = true> {
     | T
     | {
         image?: T;
+        mobileImage?: T;
+        layoutSettings?:
+          | T
+          | {
+              isPoster?: T;
+            };
         title?: T;
         subtitle?: T;
         description?: T;

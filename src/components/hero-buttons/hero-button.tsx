@@ -20,7 +20,7 @@ export function HeroButton({
       <Button
         size='lg'
         className={cn(
-          typoVariant('button20', 'text-secondary-foreground'),
+          typoVariant('heroButton', 'text-secondary-foreground'),
           'bg-secondary hover:bg-secondary/90 rounded-none',
           className,
         )}
@@ -36,7 +36,7 @@ export function HeroButton({
       variant='outline'
       size='lg'
       className={cn(
-        typoVariant('button20', 'text-white'),
+        typoVariant('heroButton', 'text-white'),
         'border-2 rounded-none border-white bg-transparent hover:bg-white hover:text-gray-800',
         className,
       )}

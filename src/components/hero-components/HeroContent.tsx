@@ -25,7 +25,7 @@ export function HeroContent({ slide }: HeroContentProps) {
       {(hasTitle || hasSubtitle) && (
         <h1
           className={cn(
-            typoVariant('heroTitle', 'text-white', 'mb-12', 'px-4'),
+            typoVariant('heroTitle', 'text-white', 'mb-16 md:mb-12', 'px-4'),
             'drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]',
             'max-w-5xl ',
           )}
@@ -39,11 +39,12 @@ export function HeroContent({ slide }: HeroContentProps) {
         </h1>
       )}
       {hasButtons && (
-        <div className='flex flex-wrap items-center justify-center gap-4'>
+        <div className='flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 w-full px-8'>
           {slide.buttons!.map((button, index) => (
             <HeroButton
               key={button.id || index}
               variant={index === 0 ? 'outline' : 'primary'}
+              className='w-full md:w-auto'
             >
               {button.label}
             </HeroButton>

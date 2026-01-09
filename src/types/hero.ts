@@ -20,6 +20,10 @@ export type HeroButtonData = {
  */
 export type HeroSlide = {
   image: number | Media | null;
+  mobileImage?: number | Media | null; // 모바일 전용 이미지 (선택)
+  layoutSettings?: {
+    isPoster?: boolean; // 포스터 모드 (true: 전체 보임, false: 화면 꽉 채움)
+  } | null;
   title?: string | null;
   subtitle?: string | null;
   description?: string | null;
