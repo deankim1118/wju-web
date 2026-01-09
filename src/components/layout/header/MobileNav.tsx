@@ -6,7 +6,12 @@ import {
 } from '@/components/header-buttons';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
@@ -27,7 +32,7 @@ export function MobileNav({
         <Button
           id='mobileTogBtn'
           variant='ghost'
-          size='icon'
+          size='icon-lg'
           className={cn(
             'absolute left-4 z-50 text-white hover:bg-transparent hover:text-white h-auto p-2 min-[900px]:hidden',
           )}
@@ -45,13 +50,14 @@ export function MobileNav({
         side='top'
         noOverlay
         className={cn(
-          'w-full border-0 p-0 bg-white shadow-lg',
+          'w-full h-screen border-0 p-0 bg-white shadow-lg',
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
           '[&>button]:hidden z-40 min-[900px]:hidden',
         )}
         style={{ top: `${topBarHeight}px` }}
       >
+        <SheetTitle className='sr-only'>Mobile Navigation Menu</SheetTitle>
         <div className='px-4 py-4 space-y-1'>
           {/* Main Navigation Items */}
           <MobileMenuButton variant='main'>ABOUT</MobileMenuButton>
