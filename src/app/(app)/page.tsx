@@ -1,5 +1,6 @@
 import { CallToAction } from '@/components/CallToAction';
 import { Hero } from '@/components/Hero';
+import { SchoolIntroduction } from '@/components/SchoolIntroduction';
 import { Header } from '@/components/layout/header/Header';
 import { getHeroData } from '@/lib/payload/queries';
 
@@ -18,6 +19,7 @@ export default async function Home() {
       <main className='flex-1' id='maincontent'>
         <Hero data={heroData} />
         <CallToAction />
+        <SchoolIntroduction />
 
         {/* Dummy Content for Scroll Testing */}
         {/* <section className='py-20 bg-gray-50'>
