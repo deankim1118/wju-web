@@ -20,7 +20,7 @@ export default async function Home() {
         <CallToAction />
 
         {/* Dummy Content for Scroll Testing */}
-        <section className='py-20 bg-gray-50'>
+        {/* <section className='py-20 bg-gray-50'>
           <div className='container mx-auto px-6'>
             <h2 className='text-4xl font-bold mb-8 text-primary'>
               About Washington Jabez University
@@ -173,7 +173,7 @@ export default async function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

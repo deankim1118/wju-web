@@ -21,11 +21,11 @@ export function HeroContent({ slide }: HeroContentProps) {
   }
 
   return (
-    <div className='relative z-10 text-center animate-in fade-in duration-700'>
+    <div className='relative z-10 text-center animate-in fade-in duration-700 md:py-5 max-h-full overflow-y-auto'>
       {(hasTitle || hasSubtitle) && (
         <h1
           className={cn(
-            typoVariant('heroTitle', 'text-white', 'mb-16 md:mb-12', 'px-4'),
+            typoVariant('heroTitle', 'text-white', 'mb-7 md:mb-4', 'px-4'),
             'drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]',
             'max-w-5xl ',
           )}
@@ -44,7 +44,7 @@ export function HeroContent({ slide }: HeroContentProps) {
             <HeroButton
               key={button.id || index}
               variant={index === 0 ? 'outline' : 'primary'}
-              className='w-full md:w-auto'
+              className='w-full max-w-[470px]'
             >
               {button.label}
             </HeroButton>
