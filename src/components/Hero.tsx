@@ -13,7 +13,7 @@ import {
 import { getHeroImageAlt } from '@/lib/utils/hero';
 import type { HeroProps, HeroSlide } from '@/types/hero';
 import Autoplay from 'embla-carousel-autoplay';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 /**
  * 기본 슬라이드 (Payload CMS에서 슬라이드 데이터가 없을 때 사용)
@@ -42,20 +42,23 @@ export function Hero({ data }: HeroProps) {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  // Autoplay 플러그인 설정
   const autoplayPlugin = useRef(
     Autoplay({
-      delay: 5000,
+      delay: 500000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     }),
   );
 
-  // 슬라이드 데이터 가져오기 (타입 단언)
-  const originalSlides = (data?.slides as HeroSlide[]) || [];
-
-  // 슬라이드가 없으면 기본 슬라이드 사용 (기본 이미지 표시)
+  // Payload의 slides 타입과 HeroSlide 타입이 호환되므로 타입 단언 사용
+  const originalSlides: HeroSlide[] = (data?.slides as HeroSlide[]) ?? [];
   const slides = originalSlides.length > 0 ? originalSlides : [DEFAULT_SLIDE];
+
+  // Autoplay 플러그인을 슬라이드가 2개 이상일 때만 적용 (메모이제이션)
+  const plugins = useMemo(
+    () => (slides.length > 1 ? [autoplayPlugin.current] : []),
+    [slides.length],
+  );
 
   // Carousel API를 통한 현재 슬라이드 추적
   useEffect(() => {
@@ -70,55 +73,56 @@ export function Hero({ data }: HeroProps) {
   }, [api]);
 
   return (
-    <Carousel
-      setApi={setApi}
-      opts={{
-        align: 'start',
-        loop: true,
-      }}
-      plugins={slides.length > 1 ? [autoplayPlugin.current] : []}
-      className='relative w-full h-[78vh] md:h-[75vh]'
-    >
-      <CarouselContent className='h-full ml-0'>
-        {slides.map((slide, index) => {
-          // title이나 버튼이 있는지 확인
-          const hasContent =
-            Boolean(slide.title) ||
-            Boolean(slide.buttons && slide.buttons.length > 0);
+    <section className='w-full' aria-label='Hero Section'>
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: 'start',
+          loop: true,
+        }}
+        plugins={plugins}
+        className='relative w-full h-[65vh] md:h-[75vh]'
+      >
+        <CarouselContent className='h-full ml-0'>
+          {slides.map((slide, index) => {
+            // title이나 버튼이 있는지 확인
+            const hasContent =
+              Boolean(slide.title) ||
+              Boolean(slide.buttons && slide.buttons.length > 0);
 
-          // 이미지 alt 텍스트 추출
-          const imageAlt = getHeroImageAlt(
-            slide.image,
-            slide.title || 'Hero image',
-          );
+            // 이미지 alt 텍스트 추출
+            const imageAlt = getHeroImageAlt(
+              slide.image,
+              slide.title || 'Hero image',
+            );
 
-          return (
-            <CarouselItem
-              key={slide.id || index}
-              className='relative flex items-center justify-center overflow-hidden h-full pl-0'
-            >
-              {/* Background Image */}
-              <HeroBackground
-                image={slide.image ?? null}
-                mobileImage={slide.mobileImage ?? null}
-                isPoster={slide.layoutSettings?.isPoster ?? false}
-                imageAlt={imageAlt}
-                hasContent={hasContent}
-                priority={index === 0}
-              />
+            return (
+              <CarouselItem
+                key={slide.id || index}
+                className='relative flex items-center justify-center overflow-hidden h-full pl-0'
+              >
+                {/* Background Image */}
+                <HeroBackground
+                  image={slide.image ?? null}
+                  mobileImage={slide.mobileImage ?? null}
+                  isPoster={slide.layoutSettings?.isPoster ?? false}
+                  imageAlt={imageAlt}
+                  hasContent={hasContent}
+                  priority={index === 0}
+                />
 
-              {/* Overlay */}
-              <HeroOverlay hasContent={hasContent} />
+                {/* Overlay */}
+                <HeroOverlay hasContent={hasContent} />
 
-              {/* Content */}
-              <HeroContent slide={slide} />
-            </CarouselItem>
-          );
-        })}
-      </CarouselContent>
+                {/* Content */}
+                <HeroContent slide={slide} />
+              </CarouselItem>
+            );
+          })}
+        </CarouselContent>
 
-      {/* Pagination Dots */}
-      <HeroPagination api={api} count={count} current={current} />
-    </Carousel>
+        <HeroPagination api={api} count={count} current={current} />
+      </Carousel>
+    </section>
   );
 }
