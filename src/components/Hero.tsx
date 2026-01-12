@@ -13,7 +13,7 @@ import {
 import { getHeroImageAlt } from '@/lib/utils/hero';
 import type { HeroProps, HeroSlide } from '@/types/hero';
 import Autoplay from 'embla-carousel-autoplay';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 /**
  * 기본 슬라이드 (Payload CMS에서 슬라이드 데이터가 없을 때 사용)
@@ -45,7 +45,7 @@ export function Hero({ data }: HeroProps) {
   // Autoplay 플러그인 설정
   const autoplayPlugin = useRef(
     Autoplay({
-      delay: 5000,
+      delay: 50000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     }),
@@ -56,6 +56,12 @@ export function Hero({ data }: HeroProps) {
 
   // 슬라이드가 없으면 기본 슬라이드 사용 (기본 이미지 표시)
   const slides = originalSlides.length > 0 ? originalSlides : [DEFAULT_SLIDE];
+
+  // Autoplay 플러그인을 슬라이드가 2개 이상일 때만 적용 (메모이제이션)
+  const plugins = useMemo(
+    () => (slides.length > 1 ? [autoplayPlugin.current] : []),
+    [slides.length],
+  );
 
   // Carousel API를 통한 현재 슬라이드 추적
   useEffect(() => {
@@ -76,7 +82,7 @@ export function Hero({ data }: HeroProps) {
         align: 'start',
         loop: true,
       }}
-      plugins={slides.length > 1 ? [autoplayPlugin.current] : []}
+      plugins={plugins}
       className='relative w-full h-[78vh] md:h-[75vh]'
     >
       <CarouselContent className='h-full ml-0'>

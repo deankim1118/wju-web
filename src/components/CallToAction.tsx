@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export function CallToAction() {
   return (
-    <footer className='bg-primary text-primary-foreground py-12'>
+    <section className='bg-primary text-primary-foreground py-6'>
       <div className='container mx-auto px-4'>
         <div className='flex items-center justify-between flex-wrap gap-8'>
           {/* Left Side */}
@@ -38,6 +38,6 @@ export function CallToAction() {
           </div>
         </div>
       </div>
-    </footer>
+    </section>
   );
 }
