@@ -1,6 +1,7 @@
 import { CallToAction } from '@/components/CallToAction';
 import { Hero } from '@/components/Hero';
-import { SchoolIntroduction } from '@/components/SchoolIntroduction';
+import { TextWithImageSection } from '@/components/TextWithImageSection';
+import { TwoColumnTextSection } from '@/components/TwoColumnTextSection';
 import { Header } from '@/components/layout/header/Header';
 import { getHeroData } from '@/lib/payload/queries';
 
@@ -19,7 +20,26 @@ export default async function Home() {
       <main className='flex-1' id='maincontent'>
         <Hero data={heroData} />
         <CallToAction />
-        <SchoolIntroduction />
+        <TextWithImageSection
+          title='Why Washington Jabez University?'
+          description={`Washington Jabez University is a religious institution exempt from state regulation and oversight in the Commonwealth of Virginia.
+
+Washington Jabez University is a nondenominational Christian and educational organization, existing for the purpose of preparing students for the Lord's service.
+
+Washington Jabez does not discriminate on the basis of race, sex, age, national or ethnic origin, or handicap in administration of its educational policies, admissions policies, and other school-administered programs.`}
+          imageUrl='/wju-hero-img.png'
+          imageAlt='Washington Jabez University Campus'
+        />
+        <TwoColumnTextSection
+          title='Guides for Your Calling'
+          content='Our faculty are not just scholars; they are pastors, counselors, and missionaries who are deeply committed to investing in your life. They will walk alongside you, guiding your academic growth and nurturing your spiritual formation for a lifetime of faithful ministry.'
+          link={{
+            text: 'Meet Your Mentors',
+            href: '#',
+            showArrow: true,
+          }}
+          spacing='tight'
+        />
 
         {/* Dummy Content for Scroll Testing */}
         {/* <section className='py-20 bg-gray-50'>
