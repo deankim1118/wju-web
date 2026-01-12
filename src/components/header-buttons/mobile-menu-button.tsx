@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { typoVariant } from '@/lib/typography';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
@@ -15,23 +14,18 @@ export function MobileMenuButton({
   className = '',
   ...props
 }: MobileMenuButtonProps) {
-  const variantClasses =
-    variant === 'main' ? 'text-black' : 'text-primary';
+  const baseClasses =
+    'btn-sm w-full justify-start font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto py-2';
+  const variantClasses = variant === 'main' ? 'text-black' : 'text-primary';
 
   return (
     <Button
       variant='ghost'
       size='sm'
-      className={cn(
-        typoVariant('button14'),
-        'w-full justify-start font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto py-2',
-        variantClasses,
-        className,
-      )}
+      className={cn(baseClasses, variantClasses, className)}
       {...props}
     >
       {children}
     </Button>
   );
 }
-

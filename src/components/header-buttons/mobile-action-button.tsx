@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { typoVariant } from '@/lib/typography';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
@@ -15,6 +14,8 @@ export function MobileActionButton({
   className = '',
   ...props
 }: MobileActionButtonProps) {
+  const baseClasses = 'btn-sm w-full rounded-none bg-transparent';
+
   if (variant === 'secondary') {
     // MY WJU 버튼 (모바일)
     return (
@@ -22,8 +23,8 @@ export function MobileActionButton({
         variant='outline'
         size='sm'
         className={cn(
-          typoVariant('button14', 'text-primary'),
-          'w-full mt-2 border-primary bg-transparent hover:bg-primary hover:text-primary-foreground rounded-none',
+          baseClasses,
+          'text-primary mt-2 border-primary hover:bg-primary hover:text-primary-foreground',
           className,
         )}
         {...props}
@@ -39,8 +40,8 @@ export function MobileActionButton({
       variant='outline'
       size='sm'
       className={cn(
-        typoVariant('button14', 'text-secondary'),
-        'w-full border-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground rounded-none',
+        baseClasses,
+        'text-secondary border-secondary hover:bg-secondary hover:text-secondary-foreground',
         className,
       )}
       {...props}
@@ -49,4 +50,3 @@ export function MobileActionButton({
     </Button>
   );
 }
-

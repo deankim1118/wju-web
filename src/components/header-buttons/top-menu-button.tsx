@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { typoVariant } from '@/lib/typography';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
@@ -13,16 +12,12 @@ export function TopMenuButton({
   className = '',
   ...props
 }: TopMenuButtonProps) {
-  const responsiveSize = 'sm:text-xs lg:text-[12px] xl:text-sm';
-
   return (
     <Button
       variant='ghost'
       size='sm'
       className={cn(
-        typoVariant('button14', 'text-white'),
-        responsiveSize,
-        'hover:text-white hover:bg-transparent hover:underline rounded-none h-auto p-0',
+        'btn-sm text-white sm:text-xs lg:text-[12px] xl:text-sm hover:text-white hover:bg-transparent hover:underline rounded-none h-auto p-0',
         className,
       )}
       {...props}
