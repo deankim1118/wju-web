@@ -1,7 +1,7 @@
 import {
   HeaderActionButton,
   MainMenuButton,
-} from '@/components/header-buttons';
+} from './buttons';
 import { cn } from '@/lib/utils';
 import { CONTAINER_PADDING, MENU_GAP, MENU_GAP_CENTER } from './constants';
 

@@ -13,8 +13,9 @@ export const typography = {
     'font-serif lg:text-7xl md:text-6xl text-5xl font-bold text-center leading-snug',
 
   // H1 - 36px
-  h1: 'font-serif text-4xl leading-[51px] font-medium tracking-[0.02em]',
-  h1Bold: 'font-serif text-4xl leading-[51px] font-bold tracking-[0.02em]',
+  h1: 'font-serif text-3xl lg:text-4xl leading-tight font-medium tracking-wide',
+  h1Bold:
+    'font-serif text-3xl lg:text-4xl  leading-tight font-bold tracking-wide',
 
   // H2 - 28px (Playfair Display)
   h2Playfair:
@@ -42,7 +43,7 @@ export const typography = {
   subtitle: 'font-sans text-xl leading-6 font-normal',
 
   // Body Base - 19.2px (1.2rem)
-  bodyBase: 'font-sans text-lg leading-7 font-normal',
+  bodyBase: 'font-sans text-[1.2rem] leading-7 font-normal',
 
   // Description - 16px
   description: 'font-sans text-base leading-6 font-normal',

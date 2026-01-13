@@ -1,28 +1,23 @@
 import { Button } from '@/components/ui/button';
-import { typoVariant } from '@/lib/typography';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
-type TopMenuButtonProps = {
+type MainMenuButtonProps = {
   children: ReactNode;
   className?: string;
 } & React.ComponentProps<typeof Button>;
 
-export function TopMenuButton({
+export function MainMenuButton({
   children,
   className = '',
   ...props
-}: TopMenuButtonProps) {
-  const responsiveSize = 'sm:text-xs lg:text-[12px] xl:text-sm';
-
+}: MainMenuButtonProps) {
   return (
     <Button
       variant='ghost'
       size='sm'
       className={cn(
-        typoVariant('button14', 'text-white'),
-        responsiveSize,
-        'hover:text-white hover:bg-transparent hover:underline rounded-none h-auto p-0',
+        'btn-sm text-black sm:text-xs lg:text-[13px] xl:text-sm font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto p-0',
         className,
       )}
       {...props}

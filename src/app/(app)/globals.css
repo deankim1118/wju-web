@@ -50,7 +50,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.9614 0.0029 84.56);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -122,11 +122,60 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
+    @apply text-lg md:text-[1.2rem] leading-7;
   }
 
-  /* 폰트 패밀리 기본 설정 */
+  /* 제목 태그 - Playfair Display 자동 적용 */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-medium tracking-wide;
+  }
+
+  h1 {
+    @apply text-3xl md:text-3xl lg:text-4xl leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-2xl lg:text-3xl leading-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl leading-tight;
+  }
+
+  h4 {
+    @apply text-lg md:text-xl leading-tight;
+  }
+
+  h5,
+  h6 {
+    @apply text-base md:text-lg leading-tight;
+  }
+
+  /* 본문 태그 - Inter 자동 적용 */
+  p {
+    @apply text-lg md:text-[1.2rem] leading-7 text-slate-900;
+  }
+
+  /* 작은 텍스트 */
+  small {
+    @apply text-sm md:text-base leading-6;
+  }
+
+  /* 리스트 */
+  ul,
+  ol {
+    @apply text-lg md:text-[1.2rem] leading-7;
+  }
+
+  /* 폰트 패밀리 유틸리티 클래스 */
   .font-sans {
     font-family: var(--font-inter), sans-serif;
   }
@@ -139,6 +188,29 @@
     font-family: var(--font-garamond), serif;
   }
 
+  /* 타이포그래피 유틸리티 클래스 */
+  .text-caption {
+    @apply text-xs leading-5;
+  }
+
+  /* Hero Title - 75px */
+  .hero-title {
+    @apply font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-center leading-snug;
+  }
+
+  /* 버튼 텍스트 스타일 */
+  .btn-hero {
+    @apply font-sans text-base md:text-xl leading-[19px] md:leading-[22px] font-semibold md:font-normal tracking-[0.12em] md:tracking-[0em] uppercase;
+  }
+
+  .btn-sm {
+    @apply font-sans text-sm leading-[17px] font-normal uppercase;
+  }
+
+  .btn-base {
+    @apply font-sans text-xl leading-[22px] font-normal uppercase;
+  }
+
   /* Hero Section Gradient Utilities */
   .bg-gradient-radial {
     background-image: radial-gradient(
@@ -147,5 +219,23 @@
       transparent 50%,
       rgba(0, 0, 0, 0.3) 100%
     );
+  }
+
+  /* Section Padding Utilities */
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+
+  .section-padding-lg {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-padding-bottom {
+    @apply pb-16 md:pb-24 lg:pb-32;
+  }
+
+  /* Section Header Padding */
+  .section-header-padding {
+    @apply pt-16 pb-6 md:pt-24 md:pb-10 lg:pt-32;
   }
 }

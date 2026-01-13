@@ -1,29 +1,31 @@
 import { Button } from '@/components/ui/button';
-import { typoVariant } from '@/lib/typography';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
 
-type MobileActionButtonProps = {
+type HeaderActionButtonProps = {
   children: ReactNode;
   variant?: 'primary' | 'secondary';
   className?: string;
 } & Omit<React.ComponentProps<typeof Button>, 'variant'>;
 
-export function MobileActionButton({
+export function HeaderActionButton({
   children,
   variant = 'primary',
   className = '',
   ...props
-}: MobileActionButtonProps) {
+}: HeaderActionButtonProps) {
+  const baseClasses =
+    'btn-sm sm:text-xs lg:text-[12px] xl:text-sm px-2 sm:px-2 md:px-3 whitespace-nowrap rounded-none';
+
   if (variant === 'secondary') {
-    // MY WJU 버튼 (모바일)
+    // MY WJU 버튼 (상단 메뉴)
     return (
       <Button
         variant='outline'
         size='sm'
         className={cn(
-          typoVariant('button14', 'text-primary'),
-          'w-full mt-2 border-primary bg-transparent hover:bg-primary hover:text-primary-foreground rounded-none',
+          baseClasses,
+          'text-white border-white bg-transparent hover:bg-white hover:text-primary',
           className,
         )}
         {...props}
@@ -33,14 +35,14 @@ export function MobileActionButton({
     );
   }
 
-  // APPLY 버튼 (모바일)
+  // APPLY 버튼 (메인 메뉴)
   return (
     <Button
       variant='outline'
       size='sm'
       className={cn(
-        typoVariant('button14', 'text-secondary'),
-        'w-full border-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground rounded-none',
+        baseClasses,
+        'text-secondary border-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground',
         className,
       )}
       {...props}
@@ -49,4 +51,3 @@ export function MobileActionButton({
     </Button>
   );
 }
-

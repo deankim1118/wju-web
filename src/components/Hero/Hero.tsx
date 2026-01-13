@@ -1,9 +1,9 @@
 'use client';
 
-import { HeroBackground } from '@/components/hero-components/HeroBackground';
-import { HeroContent } from '@/components/hero-components/HeroContent';
-import { HeroOverlay } from '@/components/hero-components/HeroOverlay';
-import { HeroPagination } from '@/components/hero-components/HeroPagination';
+import { HeroBackground } from './components/HeroBackground';
+import { HeroContent } from './components/HeroContent';
+import { HeroOverlay } from './components/HeroOverlay';
+import { HeroPagination } from './components/HeroPagination';
 import {
   Carousel,
   CarouselContent,

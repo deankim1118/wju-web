@@ -3,7 +3,7 @@
 import {
   MobileActionButton,
   MobileMenuButton,
-} from '@/components/header-buttons';
+} from './buttons';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import {

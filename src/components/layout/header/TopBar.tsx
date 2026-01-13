@@ -1,4 +1,4 @@
-import { HeaderActionButton, TopMenuButton } from '@/components/header-buttons';
+import { HeaderActionButton, TopMenuButton } from './buttons';
 import { cn } from '@/lib/utils';
 import { CONTAINER_PADDING, MENU_GAP, TOP_MENU_GAP } from './constants';
 
