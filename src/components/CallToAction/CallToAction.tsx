@@ -19,14 +19,16 @@ export function CallToAction({
     <section className='bg-primary text-primary-foreground py-8'>
       <div className='container mx-auto px-6 max-w-[1024px]'>
         <div className='flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8'>
-          <h2 className='text-white font-bold'>{title}</h2>
+          <h2 className='text-primary-foreground font-bold'>{title}</h2>
 
-          <p className='text-white/90 lg:flex-1 lg:max-w-md'>{description}</p>
+          <p className='text-primary-foreground/90 lg:flex-1 lg:max-w-md'>
+            {description}
+          </p>
 
           <Button
             variant='outline'
             size='lg'
-            className='text-base md:text-xl font-semibold md:font-normal uppercase border-2 rounded-none border-white bg-transparent hover:bg-white hover:text-primary w-full lg:w-auto max-w-[470px]'
+            className='text-base md:text-xl font-semibold md:font-normal uppercase border-2 rounded-none border-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary w-full lg:w-auto max-w-[470px]'
             asChild
           >
             <Link
@@ -34,7 +36,7 @@ export function CallToAction({
               className='flex items-center justify-center gap-2'
             >
               {buttonText}
-              <ArrowRight className='text-red-500 size-5 md:size-6' />
+              <ArrowRight className='text-secondary size-5 md:size-6' />
             </Link>
           </Button>
         </div>

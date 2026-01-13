@@ -1,8 +1,9 @@
+import { AcademicsSection } from '@/components/AcademicsSection';
 import { CallToAction } from '@/components/CallToAction';
 import { Hero } from '@/components/Hero';
+import { Header } from '@/components/layout/header/Header';
 import { TextWithImageSection } from '@/components/TextWithImageSection';
 import { TwoColumnTextSection } from '@/components/TwoColumnTextSection';
-import { Header } from '@/components/layout/header/Header';
 import { getHeroData } from '@/lib/payload/queries';
 
 export default async function Home() {
@@ -40,6 +41,7 @@ Washington Jabez does not discriminate on the basis of race, sex, age, national 
           }}
           spacing='tight'
         />
+        <AcademicsSection />
 
         {/* Dummy Content for Scroll Testing */}
         {/* <section className='py-20 bg-gray-50'>

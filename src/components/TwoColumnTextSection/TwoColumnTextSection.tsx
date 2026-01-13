@@ -23,16 +23,16 @@ export function TwoColumnTextSection({
   content,
   link,
   titleColor = 'text-secondary',
-  textColor = 'text-black',
+  textColor = '',
   linkColor = 'text-secondary',
   backgroundColor = 'bg-background',
-  spacing = 'normal',
+  spacing = 'tight',
   className = '',
 }: TwoColumnTextSectionProps) {
   const spacingMap = {
     tight: 'py-8',
-    normal: 'py-12 lg:py-16',
-    loose: 'py-16 lg:py-24',
+    normal: 'section-padding-sm',
+    loose: 'section-padding-lg',
   };
 
   return (
@@ -48,7 +48,7 @@ export function TwoColumnTextSection({
 
           {/* Content Section */}
           <div className='flex-1 flex flex-col justify-start items-start gap-4 lg:gap-6'>
-            <p className={`${textColor} whitespace-pre-line`}>{content}</p>
+            <p className={`whitespace-pre-line ${textColor}`}>{content}</p>
 
             {/* Optional Link */}
             {link && (

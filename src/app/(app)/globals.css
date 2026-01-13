@@ -161,7 +161,7 @@
 
   /* 본문 태그 - Inter 자동 적용 */
   p {
-    @apply text-lg md:text-[1.2rem] leading-7;
+    @apply text-lg md:text-[1.2rem] leading-7 text-slate-900;
   }
 
   /* 작은 텍스트 */
@@ -219,5 +219,23 @@
       transparent 50%,
       rgba(0, 0, 0, 0.3) 100%
     );
+  }
+
+  /* Section Padding Utilities */
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+
+  .section-padding-lg {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-padding-bottom {
+    @apply pb-16 md:pb-24 lg:pb-32;
+  }
+
+  /* Section Header Padding */
+  .section-header-padding {
+    @apply pt-16 pb-6 md:pt-24 md:pb-10 lg:pt-32;
   }
 }

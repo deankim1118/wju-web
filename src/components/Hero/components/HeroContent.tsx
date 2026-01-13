@@ -1,4 +1,4 @@
-import { HeroButton } from '@/components/hero-buttons';
+import { HeroButton } from '../buttons/HeroButton';
 import type { HeroSlide } from '@/types/hero';
 
 type HeroContentProps = {
