@@ -151,7 +151,7 @@
   }
 
   h4 {
-    @apply text-lg md:text-xl leading-tight;
+    @apply font-sans  font-semibold text-lg md:text-xl leading-tight;
   }
 
   h5,
@@ -161,7 +161,7 @@
 
   /* 본문 태그 - Inter 자동 적용 */
   p {
-    @apply text-lg md:text-[1.2rem] leading-7 text-slate-900;
+    @apply text-lg md:text-[1.2rem] leading-7 text-slate-700;
   }
 
   /* 작은 텍스트 */

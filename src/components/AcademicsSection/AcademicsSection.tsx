@@ -1,5 +1,5 @@
+import { SectionHeader } from '../layout/SectionHeader';
 import { AcademicCard } from './AcademicCard';
-import { SectionHeader } from './SectionHeader';
 
 type AcademicProgram = {
   title: string;
