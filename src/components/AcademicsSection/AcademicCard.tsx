@@ -37,14 +37,14 @@ export function AcademicCard({
         {/* Content */}
         <CardContent className='flex flex-col justify-between flex-1 p-6'>
           <div className='flex flex-col gap-4'>
-            <h4 className='text-secondary font-sans font-semibold group-hover:text-primary transition-colors'>
+            <h4 className='text-secondary group-hover:text-primary transition-colors'>
               {title}
             </h4>
             <p>{description}</p>
           </div>
 
           {/* Link Indicator */}
-          <div className='inline-flex items-center gap-2 text-secondary text-base lg:text-lg uppercase tracking-widest mt-4 group-hover:gap-3 transition-all'>
+          <div className='inline-flex items-center gap-2 text-secondary text-base lg:text-lg uppercase tracking-wider mt-4 group-hover:gap-3 transition-all'>
             {linkText}
             <ArrowRight className='size-4 group-hover:translate-x-1 transition-transform' />
           </div>

@@ -1,3 +1,3 @@
-export { AcademicsSection } from './AcademicsSection';
+export { SectionHeader } from '../layout/SectionHeader';
 export { AcademicCard } from './AcademicCard';
-export { SectionHeader } from './SectionHeader';
+export { AcademicsSection } from './AcademicsSection';

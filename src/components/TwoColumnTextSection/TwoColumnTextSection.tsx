@@ -54,7 +54,7 @@ export function TwoColumnTextSection({
             {link && (
               <Link
                 href={link.href}
-                className={`group inline-flex items-center gap-2 ${linkColor} text-sm md:text-base font-semibold uppercase tracking-widest transition-all hover:gap-3 hover:opacity-80`}
+                className={`group inline-flex items-center gap-2 ${linkColor} text-sm md:text-base font-semibold uppercase tracking-wider transition-all hover:gap-3 hover:opacity-80`}
               >
                 {link.text}
                 {link.showArrow !== false && (

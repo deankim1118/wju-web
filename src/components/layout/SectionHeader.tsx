@@ -3,6 +3,7 @@ type SectionHeaderProps = {
   showDivider?: boolean;
   showAccentLine?: boolean;
   alignment?: 'left' | 'center' | 'right';
+  padding?: string;
   className?: string;
 };
 
@@ -11,6 +12,7 @@ export function SectionHeader({
   showDivider = true,
   showAccentLine = true,
   alignment = 'center',
+  padding = 'section-header-padding',
   className = '',
 }: SectionHeaderProps) {
   const alignmentClasses = {
@@ -20,7 +22,7 @@ export function SectionHeader({
   };
 
   return (
-    <div className={`relative section-header-padding ${className}`}>
+    <div className={`relative ${padding} ${className}`}>
       {/* Accent Line at Top */}
       {showAccentLine && (
         <div className='absolute left-0 top-0 h-1.5 w-full max-w-md bg-secondary' />
@@ -30,7 +32,9 @@ export function SectionHeader({
       <div
         className={`flex flex-col justify-start gap-2 md:gap-4 ${alignmentClasses[alignment]}`}
       >
-        <h2 className='text-primary uppercase tracking-wider'>{title}</h2>
+        <h2 className='text-primary uppercase tracking-wider font-sans'>
+          {title}
+        </h2>
         {showDivider && <div className='w-24 h-0.5 bg-primary' />}
       </div>
     </div>
