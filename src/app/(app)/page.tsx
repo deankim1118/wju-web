@@ -1,5 +1,6 @@
 import { AcademicsSection } from '@/components/AcademicsSection';
 import { CallToAction } from '@/components/CallToAction';
+import { Footer } from '@/components/Footer';
 import { Hero } from '@/components/Hero';
 import { InformationResourcesSection } from '@/components/InformationResourcesSection';
 import { Header } from '@/components/layout/header/Header';
@@ -45,6 +46,7 @@ Washington Jabez does not discriminate on the basis of race, sex, age, national 
         <AcademicsSection />
         <InformationResourcesSection />
       </main>
+      <Footer />
     </div>
   );
 }
