@@ -1,52 +1,23 @@
 import { SectionHeader } from '@/components/layout/SectionHeader';
-import {
-  Award,
-  ClipboardList,
-  GraduationCap,
-  HeartHandshake,
-} from 'lucide-react';
+import { type LucideIcon } from 'lucide-react';
 import { ResourceCard } from './ResourceCard';
 
 type Resource = {
-  icon: typeof GraduationCap;
+  icon: LucideIcon;
   title: string;
   description: string;
   linkHref: string;
 };
 
 type InformationResourcesSectionProps = {
-  title?: string;
-  resources?: Resource[];
+  title: string;
+  resources: Resource[];
   className?: string;
 };
 
-const DEFAULT_RESOURCES: Resource[] = [
-  {
-    icon: Award,
-    title: 'Scholarships',
-    description:
-      'Recognizing your gifts with a wide range of merit-based and ministry-focused awards.',
-    linkHref: '#',
-  },
-  {
-    icon: ClipboardList,
-    title: 'Admissions Procedure',
-    description:
-      'Find all the information, requirements, and deadlines to begin your theological journey.',
-    linkHref: '#',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Financial Aid',
-    description:
-      'Explore funding options designed to make your seminary education accessible and affordable.',
-    linkHref: '#',
-  },
-];
-
 export function InformationResourcesSection({
-  title = 'Information & Resources',
-  resources = DEFAULT_RESOURCES,
+  title,
+  resources,
   className = '',
 }: InformationResourcesSectionProps) {
   return (

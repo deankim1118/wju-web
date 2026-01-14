@@ -10,41 +10,14 @@ type AcademicProgram = {
 };
 
 type AcademicsSectionProps = {
-  title?: string;
-  programs?: AcademicProgram[];
+  title: string;
+  programs: AcademicProgram[];
   className?: string;
 };
 
-const DEFAULT_PROGRAMS: AcademicProgram[] = [
-  {
-    title: 'Undergraduate Education',
-    description:
-      'Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise',
-    imageUrl: '/wju-hero-img.png',
-    imageAlt: 'Undergraduate Education',
-    linkHref: '#',
-  },
-  {
-    title: 'Graduate Education',
-    description:
-      'Unsurpassed opportunities to participate in the advancement of entire fields of knowledge',
-    imageUrl: '/wju-hero-img.png',
-    imageAlt: 'Graduate Education',
-    linkHref: '#',
-  },
-  {
-    title: 'Doctoral Education',
-    description:
-      'Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise',
-    imageUrl: '/wju-hero-img.png',
-    imageAlt: 'Doctoral Education',
-    linkHref: '#',
-  },
-];
-
 export function AcademicsSection({
-  title = 'Academics',
-  programs = DEFAULT_PROGRAMS,
+  title,
+  programs,
   className = '',
 }: AcademicsSectionProps) {
   return (
