@@ -148,3 +148,26 @@ export const actionButtons = {
   language: { label: 'Language', href: '/language' },
   support: { label: 'Support', href: '/support' },
 } as const;
+
+// Social Media Links (External social media profiles)
+export type SocialMediaLink = {
+  platform: string;
+  href: string;
+  iconName: string;
+  ariaLabel: string;
+};
+
+export const socialMediaLinks: SocialMediaLink[] = [
+  {
+    platform: 'instagram',
+    href: 'https://www.instagram.com/wju',
+    iconName: 'instagram',
+    ariaLabel: 'Visit our Instagram',
+  },
+  {
+    platform: 'youtube',
+    href: 'https://www.youtube.com/@wju',
+    iconName: 'youtube',
+    ariaLabel: 'Visit our YouTube channel',
+  },
+];
