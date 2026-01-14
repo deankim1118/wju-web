@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { MobileActionButton, MobileMenuButton } from './buttons';
+import { DESKTOP_ONLY } from './constants';
 import { MobileMainNav } from './MobileMainNav';
 
 type MobileNavProps = {
@@ -33,9 +34,7 @@ export function MobileNav({
           id='mobileTogBtn'
           variant='ghost'
           size='icon-lg'
-          className={cn(
-            'absolute left-4 z-50 text-white hover:bg-transparent hover:text-white h-auto p-2 min-[980px]:hidden',
-          )}
+          className={`absolute left-4 z-50 text-white hover:bg-transparent hover:text-white h-auto p-2 min-[${DESKTOP_ONLY}px]:hidden`}
           style={{
             top: `${topBarHeight / 2}px`,
             transform: 'translateY(-50%)',
@@ -53,7 +52,7 @@ export function MobileNav({
           'w-full h-screen border-0 p-0 bg-white shadow-lg',
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
-          '[&>button]:hidden z-40 min-[980px]:hidden',
+          `[&>button]:hidden z-40 min-[${DESKTOP_ONLY}px]:hidden`,
         )}
         style={{ top: `${topBarHeight}px` }}
       >

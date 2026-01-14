@@ -6,6 +6,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
+import type { NavItemWithSubmenu } from '@/config/navigation';
 import { actionButtons, mainNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -18,12 +19,36 @@ import {
   MENU_GAP,
 } from './constants';
 
+// =============================================================================
+// Types
+// =============================================================================
+
 type DesktopMainNavProps = {
   bottomBarHeight: number;
 };
 
+type MenuFeature = {
+  title: string;
+  description: string;
+};
+
+type NavMenuListProps = {
+  items: NavItemWithSubmenu[];
+  textColor: 'text-primary' | 'text-black';
+  children?: React.ReactNode;
+};
+
+type FeaturedMenuCardProps = {
+  item: NavItemWithSubmenu;
+  feature: MenuFeature;
+};
+
+// =============================================================================
+// Constants
+// =============================================================================
+
 // Featured menu descriptions for each section
-const menuFeatures = {
+const menuFeatures: Record<string, MenuFeature> = {
   About: {
     title: 'Washington Jabez University',
     description:
@@ -41,9 +66,22 @@ const menuFeatures = {
   },
 };
 
-// ListItem component for submenu items with descriptions
+// Consolidated NavigationMenuTrigger styles
+const TRIGGER_STYLE_BASE =
+  'btn-sm bg-transparent sm:text-xs lg:text-[13px] xl:text-sm font-medium hover:text-secondary hover:bg-transparent data-[state=open]:text-secondary data-[state=open]:bg-transparent rounded-none h-auto p-0 border-0';
+
+const SUBMENU_CONTAINER_STYLE =
+  'grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] text-slate-900';
+
+// =============================================================================
+// Sub-components
+// =============================================================================
+
+/**
+ * ListItem component for submenu items with title and description
+ */
 const ListItem = React.forwardRef<
-  React.ElementRef<'a'>,
+  HTMLAnchorElement,
   React.ComponentPropsWithoutRef<'a'> & { title: string; description?: string }
 >(({ className, title, description, href, ...props }, ref) => {
   return (
@@ -71,6 +109,79 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = 'ListItem';
 
+/**
+ * FeaturedMenuCard - Displays the featured section with gradient background
+ */
+function FeaturedMenuCard({ item, feature }: FeaturedMenuCardProps) {
+  return (
+    <li className='row-span-4'>
+      <NavigationMenuLink asChild>
+        <Link
+          className='flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
+          href={item.href}
+        >
+          <div className='mb-2 mt-4 text-lg font-medium'>{feature.title}</div>
+          <p className='text-sm leading-tight text-muted-foreground'>
+            {feature.description}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+}
+
+/**
+ * NavMenuList - Reusable component for rendering navigation items
+ */
+function NavMenuList({ items, textColor, children }: NavMenuListProps) {
+  return (
+    <>
+      {items.map((item) =>
+        item.submenu ? (
+          // Menu item with submenu
+          <NavigationMenuItem key={item.href}>
+            <NavigationMenuTrigger
+              className={cn(TRIGGER_STYLE_BASE, textColor, 'cursor-pointer')}
+            >
+              {item.label.toUpperCase()}
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className={SUBMENU_CONTAINER_STYLE}>
+                {/* Featured section */}
+                <FeaturedMenuCard
+                  item={item}
+                  feature={menuFeatures[item.label]}
+                />
+                {/* List items */}
+                {item.submenu.map((subItem) => (
+                  <ListItem
+                    key={subItem.href}
+                    href={subItem.href}
+                    title={subItem.label}
+                    description={subItem.description}
+                  />
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        ) : (
+          // Simple menu item without submenu
+          <NavigationMenuItem key={item.href}>
+            <MainMenuButton asChild>
+              <Link href={item.href}>{item.label.toUpperCase()}</Link>
+            </MainMenuButton>
+          </NavigationMenuItem>
+        ),
+      )}
+      {children}
+    </>
+  );
+}
+
+// =============================================================================
+// Main Component
+// =============================================================================
+
 export function DesktopMainNav({ bottomBarHeight }: DesktopMainNavProps) {
   // Split navigation items for left and right sides
   const leftNavItems = mainNavigation.slice(0, 3); // First 3 items
@@ -90,60 +201,7 @@ export function DesktopMainNav({ bottomBarHeight }: DesktopMainNavProps) {
           {/* Left Navigation */}
           <NavigationMenu className='justify-end max-w-none'>
             <NavigationMenuList className={cn('gap-0', MENU_GAP)}>
-              {leftNavItems.map((item) =>
-                item.submenu ? (
-                  // Menu item with submenu
-                  <NavigationMenuItem key={item.href}>
-                    <NavigationMenuTrigger className='btn-sm bg-transparent text-primary sm:text-xs lg:text-[13px] xl:text-sm font-medium hover:text-secondary hover:bg-transparent data-[state=open]:text-secondary data-[state=open]:bg-transparent rounded-none h-auto p-0 border-0'>
-                      {item.label.toUpperCase()}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
-                        {/* Featured section - fixed at 4 rows to accommodate all menus */}
-                        <li className='row-span-4'>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              className='flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
-                              href={item.href}
-                            >
-                              <div className='mb-2 mt-4 text-lg font-medium'>
-                                {
-                                  menuFeatures[
-                                    item.label as keyof typeof menuFeatures
-                                  ]?.title
-                                }
-                              </div>
-                              <p className='text-sm leading-tight text-muted-foreground'>
-                                {
-                                  menuFeatures[
-                                    item.label as keyof typeof menuFeatures
-                                  ]?.description
-                                }
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        {/* List items */}
-                        {item.submenu.map((subItem) => (
-                          <ListItem
-                            key={subItem.href}
-                            href={subItem.href}
-                            title={subItem.label}
-                            description={subItem.description}
-                          />
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ) : (
-                  // Simple menu item without submenu
-                  <NavigationMenuItem key={item.href}>
-                    <MainMenuButton asChild>
-                      <Link href={item.href}>{item.label.toUpperCase()}</Link>
-                    </MainMenuButton>
-                  </NavigationMenuItem>
-                ),
-              )}
+              <NavMenuList items={leftNavItems} textColor='text-primary' />
             </NavigationMenuList>
           </NavigationMenu>
 
@@ -153,67 +211,16 @@ export function DesktopMainNav({ bottomBarHeight }: DesktopMainNavProps) {
           {/* Right Navigation */}
           <NavigationMenu className='justify-start max-w-none'>
             <NavigationMenuList className={cn('gap-0', MENU_GAP)}>
-              {rightNavItems.map((item) =>
-                item.submenu ? (
-                  // Menu item with submenu
-                  <NavigationMenuItem key={item.href}>
-                    <NavigationMenuTrigger className='btn-sm bg-transparent text-black sm:text-xs lg:text-[13px] xl:text-sm font-medium hover:text-secondary hover:bg-transparent data-[state=open]:text-secondary data-[state=open]:bg-transparent rounded-none h-auto p-0 border-0'>
-                      {item.label.toUpperCase()}
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className='grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
-                        {/* Featured section - fixed at 4 rows to accommodate all menus */}
-                        <li className='row-span-4'>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              className='flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
-                              href={item.href}
-                            >
-                              <div className='mb-2 mt-4 text-lg font-medium'>
-                                {
-                                  menuFeatures[
-                                    item.label as keyof typeof menuFeatures
-                                  ]?.title
-                                }
-                              </div>
-                              <p className='text-sm leading-tight text-muted-foreground'>
-                                {
-                                  menuFeatures[
-                                    item.label as keyof typeof menuFeatures
-                                  ]?.description
-                                }
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                        {/* List items */}
-                        {item.submenu.map((subItem) => (
-                          <ListItem
-                            key={subItem.href}
-                            href={subItem.href}
-                            title={subItem.label}
-                            description={subItem.description}
-                          />
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                ) : (
-                  // Simple menu item without submenu
-                  <NavigationMenuItem key={item.href}>
-                    <MainMenuButton asChild>
-                      <Link href={item.href}>{item.label.toUpperCase()}</Link>
-                    </MainMenuButton>
-                  </NavigationMenuItem>
-                ),
-              )}
-              <NavigationMenuItem>
-                <HeaderActionButton asChild>
-                  <Link href={actionButtons.apply.href}>
-                    {actionButtons.apply.label.toUpperCase()}
-                  </Link>
-                </HeaderActionButton>
-              </NavigationMenuItem>
+              <NavMenuList items={rightNavItems} textColor='text-black'>
+                {/* Apply Button - only appears in right navigation */}
+                <NavigationMenuItem>
+                  <HeaderActionButton asChild>
+                    <Link href={actionButtons.apply.href}>
+                      {actionButtons.apply.label.toUpperCase()}
+                    </Link>
+                  </HeaderActionButton>
+                </NavigationMenuItem>
+              </NavMenuList>
             </NavigationMenuList>
           </NavigationMenu>
         </div>

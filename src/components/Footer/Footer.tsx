@@ -1,3 +1,4 @@
+import { Instagram, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FooterCTA } from './components/FooterCTA';
@@ -46,12 +47,38 @@ export function Footer({}: FooterProps) {
         </div>
       </div>
 
-      {/* Copyright Bar */}
-      <div className='md:border-t md:border-white/50'>
-        <div className='container mx-auto px-6 md:px-36 py-4 flex justify-center items-center'>
-          <p className='text-base leading-6 text-center'>
-            Copyright © 2026 • Washington Jabez University. All rights reserved.
-          </p>
+      {/* Copyright Bar with Social Media */}
+      <div className='border-t border-white/20'>
+        <div className='container mx-auto px-6 md:px-16 py-6'>
+          <div className='flex flex-col-reverse md:flex-row justify-between items-start gap-4'>
+            {/* Copyright Text */}
+            <p className='text-sm md:text-base leading-6 text-left text-white/90'>
+              Copyright © 2026 • Washington Jabez University. All rights
+              reserved.
+            </p>
+
+            {/* Social Media Icons */}
+            <div className='flex items-center gap-4'>
+              <Link
+                href='https://www.instagram.com/wju'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/90 text-white/90 hover:text-white hover:border-white transition-all duration-200 hover:scale-105'
+                aria-label='Visit our Instagram'
+              >
+                <Instagram className='w-5 h-5' strokeWidth={2} />
+              </Link>
+              <Link
+                href='https://www.youtube.com/@wju'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/90 text-white/90 hover:text-white hover:border-white transition-all duration-200 hover:scale-105'
+                aria-label='Visit our YouTube channel'
+              >
+                <Youtube className='w-5 h-5' strokeWidth={2} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
