@@ -3,8 +3,8 @@
 import { useHeaderControl } from '@/hooks/use-header-control';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
+import { DesktopMainNav } from './DesktopMainNav';
 import { HeaderLogo } from './HeaderLogo';
-import { MainNav } from './MainNav';
 import { MobileNav } from './MobileNav';
 import { TopBar } from './TopBar';
 
@@ -44,7 +44,7 @@ export function Header() {
       {/* Header Navigation */}
       <div className='relative'>
         <TopBar topBarHeight={topBarHeight} />
-        <MainNav bottomBarHeight={bottomBarHeight} />
+        <DesktopMainNav bottomBarHeight={bottomBarHeight} />
       </div>
 
       {/* Skip link anchor */}

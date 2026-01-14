@@ -7,6 +7,7 @@ import {
   LOGO_DESKTOP_WIDTH,
   LOGO_MOBILE_HEIGHT,
   LOGO_MOBILE_WIDTH,
+  LOGO_RESPONSIVE_WIDTH,
 } from './constants';
 
 type HeaderLogoProps = {
@@ -24,9 +25,10 @@ export function HeaderLogo({ isScrolled, headerHeight }: HeaderLogoProps) {
       <Link
         href='/'
         className={cn(
-          'absolute left-1/2 -top-1 z-50 -translate-x-1/2 transition-all duration-300 w-[clamp(330px,29vw,370px)]',
+          'absolute left-1/2 -top-1 z-50 -translate-x-1/2 transition-all duration-300',
           logoScaleClass,
         )}
+        style={{ width: LOGO_RESPONSIVE_WIDTH }}
         aria-label='Logo'
       >
         <Image
@@ -34,7 +36,7 @@ export function HeaderLogo({ isScrolled, headerHeight }: HeaderLogoProps) {
           alt='Washington Jabez University Logo'
           width={LOGO_DESKTOP_WIDTH}
           height={LOGO_DESKTOP_HEIGHT}
-          className='hidden min-[900px]:block w-full h-auto object-contain transition-all duration-300'
+          className='hidden min-[980px]:block w-full h-auto object-contain transition-all duration-300'
         />
       </Link>
 
@@ -42,7 +44,7 @@ export function HeaderLogo({ isScrolled, headerHeight }: HeaderLogoProps) {
       <Link
         href='/'
         className={cn(
-          'absolute left-1/2 top-0 z-100 -translate-x-1/2 transition-all duration-300 min-[900px]:hidden',
+          'absolute left-1/2 top-0 z-100 -translate-x-1/2 transition-all duration-300 min-[980px]:hidden',
           logoScaleClass,
         )}
         aria-label='Logo'

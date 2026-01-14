@@ -1,9 +1,5 @@
 'use client';
 
-import {
-  MobileActionButton,
-  MobileMenuButton,
-} from './buttons';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import {
@@ -12,8 +8,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { actionButtons, topBarNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import { MobileActionButton, MobileMenuButton } from './buttons';
+import { MobileMainNav } from './MobileMainNav';
 
 type MobileNavProps = {
   isOpen: boolean;
@@ -34,7 +34,7 @@ export function MobileNav({
           variant='ghost'
           size='icon-lg'
           className={cn(
-            'absolute left-4 z-50 text-white hover:bg-transparent hover:text-white h-auto p-2 min-[900px]:hidden',
+            'absolute left-4 z-50 text-white hover:bg-transparent hover:text-white h-auto p-2 min-[980px]:hidden',
           )}
           style={{
             top: `${topBarHeight / 2}px`,
@@ -53,28 +53,38 @@ export function MobileNav({
           'w-full h-screen border-0 p-0 bg-white shadow-lg',
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
-          '[&>button]:hidden z-40 min-[900px]:hidden',
+          '[&>button]:hidden z-40 min-[980px]:hidden',
         )}
         style={{ top: `${topBarHeight}px` }}
       >
         <SheetTitle className='sr-only'>Mobile Navigation Menu</SheetTitle>
         <div className='px-4 py-4 space-y-1'>
-          {/* Main Navigation Items */}
-          <MobileMenuButton variant='main'>ABOUT</MobileMenuButton>
-          <MobileMenuButton variant='main'>ACADEMICS</MobileMenuButton>
-          <MobileMenuButton variant='main'>ADMISSIONS</MobileMenuButton>
-          <MobileMenuButton variant='main'>CHURCH MUSIC</MobileMenuButton>
-          <MobileActionButton>APPLY</MobileActionButton>
+          {/* Main Navigation Items with Submenus */}
+          <MobileMainNav />
 
           {/* Top Navigation Items (from Brand Bar) */}
           <Separator className='my-3' />
           <div className='space-y-1'>
-            <MobileMenuButton variant='top'>QUICK LINKS</MobileMenuButton>
-            <MobileMenuButton variant='top'>VISIT US</MobileMenuButton>
-            <MobileMenuButton variant='top'>REQUEST INFO</MobileMenuButton>
-            <MobileActionButton variant='secondary'>MY WJU</MobileActionButton>
-            <MobileMenuButton variant='top'>LANGUAGE</MobileMenuButton>
-            <MobileMenuButton variant='top'>SUPPORT</MobileMenuButton>
+            {topBarNavigation.map((link) => (
+              <MobileMenuButton key={link.href} variant='top' asChild>
+                <Link href={link.href}>{link.label.toUpperCase()}</Link>
+              </MobileMenuButton>
+            ))}
+            <MobileActionButton variant='secondary' asChild>
+              <Link href={actionButtons.myWju.href}>
+                {actionButtons.myWju.label.toUpperCase()}
+              </Link>
+            </MobileActionButton>
+            <MobileMenuButton variant='top' asChild>
+              <Link href={actionButtons.language.href}>
+                {actionButtons.language.label.toUpperCase()}
+              </Link>
+            </MobileMenuButton>
+            <MobileMenuButton variant='top' asChild>
+              <Link href={actionButtons.support.href}>
+                {actionButtons.support.label.toUpperCase()}
+              </Link>
+            </MobileMenuButton>
           </div>
         </div>
       </SheetContent>

@@ -1,8 +1,7 @@
-import {
-  HeaderActionButton,
-  MainMenuButton,
-} from './buttons';
+import { actionButtons, mainNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { HeaderActionButton, MainMenuButton } from './buttons';
 import { CONTAINER_PADDING, MENU_GAP, MENU_GAP_CENTER } from './constants';
 
 type MainNavProps = {
@@ -10,9 +9,13 @@ type MainNavProps = {
 };
 
 export function MainNav({ bottomBarHeight }: MainNavProps) {
+  // Split navigation items for left and right sides
+  const leftNavItems = mainNavigation.slice(0, 3); // First 3 items
+  const rightNavItems = mainNavigation.slice(3); // Remaining items
+
   return (
     <nav
-      className='hidden min-[900px]:block bg-white shadow-sm tracking-wider'
+      className='hidden min-[980px]:block bg-white shadow-sm tracking-wider'
       aria-label='Main'
     >
       <div className={cn('relative max-w-[1920px] mx-auto', CONTAINER_PADDING)}>
@@ -26,15 +29,13 @@ export function MainNav({ bottomBarHeight }: MainNavProps) {
         >
           {/* Left Navigation */}
           <ul className={cn('flex items-center justify-end', MENU_GAP)}>
-            <li>
-              <MainMenuButton>ABOUT</MainMenuButton>
-            </li>
-            <li>
-              <MainMenuButton>ACADEMICS</MainMenuButton>
-            </li>
-            <li>
-              <MainMenuButton>ADMISSIONS</MainMenuButton>
-            </li>
+            {leftNavItems.map((link) => (
+              <li key={link.href}>
+                <MainMenuButton asChild>
+                  <Link href={link.href}>{link.label.toUpperCase()}</Link>
+                </MainMenuButton>
+              </li>
+            ))}
           </ul>
 
           {/* Center Logo Spacer - matches logo width, maintains consistent padding from logo */}
@@ -47,11 +48,19 @@ export function MainNav({ bottomBarHeight }: MainNavProps) {
 
           {/* Right Navigation */}
           <ul className={cn('flex items-center justify-start', MENU_GAP)}>
+            {rightNavItems.map((link) => (
+              <li key={link.href}>
+                <MainMenuButton asChild>
+                  <Link href={link.href}>{link.label.toUpperCase()}</Link>
+                </MainMenuButton>
+              </li>
+            ))}
             <li>
-              <MainMenuButton>CHURCH MUSIC</MainMenuButton>
-            </li>
-            <li>
-              <HeaderActionButton>APPLY</HeaderActionButton>
+              <HeaderActionButton asChild>
+                <Link href={actionButtons.apply.href}>
+                  {actionButtons.apply.label.toUpperCase()}
+                </Link>
+              </HeaderActionButton>
             </li>
           </ul>
         </div>
