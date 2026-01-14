@@ -37,9 +37,9 @@ const DEFAULT_RESOURCES: Resource[] = [
   },
   {
     icon: HeartHandshake,
-    title: 'Financial Aid',
+    title: 'Tuition & Financial Aid',
     description:
-      'Explore funding options designed to make your seminary education accessible and affordable.',
+      'Discover affordable tuition plans and scholarship opportunities to support your theological journey.',
     linkHref: '#',
   },
 ];
