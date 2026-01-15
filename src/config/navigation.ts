@@ -20,12 +20,37 @@ export type NavItemWithSubmenu = {
   submenu?: NavLink[];
 };
 
+export type MenuFeature = {
+  title: string;
+  description: string;
+};
+
 // Top Bar Navigation (Quick access links)
 export const topBarNavigation: NavLink[] = [
   { label: 'Quick Links', href: '/quick-links' },
   { label: 'Visit Us', href: '/visit' },
   { label: 'Request Info', href: '/request-info' },
 ];
+
+// Featured Menu Descriptions (for navigation submenu cards)
+// These act as "overview" links to the main section page
+export const menuFeatures: Record<string, MenuFeature> = {
+  About: {
+    title: 'A Word from Chairman',
+    description:
+      'Discover our mission, faith, and commitment to training faithful servants for gospel ministry worldwide.',
+  },
+  Academics: {
+    title: 'Academic Programs',
+    description:
+      'Explore our comprehensive theological education that integrates Scripture, tradition, and ministry.',
+  },
+  Admissions: {
+    title: 'Join Our Community',
+    description:
+      'Start your journey toward faithful ministry through spiritual formation and academic excellence.',
+  },
+};
 
 // Main Navigation (Primary menu items with optional submenus)
 export const mainNavigation: NavItemWithSubmenu[] = [

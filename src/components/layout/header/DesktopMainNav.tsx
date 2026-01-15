@@ -6,8 +6,12 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
-import type { NavItemWithSubmenu } from '@/config/navigation';
-import { actionButtons, mainNavigation } from '@/config/navigation';
+import type { MenuFeature, NavItemWithSubmenu } from '@/config/navigation';
+import {
+  actionButtons,
+  mainNavigation,
+  menuFeatures,
+} from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import * as React from 'react';
@@ -26,11 +30,6 @@ type DesktopMainNavProps = {
   bottomBarHeight: number;
 };
 
-type MenuFeature = {
-  title: string;
-  description: string;
-};
-
 type NavMenuListProps = {
   items: NavItemWithSubmenu[];
   textColor: 'text-primary' | 'text-black';
@@ -45,25 +44,6 @@ type FeaturedMenuCardProps = {
 // =============================================================================
 // Constants
 // =============================================================================
-
-// Featured menu descriptions for each section
-const menuFeatures: Record<string, MenuFeature> = {
-  About: {
-    title: 'Washington Jabez University',
-    description:
-      'Rooted in Reformed theology and committed to training faithful servants for gospel ministry in the United States and worldwide.',
-  },
-  Academics: {
-    title: 'Academic Excellence',
-    description:
-      'Rigorous theological education that integrates Scripture, tradition, and practical ministry experience.',
-  },
-  Admissions: {
-    title: 'Begin Your Journey',
-    description:
-      'Join a community dedicated to spiritual formation, academic excellence, and faithful ministry preparation.',
-  },
-};
 
 // Consolidated NavigationMenuTrigger styles
 const TRIGGER_STYLE_BASE =
