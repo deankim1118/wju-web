@@ -2,12 +2,7 @@ import { actionButtons, mainNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { HeaderActionButton, MainMenuButton } from './buttons';
-import {
-  CONTAINER_PADDING,
-  DESKTOP_ONLY,
-  MENU_GAP,
-  MENU_GAP_CENTER,
-} from './constants';
+import { CONTAINER_PADDING, MENU_GAP, MENU_GAP_CENTER } from './constants';
 
 type MainNavProps = {
   bottomBarHeight: number;
@@ -20,7 +15,7 @@ export function MainNav({ bottomBarHeight }: MainNavProps) {
 
   return (
     <nav
-      className={`hidden min-[${DESKTOP_ONLY}px]:block bg-white shadow-sm tracking-wider`}
+      className='hidden desktop:block bg-white shadow-sm tracking-wider'
       aria-label='Main'
     >
       <div className={cn('relative max-w-[1920px] mx-auto', CONTAINER_PADDING)}>

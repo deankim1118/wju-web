@@ -14,7 +14,6 @@ import * as React from 'react';
 import { HeaderActionButton, MainMenuButton } from './buttons';
 import {
   CONTAINER_PADDING,
-  DESKTOP_ONLY,
   LOGO_RESPONSIVE_WIDTH,
   MENU_GAP,
 } from './constants';
@@ -189,10 +188,10 @@ export function DesktopMainNav({ bottomBarHeight }: DesktopMainNavProps) {
 
   return (
     <nav
-      className={`hidden min-[${DESKTOP_ONLY}px]:block bg-white shadow-sm tracking-wide`}
+      className='hidden desktop:block bg-white shadow-sm tracking-wide'
       aria-label='Main'
     >
-      <div className={cn('relative max-w-[1920px] mx-auto', CONTAINER_PADDING)}>
+      <div className={cn('relative max-w-[1440px] mx-auto', CONTAINER_PADDING)}>
         {/* Desktop Navigation - Grid Layout with responsive height */}
         <div
           className='grid grid-cols-[1fr_auto_1fr] items-center transition-all duration-300 md:gap-x-2 xl:gap-x-10'

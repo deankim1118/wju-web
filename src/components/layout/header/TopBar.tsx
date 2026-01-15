@@ -2,12 +2,7 @@ import { actionButtons, topBarNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { HeaderActionButton, TopMenuButton } from './buttons';
-import {
-  CONTAINER_PADDING,
-  DESKTOP_ONLY,
-  MENU_GAP,
-  TOP_MENU_GAP,
-} from './constants';
+import { CONTAINER_PADDING, MENU_GAP, TOP_MENU_GAP } from './constants';
 
 type TopBarProps = {
   topBarHeight: number;
@@ -23,7 +18,7 @@ export function TopBar({ topBarHeight }: TopBarProps) {
         {/* Desktop Menu */}
         <div
           className={cn(
-            `hidden min-[${DESKTOP_ONLY}px]:flex items-center justify-between h-full lg:tracking-wide`,
+            'hidden desktop:flex items-center justify-between h-full lg:tracking-wide',
             CONTAINER_PADDING,
           )}
         >
@@ -55,7 +50,7 @@ export function TopBar({ topBarHeight }: TopBarProps) {
           </div>
         </div>
         {/* Mobile - Empty space to maintain background */}
-        <div className={`min-[${DESKTOP_ONLY}px]:hidden h-full`} />
+        <div className='desktop:hidden h-full' />
       </div>
     </div>
   );

@@ -4,7 +4,6 @@
 
 // 브레이크포인트
 export const DESKTOP_BREAKPOINT = 1024; // px
-export const DESKTOP_ONLY = 980; // px
 
 // 헤더 높이 관련
 export const HEADER_HEIGHT_MAX = 100; // px

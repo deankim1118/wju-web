@@ -46,11 +46,6 @@ export function Header() {
         <TopBar topBarHeight={topBarHeight} />
         <DesktopMainNav bottomBarHeight={bottomBarHeight} />
       </div>
-
-      {/* Skip link anchor */}
-      <div id='maincontent' className='sr-only'>
-        Main content
-      </div>
     </header>
   );
 }

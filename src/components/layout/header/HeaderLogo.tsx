@@ -2,7 +2,6 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  DESKTOP_ONLY,
   HEADER_HEIGHT_MIN,
   LOGO_DESKTOP_HEIGHT,
   LOGO_DESKTOP_WIDTH,
@@ -37,7 +36,7 @@ export function HeaderLogo({ isScrolled, headerHeight }: HeaderLogoProps) {
           alt='Washington Jabez University Logo'
           width={LOGO_DESKTOP_WIDTH}
           height={LOGO_DESKTOP_HEIGHT}
-          className={`hidden min-[${DESKTOP_ONLY}px]:block w-full h-auto object-contain transition-all duration-300`}
+          className='hidden desktop:block w-full h-auto object-contain transition-all duration-300'
         />
       </Link>
 
@@ -45,7 +44,7 @@ export function HeaderLogo({ isScrolled, headerHeight }: HeaderLogoProps) {
       <Link
         href='/'
         className={cn(
-          `absolute left-1/2 top-0 z-100 -translate-x-1/2 transition-all duration-300 min-[${DESKTOP_ONLY}px]:hidden`,
+          'absolute left-1/2 top-0 z-100 -translate-x-1/2 transition-all duration-300 desktop:hidden',
           logoScaleClass,
         )}
         aria-label='Logo'

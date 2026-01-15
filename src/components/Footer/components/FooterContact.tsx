@@ -25,7 +25,7 @@ export function FooterContact({}: FooterContactProps) {
           href='mailto:admin@wjuin.org'
           className='hover:text-gray-300 transition-colors'
         >
-          admin@wjuin.org
+          Admin@wjuin.org
         </a>
         <span>4421 Dale Blvd. Woodbridge, VA 22191</span>
       </address>
