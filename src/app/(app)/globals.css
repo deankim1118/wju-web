@@ -203,9 +203,14 @@
     @apply text-xs leading-5;
   }
 
-  /* Hero Title - 75px */
+  /* Hero Title Landing Page - 75px */
   .hero-title {
-    @apply font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-center leading-snug;
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold text-center drop-shadow-xl;
+  }
+
+  /* Hero Title Small*/
+  .hero-title-sm {
+    @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center drop-shadow-xl;
   }
 
   /* 버튼 텍스트 스타일 */
@@ -247,5 +252,19 @@
   /* Section Header Padding */
   .section-header-padding {
     @apply pt-16 pb-6 md:pt-24 md:pb-10 lg:pt-32;
+  }
+
+  /* Slow Zoom Animation for Hero Images */
+  .slow-zoom {
+    animation: slowZoom 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes slowZoom {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
   }
 }
