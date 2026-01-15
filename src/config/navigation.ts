@@ -3,6 +3,8 @@
  * All navigation links and labels are defined here for consistency across the site
  */
 
+import { ROUTES } from './routes';
+
 export type NavLink = {
   label: string;
   href: string;
@@ -23,13 +25,14 @@ export type NavItemWithSubmenu = {
 export type MenuFeature = {
   title: string;
   description: string;
+  href: string;
 };
 
 // Top Bar Navigation (Quick access links)
 export const topBarNavigation: NavLink[] = [
-  { label: 'Quick Links', href: '/quick-links' },
-  { label: 'Visit Us', href: '/visit' },
-  { label: 'Request Info', href: '/request-info' },
+  { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
+  { label: 'Visit Us', href: ROUTES.VISIT },
+  { label: 'Request Info', href: ROUTES.REQUEST_INFO },
 ];
 
 // Featured Menu Descriptions (for navigation submenu cards)
@@ -39,16 +42,19 @@ export const menuFeatures: Record<string, MenuFeature> = {
     title: 'A Word from Chairman',
     description:
       'Discover our mission, faith, and commitment to training faithful servants for gospel ministry worldwide.',
+    href: ROUTES.ABOUT.ROOT,
   },
   Academics: {
     title: 'Academic Programs',
     description:
       'Explore our comprehensive theological education that integrates Scripture, tradition, and ministry.',
+    href: ROUTES.ACADEMICS.ROOT,
   },
   Admissions: {
     title: 'Join Our Community',
     description:
       'Start your journey toward faithful ministry through spiritual formation and academic excellence.',
+    href: ROUTES.ADMISSIONS.ROOT,
   },
 };
 
@@ -56,74 +62,66 @@ export const menuFeatures: Record<string, MenuFeature> = {
 export const mainNavigation: NavItemWithSubmenu[] = [
   {
     label: 'About',
-    href: '/about',
+    href: ROUTES.ABOUT.ROOT,
     submenu: [
       {
-        label: 'Statement of Faith',
-        href: '/about/statement-of-faith',
-        description:
-          'Our core beliefs and theological foundations that guide our seminary.',
-      },
-      {
-        label: 'Mission & Vision',
-        href: '/about/mission-vision',
-        description:
-          'Discover our calling to equip faithful servants for gospel ministry.',
-      },
-      {
-        label: 'Our History',
-        href: '/about/history',
-        description: 'Learn about our heritage and journey since our founding.',
+        label: 'Mission & Faith',
+        href: ROUTES.ABOUT.MISSION_FAITH,
+        description: 'The core beliefs and theology guiding our mission.',
       },
       {
         label: 'Faculty & Staff',
-        href: '/about/faculty-staff',
-        description:
-          'Meet the dedicated scholars and leaders shaping future ministers.',
+        href: ROUTES.ABOUT.FACULTY_STAFF,
+        description: 'Dedicated scholars mentoring future gospel ministers.',
+      },
+      {
+        label: 'Institutional Integrity',
+        href: ROUTES.ABOUT.INTEGRITY,
+        description: 'Our commitment to transparency & accountability.',
       },
     ],
   },
   {
     label: 'Academics',
-    href: '/academics',
+    href: ROUTES.ACADEMICS.ROOT,
     submenu: [
       {
         label: 'Degree Programs',
-        href: '/academics/programs',
+        href: ROUTES.ACADEMICS.PROGRAMS,
         description:
           'Explore our comprehensive programs in theology and ministry.',
       },
       {
         label: 'Academic Calendar',
-        href: '/academics/calendar',
+        href: ROUTES.ACADEMICS.CALENDAR,
         description:
           'View important dates, semesters, and academic milestones.',
       },
       {
         label: 'Course Catalog',
-        href: '/academics/catalog',
+        href: ROUTES.ACADEMICS.CATALOG,
         description: 'Browse our full curriculum and course offerings.',
       },
     ],
   },
   {
     label: 'Admissions',
-    href: '/admissions',
+    href: ROUTES.ADMISSIONS.ROOT,
     submenu: [
       {
         label: 'Apply Now',
-        href: '/admissions/apply',
+        href: ROUTES.ADMISSIONS.APPLY,
         description: 'Start your journey toward faithful ministry and service.',
       },
       {
         label: 'Scholarships & Aid',
-        href: '/admissions/scholarships',
+        href: ROUTES.ADMISSIONS.SCHOLARSHIPS,
         description:
           'Explore financial support options for your theological education.',
       },
       {
         label: 'Visit Campus',
-        href: '/admissions/visit',
+        href: ROUTES.ADMISSIONS.VISIT,
         description:
           'Experience our community and discover life at WJU Seminary.',
       },
@@ -131,7 +129,7 @@ export const mainNavigation: NavItemWithSubmenu[] = [
   },
   {
     label: 'Church Music',
-    href: '/church-music',
+    href: ROUTES.CHURCH_MUSIC,
   },
 ];
 
@@ -140,38 +138,37 @@ export const footerNavigation: NavSection[] = [
   {
     title: 'About Us',
     links: [
-      { label: 'Statement of Faith', href: '/about/statement-of-faith' },
-      { label: 'Mission & Vision', href: '/about/mission-vision' },
-      { label: 'Our History', href: '/about/history' },
-      { label: 'Faculty & Staff', href: '/about/faculty-staff' },
+      { label: 'Mission of Faith', href: ROUTES.ABOUT.MISSION_FAITH },
+      { label: 'INTEGRITY', href: ROUTES.ABOUT.INTEGRITY },
+      { label: 'Faculty & Staff', href: ROUTES.ABOUT.FACULTY_STAFF },
     ],
   },
   {
     title: 'Academics',
     links: [
-      { label: 'Degree Programs', href: '/academics/programs' },
-      { label: 'Admissions', href: '/admissions' },
-      { label: 'Scholarships & Aid', href: '/admissions/scholarships' },
-      { label: 'Academic Calendar', href: '/academics/calendar' },
-      { label: 'Course Catalog', href: '/academics/catalog' },
+      { label: 'Degree Programs', href: ROUTES.ACADEMICS.PROGRAMS },
+      { label: 'Admissions', href: ROUTES.ADMISSIONS.ROOT },
+      { label: 'Scholarships & Aid', href: ROUTES.ADMISSIONS.SCHOLARSHIPS },
+      { label: 'Academic Calendar', href: ROUTES.ACADEMICS.CALENDAR },
+      { label: 'Course Catalog', href: ROUTES.ACADEMICS.CATALOG },
     ],
   },
   {
     title: 'Get Involved',
     links: [
-      { label: 'Apply Now', href: '/apply' },
-      { label: 'Visit Us', href: '/visit' },
-      { label: 'Request Information', href: '/request-info' },
+      { label: 'Apply Now', href: ROUTES.APPLY },
+      { label: 'Visit Us', href: ROUTES.VISIT },
+      { label: 'Request Information', href: ROUTES.REQUEST_INFO },
     ],
   },
 ];
 
 // Action Buttons (CTA buttons that appear across the site)
 export const actionButtons = {
-  apply: { label: 'Apply', href: '/apply' },
-  myWju: { label: 'My WJU', href: '/my-wju' },
-  language: { label: 'Language', href: '/language' },
-  support: { label: 'Support', href: '/support' },
+  apply: { label: 'Apply', href: ROUTES.APPLY },
+  myWju: { label: 'My WJU', href: ROUTES.MY_WJU },
+  language: { label: 'Language', href: ROUTES.LANGUAGE },
+  support: { label: 'Support', href: ROUTES.SUPPORT },
 } as const;
 
 // Social Media Links (External social media profiles)
@@ -185,13 +182,13 @@ export type SocialMediaLink = {
 export const socialMediaLinks: SocialMediaLink[] = [
   {
     platform: 'instagram',
-    href: 'https://www.instagram.com/wju',
+    href: ROUTES.EXTERNAL.INSTAGRAM,
     iconName: 'instagram',
     ariaLabel: 'Visit our Instagram',
   },
   {
     platform: 'youtube',
-    href: 'https://www.youtube.com/@wju',
+    href: ROUTES.EXTERNAL.YOUTUBE,
     iconName: 'youtube',
     ariaLabel: 'Visit our YouTube channel',
   },

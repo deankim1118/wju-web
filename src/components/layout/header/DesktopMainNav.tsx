@@ -97,7 +97,7 @@ function FeaturedMenuCard({ item, feature }: FeaturedMenuCardProps) {
       <NavigationMenuLink asChild>
         <Link
           className='flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md'
-          href={item.href}
+          href={feature.href}
         >
           <div className='mb-2 mt-4 text-lg font-medium'>{feature.title}</div>
           <p className='text-sm leading-tight text-muted-foreground'>
@@ -120,7 +120,11 @@ function NavMenuList({ items, textColor, children }: NavMenuListProps) {
           // Menu item with submenu
           <NavigationMenuItem key={item.href}>
             <NavigationMenuTrigger
-              className={cn(TRIGGER_STYLE_BASE, textColor, 'cursor-pointer')}
+              className={cn(
+                TRIGGER_STYLE_BASE,
+                textColor,
+                'cursor-pointer data-[state=open]:hover:bg-transparent ',
+              )}
             >
               {item.label.toUpperCase()}
             </NavigationMenuTrigger>

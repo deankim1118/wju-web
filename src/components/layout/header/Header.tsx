@@ -1,5 +1,6 @@
 'use client';
 
+import { ROUTES } from '@/config/routes';
 import { useHeaderControl } from '@/hooks/use-header-control';
 import { cn } from '@/lib/utils';
 import { useState } from 'react';
@@ -21,7 +22,7 @@ export function Header() {
     >
       {/* Skip to main content for accessibility */}
       <a
-        href='#maincontent'
+        href={ROUTES.ANCHORS.MAIN_CONTENT}
         className={cn(
           'sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0',
           'focus:z-100 focus:bg-primary focus:text-primary-foreground',
