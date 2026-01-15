@@ -9,6 +9,7 @@ import {
   HeartHandshake,
   type LucideIcon,
 } from 'lucide-react';
+import { ROUTES } from './routes';
 
 // ============================================================================
 // TYPE DEFINITIONS
@@ -89,7 +90,7 @@ export const callToActionContent: CallToActionContent = {
   description:
     "WJU is where great stories begin. It's time to start yours. Find out how.",
   buttonText: 'REQUEST INFORMATION',
-  href: '#',
+  href: ROUTES.PLACEHOLDER,
 };
 
 /**
@@ -115,7 +116,7 @@ export const facultyMentorshipContent: TwoColumnTextContent = {
     'Our faculty are not just scholars; they are pastors, counselors, and missionaries who are deeply committed to investing in your life. They will walk alongside you, guiding your academic growth and nurturing your spiritual formation for a lifetime of faithful ministry.',
   link: {
     text: 'Meet Your Mentors',
-    href: '#',
+    href: ROUTES.PLACEHOLDER,
     showArrow: true,
   },
   spacing: 'tight',
@@ -133,7 +134,7 @@ export const academicsContent: AcademicsSectionContent = {
         'Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise',
       imageUrl: '/wju-hero-img.png',
       imageAlt: 'Undergraduate Education',
-      linkHref: '#',
+      linkHref: ROUTES.PLACEHOLDER,
     },
     {
       title: 'Graduate Education',
@@ -141,7 +142,7 @@ export const academicsContent: AcademicsSectionContent = {
         'Unsurpassed opportunities to participate in the advancement of entire fields of knowledge',
       imageUrl: '/wju-hero-img.png',
       imageAlt: 'Graduate Education',
-      linkHref: '#',
+      linkHref: ROUTES.PLACEHOLDER,
     },
     {
       title: 'Doctoral Education',
@@ -149,7 +150,7 @@ export const academicsContent: AcademicsSectionContent = {
         'Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise',
       imageUrl: '/wju-hero-img.png',
       imageAlt: 'Doctoral Education',
-      linkHref: '#',
+      linkHref: ROUTES.PLACEHOLDER,
     },
   ],
 };
@@ -165,21 +166,21 @@ export const informationResourcesContent: InformationResourcesContent = {
       title: 'Scholarships',
       description:
         'Recognizing your gifts with a wide range of merit-based and ministry-focused awards.',
-      linkHref: '#',
+      linkHref: ROUTES.PLACEHOLDER,
     },
     {
       icon: ClipboardList,
       title: 'Admissions Procedure',
       description:
         'Find all the information, requirements, and deadlines to begin your theological journey.',
-      linkHref: '#',
+      linkHref: ROUTES.PLACEHOLDER,
     },
     {
       icon: HeartHandshake,
       title: 'Tuition & Financial Aid',
       description:
         'Discover affordable tuition plans and scholarship opportunities to support your theological journey.',
-      linkHref: '#',
+      linkHref: ROUTES.PLACEHOLDER,
     },
   ],
 };
@@ -192,11 +193,11 @@ export const footerContent: FooterContent = {
   logoAlt: 'Washington Jabez University Logo',
   ctaButtons: [
     {
-      href: '/apply',
+      href: ROUTES.APPLY,
       label: 'Apply WJU',
     },
     {
-      href: '/request-info',
+      href: ROUTES.REQUEST_INFO,
       label: 'Request Information',
     },
   ],
