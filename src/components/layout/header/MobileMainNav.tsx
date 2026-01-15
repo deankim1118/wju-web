@@ -33,7 +33,7 @@ export function MobileMainNav({}: MobileMainNavProps) {
               <AccordionContent className='pb-0 pt-1'>
                 {/* Featured Menu Item - Overview Link */}
                 {feature && (
-                  <div className='mb-3 mx-3 p-3 bg-muted/30 rounded-md'>
+                  <div className=' mx-3 p-3 bg-muted/30 rounded-md'>
                     <Link href={feature.href} className='block'>
                       <div className='font-medium text-sm mb-1 text-black hover:text-secondary transition-colors'>
                         {feature.title}
@@ -46,12 +46,12 @@ export function MobileMainNav({}: MobileMainNavProps) {
                 )}
 
                 {/* Submenu Items */}
-                <ul className='space-y-1 pl-4'>
+                <ul className='pl-4'>
                   {item.submenu.map((subItem) => (
                     <li key={subItem.href}>
                       <Link
                         href={subItem.href}
-                        className='block py-2 text-sm text-black hover:text-secondary transition-colors'
+                        className='block text-sm py-2 text-black hover:text-secondary transition-colors'
                       >
                         {subItem.label}
                       </Link>
