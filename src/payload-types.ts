@@ -89,9 +89,11 @@ export interface Config {
   fallbackLocale: null;
   globals: {
     hero: Hero;
+    footer: Footer;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
+    footer: FooterSelect<false> | FooterSelect<true>;
   };
   locale: null;
   user: User & {
@@ -386,6 +388,42 @@ export interface Hero {
   createdAt?: string | null;
 }
 /**
+ * Footer 영역에 표시될 연락처 정보를 관리합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer".
+ */
+export interface Footer {
+  id: number;
+  /**
+   * Footer에 표시될 연락처 정보를 입력하세요.
+   */
+  contact: {
+    /**
+     * Footer에 표시될 대학교 이름
+     */
+    universityName: string;
+    /**
+     * 예: 123-456-7890
+     */
+    phoneEn: string;
+    /**
+     * 예: 123-456-7890
+     */
+    phoneKo: string;
+    /**
+     * 대학 대표 이메일 주소
+     */
+    email: string;
+    /**
+     * 대학교 주소
+     */
+    address: string;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
@@ -411,6 +449,24 @@ export interface HeroSelect<T extends boolean = true> {
               id?: T;
             };
         id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "footer_select".
+ */
+export interface FooterSelect<T extends boolean = true> {
+  contact?:
+    | T
+    | {
+        universityName?: T;
+        phoneEn?: T;
+        phoneKo?: T;
+        email?: T;
+        address?: T;
       };
   updatedAt?: T;
   createdAt?: T;

@@ -5,8 +5,7 @@
  * depth 옵션을 활용하여 관계된 이미지 데이터를 한 번에 가져옵니다.
  */
 
-import config from '@payload-config';
-import { getPayload } from 'payload';
+import { getPayloadClient } from '../payloadClient';
 
 type HeroQueryOptions = {
   depth?: number;
@@ -20,7 +19,7 @@ export async function getHeroData(options: HeroQueryOptions = {}) {
 
   try {
     // 공식적인 방법으로 Payload 인스턴스 가져오기
-    const payload = await getPayload({ config });
+    const payload = await getPayloadClient();
 
     // [핵심] findGlobal 한 번 호출로 끝냅니다.
     // Payload가 알아서 slides 안의 image id를 조회해서 객체로 바꿔줍니다.

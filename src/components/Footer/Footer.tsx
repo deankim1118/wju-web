@@ -1,5 +1,6 @@
 import { footerContent } from '@/config/home-content';
 import { socialMediaLinks } from '@/config/navigation';
+import { getFooterData } from '@/lib/payload/queries';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FooterCTA } from './components/FooterCTA';
@@ -9,7 +10,20 @@ import { SocialMediaIcons } from './components/SocialMediaIcons';
 
 type FooterProps = Record<string, never>;
 
-export function Footer({}: FooterProps) {
+export async function Footer({}: FooterProps) {
+  // Fetch footer data from Payload CMS
+  const footerData = await getFooterData();
+
+  // Extract contact data with fallback to default values
+  const contactData = footerData?.contact
+    ? {
+        universityName: footerData.contact.universityName,
+        phoneEn: footerData.contact.phoneEn,
+        phoneKo: footerData.contact.phoneKo,
+        email: footerData.contact.email,
+        address: footerData.contact.address,
+      }
+    : undefined;
   return (
     <footer className='bg-primary text-white'>
       {/* Main Footer Content */}
@@ -46,7 +60,7 @@ export function Footer({}: FooterProps) {
 
         {/* Footer Links Section */}
         <div className='w-full mx-auto px-6 flex justify-center items-center'>
-          <FooterLinksSection />
+          <FooterLinksSection contactData={contactData} />
         </div>
       </div>
 

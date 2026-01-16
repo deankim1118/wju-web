@@ -5,4 +5,5 @@
  * 일관된 import 경로를 제공합니다.
  */
 
+export { getFooterData } from './footer';
 export { getHeroData } from './hero';

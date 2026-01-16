@@ -10,9 +10,17 @@ import { footerNavigation, type NavLink } from '@/config/navigation';
 import Link from 'next/link';
 import { FooterContact } from './FooterContact';
 
-type FooterLinksSectionProps = Record<string, never>;
+type FooterLinksSectionProps = {
+  contactData?: {
+    universityName?: string;
+    phoneEn?: string;
+    phoneKo?: string;
+    email?: string;
+    address?: string;
+  };
+};
 
-export function FooterLinksSection({}: FooterLinksSectionProps) {
+export function FooterLinksSection({ contactData }: FooterLinksSectionProps) {
   return (
     <>
       {/* Mobile: Accordion Style */}
@@ -23,7 +31,7 @@ export function FooterLinksSection({}: FooterLinksSectionProps) {
               Contact
             </AccordionTrigger>
             <AccordionContent className='px-6 pb-6'>
-              <FooterContact />
+              <FooterContact {...contactData} />
             </AccordionContent>
           </AccordionItem>
 
@@ -46,7 +54,7 @@ export function FooterLinksSection({}: FooterLinksSectionProps) {
 
       {/* Desktop: Grid Layout */}
       <div className='hidden md:flex w-full max-w-7xl justify-between md:gap-7 px-4'>
-        <FooterContact />
+        <FooterContact {...contactData} />
 
         {footerNavigation.map((section) => (
           <nav
