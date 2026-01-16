@@ -1,8 +1,17 @@
+import { revalidateHero } from '@/lib/payload/revalidate';
 import { GlobalConfig } from 'payload';
 
 export const HeroPayload: GlobalConfig = {
   slug: 'hero',
   label: 'Hero Section Landing Page',
+  hooks: {
+    afterChange: [
+      async () => {
+        // 🚀 Hero 데이터가 변경될 때 Next.js 캐시를 즉시 무효화
+        revalidateHero();
+      },
+    ],
+  },
   fields: [
     {
       name: 'slides',

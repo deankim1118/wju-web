@@ -1,3 +1,4 @@
+import { revalidateFooter } from '@/lib/payload/revalidate';
 import { GlobalConfig } from 'payload';
 
 export const FooterPayload: GlobalConfig = {
@@ -5,6 +6,14 @@ export const FooterPayload: GlobalConfig = {
   label: 'Footer Settings',
   admin: {
     description: 'Footer 영역에 표시될 연락처 정보를 관리합니다.',
+  },
+  hooks: {
+    afterChange: [
+      async () => {
+        // 🚀 Footer 데이터가 변경될 때 Next.js 캐시를 즉시 무효화
+        revalidateFooter();
+      },
+    ],
   },
   fields: [
     {

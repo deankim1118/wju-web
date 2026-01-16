@@ -1,9 +1,9 @@
 import { footerContent } from '@/config/home-content';
 import { socialMediaLinks } from '@/config/navigation';
-import { getFooterData } from '@/lib/payload/queries';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FooterCTA } from './components/FooterCTA';
+import { FooterContactServer } from './components/FooterContactServer';
 import { FooterLinksSection } from './components/FooterLinksSection';
 import { FooterQuote } from './components/FooterQuote';
 import { SocialMediaIcons } from './components/SocialMediaIcons';
@@ -11,19 +11,7 @@ import { SocialMediaIcons } from './components/SocialMediaIcons';
 type FooterProps = Record<string, never>;
 
 export async function Footer({}: FooterProps) {
-  // Fetch footer data from Payload CMS
-  const footerData = await getFooterData();
-
-  // Extract contact data with fallback to default values
-  const contactData = footerData?.contact
-    ? {
-        universityName: footerData.contact.universityName,
-        phoneEn: footerData.contact.phoneEn,
-        phoneKo: footerData.contact.phoneKo,
-        email: footerData.contact.email,
-        address: footerData.contact.address,
-      }
-    : undefined;
+  // Server Component: 데이터 fetch는 FooterContactServer에서 수행
   return (
     <footer className='bg-primary text-white'>
       {/* Main Footer Content */}
@@ -60,7 +48,7 @@ export async function Footer({}: FooterProps) {
 
         {/* Footer Links Section */}
         <div className='w-full mx-auto px-6 flex justify-center items-center'>
-          <FooterLinksSection contactData={contactData} />
+          <FooterLinksSection contactElement={<FooterContactServer />} />
         </div>
       </div>
 
