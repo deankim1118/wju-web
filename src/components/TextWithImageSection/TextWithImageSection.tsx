@@ -12,6 +12,7 @@ type TextWithImageSectionProps = {
   textColor?: string;
   accentColor?: string;
   showAccentLine?: boolean;
+  hideImageMobile?: boolean;
   className?: string;
 };
 
@@ -27,15 +28,16 @@ export function TextWithImageSection({
   textColor = '',
   accentColor = 'bg-secondary',
   showAccentLine = true,
+  hideImageMobile = false,
   className = '',
 }: TextWithImageSectionProps) {
   const textContent = (
     <div className='flex-1 flex flex-col justify-start items-start gap-6 md:gap-10'>
       {/* Title with Optional Decorative Line */}
       <div className='flex flex-col justify-start items-start gap-3 w-full'>
-        <h1 className={titleColor}>{title}</h1>
-        {subtitle && <p className='text-muted-foreground'>{subtitle}</p>}
+        <h1 className={`${titleColor} font-light`}>{title}</h1>
         {showAccentLine && <div className={`w-24 h-1.5 ${accentColor}`} />}
+        {subtitle && <p className=' italic font-serif'>{subtitle}</p>}
       </div>
 
       {/* Description */}
@@ -44,7 +46,11 @@ export function TextWithImageSection({
   );
 
   const imageContent = (
-    <div className='w-full lg:w-auto lg:flex-1 lg:max-w-[600px]'>
+    <div
+      className={`w-full lg:w-auto lg:flex-1 lg:max-w-[600px] ${
+        hideImageMobile ? 'hidden lg:block' : ''
+      }`}
+    >
       <div className='relative w-full aspect-4/3 bg-muted overflow-hidden'>
         <Image
           src={imageUrl}
@@ -61,7 +67,7 @@ export function TextWithImageSection({
   return (
     <section className={`${backgroundColor} section-padding-lg ${className}`}>
       <div className='container mx-auto px-6 max-w-[1440px]'>
-        <div className='flex flex-col lg:flex-row justify-between items-center lg:items-center gap-10 lg:gap-20'>
+        <div className='flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10 lg:gap-16'>
           {imagePosition === 'left' ? (
             <>
               {imageContent}

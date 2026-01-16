@@ -40,7 +40,7 @@ export function TwoColumnTextSection({
       className={`${backgroundColor} ${spacingMap[spacing]} ${className}`}
     >
       <div className='container mx-auto px-6 max-w-7xl'>
-        <div className='flex flex-col lg:flex-row justify-start items-start gap-6 lg:gap-12'>
+        <div className='flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-12'>
           {/* Title Section */}
           <div className='flex-1'>
             <h1 className={titleColor}>{title}</h1>
