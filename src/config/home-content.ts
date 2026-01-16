@@ -28,6 +28,9 @@ export type TextWithImageContent = {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  author?: string;
+  authorTitle?: string;
+  authorColor?: string;
 };
 
 export type TwoColumnTextContent = {

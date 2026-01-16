@@ -44,7 +44,7 @@ export function PageHero({
       </div>
 
       {/* Content */}
-      <div className='relative z-20 flex flex-col gap-1 items-start mx-auto justify-end-safe h-full px-6 md:px-8 2xl:px-0 max-w-[1440px] pb-10 md:pb-16'>
+      <div className='relative z-20 flex flex-col gap-1 items-start mx-auto justify-end-safe h-full px-6 md:px-8 2xl:px-0 max-w-[1440px] pb-8 md:pb-12'>
         {subtitle && (
           <p className='text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl'>
             {subtitle}

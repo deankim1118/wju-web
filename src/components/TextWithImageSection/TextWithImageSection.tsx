@@ -14,12 +14,17 @@ type TextWithImageSectionProps = {
   showAccentLine?: boolean;
   hideImageMobile?: boolean;
   className?: string;
+  author?: string;
+  authorTitle?: string;
+  authorColor?: string;
 };
 
 export function TextWithImageSection({
   title,
   subtitle,
   description,
+  author,
+  authorTitle,
   imageUrl,
   imageAlt,
   imagePosition = 'right',
@@ -27,6 +32,7 @@ export function TextWithImageSection({
   titleColor = 'text-primary',
   textColor = '',
   accentColor = 'bg-secondary',
+  authorColor = 'text-slate-700',
   showAccentLine = true,
   hideImageMobile = false,
   className = '',
@@ -42,6 +48,13 @@ export function TextWithImageSection({
 
       {/* Description */}
       <p className={`whitespace-pre-line ${textColor}`}>{description}</p>
+      {/* Author */}
+      {author && (
+        <div className='flex flex-col font-serif italic w-full justify-start items-end '>
+          <p className={`${authorColor}`}>{author}</p>
+          <p className={`${authorColor}`}>{authorTitle}</p>
+        </div>
+      )}
     </div>
   );
 

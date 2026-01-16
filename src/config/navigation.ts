@@ -128,6 +128,10 @@ export const mainNavigation: NavItemWithSubmenu[] = [
     ],
   },
   {
+    label: 'WJU Academy',
+    href: ROUTES.WJU_ACADEMY,
+  },
+  {
     label: 'Church Music',
     href: ROUTES.CHURCH_MUSIC,
   },

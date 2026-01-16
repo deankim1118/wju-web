@@ -7,9 +7,8 @@ export type TwoColumnTextContent = {
 };
 
 export const aboutChairmanPageContent: TwoColumnTextContent = {
-  title: 'Equipping Leaders for Faithful Ministry',
-  content:
-    'Since 2014, Washington Jabez University has been dedicated to training the next generation of pastors and missionaries through Christ-centered theological education',
+  content: 'Equipping Leaders for Faithful Ministry',
+  title: `"If God has called you here, you are in the right place. We are ready to walk this path with you."`,
   spacing: 'loose',
 };
 
@@ -18,26 +17,26 @@ export const aboutChairmanPageContent: TwoColumnTextContent = {
  */
 export const aWordChairmanContent: TextWithImageContent = {
   title: 'A Word from Chairman of the Board',
-  subtitle: `Our mission is to equip biblically-grounded pastors, missionaries, and lay leaders to be faithful servants for God's harvest.`,
-  description: `Just as Jesus equipped His disciples for the Gospel, Washington Jabez University (WJU) is established to raise up leaders characterized by the Bible, holiness, prayer, and evangelism. Our deeply committed faculty is dedicated to teaching and training students for this high calling.
+  subtitle: `Washington Jabez University is dedicated to raising up men and women of holiness, prayer, and evangelism through missionary, pastoral, and lay leadership training`,
+  description: `Jesus selected His disciples and equipped them in a special way to become workers of the Gospel. Following this example, Washington Jabez University (WJU) was established to raise up men and women of God characterized by biblical truth, holiness, prayer, and evangelism. Our competent faculty is totally dedicated to teaching and training theological students with deep commitment.
 
-Our vision is focused on three objectives: training missionary, pastoral, and lay leaders. Through excellent undergraduate and graduate programs, we instill the intellectual and spiritual strength necessary for effective ministry, just as the Lord provided for His disciples.
-
-We pray that God will produce powerful leaders through WJU, for as Jesus taught, “The harvest is plentiful, but the laborers are few.” If God has providentially called you to WJU, you have made the right choice. We are committed to doing our best to help you fulfill your mission in Christ.`,
+With this vision in mind, WJU focuses on three core objectives: missionary leadership, pastoral leadership, and lay leadership training. To achieve these goals, we offer excellent undergraduate and graduate programs designed to develop moral character and instill the intellectual and spiritual power necessary for ministry, just as the Lord provided for His disciples.`,
   imageUrl: '/wju-hero-img.png',
-  imageAlt: 'Washington Jabez University Campus',
+  imageAlt: 'Washington Jabez University Chairman of the Board',
+  author: `Kwangsung Park, Ph.D.`,
+  authorTitle: `Chairman of the Board`,
 };
 
 /**
  * Chairman’s Biography
  */
 export const chairmanBiographyContent: TextWithImageContent = {
-  title: 'Chairman’s Biography',
+  title: 'A Prayer for the Harvest',
   subtitle:
-    'Ms Elizabeth Stone brings a wide range of previous experience from both co-educational and single-sex, day and boarding schools in Australia and the UK.',
-  description: `Prior to Winchester, she spent nine years as Principal of Queenwood School, Sydney, a leading independent girls’ school with 900 pupils. She was Vice Principal of Cheltenham Ladies’ College from 2012-14 and, immediately before this, she spent three years at Winchester, as a maths teacher and Undermaster.
+    'We pray that God raises up powerful leaders to change the world, and we pledge our utmost support to help you fulfill your mission in Christ.',
+  description: `My prayer is that God blesses this university to produce not only faithful servants for His Kingdom but also effective, powerful leaders who can change the world. We hold to the spirit of prayer that Jesus taught His disciples: 'The harvest is plentiful, but the laborers are few; therefore pray earnestly to the Lord of the harvest to send out laborers into his harvest' (Matthew 9:37-38).
 
-Elizabeth was educated at Ascham School and has undergraduate degrees from the University of New South Wales, where she studied Maths, German and Law. At Oxford University she studied as a Rhodes Scholar and completed a master’s degree at University College. She worked at the Supreme Court of New South Wales and held an academic appointment at the University of New South Wales Faculty of Law, one of Australia’s leading law schools, where she specialised in commercial contract law before commencing her teaching career.`,
+If God has providentially directed you to apply to Washington Jabez University, you have made the right choice. You have our word that we will surely do our best to assist you in fulfilling your mission in Christ.`,
   imageUrl: '/wju-hero-img.png',
   imageAlt: 'Washington Jabez University Campus',
 };

@@ -43,6 +43,7 @@ export const ROUTES = {
 
   // Other Main Pages
   CHURCH_MUSIC: '/church-music',
+  WJU_ACADEMY: '/wju-academy',
   APPLY: '/apply',
 
   // User Account

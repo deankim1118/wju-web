@@ -5,7 +5,7 @@ import {
   chairmanBiographyContent,
 } from '../../../config/about-content';
 import { TextWithImageSection } from '../../TextWithImageSection';
-import { TwoColumnTextSection } from '../../TwoColumnTextSection';
+import { TwoRowTextSection } from '../../TwoTextSection';
 
 export function AboutPage() {
   return (
@@ -25,8 +25,10 @@ export function AboutPage() {
         imagePosition='left'
         imageUrl={aWordChairmanContent.imageUrl}
         imageAlt={aWordChairmanContent.imageAlt}
+        author={aWordChairmanContent.author}
+        authorTitle={aWordChairmanContent.authorTitle}
       />
-      <TwoColumnTextSection
+      <TwoRowTextSection
         title={aboutChairmanPageContent.title}
         content={aboutChairmanPageContent.content}
         spacing={aboutChairmanPageContent.spacing}

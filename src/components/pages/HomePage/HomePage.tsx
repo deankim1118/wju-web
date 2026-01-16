@@ -3,7 +3,7 @@ import { CallToAction } from '@/components/CallToAction';
 import { Hero } from '@/components/Hero';
 import { InformationResourcesSection } from '@/components/InformationResourcesSection';
 import { TextWithImageSection } from '@/components/TextWithImageSection';
-import { TwoColumnTextSection } from '@/components/TwoColumnTextSection';
+import { TwoColumnTextSection } from '@/components/TwoTextSection';
 import {
   academicsContent,
   callToActionContent,
