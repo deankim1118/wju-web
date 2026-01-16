@@ -17,7 +17,7 @@ export function CallToAction({
 }: CallToActionProps) {
   return (
     <section className='bg-primary text-primary-foreground py-8'>
-      <div className='container mx-auto px-6 max-w-[1024px]'>
+      <div className='container mx-auto px-6 lg:px-20 xl:px-0 max-w-[1024px]'>
         <div className='flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8'>
           <h2 className='text-primary-foreground font-bold'>{title}</h2>
 

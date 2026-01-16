@@ -1,5 +1,5 @@
-import { HeroButton } from '../buttons/HeroButton';
 import type { HeroSlide } from '@/types/hero';
+import { HeroButton } from '../buttons/HeroButton';
 
 type HeroContentProps = {
   slide: HeroSlide;
@@ -21,7 +21,7 @@ export function HeroContent({ slide }: HeroContentProps) {
   return (
     <div className='relative z-10 text-center animate-in fade-in duration-700 md:py-5 max-h-full overflow-y-auto'>
       {(hasTitle || hasSubtitle) && (
-        <h1 className='hero-title text-white mb-7 md:mb-4 px-4 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] max-w-5xl'>
+        <h1 className='hero-title text-white mb-10 md:mb-10 px-4  max-w-5xl'>
           {hasTitle && (
             <span className='block text-balance'>{slide.title}</span>
           )}
