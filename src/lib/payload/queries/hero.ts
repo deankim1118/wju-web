@@ -3,38 +3,46 @@
  *
  * Payload CMS의 Hero 글로벌 데이터를 가져옵니다.
  * depth 옵션을 활용하여 관계된 이미지 데이터를 한 번에 가져옵니다.
+ *
+ * 🚀 Performance: unstable_cache를 사용한 On-demand Revalidation 전략
+ * - 캐시는 영구 보관되며, Payload Admin에서 데이터 수정 시에만 갱신됩니다.
+ * - Cache Tag: 'hero-global'을 사용하여 선택적 무효화가 가능합니다.
  */
 
 import { getPayloadClient } from '../payloadClient';
+import { getCachedData } from './cache-utils';
 
 type HeroQueryOptions = {
   depth?: number;
   draft?: boolean;
 };
 
-export async function getHeroData(options: HeroQueryOptions = {}) {
-  // depth: 1이면 slides 배열 안의 image 객체까지 자동으로 population 됩니다.
-  // 혹시 중첩이 깊다면 2로 설정하세요.
-  const { depth = 1, draft = true } = options;
+/**
+ * 내부 페칭 함수 (캐싱되지 않은 원본)
+ * 이 함수가 호출되면 = 캐시 MISS (DB 조회 발생)
+ */
+async function fetchHeroData(options: HeroQueryOptions = {}) {
+  const { depth = 1, draft = false } = options;
+  const startTime = Date.now();
 
   try {
-    // 공식적인 방법으로 Payload 인스턴스 가져오기
+    console.log('🔴 [Hero] DB 조회 중...');
     const payload = await getPayloadClient();
 
-    // [핵심] findGlobal 한 번 호출로 끝냅니다.
-    // Payload가 알아서 slides 안의 image id를 조회해서 객체로 바꿔줍니다.
-    // draft: true로 설정하여 draft 데이터도 가져올 수 있도록 함
     const heroData = await payload.findGlobal({
       slug: 'hero',
       depth,
       draft,
     });
 
+    const duration = Date.now() - startTime;
+
     if (!heroData) {
-      console.warn('Hero global data not found.');
+      console.warn('[Hero] Global data not found.');
       return null;
     }
 
+    console.log(`🟢 [Hero] DB 조회 완료 (${duration}ms)`);
     return heroData;
   } catch (error) {
     console.error('[Hero Fetch Error]', error);
@@ -43,4 +51,31 @@ export async function getHeroData(options: HeroQueryOptions = {}) {
     }
     return null;
   }
+}
+
+/**
+ * 캐싱된 Hero 데이터 페칭 함수
+ *
+ * @param options - depth, draft 옵션
+ * @returns Hero 글로벌 데이터
+ *
+ * 🔍 테스트:
+ * - 첫 호출: fetchHeroData 실행 (캐시 MISS) → DB 조회
+ * - 이후 호출: 캐시에서 즉시 반환 (캐시 HIT) → DB 조회 없음
+ *
+ * ✅ 개선: depth나 draft가 바뀌어도 각각 별도의 캐시로 관리됨
+ */
+export async function getHeroData(options: HeroQueryOptions = {}) {
+  const { depth = 1, draft = false } = options;
+
+  return getCachedData(
+    fetchHeroData,
+    depth,
+    draft,
+    {
+      tag: 'hero-global',
+      slug: 'hero',
+    },
+    '🟢 [Hero]',
+  );
 }
