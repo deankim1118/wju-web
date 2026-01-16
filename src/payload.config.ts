@@ -6,6 +6,8 @@ import { buildConfig } from 'payload';
 import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 import { MediaPayload } from './payload-components/collections/MediaPayload';
+import { UsersPayload } from './payload-components/collections/UsersPayload';
+import { FooterPayload } from './payload-components/globals/FooterPayload';
 import { HeroPayload } from './payload-components/globals/HeroPayload';
 
 const filename = fileURLToPath(import.meta.url);
@@ -15,15 +17,8 @@ export default buildConfig({
   admin: {
     user: 'users',
   },
-  collections: [
-    {
-      slug: 'users',
-      auth: true,
-      fields: [],
-    },
-    MediaPayload,
-  ],
-  globals: [HeroPayload],
+  collections: [UsersPayload, MediaPayload],
+  globals: [HeroPayload, FooterPayload],
 
   // ✅ 공식 문서 기반의 최신 S3 스토리지 설정
   plugins: [
