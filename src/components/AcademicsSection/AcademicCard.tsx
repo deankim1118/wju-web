@@ -21,7 +21,7 @@ export function AcademicCard({
   linkHref,
 }: AcademicCardProps) {
   return (
-    <Link href={linkHref} className='block group'>
+    <Link href={linkHref} className='block group h-full'>
       <Card className='flex flex-col w-full h-full overflow-hidden border-none rounded-none pt-0 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]'>
         {/* Image */}
         <div className='relative w-full aspect-4/3 bg-muted overflow-hidden'>

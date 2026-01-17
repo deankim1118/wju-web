@@ -1,3 +1,6 @@
+'use client';
+
+import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
 import { SectionHeader } from '../layout/SectionHeader';
 import { AcademicCard } from './AcademicCard';
 
@@ -24,19 +27,28 @@ export function AcademicsSection({
     <section className={`bg-foreground section-padding-bottom ${className}`}>
       <div className='container mx-auto px-6 max-w-[1440px]'>
         {/* Section Header */}
-        <SectionHeader title={title} />
+        <ScrollReveal variant='fade-up' delay={0} duration={1.5}>
+          <SectionHeader title={title} />
+        </ScrollReveal>
 
         {/* Cards Grid */}
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
-          {programs.map((program) => (
-            <AcademicCard
+          {programs.map((program, index) => (
+            <ScrollReveal
               key={program.title}
-              title={program.title}
-              description={program.description}
-              imageUrl={program.imageUrl}
-              imageAlt={program.imageAlt}
-              linkHref={program.linkHref}
-            />
+              variant='zoom-in'
+              delay={index * 0.3}
+              duration={0.8}
+              className='h-full'
+            >
+              <AcademicCard
+                title={program.title}
+                description={program.description}
+                imageUrl={program.imageUrl}
+                imageAlt={program.imageAlt}
+                linkHref={program.linkHref}
+              />
+            </ScrollReveal>
           ))}
         </div>
       </div>

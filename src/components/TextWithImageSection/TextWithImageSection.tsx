@@ -1,3 +1,6 @@
+'use client';
+
+import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
 import Image from 'next/image';
 
 type TextWithImageSectionProps = {
@@ -38,24 +41,32 @@ export function TextWithImageSection({
   className = '',
 }: TextWithImageSectionProps) {
   const textContent = (
-    <div className='flex-1 flex flex-col justify-start items-start gap-6 md:gap-10'>
-      {/* Title with Optional Decorative Line */}
-      <div className='flex flex-col justify-start items-start gap-3 w-full'>
-        <h1 className={`${titleColor} font-light`}>{title}</h1>
-        {showAccentLine && <div className={`w-24 h-1.5 ${accentColor}`} />}
-        {subtitle && <p className=' italic font-serif'>{subtitle}</p>}
+    
+      <div className='flex-1 flex flex-col justify-start items-start gap-6 md:gap-10'>
+        {/* Title with Optional Decorative Line */}
+        <ScrollReveal variant="fade-up" duration={1.4}>
+        <div className='flex flex-col justify-start items-start gap-3 w-full'>
+          <h1 className={`${titleColor} font-light`}>{title}</h1>
+          {showAccentLine && <div className={`w-24 h-1.5 ${accentColor}`} />}
+          {subtitle && <p className=' italic font-serif'>{subtitle}</p>}
+        </div>
+        </ScrollReveal>
+        {/* Description */}
+        <ScrollReveal variant="fade-up" delay={0.2} duration={0.7}>
+        <p className={`whitespace-pre-line ${textColor}`}>{description}</p>
+        </ScrollReveal>
+        {/* Author */}
+        {author && (
+          <ScrollReveal variant="fade-up" delay={0.3} duration={0.7}>
+          <div className='flex flex-col font-serif italic w-full justify-start items-end '>
+            <p className={`${authorColor}`}>{author}</p>
+            <p className={`${authorColor}`}>{authorTitle}</p>
+          </div>
+          </ScrollReveal>
+        )}
+       
       </div>
 
-      {/* Description */}
-      <p className={`whitespace-pre-line ${textColor}`}>{description}</p>
-      {/* Author */}
-      {author && (
-        <div className='flex flex-col font-serif italic w-full justify-start items-end '>
-          <p className={`${authorColor}`}>{author}</p>
-          <p className={`${authorColor}`}>{authorTitle}</p>
-        </div>
-      )}
-    </div>
   );
 
   const imageContent = (
@@ -64,16 +75,23 @@ export function TextWithImageSection({
         hideImageMobile ? 'hidden lg:block' : ''
       }`}
     >
-      <div className='relative w-full aspect-4/3 bg-muted overflow-hidden'>
-        <Image
-          src={imageUrl}
-          alt={imageAlt}
-          fill
-          className='object-cover'
-          sizes='(max-width: 1024px) 100vw, 600px'
-          priority={false}
-        />
-      </div>
+      <ScrollReveal
+        variant={imagePosition === 'left' ? 'fade-left' : 'fade-right'}
+        delay={0}
+        duration={1.4}
+        className='flex-1 w-full'
+      >
+        <div className='relative w-full aspect-4/3 bg-muted overflow-hidden'>
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            fill
+            className='object-cover'
+            sizes='(max-width: 1024px) 100vw, 600px'
+            priority={false}
+          />
+        </div>
+      </ScrollReveal>
     </div>
   );
 

@@ -1,3 +1,6 @@
+'use client';
+
+import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
 import Link from 'next/link';
 
 type LinkConfig = {
@@ -30,7 +33,7 @@ export function TwoColumnTextSection({
   className = '',
 }: TwoColumnTextSectionProps) {
   const spacingMap = {
-    tight: 'py-8',
+    tight: 'py-12',
     normal: 'section-padding-sm',
     loose: 'section-padding-lg',
   };
@@ -42,29 +45,33 @@ export function TwoColumnTextSection({
       <div className='container mx-auto px-6 max-w-7xl'>
         <div className='flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-12'>
           {/* Title Section */}
-          <div className='flex-1'>
-            <h1 className={titleColor}>{title}</h1>
-          </div>
+          <ScrollReveal variant='fade-up' delay={0} duration={0.7}>
+            <div className='flex-1'>
+              <h1 className={titleColor}>{title}</h1>
+            </div>
+          </ScrollReveal>
 
           {/* Content Section */}
-          <div className='flex-1 flex flex-col justify-start items-start gap-4 lg:gap-6'>
-            <p className={`whitespace-pre-line ${textColor}`}>{content}</p>
+          <ScrollReveal variant='fade-up' delay={0.3} duration={0.7} className='flex-1 w-full'>
+            <div className='flex-1 flex flex-col justify-start items-start gap-4 lg:gap-6'>
+              <p className={`whitespace-pre-line ${textColor}`}>{content}</p>
 
-            {/* Optional Link */}
-            {link && (
-              <Link
-                href={link.href}
-                className={`group inline-flex items-center gap-2 ${linkColor} text-sm md:text-base font-semibold uppercase tracking-wider transition-all hover:gap-3 hover:opacity-80`}
-              >
-                {link.text}
-                {link.showArrow !== false && (
-                  <span className='transition-transform group-hover:translate-x-1'>
-                    &gt;
-                  </span>
-                )}
-              </Link>
-            )}
-          </div>
+              {/* Optional Link */}
+              {link && (
+                <Link
+                  href={link.href}
+                  className={`group inline-flex items-center gap-2 ${linkColor} text-sm md:text-base font-semibold uppercase tracking-wider transition-all hover:gap-3 hover:opacity-80`}
+                >
+                  {link.text}
+                  {link.showArrow !== false && (
+                    <span className='transition-transform group-hover:translate-x-1'>
+                      &gt;
+                    </span>
+                  )}
+                </Link>
+              )}
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
