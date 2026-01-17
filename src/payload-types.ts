@@ -90,10 +90,12 @@ export interface Config {
   globals: {
     hero: Hero;
     footer: Footer;
+    'chairman-message': ChairmanMessage;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
+    'chairman-message': ChairmanMessageSelect<false> | ChairmanMessageSelect<true>;
   };
   locale: null;
   user: User & {
@@ -424,6 +426,41 @@ export interface Footer {
   createdAt?: string | null;
 }
 /**
+ * /about - Chairman's Message 섹션에 표시될 내용을 관리합니다
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chairman-message".
+ */
+export interface ChairmanMessage {
+  id: number;
+  /**
+   * 섹션의 메인 제목입니다
+   */
+  title: string;
+  /**
+   * 제목 아래에 표시될 소제목입니다
+   */
+  subtitle?: string | null;
+  /**
+   * 본문 내용을 입력하세요
+   */
+  description?: string | null;
+  /**
+   * 섹션에 표시될 이미지를 업로드하세요
+   */
+  image?: (number | null) | Media;
+  /**
+   * 작성자 이름을 입력하세요 (예: Kwangsung Park, Ph.D.)
+   */
+  author?: string | null;
+  /**
+   * 작성자의 직책을 입력하세요 (예: Chairman of the Board)
+   */
+  authorTitle?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
@@ -468,6 +505,21 @@ export interface FooterSelect<T extends boolean = true> {
         email?: T;
         address?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "chairman-message_select".
+ */
+export interface ChairmanMessageSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  description?: T;
+  image?: T;
+  author?: T;
+  authorTitle?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
