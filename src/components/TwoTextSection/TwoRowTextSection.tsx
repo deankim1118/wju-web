@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ScrollReveal } from '../scroll-animation/scroll-reveal';
 
 type LinkConfig = {
   text: string;
@@ -47,11 +48,13 @@ export function TwoRowTextSection({
       <div className='container mx-auto px-6 max-w-7xl'>
         <div className='flex flex-col justify-between items-start gap-8 md:gap-12'>
           {/* Title Section */}
+          <ScrollReveal variant='fade-up' delay={0} duration={0.7}>
           <div className='flex-1 italic'>
             <h1 className={titleColor}>{title}</h1>
           </div>
-
+          </ScrollReveal>
           {/* Content Section */}
+          <ScrollReveal variant='fade-up' delay={0.3} duration={0.7}>
           <div className=' flex flex-col md:flex-row justify-between items-end md:items-start gap-6 w-full'>
             <div className='flex-1 flex flex-col justify-start items-start gap-4 lg:gap-6 w-full'>
               <p
@@ -75,7 +78,7 @@ export function TwoRowTextSection({
                 </Link>
               )}
             </div>
-
+           
             {/* 오른쪽 이미지 영역 (Optional) */}
             {imageUrl && (
               <div className='w-2/5 md:w-2/8 h-auto z-10'>
@@ -90,6 +93,7 @@ export function TwoRowTextSection({
               </div>
             )}
           </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

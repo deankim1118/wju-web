@@ -1,9 +1,5 @@
 'use client';
 
-import { HeroBackground } from './components/HeroBackground';
-import { HeroContent } from './components/HeroContent';
-import { HeroOverlay } from './components/HeroOverlay';
-import { HeroPagination } from './components/HeroPagination';
 import {
   Carousel,
   CarouselContent,
@@ -14,6 +10,10 @@ import { getHeroImageAlt } from '@/lib/utils/hero';
 import type { HeroProps, HeroSlide } from '@/types/hero';
 import Autoplay from 'embla-carousel-autoplay';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { HeroBackground } from './components/HeroBackground';
+import { HeroContent } from './components/HeroContent';
+import { HeroOverlay } from './components/HeroOverlay';
+import { HeroPagination } from './components/HeroPagination';
 
 /**
  * 기본 슬라이드 (Payload CMS에서 슬라이드 데이터가 없을 때 사용)

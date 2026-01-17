@@ -8,7 +8,6 @@ import {
   academicsContent,
   callToActionContent,
   facultyMentorshipContent,
-  informationResourcesContent,
   whyWjuContent,
 } from '@/config/home-content';
 import { getHeroData } from '@/lib/payload/queries';
@@ -53,10 +52,7 @@ export async function HomePage() {
         title={academicsContent.title}
         programs={academicsContent.programs}
       />
-      <InformationResourcesSection
-        title={informationResourcesContent.title}
-        resources={informationResourcesContent.resources}
-      />
+      <InformationResourcesSection />
     </>
   );
 }
