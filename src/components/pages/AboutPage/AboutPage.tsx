@@ -1,13 +1,25 @@
 import { PageHero } from '@/components/PageHero';
+import { getChairmanMessageData } from '@/lib/payload/queries';
 import {
   aboutChairmanPageContent,
-  aWordChairmanContent,
   chairmanBiographyContent,
 } from '../../../config/about-content';
 import { TextWithImageSection } from '../../TextWithImageSection';
 import { TwoRowTextSection } from '../../TwoTextSection';
 
-export function AboutPage() {
+export async function AboutPage() {
+  // Payload에서 Chairman's Message 데이터 가져오기
+  const chairmanMessageData = await getChairmanMessageData({ depth: 1 });
+
+  // 이미지 URL 및 alt 추출 (depth=1이므로 Media 객체가 풀려서 옴)
+  const image =
+    chairmanMessageData?.image && typeof chairmanMessageData.image === 'object'
+      ? chairmanMessageData.image
+      : null;
+
+  const imageUrl = image?.url || '/wju-hero-img.png';
+  const imageAlt = image?.alt || "Washington Jabez University Chairman's Message";
+
   return (
     <>
       <PageHero
@@ -18,16 +30,34 @@ export function AboutPage() {
       />
       {/* 추가 섹션들은 여기에 추가됩니다 */}
 
-      <TextWithImageSection
-        title={aWordChairmanContent.title}
-        subtitle={aWordChairmanContent.subtitle}
-        description={aWordChairmanContent.description}
-        imagePosition='left'
-        imageUrl={aWordChairmanContent.imageUrl}
-        imageAlt={aWordChairmanContent.imageAlt}
-        author={aWordChairmanContent.author}
-        authorTitle={aWordChairmanContent.authorTitle}
-      />
+      {chairmanMessageData && (
+        <TextWithImageSection
+          title={chairmanMessageData.title || ''}
+          subtitle={
+            typeof chairmanMessageData.subtitle === 'string'
+              ? chairmanMessageData.subtitle
+              : undefined
+          }
+          description={
+            typeof chairmanMessageData.description === 'string'
+              ? chairmanMessageData.description
+              : ''
+          }
+          imagePosition='left'
+          imageUrl={imageUrl}
+          imageAlt={imageAlt}
+          author={
+            typeof chairmanMessageData.author === 'string'
+              ? chairmanMessageData.author
+              : undefined
+          }
+          authorTitle={
+            typeof chairmanMessageData.authorTitle === 'string'
+              ? chairmanMessageData.authorTitle
+              : undefined
+          }
+        />
+      )}
       <TwoRowTextSection
         title={aboutChairmanPageContent.title}
         content={aboutChairmanPageContent.content}
