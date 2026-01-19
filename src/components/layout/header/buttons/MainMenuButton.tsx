@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
+import { HEADER_MENU_STYLES } from '../constants';
 
 type MainMenuButtonProps = {
   children: ReactNode;
@@ -17,7 +18,7 @@ export function MainMenuButton({
       variant='ghost'
       size='sm'
       className={cn(
-        'btn-sm text-black sm:text-xs lg:text-[13px] xl:text-sm font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto p-0',
+        HEADER_MENU_STYLES.desktopMainButton,
         className,
       )}
       {...props}

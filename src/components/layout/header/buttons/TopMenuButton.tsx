@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
+import { HEADER_MENU_STYLES } from '../constants';
 
 type TopMenuButtonProps = {
   children: ReactNode;
@@ -17,7 +18,7 @@ export function TopMenuButton({
       variant='ghost'
       size='sm'
       className={cn(
-        'btn-sm text-white sm:text-xs lg:text-[12px] xl:text-sm hover:text-white hover:bg-transparent hover:underline rounded-none h-auto p-0',
+        HEADER_MENU_STYLES.topMenuButton,
         className,
       )}
       {...props}

@@ -28,6 +28,11 @@ export type MenuFeature = {
   href: string;
 };
 
+export type AcademicProgramGroup = {
+  category: 'Undergraduate' | 'Graduate' | 'Doctoral';
+  items: NavLink[];
+};
+
 // Top Bar Navigation (Quick access links)
 export const topBarNavigation: NavLink[] = [
   { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
@@ -134,6 +139,78 @@ export const mainNavigation: NavItemWithSubmenu[] = [
   {
     label: 'Church Music',
     href: ROUTES.CHURCH_MUSIC,
+  },
+];
+
+/**
+ * Academics Mega Menu (Degree-level program groups)
+ * Single source of truth for the Academics mega menu UI.
+ */
+export const academicProgramGroups: AcademicProgramGroup[] = [
+  {
+    category: 'Undergraduate',
+    items: [
+      {
+        label: 'Bachelor of Theology (ThB)',
+        href: ROUTES.ACADEMICS.THB,
+        description: 'Biblical and theological foundation for ministry.',
+      },
+      {
+        label: 'Bachelor of Christian & Counseling (BCC)',
+        href: ROUTES.ACADEMICS.BCC,
+        description: 'Christian formation with counseling fundamentals.',
+      },
+      {
+        label: 'Bachelor of Comparative Religious Studies (BCRS)',
+        href: ROUTES.ACADEMICS.BCRS,
+        description: 'Study world religions through a biblical lens.',
+      },
+    ],
+  },
+  {
+    category: 'Graduate',
+    items: [
+      {
+        label: 'Master of Divinity (MDiv)',
+        href: ROUTES.ACADEMICS.MDIV,
+        description: 'Professional preparation for pastoral ministry.',
+      },
+      {
+        label: 'Master of Theology (ThM)',
+        href: ROUTES.ACADEMICS.THM,
+        description: 'Advanced theological study and research.',
+      },
+      {
+        label: 'Master of Christian Counseling (MCC)',
+        href: ROUTES.ACADEMICS.MCC,
+        description: 'Counseling training grounded in Scripture.',
+      },
+      {
+        label: 'Master of Christian Education (MCE)',
+        href: ROUTES.ACADEMICS.MCE,
+        description: 'Equip teachers and leaders for Christian education.',
+      },
+      {
+        label: 'Master of Comparative Religious Studies (MCRS)',
+        href: ROUTES.ACADEMICS.MCRS,
+        description: 'Graduate-level study of religions and apologetics.',
+      },
+      {
+        label: 'Master of Chaplaincy (MChap)',
+        href: ROUTES.ACADEMICS.MCHAP,
+        description: 'Ministry preparation for institutional chaplaincy.',
+      },
+    ],
+  },
+  {
+    category: 'Doctoral',
+    items: [
+      {
+        label: 'Doctor of Ministry (DMin)',
+        href: ROUTES.ACADEMICS.DMIN,
+        description: 'Advanced professional ministry leadership.',
+      },
+    ],
   },
 ];
 
