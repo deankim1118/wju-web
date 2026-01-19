@@ -63,8 +63,8 @@ export function LinkCardsCarouselSection({
     bottomClassName: 'h-3/5 bg-primary',
   },
   carouselClassName = 'relative',
-  carouselContentClassName = '-ml-4 xl:items-center xl:justify-center xl:gap-2',
-  carouselItemClassName = 'pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 rounded-none aspect-3/4 max-w-[330px] md:max-w-[380px] max-h-[440px] md:max-h-[500px]',
+  carouselContentClassName = '-ml-4',
+  carouselItemClassName = 'pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 rounded-none',
 }: LinkCardsCarouselSectionProps) {
   const pathname = usePathname();
   const currentPath = normalizePath(pathname ?? '');
@@ -75,8 +75,14 @@ export function LinkCardsCarouselSection({
 
   if (cards.length === 0) return null;
 
+  // ✅ 핵심 로직 추가
+  // 아이템이 3개 이하라면 XL 화면(1280px~)에서는 한눈에 다 보입니다.
+  // 따라서 그때만 버튼을 숨기고, 4개 이상이면 버튼을 보여줍니다.
+  const isStaticOnXL = cards.length <= 3;
+
   return (
     <section className={cn('relative overflow-hidden', className)}>
+      <div className='absolute top-0 h-1.5 w-full bg-secondary' />
       {/* Background split */}
       <div aria-hidden className='absolute inset-0'>
         <div className={backgroundSplit.topClassName} />
@@ -85,7 +91,7 @@ export function LinkCardsCarouselSection({
 
       <div className='relative z-10 mx-auto max-w-[1440px] px-6 section-padding-lg'>
         {/* Accent Line (Left) */}
-        <div className='absolute left-0 top-0 h-1.5 w-full max-w-[472px] bg-secondary' />
+        
 
         {/* Title */}
         <div className='flex flex-col items-center gap-6'>
@@ -101,7 +107,13 @@ export function LinkCardsCarouselSection({
             opts={{ align: 'start', loop: cards.length > 2 }}
             className={carouselClassName}
           >
-            <CarouselContent className={carouselContentClassName}>
+            <CarouselContent 
+              className={cn(
+                carouselContentClassName, // 기본 -ml-4
+                // 3개 이하면: 중앙 정렬 + 간격 살짝 조정
+                isStaticOnXL ? 'xl:justify-center xl:gap-2' : '' 
+              )}
+            >
               {cards.map((card) => (
                 <CarouselItem key={card.href} className={carouselItemClassName}>
                   <Link
@@ -176,19 +188,23 @@ export function LinkCardsCarouselSection({
             <CarouselPrevious
               variant='ghost'
               className={cn(
-                'left-3 md:left-4',
+                'left-3 lg:left-2 md:size-10',
                 'bg-white/10 text-white border border-white/20 backdrop-blur',
                 'hover:bg-white/15',
                 'disabled:hidden',
+                // 👇 아이템이 3개 이하면 XL에서 숨기고, 아니면 보이게 함
+                isStaticOnXL ? 'xl:hidden' : ''
               )}
             />
             <CarouselNext
               variant='ghost'
               className={cn(
-                'right-3 md:right-4',
+                'right-3 lg:right-2 md:size-10',
                 'bg-white/10 text-white border border-white/20 backdrop-blur',
                 'hover:bg-white/15',
                 'disabled:hidden',
+                // 👇 아이템이 3개 이하면 XL에서 숨기고, 아니면 보이게 함
+                isStaticOnXL ? 'xl:hidden' : ''
               )}
             />
           </Carousel>

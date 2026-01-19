@@ -24,9 +24,9 @@ export function SectionHeader({
   return (
     <div className={`relative ${padding} ${className}`}>
       {/* Accent Line at Top */}
-      {showAccentLine && (
+      {/* {showAccentLine && (
         <div className='absolute left-0 top-0 h-1.5 w-full max-w-md bg-secondary' />
-      )}
+      )} */}
 
       {/* Title and Divider */}
       <div

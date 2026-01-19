@@ -24,7 +24,11 @@ export function AcademicsSection({
   className = '',
 }: AcademicsSectionProps) {
   return (
-    <section className={`bg-foreground section-padding-bottom ${className}`}>
+    <section className={`relative bg-foreground section-padding-bottom ${className}`}>
+       {/* Accent Line at Top */}
+       
+        <div className='absolute left-0 top-0 h-1.5 w-full max-w-2/3 md:max-w-2/5  bg-secondary' />
+   
       <div className='container mx-auto px-6 max-w-[1440px]'>
         {/* Section Header */}
         <ScrollReveal variant='fade-up' delay={0} duration={1.5}>

@@ -4,7 +4,7 @@ import { ABOUT_FOUNDATION_CARDS } from '@/config/about-foundation';
 import { getChairmanMessageData } from '@/lib/payload/queries';
 import {
   aboutChairmanPageContent,
-  chairmanBiographyContent,
+  prayerContent,
 } from '../../../config/about-content';
 import { TextWithImageSection } from '../../TextWithImageSection';
 import { TwoRowTextSection } from '../../TwoTextSection';
@@ -28,7 +28,7 @@ export async function AboutPage() {
         title='Washington Jabez University'
         subtitle='Welcome'
         imageUrl='/wju-hero-img.png'
-        imageAlt='Winchester Jung University campus'
+        imageAlt='Washington Jabez University campus'
       />
       {/* 추가 섹션들은 여기에 추가됩니다 */}
 
@@ -69,11 +69,11 @@ export async function AboutPage() {
         titleColor='text-white'
       />
       <TextWithImageSection
-        title={chairmanBiographyContent.title}
-        subtitle={chairmanBiographyContent.subtitle}
-        description={chairmanBiographyContent.description}
-        imageUrl={chairmanBiographyContent.imageUrl}
-        imageAlt={chairmanBiographyContent.imageAlt}
+        title={prayerContent.title}
+        subtitle={prayerContent.subtitle}
+        description={prayerContent.description}
+        imageUrl={prayerContent.imageUrl}
+        imageAlt={prayerContent.imageAlt}
         imagePosition='right'
       />
       <LinkCardsCarouselSection

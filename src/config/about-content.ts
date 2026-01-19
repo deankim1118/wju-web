@@ -5,7 +5,9 @@ export type TwoColumnTextContent = {
   content: string;
   spacing: 'tight' | 'normal' | 'loose';
 };
-
+/**
+ * About / A word from Chairman
+ */
 export const aboutChairmanPageContent: TwoColumnTextContent = {
   content: 'Equipping Leaders for Faithful Ministry',
   title: `"If God has called you here, you are in the right place. We are ready to walk this path with you."`,
@@ -30,7 +32,7 @@ With this vision in mind, WJU focuses on three core objectives: missionary leade
 /**
  * Chairman’s Biography
  */
-export const chairmanBiographyContent: TextWithImageContent = {
+export const prayerContent: TextWithImageContent = {
   title: 'A Prayer for the Harvest',
   subtitle:
     'We pray that God raises up powerful leaders to change the world, and we pledge our utmost support to help you fulfill your mission in Christ.',
@@ -40,3 +42,23 @@ If God has providentially directed you to apply to Washington Jabez University, 
   imageUrl: '/wju-hero-img.png',
   imageAlt: 'Washington Jabez University Campus',
 };
+
+/**
+ * About / Mission & Faith
+ */
+
+export const aboutOurVisionContent: TwoColumnTextContent = {
+  title: `Our Vision`,
+  content: 'We envision a world where our graduates lead with biblical wisdom and Christ-like character, transforming their communities for the glory of God.',
+  spacing: 'tight',
+};
+
+export const aboutOurMissionContent: TextWithImageContent = {
+  title: `Our Mission`,
+  description: `Our mission is to educate students in the fullness of life in Christ, developing them intellectually through rigorous academics that foster curiosity and a passion for service. We offer bachelor's and master's programs in fields including Theology and Divinity.
+
+We endeavor to develop our students spiritually, personally, and professionally to understand and live out the truth of the Gospel. Utilizing modern teaching methodologies, we prepare effective Christian leaders for our society. Beyond academics, our students are encouraged to become well-rounded individuals who possess moral character, hold ethical values, and take responsibility in all things.`,
+imageUrl: '/wju-hero-img.png',
+imageAlt: 'Washington Jabez University Campus',
+};
+

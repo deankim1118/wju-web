@@ -20,9 +20,9 @@ export const ROUTES = {
   // About Section
   ABOUT: {
     ROOT: '/about',
-    MISSION_FAITH: '/about/statement-of-faith',
+    MISSION_FAITH: '/about/mission-faith',
     FACULTY_STAFF: '/about/faculty-staff',
-    INTEGRITY: '/about/mission-vision',
+    INTEGRITY: '/about/integrity',
   },
 
   // Academics Section

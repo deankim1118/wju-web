@@ -42,7 +42,7 @@ export function TwoColumnTextSection({
     <section
       className={`${backgroundColor} ${spacingMap[spacing]} ${className}`}
     >
-      <div className='container mx-auto px-6 max-w-7xl'>
+      <div className='container mx-auto px-6 max-w-[1024px]'>
         <div className='flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-12'>
           {/* Title Section */}
           <ScrollReveal variant='fade-up' delay={0} duration={0.7}>
