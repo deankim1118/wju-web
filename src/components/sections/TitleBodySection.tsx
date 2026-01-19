@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 
 type TitleBodySectionProps = {
   title: string;
+  subtitle?: string;
   body: React.ReactNode;
   backgroundColor?: string;
   textColor?: string;
@@ -15,6 +16,7 @@ type TitleBodySectionProps = {
 
 export function TitleBodySection({
   title,
+  subtitle,
   body,
   backgroundColor='bg-primary',
   textColor='text-white',
@@ -30,10 +32,13 @@ export function TitleBodySection({
           <ScrollReveal variant='fade-up' delay={0} duration={0.7}>
             <h1 className={cn('font-serif uppercase font-medium leading-[51px] text-center', textColor)}>
               {title}
-            </h1>
+            </h1>       
           </ScrollReveal>
+          {subtitle && <ScrollReveal variant='fade-up' delay={0.1} duration={0.7} className='w-full'>
+            <div className={cn('w-full whitespace-pre-line', textColor)}>{subtitle}</div>
+          </ScrollReveal>}
 
-          <ScrollReveal variant='fade-up' delay={0.1} duration={0.7} className='w-full'>
+          <ScrollReveal variant='fade-up' delay={0.2} duration={0.7} className='w-full'>
             <div className={cn('w-full', textColor)}>{body}</div>
           </ScrollReveal>
         </div>

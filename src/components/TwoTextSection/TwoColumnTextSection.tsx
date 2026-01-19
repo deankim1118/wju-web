@@ -42,17 +42,17 @@ export function TwoColumnTextSection({
     <section
       className={`${backgroundColor} ${spacingMap[spacing]} ${className}`}
     >
-      <div className='container mx-auto px-6 max-w-[1024px]'>
+      <div className='container mx-auto px-6 max-w-6xl'>
         <div className='flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-12'>
           {/* Title Section */}
-          <ScrollReveal variant='fade-up' delay={0} duration={0.7}>
-            <div className='flex-1'>
+          <ScrollReveal variant='fade-up' delay={0.3} duration={0.7}>
+            <div className='flex-1 lg:max-w-md'>
               <h1 className={titleColor}>{title}</h1>
             </div>
           </ScrollReveal>
 
           {/* Content Section */}
-          <ScrollReveal variant='fade-up' delay={0.3} duration={0.7} className='flex-1 w-full'>
+          <ScrollReveal variant='fade-up' delay={0.5} duration={0.7} className='flex-1 w-full'>
             <div className='flex-1 flex flex-col justify-start items-start gap-4 lg:gap-6'>
               <p className={`whitespace-pre-line ${textColor}`}>{content}</p>
 

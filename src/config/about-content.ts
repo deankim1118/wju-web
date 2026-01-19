@@ -62,3 +62,13 @@ imageUrl: '/wju-hero-img.png',
 imageAlt: 'Washington Jabez University Campus',
 };
 
+
+/**
+ * About /  Institutional Integrity
+ */
+
+export const aboutIntegritynContent: TwoColumnTextContent = {
+  title: `Our Commitment to Integrity`,
+  content: `Washington Jabez University is dedicated to the highest standards of ethics and accountability in all operations. This Code of Conduct reflects our commitment to honoring Christ through responsible stewardship and transparent practices. It serves as a guide for our directors, faculty, and staff to ensure our community is built on a foundation of trust.`,
+  spacing: 'tight',
+};

@@ -1,47 +1,47 @@
 import { PageHero } from '@/components/PageHero';
 import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
 import { TitleBodySection } from '@/components/sections/TitleBodySection';
-import { TextWithImageSection } from '@/components/TextWithImageSection';
-import { TwoColumnTextSection } from '@/components/TwoTextSection';
+import { TwoRowTextSection } from '@/components/TwoTextSection';
 import {
-  aboutOurMissionContent,
-  aboutOurVisionContent,
+  aboutIntegritynContent
 } from '@/config/about-content';
 import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-foundation';
-import { STATEMENT_OF_FAITH_CONTENT } from '@/config/statement-of-faith';
+import { INTEGRITY_CONTENT } from '@/config/integrity-content';
 
-export async function MissionFaithPage() {
+
+export async function IntegrityPage() {
   return (
     <>
       <PageHero
-        title='Mission & Faith'
+        title='Institutional Integrity'
         subtitle='Welcome'
         imageUrl='/wju-hero-img.png'
         imageAlt='Washington Jabez University campus'
       />
-      <TwoColumnTextSection
-        title={aboutOurVisionContent.title}
-        content={aboutOurVisionContent.content}
-        spacing={aboutOurVisionContent.spacing}
-        backgroundColor='bg-primary'
-        textColor='text-white'
-        titleColor='text-white'
+      <TwoRowTextSection
+        title={aboutIntegritynContent.title}
+        content={aboutIntegritynContent.content}
+        spacing={aboutIntegritynContent.spacing}
+        backgroundColor='bg-foreground'
+        textColor='text-primary'
+        contentTextVariant='body'
+        titleColor='text-secondary'
       />
-      
-        <TextWithImageSection
-          title={aboutOurMissionContent.title}
-          description={aboutOurMissionContent.description}
-          imagePosition='left'
-          imageUrl={aboutOurMissionContent.imageUrl}
-          imageAlt={aboutOurMissionContent.imageAlt}
-
-        />
-
+      {/* <TwoColumnTextSection
+        title={aboutIntegritynContent.title}
+        content={aboutIntegritynContent.content}
+        spacing={aboutIntegritynContent.spacing}
+        backgroundColor='bg-foreground'
+        textColor='text-primary'
+        titleColor='text-secondary'
+      />
+       */}
       <TitleBodySection
-        title={STATEMENT_OF_FAITH_CONTENT.title}
+        title={INTEGRITY_CONTENT.title}
+        subtitle={INTEGRITY_CONTENT.subtitle}
         body={
           <div className='flex flex-col gap-10'>
-            {STATEMENT_OF_FAITH_CONTENT.items.map((item) => (
+            {INTEGRITY_CONTENT.items.map((item) => (
               <div key={item.heading} className='flex flex-col gap-4'>
                 <h3 className='font-serif font-semibold leading-7'>
                   {item.heading}

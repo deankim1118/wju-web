@@ -52,7 +52,7 @@ export function PageHero({
             {subtitle}
           </p>
         )}
-        <h1 className='pl-2 md:pl-5 hero-title-sm text-white mb-4 capitalize text-start'>
+        <h1 className='pl-2 md:pl-5 hero-title-md text-white mb-4 capitalize text-start'>
           {title}
         </h1>
       </div>

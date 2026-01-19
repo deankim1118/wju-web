@@ -211,6 +211,11 @@
     @apply text-5xl md:text-6xl lg:text-7xl font-bold text-center drop-shadow-xl;
   }
 
+  /* Hero Title Medium*/
+  .hero-title-md {
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-semibold text-center drop-shadow-xl;
+  }
+
   /* Hero Title Small*/
   .hero-title-sm {
     @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center drop-shadow-xl;

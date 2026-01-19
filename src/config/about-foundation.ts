@@ -2,7 +2,7 @@ import { ROUTES, type Routes } from './routes';
 
 type AboutHref = Routes['ABOUT'][keyof Routes['ABOUT']];
 
-export type AboutFoundationCard = {
+export type AboutLinkCard = {
   title: string;
   href: AboutHref;
   imageUrl: string;
@@ -15,7 +15,10 @@ export type AboutFoundationCard = {
  * - 라우트/텍스트/이미지는 여기서만 수정하도록 중앙화
  * - 현재 페이지 링크는 컴포넌트에서 자동 제외
  */
-export const ABOUT_FOUNDATION_CARDS: readonly AboutFoundationCard[] = [
+
+export const ABOUT_LINK_CARDS_TITLE = 'Our Indentity';
+
+export const ABOUT_LINK_CARDS: readonly AboutLinkCard[] = [
   {
     title: 'About WJU',
     href: ROUTES.ABOUT.ROOT,
