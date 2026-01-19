@@ -28,7 +28,7 @@ export function CallToAction({
             duration={0.8}
             animateImmediately={true}
           >
-            <h2 className='text-primary-foreground font-bold'>{title}</h2>
+            <h2 className='text-primary-foreground font-serif font-bold'>{title}</h2>
           </ScrollReveal>
 
           <ScrollReveal

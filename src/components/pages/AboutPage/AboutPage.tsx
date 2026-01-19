@@ -1,4 +1,6 @@
 import { PageHero } from '@/components/PageHero';
+import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
+import { ABOUT_FOUNDATION_CARDS } from '@/config/about-foundation';
 import { getChairmanMessageData } from '@/lib/payload/queries';
 import {
   aboutChairmanPageContent,
@@ -73,6 +75,11 @@ export async function AboutPage() {
         imageUrl={chairmanBiographyContent.imageUrl}
         imageAlt={chairmanBiographyContent.imageAlt}
         imagePosition='right'
+      />
+      <LinkCardsCarouselSection
+        title='Our Foundation'
+        items={ABOUT_FOUNDATION_CARDS}
+        shouldExcludeCurrentPath
       />
     </>
   );

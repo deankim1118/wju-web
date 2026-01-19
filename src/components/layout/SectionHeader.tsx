@@ -32,7 +32,7 @@ export function SectionHeader({
       <div
         className={`flex flex-col justify-start gap-2 md:gap-4 ${alignmentClasses[alignment]}`}
       >
-        <h2 className='text-primary uppercase tracking-wider font-sans'>
+        <h2>
           {title}
         </h2>
         {showDivider && <div className='w-24 h-0.5 bg-primary' />}

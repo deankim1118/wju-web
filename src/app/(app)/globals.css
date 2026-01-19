@@ -130,9 +130,12 @@
   }
 
   /* 제목 태그 - Playfair Display 자동 적용 */
-  h1,
+  h1 {
+    @apply font-serif tracking-wide font-light;
+  }
+
   h2 {
-    @apply font-serif font-medium tracking-wide font-light;
+    @apply font-sans text-primary uppercase tracking-wide font-normal;
   }
 
   h3 {
