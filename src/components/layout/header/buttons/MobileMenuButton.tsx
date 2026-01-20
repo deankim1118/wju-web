@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import type { ReactNode } from 'react';
+import { HEADER_MENU_STYLES } from '../constants';
 
 type MobileMenuButtonProps = {
   children: ReactNode;
@@ -14,8 +15,7 @@ export function MobileMenuButton({
   className = '',
   ...props
 }: MobileMenuButtonProps) {
-  const baseClasses =
-    'btn-sm w-full justify-start font-medium hover:text-secondary hover:bg-transparent rounded-none h-auto py-2';
+  const baseClasses = HEADER_MENU_STYLES.mobileMenuButtonBase;
   const variantClasses = variant === 'main' ? 'text-black' : 'text-primary';
 
   return (

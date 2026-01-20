@@ -33,8 +33,8 @@ export function InformationResourcesSection({
             <ScrollReveal
               key={resource.title}
               variant='fade-up'
-              delay={index * 0.3}
-              duration={0.8}
+              delay={index * 0.2}
+              duration={0.5}
             >
               <ResourceCard
                 icon={resource.icon}

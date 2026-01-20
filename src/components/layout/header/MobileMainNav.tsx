@@ -1,18 +1,19 @@
 'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from '@/components/ui/accordion';
-import {
-  actionButtons,
-  mainNavigation,
-  menuFeatures,
-} from '@/config/navigation';
+import { SheetClose } from '@/components/ui/sheet';
+import { actionButtons, mainNavigation, menuFeatures } from '@/config/navigation';
 import Link from 'next/link';
 import { MobileActionButton, MobileMenuButton } from './buttons';
+import { HEADER_MENU_STYLES } from './constants';
+import { MobileAcademicsSubmenu } from './mobile/MobileAcademicsSubmenu';
+import { MobileFeaturedLink } from './mobile/MobileFeaturedLink';
+import { MobileStandardSubmenu } from './mobile/MobileStandardSubmenu';
 
 type MobileMainNavProps = Record<string, never>;
 
@@ -20,59 +21,47 @@ export function MobileMainNav({}: MobileMainNavProps) {
   return (
     <div className='space-y-1'>
       {mainNavigation.map((item) => {
-        // Get featured menu data for this section
         const feature = menuFeatures[item.label];
 
-        return item.submenu ? (
-          // Menu item with submenu - Use Accordion
+        if (!item.submenu) {
+          return (
+            <MobileMenuButton key={item.href} variant='main' asChild>
+              <SheetClose asChild>
+                <Link href={item.href}>{item.label.toUpperCase()}</Link>
+              </SheetClose>
+            </MobileMenuButton>
+          );
+        }
+
+        return (
           <Accordion key={item.href} type='single' collapsible>
             <AccordionItem value={item.href} className='border-0'>
-              <AccordionTrigger className='btn-sm w-full justify-start font-medium text-black hover:text-secondary hover:bg-transparent hover:no-underline rounded-none h-auto py-2 px-3 cursor-pointer'>
+              <AccordionTrigger className={HEADER_MENU_STYLES.mobileAccordionTrigger}>
                 {item.label.toUpperCase()}
               </AccordionTrigger>
-              <AccordionContent className='pb-0 pt-1'>
-                {/* Featured Menu Item - Overview Link */}
-                {feature && (
-                  <div className=' mx-3 p-3 bg-muted/30 rounded-md'>
-                    <Link href={feature.href} className='block'>
-                      <div className='font-medium text-sm mb-1 text-black hover:text-secondary transition-colors'>
-                        {feature.title}
-                      </div>
-                      <div className='text-xs text-muted-foreground leading-tight'>
-                        {feature.description}
-                      </div>
-                    </Link>
-                  </div>
-                )}
 
-                {/* Submenu Items */}
-                <ul className='pl-4'>
-                  {item.submenu.map((subItem) => (
-                    <li key={subItem.href}>
-                      <Link
-                        href={subItem.href}
-                        className='block text-sm py-2 text-black hover:text-secondary transition-colors'
-                      >
-                        {subItem.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+              <AccordionContent className='pb-0 pt-1'>
+                {feature && <MobileFeaturedLink feature={feature} />}
+
+                {item.label === 'Academics' ? (
+                  <MobileAcademicsSubmenu item={item} />
+                ) : (
+                  <MobileStandardSubmenu submenu={item.submenu} />
+                )}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
-        ) : (
-          // Simple menu item without submenu
-          <MobileMenuButton key={item.href} variant='main' asChild>
-            <Link href={item.href}>{item.label.toUpperCase()}</Link>
-          </MobileMenuButton>
         );
       })}
+
       <MobileActionButton asChild>
-        <Link href={actionButtons.apply.href}>
-          {actionButtons.apply.label.toUpperCase()}
-        </Link>
+        <SheetClose asChild>
+          <Link href={actionButtons.apply.href}>
+            {actionButtons.apply.label.toUpperCase()}
+          </Link>
+        </SheetClose>
       </MobileActionButton>
     </div>
   );
 }
+

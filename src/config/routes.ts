@@ -31,6 +31,17 @@ export const ROUTES = {
     PROGRAMS: '/academics/programs',
     CALENDAR: '/academics/calendar',
     CATALOG: '/academics/catalog',
+    // Degree Programs (Mega menu)
+    MDIV: '/academics/mdiv',
+    THM: '/academics/thm',
+    MCC: '/academics/mcc',
+    MCE: '/academics/mce',
+    MCRS: '/academics/mcrs',
+    MCHAP: '/academics/mchap',
+    DMIN: '/academics/dmin',
+    BCRS: '/academics/bcrs',
+    THB: '/academics/thb',
+    BCC: '/academics/bcc',
   },
 
   // Admissions Section

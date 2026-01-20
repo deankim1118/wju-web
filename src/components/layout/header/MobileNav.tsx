@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetTitle,
   SheetTrigger,
@@ -48,12 +49,15 @@ export function MobileNav({
         side='top'
         noOverlay
         className={cn(
-          'w-full h-screen border-0 p-0 bg-white shadow-lg',
+          'w-full border-0 p-0 bg-white shadow-lg overflow-y-auto overscroll-contain',
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
           '[&>button]:hidden z-40 desktop:hidden',
         )}
-        style={{ top: `${topBarHeight}px` }}
+        style={{
+          top: `${topBarHeight}px`,
+          height: `calc(100vh - ${topBarHeight}px)`,
+        }}
       >
         <SheetTitle className='sr-only'>Mobile Navigation Menu</SheetTitle>
         <div className='px-4 py-4 space-y-1'>
@@ -65,23 +69,31 @@ export function MobileNav({
           <div className='space-y-1'>
             {topBarNavigation.map((link) => (
               <MobileMenuButton key={link.href} variant='top' asChild>
-                <Link href={link.href}>{link.label.toUpperCase()}</Link>
+                <SheetClose asChild>
+                  <Link href={link.href}>{link.label.toUpperCase()}</Link>
+                </SheetClose>
               </MobileMenuButton>
             ))}
             <MobileActionButton variant='secondary' asChild>
-              <Link href={actionButtons.myWju.href}>
-                {actionButtons.myWju.label.toUpperCase()}
-              </Link>
+              <SheetClose asChild>
+                <Link href={actionButtons.myWju.href}>
+                  {actionButtons.myWju.label.toUpperCase()}
+                </Link>
+              </SheetClose>
             </MobileActionButton>
             <MobileMenuButton variant='top' asChild>
-              <Link href={actionButtons.language.href}>
-                {actionButtons.language.label.toUpperCase()}
-              </Link>
+              <SheetClose asChild>
+                <Link href={actionButtons.language.href}>
+                  {actionButtons.language.label.toUpperCase()}
+                </Link>
+              </SheetClose>
             </MobileMenuButton>
             <MobileMenuButton variant='top' asChild>
-              <Link href={actionButtons.support.href}>
-                {actionButtons.support.label.toUpperCase()}
-              </Link>
+              <SheetClose asChild>
+                <Link href={actionButtons.support.href}>
+                  {actionButtons.support.label.toUpperCase()}
+                </Link>
+              </SheetClose>
             </MobileMenuButton>
           </div>
         </div>
