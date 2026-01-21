@@ -27,17 +27,17 @@ export function AcademicInquiryInfoPanel() {
           </p>
 
           <div className='mt-2 grid gap-3 text-white/85'>
-            <div className='flex items-start gap-3'>
+            <div className='flex items-center gap-3'>
               <span className='mt-1 block size-1.5 rounded-full bg-secondary' />
-              <p>Compare degree pathways and outcomes</p>
+              <span>Compare degree pathways and outcomes</span>
             </div>
-            <div className='flex items-start gap-3'>
+            <div className='flex items-center gap-3'>
               <span className='mt-1 block size-1.5 rounded-full bg-secondary' />
-              <p>Receive admissions guidance and next steps</p>
+              <span>Receive admissions guidance and next steps</span>
             </div>
-            <div className='flex items-start gap-3'>
+            <div className='flex items-center gap-3'>
               <span className='mt-1 block size-1.5 rounded-full bg-secondary' />
-              <p>Get a personalized program recommendation</p>
+              <span>Get a personalized program recommendation</span>
             </div>
           </div>
         </div>

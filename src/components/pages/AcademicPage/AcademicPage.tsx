@@ -7,6 +7,8 @@ import {
 
 import { AcademicInquirySection } from '@/components/academics/inquiry/academic-inquiry-section';
 import { callToActionContent } from '@/config/home-content';
+import { ACADEMICS_LINK_CARDS, ACADEMICS_LINK_CARDS_TITLE } from '../../../config/academic-link-content';
+import { LinkCardsCarouselSection } from '../../sections/LinkCardsCarouselSection';
 import { DegreeProgramsSection } from './components/DegreeProgramsSection';
 
 export function AcademicPage() {
@@ -29,12 +31,6 @@ export function AcademicPage() {
         buttonText={callToActionContent.buttonText}
         href={callToActionContent.href}
       />
-
-
-      {/* <AcademicDistinctivesSection
-        title={ACADEMICS_PAGE_CONTENT.distinctives.title}
-        items={ACADEMICS_PAGE_CONTENT.distinctives.items}
-      /> */}
 
       <DegreeProgramsSection
         id={ACADEMICS_PAGE_CONTENT.programs.sectionId}
@@ -64,6 +60,11 @@ export function AcademicPage() {
         ]}
       />
       <AcademicInquirySection />
+      <LinkCardsCarouselSection
+        title={ACADEMICS_LINK_CARDS_TITLE}
+        items={ACADEMICS_LINK_CARDS}
+        shouldExcludeCurrentPath
+      />
     </>
   );
 }

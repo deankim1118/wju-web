@@ -5,7 +5,7 @@ import { TwoRowTextSection } from '@/components/TwoTextSection';
 import {
   aboutIntegritynContent
 } from '@/config/about-content';
-import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-foundation';
+import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-link-content';
 import { INTEGRITY_CONTENT } from '@/config/integrity-content';
 
 

@@ -103,7 +103,7 @@ export function AcademicInquiryForm() {
         <p className='text-xs uppercase tracking-widest text-muted-foreground'>
           Request information
         </p>
-        <h2 className='font-serif text-3xl md:text-4xl'>Let’s Get Started</h2>
+        <h1 className='uppercase'>Let’s Get Started</h1>
         <p className='text-muted-foreground max-w-md'>
           Tell us a bit about your goals. We’ll follow up with next steps and program
           details.

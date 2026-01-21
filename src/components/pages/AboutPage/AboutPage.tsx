@@ -1,6 +1,6 @@
 import { PageHero } from '@/components/PageHero';
 import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
-import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-foundation';
+import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-link-content';
 import { getChairmanMessageData } from '@/lib/payload/queries';
 import {
   aboutChairmanPageContent,
