@@ -25,7 +25,7 @@ export async function IntegrityPage() {
         backgroundColor='bg-foreground'
         textColor='text-primary'
         contentTextVariant='body'
-        titleColor='text-secondary'
+        titleColor='text-secondary text-2xl md:text-2xl lg:text-3xl '
       />
       {/* <TwoColumnTextSection
         title={aboutIntegritynContent.title}
