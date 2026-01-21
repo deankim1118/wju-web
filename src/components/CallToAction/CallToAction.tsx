@@ -2,7 +2,7 @@
 
 import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { CircleAlert } from 'lucide-react';
 import Link from 'next/link';
 
 type CallToActionProps = {
@@ -55,12 +55,14 @@ export function CallToAction({
               className='text-base md:text-xl font-semibold md:font-normal uppercase border-2 rounded-none border-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary w-full lg:w-auto max-w-[470px]'
               asChild
             >
+              
               <Link
                 href={href}
                 className='flex items-center justify-center gap-2'
               >
+                <CircleAlert className='text-red-500 size-5 md:size-6' />
                 {buttonText}
-                <ArrowRight className='text-secondary size-5 md:size-6' />
+                {/* <ArrowRight className='text-secondary size-5 md:size-6' /> */}
               </Link>
             </Button>
           </ScrollReveal>

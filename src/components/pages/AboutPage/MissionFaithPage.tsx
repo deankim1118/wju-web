@@ -7,7 +7,7 @@ import {
   aboutOurMissionContent,
   aboutOurVisionContent,
 } from '@/config/about-content';
-import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-foundation';
+import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-link-content';
 import { STATEMENT_OF_FAITH_CONTENT } from '@/config/statement-of-faith';
 
 export async function MissionFaithPage() {

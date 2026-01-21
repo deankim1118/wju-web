@@ -12,7 +12,7 @@ export function SectionHeader({
   showDivider = true,
   showAccentLine = true,
   alignment = 'center',
-  padding = 'section-header-padding',
+  padding = 'pb-8',
   className = '',
 }: SectionHeaderProps) {
   const alignmentClasses = {
