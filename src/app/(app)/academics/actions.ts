@@ -1,8 +1,7 @@
 'use server';
 
-import nodemailer from 'nodemailer';
-
 import { DEGREE_PROGRAMS } from '@/config/academics-content';
+import { getResend } from '@/lib/resend';
 import {
   type AcademicInquiryInput,
   academicInquirySchema,
@@ -88,29 +87,26 @@ export async function sendAcademicInquiry(raw: AcademicInquiryInput) {
 
   const input = parsed.data;
 
-  const host = getEnv('SMTP_HOST');
-  const port = Number(getEnv('SMTP_PORT'));
-  const user = getEnv('SMTP_USER');
-  const pass = getEnv('SMTP_PASS');
+  const resend = getResend();
 
-  const secure = (process.env.SMTP_SECURE ?? '').toLowerCase() === 'true';
-  const from = process.env.WJU_ADMISSIONS_EMAIL_FROM || user;
-  const to = getEnv('WJU_ADMISSIONS_EMAIL_TO');
+  // Verified sender recommended (Resend requires domain verification for custom From).
+  const from =
+    process.env.EMAIL_FROM ||
+    'WJU System <onboarding@resend.dev>';
 
-  const transporter = nodemailer.createTransport({
-    host,
-    port,
-    secure,
-    auth: { user, pass },
-  });
+  // Admin recipient (defaults to legacy env var if present).
+  const to = process.env.ADMIN_EMAIL_TO || "4421newlife@gmail.com";
+  if (!to) {
+    throw new Error('Missing environment variable: ADMIN_EMAIL');
+  }
 
-  const subject = `[WJU] Academic Inquiry — ${input.firstName} ${input.lastName}`;
+  const subject = `[Academic Inquiry] New message from ${input.firstName} ${input.lastName}`;
 
-  await transporter.sendMail({
+  await resend.emails.send({
     from,
     to,
-    replyTo: input.emailAddress,
     subject,
+    replyTo: input.emailAddress, // Crucial: admin "Reply" goes to student
     text: toEmailText(input),
     html: toEmailHtml(input),
   });
