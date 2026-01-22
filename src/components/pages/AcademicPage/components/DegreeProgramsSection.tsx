@@ -60,7 +60,7 @@ export function DegreeProgramsSection({
 
       <div className='container mx-auto px-6 max-w-[1440px]'>
         <div className='flex flex-col gap-4 items-center'>
-          <ScrollReveal variant='fade-up' delay={0.1} duration={0.7}>
+          <ScrollReveal variant='fade-up' delay={0.1} duration={0.7} animateImmediately>
           <SectionHeader title={title} padding='pt-0 pb-6 md:pb-10' />
           {subtitle && (
             <p className='text-muted-foreground text-center max-w-3xl'>

@@ -16,7 +16,7 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
     <>
       <PageHero
         title={program.title}
-        subtitle={`${program.level} • ${program.credential}`}
+        subtitle={`Academic Program`}
         imageUrl='/wju-hero-img.png'
         imageAlt={`${program.title} hero`}
       />
