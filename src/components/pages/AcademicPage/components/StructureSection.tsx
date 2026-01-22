@@ -1,5 +1,5 @@
-import { ChevronRight } from 'lucide-react';
 import type { SemesterStep } from '@/config/academics/program-extended-types';
+import { ChevronRight } from 'lucide-react';
 
 type StructureSectionProps = {
   steps: SemesterStep[];
@@ -10,7 +10,6 @@ export function StructureSection({ steps }: StructureSectionProps) {
     <section aria-labelledby="structure-heading" className="space-y-6">
       <h2
         id="structure-heading"
-        className="font-serif text-2xl font-semibold text-primary md:text-3xl"
       >
         Program Structure
       </h2>

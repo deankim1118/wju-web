@@ -13,12 +13,12 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
         {/* Credit Information */}
         <div className="space-y-4 md:pr-8">
           <div className="flex items-center gap-2.5">
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <Info className="size-5 text-primary" />
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+              <Info className="size-5 text-rose-500" />
             </div>
-            <h3 className="font-serif text-base font-semibold uppercase tracking-wide text-primary">
+            <h4 className="uppercase tracking-wide text-primary">
               Credit Information
-            </h3>
+            </h4>
           </div>
           <div className="space-y-2.5 text-sm text-muted-foreground">
             <p>
@@ -32,12 +32,12 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
         {/* Study Options */}
         <div className="space-y-4 md:px-8">
           <div className="flex items-center gap-2.5">
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <BookOpen className="size-5 text-primary" />
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+              <BookOpen className="size-5 text-rose-500" />
             </div>
-            <h3 className="font-serif text-base font-semibold uppercase tracking-wide text-primary">
+            <h4 className="uppercase tracking-wide text-primary">
               Study Options
-            </h3>
+            </h4>
           </div>
           <div className="space-y-4 text-sm">
             {data.studyOptions.map((option) => {
@@ -66,12 +66,12 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
         {/* Hours of Instruction */}
         <div className="space-y-4 md:pl-8">
           <div className="flex items-center gap-2.5">
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <Clock className="size-5 text-primary" />
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+              <Clock className="size-5 text-rose-500" />
             </div>
-            <h3 className="font-serif text-base font-semibold uppercase tracking-wide text-primary">
+            <h4 className="uppercase tracking-wide text-primary">
               Hours of Instruction
-            </h3>
+            </h4>
           </div>
           <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
             <p>{data.hoursOfInstruction.semesterHour}</p>

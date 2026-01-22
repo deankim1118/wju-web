@@ -1,5 +1,5 @@
-import { CheckCircle } from 'lucide-react';
 import type { GraduationRequirement } from '@/config/academics/program-extended-types';
+import { CheckCircle } from 'lucide-react';
 
 type GraduationSectionProps = {
   requirements: GraduationRequirement[];
@@ -10,7 +10,6 @@ export function GraduationSection({ requirements }: GraduationSectionProps) {
     <section aria-labelledby="graduation-heading" className="space-y-6">
       <h2
         id="graduation-heading"
-        className="font-serif text-2xl font-semibold text-primary md:text-3xl"
       >
         Graduation Requirements
       </h2>

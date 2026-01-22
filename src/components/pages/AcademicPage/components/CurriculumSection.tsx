@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import type { CurriculumCategory } from '@/config/academics/program-extended-types';
+import { cn } from '@/lib/utils';
 
 type CurriculumSectionProps = {
   curriculum: CurriculumCategory[];
@@ -15,19 +16,22 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
     <section aria-labelledby="curriculum-heading" className="space-y-6">
       <h2
         id="curriculum-heading"
-        className="font-serif text-2xl font-semibold text-primary md:text-3xl"
       >
         Curriculum
       </h2>
 
       <Accordion type="single" collapsible className="w-full">
-        {curriculum.map((category) => {
+        {curriculum.map((category, index) => {
           const totalCredits = category.courses.reduce((sum, c) => sum + c.credits, 0);
+          const isLast = index === curriculum.length - 1;
           return (
             <AccordionItem
               key={category.id}
               value={category.id}
-              className="border rounded-lg px-4 mb-2 bg-card"
+              className={cn(
+                'border rounded-lg px-4 bg-card',
+                isLast && 'border-b!' // 마지막 항목에도 border-bottom 강제 유지
+              )}
             >
               <AccordionTrigger className="text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-muted-foreground">
                 <span>
@@ -37,7 +41,7 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
                   </span>
                 </span>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="pb-4">
                 <ul className="space-y-2.5 pt-2">
                   {category.courses.map((course) => (
                     <li
@@ -45,14 +49,11 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
                       className="flex flex-wrap items-baseline justify-between gap-2 text-sm text-muted-foreground"
                     >
                       <span>
-                        <span className="font-mono  mr-2">
+                        <span className="font-mono mr-2">
                           {course.code}
                         </span>
                         {course.name}
                       </span>
-                      {/* <span className=" shrink-0">
-                        {course.credits} credits
-                      </span> */}
                     </li>
                   ))}
                 </ul>

@@ -1,12 +1,12 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import type { OutcomeItem } from '@/config/academics/program-extended-types';
 import {
+  Globe,
+  Heart,
   ScrollText,
   Target,
   Users,
-  Heart,
-  Globe,
 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import type { OutcomeItem } from '@/config/academics/program-extended-types';
 
 const ICON_MAP = {
   ScrollText,
@@ -23,10 +23,7 @@ type OutcomesSectionProps = {
 export function OutcomesSection({ outcomes }: OutcomesSectionProps) {
   return (
     <section aria-labelledby="outcomes-heading" className="space-y-8">
-      <h2
-        id="outcomes-heading"
-        className="font-serif text-2xl font-semibold text-primary md:text-3xl"
-      >
+      <h2 id="outcomes-heading">
         Learning Outcomes
       </h2>
       <p className="text-muted-foreground">Upon successful completion of the MDiv program, students will be able to:</p>

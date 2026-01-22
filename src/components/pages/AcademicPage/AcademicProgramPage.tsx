@@ -4,9 +4,7 @@ import { PageHero } from '@/components/PageHero';
 import { Button } from '@/components/ui/button';
 import {
   Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
+  CardContent
 } from '@/components/ui/card';
 import type { DegreeProgram } from '@/config/academics-content';
 import { getProgramExtendedData } from '@/config/academics/program-extended';

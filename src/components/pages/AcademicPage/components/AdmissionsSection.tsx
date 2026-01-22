@@ -14,7 +14,6 @@ export function AdmissionsSection({ intro, sections }: AdmissionsSectionProps) {
     <section aria-labelledby="admissions-heading" className="space-y-6">
       <h2
         id="admissions-heading"
-        className="font-serif text-2xl font-semibold text-primary md:text-3xl"
       >
         Admission Requirements
       </h2>
