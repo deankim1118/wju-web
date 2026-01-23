@@ -2,7 +2,7 @@
  * Doctor of Ministry (DMin) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const DMIN_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const DMIN_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$525.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'advanced-hermeneutics',
+      title: 'Advanced Hermeneutics',
+      description:
+        'Apply advanced biblical theology and hermeneutics to contemporary pastoral contexts.',
+    },
+    {
+      id: 'contextual-ecclesiology',
+      title: 'Contextual Ecclesiology',
+      description:
+        'Reevaluate church identity and mission through the lens of New Testament and Reformation history.',
+    },
+    {
+      id: 'strategic-evangelism',
+      title: 'Strategic Evangelism',
+      description:
+        'Reinvent evangelism strategies to effectively reach postmodern and pluralistic societies.',
+    },
+    {
+      id: 'cultural-engagement',
+      title: 'Cultural Engagement',
+      description:
+        'Navigate complex ethical and multicultural challenges in urban ministry settings.',
+    },
+    {
+      id: 'spiritual-resilience',
+      title: 'Spiritual Resilience',
+      description:
+        'Cultivate holistic personal health and spiritual maturity for sustainable long-term leadership.',
+    },
+    {
+      id: 'professional-research',
+      title: 'Professional Research',
+      description:
+        'Contribute to ministry scholarship through rigorous qualitative and quantitative dissertation research.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-theological-foundations',

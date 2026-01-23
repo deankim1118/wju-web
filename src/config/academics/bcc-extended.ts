@@ -2,7 +2,7 @@
  * Bachelor of Christian Counseling (BCC) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const BCC_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const BCC_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$255.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'biblical-counseling',
+      title: 'Biblical Counseling',
+      description:
+        'Integrate psychological principles with biblical truth to provide holistic care for individuals and families.',
+    },
+    {
+      id: 'theological-foundation',
+      title: 'Theological Foundation',
+      description:
+        'Construct a solid scriptural framework using Old and New Testament survey, hermeneutics, and systematic theology.',
+    },
+    {
+      id: 'clinical-competency',
+      title: 'Clinical Competency',
+      description:
+        'Apply professional counseling theories and assessment tools  to diverse mental health scenarios.',
+    },
+    {
+      id: 'marriage-family',
+      title: 'Marriage & Family',
+      description:
+        'Implement therapeutic interventions for couples in crisis and guide proper child development and home ministry.',
+    },
+    {
+      id: 'conflict-resolution',
+      title: 'Conflict Resolution',
+      description:
+        'Navigate interpersonal disputes and multicultural challenges using negotiation strategies and mediation skills.',
+    },
+    {
+      id: 'practical-ministry',
+      title: 'Practical Ministry',
+      description:
+        'Demonstrate pastoral care skills through supervised internships in hospitals, churches, and denominational agencies.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-languages',

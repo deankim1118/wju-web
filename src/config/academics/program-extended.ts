@@ -44,6 +44,59 @@ const COMMON_KEY_INFORMATION = {
   },
 };
 
+/**
+ * Graduate (Master's) admissions data
+ * Used as default for Graduate level programs
+ */
+const GRADUATE_ADMISSIONS = {
+  intro: [
+    'To be admitted into this program at Washington Jabez University, Applicants must meet the following spiritual and academic standards to be considered for admission.',
+  ],
+  sections: [
+    {
+      id: 'spiritual-qualifications',
+      title: 'Spiritual Qualifications',
+      items: [
+        'A personal regeneration experience and baptism with water.',
+        'A confirmed sense of calling from God for Christian ministry.',
+        'Active and fruitful participation in a local church.',
+      ],
+    },
+    {
+      id: 'academic-qualifications',
+      title: 'Academic Qualifications',
+      items: [
+        "A Bachelor's degree from an approved institution.",
+        'Minimum 2.00 Cumulative GPA.',
+        'Note: M.Div. applicants are not required to have majored in Bible at the undergraduate level.'
+      ],
+    },
+    {
+      id: 'academic-checklist',
+      title: 'Application Checklist',
+      items: [
+        'Application for Admission',
+        'Application Fee',
+        'Two recent 2" X 2 1/2" photographs',
+        'Personal Essay (Detailing your sense of calling and ministry vision)',
+        'Official Transcripts & Diploma (Verification of final degree)',
+        'Reference Letter (Recommendation from a pastor or ministry leader)',
+        'Important Note: All applicants are required to complete a personal interview with the faculty committee after document review.',
+      ],
+    },
+  ],
+};
+
+/**
+ * Get default admissions based on degree level
+ * TODO: Add Undergraduate and Doctoral admissions when ready
+ */
+function getDefaultAdmissionsForLevel(level?: string) {
+  // For now, all levels use graduate admissions
+  // This can be expanded later with level-specific admissions
+  return GRADUATE_ADMISSIONS;
+}
+
 // Map of program slugs to their extended data (input type - allows optional fields)
 const PROGRAM_EXTENDED_DATA: Record<string, ProgramExtendedDataInput> = {
   thb: THB_EXTENDED,
@@ -97,22 +150,8 @@ function createDefaultExtendedData(program: DegreeProgram): ProgramExtendedData 
       },
     ],
     admissions: {
-      intro: [
-        `To be admitted into the ${program.title} program at Washington Jabez University, applicants must demonstrate a clear calling to ministry and meet the following academic and spiritual criteria.`,
-      ],
-      sections: [
-        {
-          id: 'general',
-          title: 'General Requirements',
-          items: [
-            'Minimum bachelor\'s degree from an accredited institution',
-            'Cumulative GPA of 2.0 or higher',
-            'Application for Admission',
-            'Official College Transcripts',
-            'Admissions Essay',
-          ],
-        },
-      ],
+      intro: [],
+      sections: [],
     },
     graduation: {
       requirements: [
@@ -140,10 +179,24 @@ function createDefaultExtendedData(program: DegreeProgram): ProgramExtendedData 
  */
 function mergeProgramData(
   programData: ProgramExtendedDataInput,
+  program?: DegreeProgram,
 ): ProgramExtendedData {
   const hasCustomStudyOptions =
     programData.keyInformation.studyOptions &&
     programData.keyInformation.studyOptions.length > 0;
+
+  // Use program title in intro if available, otherwise use generic text
+  const defaultAdmissions = getDefaultAdmissionsForLevel(program?.level);
+  const admissionsIntro = program
+    ? [
+        `To be admitted into the ${program.title} program at Washington Jabez University, Applicants must meet the following spiritual and academic standards to be considered for admission.`,
+      ]
+    : defaultAdmissions.intro;
+
+  const hasCustomAdmissions =
+    programData.admissions &&
+    (programData.admissions.intro.length > 0 ||
+      programData.admissions.sections.length > 0);
 
   return {
     ...programData,
@@ -158,6 +211,12 @@ function mergeProgramData(
         ...programData.keyInformation.hoursOfInstruction,
       },
     },
+    admissions: hasCustomAdmissions && programData.admissions
+      ? programData.admissions!
+      : {
+          intro: admissionsIntro,
+          sections: defaultAdmissions.sections,
+        },
   };
 }
 
@@ -172,7 +231,7 @@ export function getProgramExtendedData(
 ): ProgramExtendedData {
   // Return extended data if available
   if (PROGRAM_EXTENDED_DATA[slug]) {
-    return mergeProgramData(PROGRAM_EXTENDED_DATA[slug]);
+    return mergeProgramData(PROGRAM_EXTENDED_DATA[slug], program);
   }
   
   // Fallback: create default extended data from program data (should not happen)

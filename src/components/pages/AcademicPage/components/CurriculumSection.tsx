@@ -13,7 +13,7 @@ type CurriculumSectionProps = {
 
 export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
   return (
-    <section aria-labelledby="curriculum-heading" className="space-y-6">
+    <section aria-labelledby="curriculum-heading" className="space-y-8">
       <h2
         id="curriculum-heading"
       >
@@ -33,7 +33,7 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
                 isLast && 'border-b!' // 마지막 항목에도 border-bottom 강제 유지
               )}
             >
-              <AccordionTrigger className="text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-muted-foreground text-sm md:text-base">
+              <AccordionTrigger className="text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-600 text-sm md:text-base">
                 <span>
                   {category.name}{' '}
                   <span className="font-normal">

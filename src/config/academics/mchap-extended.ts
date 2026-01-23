@@ -2,7 +2,7 @@
  * Master of Chaplaincy (MChap) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const MCHAP_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const MCHAP_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$300.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'institutional-chaplaincy',
+      title: 'Institutional Chaplaincy',
+      description:
+        'Minister effectively in diverse specialized settings including healthcare, correctional facilities, and military contexts.',
+    },
+    {
+      id: 'crisis-grief-care',
+      title: 'Crisis & Grief Care',
+      description:
+        'Provide compassionate spiritual support and ethical guidance during critical moments of suffering, death, and bereavement.',
+    },
+    {
+      id: 'pastoral-counseling',
+      title: 'Pastoral Counseling',
+      description:
+        'Apply counseling theories and psychological assessments to support mental and spiritual health across all age groups.',
+    },
+    {
+      id: 'conflict-mediation',
+      title: 'Conflict Mediation',
+      description:
+        'Resolve interpersonal disputes and navigate complex ethical challenges using negotiation strategies and mediation skills.',
+    },
+    {
+      id: 'pluralistic-ministry',
+      title: 'Pluralistic Engagement',
+      description:
+        'Communicate the Gospel wisely and provide Christocentric care within secular, multi-faith, and multicultural environments.',
+    },
+    {
+      id: 'biblical-integration',
+      title: 'Biblical Integration',
+      description:
+        'Integrate wisdom literature, soteriology, and the teaching methods of Jesus into practical ministry service.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-studies',

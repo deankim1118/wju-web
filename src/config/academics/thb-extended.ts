@@ -2,7 +2,7 @@
  * Bachelor of Theology (ThB) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const THB_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const THB_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$255.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'biblical-fluency',
+      title: 'Biblical Fluency',
+      description:
+        'Interpret Old and New Testament texts accurately using introductory Hebrew/Greek  and historical geography.',
+    },
+    {
+      id: 'theological-defense',
+      title: 'Theological Defense',
+      description:
+        'Construct a systematic theological framework to defend the Christian faith against modern cultural and philosophical challenges.',
+    },
+    {
+      id: 'pastoral-ministry',
+      title: 'Pastoral Ministry',
+      description:
+        'Deliver expository sermons and lead worship services while gaining practical experience through supervised internships.',
+    },
+    {
+      id: 'christian-counseling',
+      title: 'Christian Counseling',
+      description:
+        'Apply biblical principles and basic psychological theories to counsel individuals and resolve interpersonal conflicts.',
+    },
+    {
+      id: 'global-engagement',
+      title: 'Global Engagement',
+      description:
+        'Understand major world religions and implement multicultural mission strategies for effective evangelism.',
+    },
+    {
+      id: 'christian-education',
+      title: 'Christian Education',
+      description:
+        'Develop age-appropriate bible teaching methods and curriculums for children, youth, and home ministries.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-languages',

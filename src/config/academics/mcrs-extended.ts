@@ -2,7 +2,7 @@
  * Master of Comparative Religious Studies (MCRS) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const MCRS_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const MCRS_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$300.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'comparative-analysis',
+      title: 'Comparative Analysis',
+      description:
+        'Analyze structural similarities and theological differences between Christianity, Islam, and other major world religions.',
+    },
+    {
+      id: 'eastern-religions',
+      title: 'Eastern Religions',
+      description:
+        'Master the core beliefs, historical developments, and cultural impacts of Hinduism, Buddhism, and South Asian traditions.',
+    },
+    {
+      id: 'philosophy-of-religion',
+      title: 'Philosophy of Religion',
+      description:
+        'Apply philosophical methods to critique religious experience, faith-reason dynamics, and the nature of belief.',
+    },
+    {
+      id: 'cultural-anthropology',
+      title: 'Cultural Anthropology',
+      description:
+        'Examine the intersection of religion, gender, and culture within Middle Eastern, American, and global contexts.',
+    },
+    {
+      id: 'indigenous-movements',
+      title: 'Indigenous & New Movements',
+      description:
+        'Explore the spiritual heritage of indigenous peoples, shamanistic traditions, and contemporary religious cults.',
+    },
+    {
+      id: 'biblical-linguistics',
+      title: 'Biblical Linguistics',
+      description:
+        'Utilize Biblical Hebrew and Greek  to interpret sacred texts and foundational Christian narratives.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-language-studies',

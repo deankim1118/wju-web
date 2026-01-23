@@ -1,61 +1,58 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import type { OutcomeItem } from '@/config/academics/program-extended-types';
-import {
-  Globe,
-  Heart,
-  ScrollText,
-  Target,
-  Users,
-} from 'lucide-react';
-
-const ICON_MAP = {
-  ScrollText,
-  Target,
-  Users,
-  Heart,
-  Globe,
-} as const;
 
 type OutcomesSectionProps = {
   outcomes: OutcomeItem[];
 };
 
+/**
+ * Determine optimal grid columns based on number of outcomes
+ * Ensures each outcome has sufficient space for readability
+ */
+function getGridCols(outcomeCount: number): string {
+  if (outcomeCount === 0) return 'grid-cols-1';
+  if (outcomeCount <= 3) return 'grid-cols-1';
+  if (outcomeCount <= 6) return 'grid-cols-1 lg:grid-cols-2';
+  // 7+ outcomes: use 2 columns on large screens, 3 on xl if needed
+  return 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3';
+}
+
 export function OutcomesSection({ outcomes }: OutcomesSectionProps) {
+  if (outcomes.length === 0) {
+    return null;
+  }
+
+  const gridCols = getGridCols(outcomes.length);
+
   return (
     <section aria-labelledby="outcomes-heading" className="space-y-8">
-      <h2 id="outcomes-heading">
-        Learning Outcomes
-      </h2>
-      <p className="text-muted-foreground">Upon successful completion of the MDiv program, students will be able to:</p>
+      {/* Header */}
+      <div className="space-y-2">
+        <h2
+          id="outcomes-heading"
+          className="uppercase tracking-wide text-slate-900"
+        >
+          Learning Outcomes
+        </h2>
+        <p className="text-sm text-slate-600 leading-relaxed">
+          Students will be able to:
+        </p>
+      </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {outcomes.map((outcome) => {
-          const Icon = ICON_MAP[outcome.icon as keyof typeof ICON_MAP];
-          return (
-            <Card
-              key={outcome.id}
-              className="rounded-lg border border-border/60 bg-card shadow-sm"
-            >
-              <CardHeader className="pb-3">
-                <div className="flex items-center gap-3">
-                  {Icon && (
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      <Icon className="size-5" />
-                    </div>
-                  )}
-                  <CardTitle className="text-lg font-semibold text-slate-900">
-                    {outcome.title}
-                  </CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {outcome.description}
-                </p>
-              </CardContent>
-            </Card>
-          );
-        })}
+      {/* Outcomes Grid - Dynamic columns based on count */}
+      <div className={`grid ${gridCols} gap-4 md:gap-6 lg:gap-10`}>
+        {outcomes.map((outcome, index) => (
+          <div
+            key={outcome.id}
+            className="flex flex-col border-b border-slate-200 pb-2 last:border-b-0 last:pb-0 lg:border-b-0 lg:pb-0 lg:border-r lg:pr-12 "
+          >
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-900 mb-3">
+              {outcome.title}
+            </h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              {outcome.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );

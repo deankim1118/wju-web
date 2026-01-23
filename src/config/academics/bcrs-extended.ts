@@ -2,7 +2,7 @@
  * Bachelor of Comparative Religious Studies (BCRS) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const BCRS_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const BCRS_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$255.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'world-religions',
+      title: 'World Religions Survey',
+      description:
+        'Gain a comprehensive overview of major global faiths including Christianity, Islam, Hinduism, and Buddhism.',
+    },
+    {
+      id: 'biblical-foundation',
+      title: 'Biblical Foundation',
+      description:
+        'Build a solid foundation in Old and New Testament studies, including introductory Hebrew and Greek.',
+    },
+    {
+      id: 'philosophy-ethics',
+      title: 'Philosophy & Ethics',
+      description:
+        'Develop critical thinking skills to analyze philosophical arguments regarding faith, reason, and morality.',
+    },
+    {
+      id: 'cultural-engagement',
+      title: 'Cultural Engagement',
+      description:
+        'Explore the intersection of religion with culture, gender, and science in both American and global contexts.',
+    },
+    {
+      id: 'comparative-analysis',
+      title: 'Comparative Analysis',
+      description:
+        'Compare theological themes and religious practices across different traditions to understand their similarities and distinctions.',
+    },
+    {
+      id: 'global-perspectives',
+      title: 'Global Perspectives',
+      description:
+        'Understand the historical and political impact of religion in diverse regions like the Middle East and South Asia.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-language-studies',

@@ -18,39 +18,40 @@ export const MDIV_EXTENDED: ProgramExtendedDataInput = {
   },
   outcomes: [
     {
-      id: 'biblical-competency',
-      title: 'Biblical Competency',
+      id: 'biblical-interpretation',
+      title: 'Biblical Interpretation',
       description:
-        'Interpret the Old and New Testaments faithfully by utilizing original languages (Hebrew and Greek) and proper exegetical methods.',
-      icon: 'ScrollText',
+        'Master the exegesis of Old and New Testaments using original Hebrew and Greek.',
     },
     {
-      id: 'theological-integration',
-      title: 'Theological Integration',
+      id: 'theological-foundation',
+      title: 'Theological Foundation',
       description:
-        'Articulate a coherent and robust Christian theology that integrates biblical truth with historical doctrines and contemporary contexts.',
-      icon: 'Target',
+        'Construct a robust Christian theology integrating biblical truth with historical context.',
     },
     {
-      id: 'pastoral-proficiency',
-      title: 'Pastoral Proficiency',
+      id: 'ministry-leadership',
+      title: 'Ministry Leadership',
       description:
-        'Demonstrate practical skills necessary for ministry leadership, including expository preaching, worship planning, pastoral care, and church administration.',
-      icon: 'Users',
+        'Lead churches effectively with skills in administration, worship planning, and church planting.',
     },
     {
-      id: 'missionary-engagement',
-      title: 'Missionary Engagement',
+      id: 'preaching-teaching',
+      title: 'Preaching & Teaching',
       description:
-        'Formulate strategies for evangelism and cross-cultural mission, demonstrating a passion for the Great Commission and the ability to serve in pluralistic settings.',
-      icon: 'Globe',
+        'Deliver biblically faithful sermons and teachings with confidence and clarity.',
     },
     {
-      id: 'spiritual-maturity',
-      title: 'Spiritual Maturity',
+      id: 'global-mission',
+      title: 'Global Mission',
       description:
-        'Exhibit the moral integrity, spiritual discipline, and servant leadership character required for professional Christian ministry.',
-      icon: 'Heart',
+        'Engage in cross-cultural evangelism and mission work for unreached people groups.',
+    },
+    {
+      id: 'pastoral-care',
+      title: 'Pastoral Care',
+      description:
+        'Provide biblical counseling and conflict resolution for individuals and families.',
     },
   ] as OutcomeItem[],
   curriculum: [
@@ -124,38 +125,6 @@ export const MDIV_EXTENDED: ProgramExtendedDataInput = {
       ],
     },
   ] as CurriculumCategory[],
-  admissions: {
-    intro: [
-      'To be admitted into the Master of Divinity program at Washington Jabez University, applicants must demonstrate a clear calling to ministry and meet the following academic and spiritual criteria:',
-    ],
-    sections: [
-      {
-        id: 'spiritual',
-        title: 'Spiritual Qualifications',
-        items: [
-          'A confirmed sense of calling from God for Christian ministry.',
-          'Evidence of a regeneration experience and baptism with water.',
-          'Active and fruitful participation in a local church.',
-        ],
-      },
-      {
-        id: 'academic',
-        title: 'Academic Documentation',
-        items: [
-          'Submission of Official Transcripts and Diploma from a recognized undergraduate institution.',
-          "A Reference Letter attesting to the applicant's character and potential for ministry.",
-        ],
-      },
-      {
-        id: 'interview',
-        title: 'Interview Process',
-        items: [
-          'Completion of a personal interview with a team of faculty members.',
-          'Final admission is contingent upon a positive evaluation by the Admissions Committee.',
-        ],
-      },
-    ],
-  },
   graduation: {
     requirements: [
       {

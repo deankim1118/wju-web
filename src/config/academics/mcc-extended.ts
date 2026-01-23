@@ -2,7 +2,7 @@
  * Master of Christian Counseling (MCC) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const MCC_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const MCC_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$300.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'biblical-foundation',
+      title: 'Biblical Foundation',
+      description:
+        'Apply accurate biblical interpretation and theological insights to the counseling process.',
+    },
+    {
+      id: 'counseling-theory',
+      title: 'Counseling Theory',
+      description:
+        'Master major psychotherapeutic theories and assessment techniques for diverse clinical scenarios.',
+    },
+    {
+      id: 'faith-integration',
+      title: 'Faith Integration',
+      description:
+        'Synthesize psychological principles with biblical truth to provide holistic Christian care.',
+    },
+    {
+      id: 'marriage-family',
+      title: 'Marriage & Family',
+      description:
+        'Implement systemic interventions to restore health in couples and family dynamics.',
+    },
+    {
+      id: 'lifespan-group-care',
+      title: 'Lifespan & Group Care',
+      description:
+        'Facilitate group therapy and provide age-appropriate counseling for children and adolescents.',
+    },
+    {
+      id: 'conflict-resolution',
+      title: 'Conflict Resolution',
+      description:
+        'Navigate interpersonal disputes effectively using negotiation strategies and mediation skills.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-studies',

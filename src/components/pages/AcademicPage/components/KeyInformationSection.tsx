@@ -27,12 +27,12 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
   const semesters = 'Fall (Aug–Dec) & Spring (Jan–May)';
 
   return (
-    <div className="py-12 px-6 md:px-12">
+    <div className="">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-5">
           {/* Left Section - Title */}
           <div className="flex items-start col-span-2">
-            <h2 className="text-2xl font-semibold uppercase tracking-wide text-slate-900 md:text-3xl">
+            <h2 className="uppercase tracking-wide text-slate-900">
               Program Snapshot
             </h2>
           </div>
@@ -44,7 +44,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
               {/* Credits */}
               <div>
                 <div className="mb-2">
-                  <div className="text-5xl font-bold text-slate-900 md:text-6xl">
+                  <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
                     {data.creditInfo.creditHours}
                   </div>
                   <div className="mt-2 h-px w-full bg-slate-900"></div>
@@ -57,7 +57,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
               {/* Years of Study */}
               <div>
                 <div className="mb-2">
-                  <div className="text-5xl font-bold text-slate-900 md:text-6xl">
+                  <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
                     {yearsOfStudy}
                   </div>
                   <div className="mt-2 h-px w-full bg-slate-900"></div>
@@ -70,7 +70,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
               {/* Semester Hours */}
               <div>
                 <div className="mb-2">
-                  <div className="text-5xl font-bold text-slate-900 md:text-6xl">
+                  <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
                     2/3
                   </div>
                   <div className="mt-2 h-px w-full bg-slate-900"></div>
@@ -88,7 +88,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
                 <div className="flex items-start gap-3">
                   <Calendar className="mt-0.5 size-5 shrink-0 text-slate-600" />
                   <div className="flex-1">
-                    <p className="text-sm uppercase tracking-wider text-slate-500 mb-1.5">
+                    <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
                       Semesters
                     </p>
                     <p className="text-sm font-medium text-slate-900 leading-relaxed">
@@ -103,7 +103,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
                 <div className="flex items-start gap-3">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-slate-600" />
                   <div className="flex-1">
-                    <p className="text-sm uppercase tracking-wider text-slate-500 mb-1.5">
+                    <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
                       Study Mode
                     </p>
                     <p className="text-sm font-medium text-slate-900 leading-relaxed">

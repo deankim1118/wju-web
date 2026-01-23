@@ -35,7 +35,6 @@ export type OutcomeItem = {
   id: string;
   title: string;
   description: string;
-  icon: 'ScrollText' | 'Target' | 'Users' | 'Heart' | 'Globe' | 'BookOpen' | 'Award';
 };
 
 export type CurriculumCategory = {
@@ -59,12 +58,13 @@ export type ProgramExtendedDataInput = {
   keyInformation: KeyInformationInput;
   outcomes: OutcomeItem[];
   curriculum: CurriculumCategory[];
-  admissions: {
+  admissions?: {
     intro: string[];
     sections: {
       id: string;
       title: string;
       items: string[];
+      
     }[];
   };
   graduation: {

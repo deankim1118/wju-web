@@ -1,14 +1,11 @@
-import Link from 'next/link';
 
 import { PageHero } from '@/components/PageHero';
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent
 } from '@/components/ui/card';
 import type { DegreeProgram } from '@/config/academics-content';
 import { getProgramExtendedData } from '@/config/academics/program-extended';
-import { ROUTES } from '@/config/routes';
 import { callToActionContent } from '../../../config/home-content';
 import { CallToAction } from '../../CallToAction';
 import { AdmissionsSection } from './components/AdmissionsSection';
@@ -47,7 +44,7 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10 xl:px-14">
           <Card className="w-full rounded-none bg-card border-bottom border-border/60  shadow-sm relative">
             <div className='absolute left-0 top-0 h-1.5 w-full  bg-secondary' />
-            <CardContent className="p-6 md:p-8">
+            <CardContent className="section-padding-sm px-10 md:px-18">
               <KeyInformationSection data={extendedData.keyInformation} />
             </CardContent>
           </Card>
@@ -55,7 +52,7 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
       </div>
 
       <div className="bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-24 lg:px-10 xl:px-14">
+        <div className="mx-auto max-w-7xl px-6 section-padding-sm lg:px-10 xl:px-14">
           <div className="flex flex-col gap-16 lg:flex-row lg:gap-20">
             <ProgramSidebar currentProgram={program} />
 
@@ -68,16 +65,6 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
                 sections={extendedData.admissions.sections}
               />
               <GraduationSection requirements={extendedData.graduation.requirements} />
-
-              {/* CTAs */}
-              <section className="flex flex-col gap-4 sm:flex-row sm:gap-6 pt-4 border-t border-border/60">
-                <Button variant="outline" className="rounded-md text-primary" asChild>
-                  <Link href={ROUTES.REQUEST_INFO}>Request information</Link>
-                </Button>
-                <Button variant="default" className="rounded-md" asChild>
-                  <Link href={ROUTES.ACADEMICS.ROOT}>Back to Academics</Link>
-                </Button>
-              </section>
             </main>
           </div>
         </div>

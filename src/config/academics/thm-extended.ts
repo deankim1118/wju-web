@@ -2,7 +2,7 @@
  * Master of Theology (ThM) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const THM_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const THM_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$300.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'biblical-exegesis',
+      title: 'Biblical Exegesis',
+      description:
+        'Interpret Old and New Testament texts accurately using original languages and advanced critical methods.',
+    },
+    {
+      id: 'systematic-theology',
+      title: 'Systematic Theology',
+      description:
+        'Construct a comprehensive doctrinal framework covering God, Soteriology, and Ecclesiology.',
+    },
+    {
+      id: 'historical-analysis',
+      title: 'Historical Theology',
+      description:
+        'Evaluate the development of Christian thought from the early church to contemporary theological movements.',
+    },
+    {
+      id: 'eschatological-studies',
+      title: 'Eschatological Studies',
+      description:
+        'Analyze major eschatological themes, prophetic events, and diverse views on the consummation of God’s plan.',
+    },
+    {
+      id: 'research-methodology',
+      title: 'Research Methodology',
+      description:
+        'Employ rigorous qualitative and quantitative methods to investigate religious phenomena and theological controversies.',
+    },
+    {
+      id: 'scholarly-ministry',
+      title: 'Scholarly Ministry',
+      description:
+        'Apply deep theological insights to practical leadership, preaching, and teaching in the church context.',
+    },
+  ]  as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-languages',

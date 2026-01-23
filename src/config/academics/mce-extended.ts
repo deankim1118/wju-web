@@ -2,7 +2,7 @@
  * Master of Christian Education (MCE) Extended Data
  */
 
-import type { ProgramExtendedDataInput } from './program-extended-types';
+import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-types';
 
 export const MCE_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
@@ -11,7 +11,44 @@ export const MCE_EXTENDED: ProgramExtendedDataInput = {
       costPerCredit: '$300.00 per credit hour',
     },
   },
-  outcomes: [],
+  outcomes: [
+    {
+      id: 'educational-design',
+      title: 'Curriculum & Pedagogy',
+      description:
+        'Design biblically grounded curricula and master advanced teaching methodologies, including the teaching methods of Jesus.',
+    },
+    {
+      id: 'biblical-literacy',
+      title: 'Biblical Literacy',
+      description:
+        'Synthesize Old and New Testament history, wisdom literature, and prophetic writings for effective educational instruction.',
+    },
+    {
+      id: 'theological-formation',
+      title: 'Theological Formation',
+      description:
+        'Articulate core doctrines including Soteriology, Ecclesiology, and Eschatology to ensure theological accuracy in teaching.',
+    },
+    {
+      id: 'contextual-teaching',
+      title: 'Contextual Teaching',
+      description:
+        'Adapt educational strategies to engage diverse learners in urban settings and pluralistic cultures.',
+    },
+    {
+      id: 'ethics-leadership',
+      title: 'Ethics & Leadership',
+      description:
+        'Apply Christian ethics and legal principles to moral decision-making and conflict resolution within ministry contexts.',
+    },
+    {
+      id: 'evangelism-discipleship',
+      title: 'Evangelism & Discipleship',
+      description:
+        'Integrate evangelism strategies and spiritual formation practices into the educational ministry of the church.',
+    },
+  ] as OutcomeItem[],
   curriculum: [
     {
       id: 'biblical-studies',

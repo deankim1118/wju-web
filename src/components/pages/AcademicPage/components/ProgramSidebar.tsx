@@ -20,10 +20,10 @@ type ProgramSidebarProps = {
 export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
   return (
     <aside
-      className="w-full lg:w-64 xl:w-72 shrink-0"
+      className="w-full lg:w-64 xl:w-72 shrink-0 "
       aria-label="Degree programs"
     >
-      <nav className="sticky top-28 space-y-6">
+      <nav className="sticky top-28 space-y-6 bg-slate-50 px-4 lg:py-4">
         <div className="lg:hidden">
           <div className="border-b">
             <Link
@@ -31,7 +31,7 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
               className={cn(
                 'block py-3 text-sm font-medium transition-colors',
                 'hover:bg-muted hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                'text-muted-foreground'
+                'text-slate-500'
               )}
             >
               About this Department
@@ -40,7 +40,7 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
           <Accordion type="single" collapsible className="w-full">
             {academicProgramGroups.map((group) => (
               <AccordionItem key={group.category} value={group.category}>
-                <AccordionTrigger className="text-xs font-semibold uppercase tracking-widest text-muted-foreground py-3">
+                <AccordionTrigger className="text-xs font-semibold uppercase tracking-widest text-slate-500 py-3">
                   {group.category}
                 </AccordionTrigger>
                 <AccordionContent>
@@ -55,8 +55,8 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
                               'block rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
                               'hover:bg-muted hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                               isCurrent
-                                ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[2px] pl-[14px]'
-                                : 'text-muted-foreground'
+                                ? 'bg-slate-200 text-primary border-l-2 border-secondary -ml-[2px] pl-[14px]'
+                                : 'text-slate-500'
                             )}
                           >
                             {item.label}
@@ -71,13 +71,13 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
           </Accordion>
         </div>
         <div className="hidden lg:block space-y-6">
-          <div className="border-b pb-3">
+          <div className="border-b border-slate-200 pb-3">
             <Link
               href={ROUTES.ACADEMICS.ROOT}
               className={cn(
-                'block py-2.5 text-sm font-medium transition-colors',
+                'block py-3 text-sm font-medium transition-colors',
                 'hover:bg-muted hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                'text-muted-foreground'
+                'text-slate-500'
               )}
             >
               About this Department
@@ -85,10 +85,10 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
           </div>
           {academicProgramGroups.map((group) => (
             <div key={group.category}>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">
                 {group.category}
               </h3>
-              <ul className="space-y-0.5">
+              <ul className="space-y-0.5 border-b border-slate-200 pb-3">
                 {group.items.map((item) => {
                   const isCurrent = item.href === currentProgram.href;
                   return (
@@ -99,8 +99,8 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
                           'block rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
                           'hover:bg-muted hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                           isCurrent
-                            ? 'bg-primary/10 text-primary border-l-2 border-primary -ml-[2px] pl-[14px]'
-                            : 'text-muted-foreground'
+                            ? 'bg-muted text-primary border-l-2 border-secondary -ml-[2px] pl-[14px]'
+                            : 'text-slate-500'
                         )}
                       >
                         {item.label}
