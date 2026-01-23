@@ -17,7 +17,6 @@ import { GraduationSection } from './components/GraduationSection';
 import { KeyInformationSection } from './components/KeyInformationSection';
 import { OutcomesSection } from './components/OutcomesSection';
 import { ProgramSidebar } from './components/ProgramSidebar';
-import { StructureSection } from './components/StructureSection';
 
 type AcademicProgramPageProps = {
   program: DegreeProgram;
@@ -46,7 +45,7 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
       {/* Key Information - Full width card above sidebar */}
       <div className="bg-background">
         <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10 xl:px-14">
-          <Card className="w-full rounded-none border border-border/60 bg-card shadow-sm relative">
+          <Card className="w-full rounded-none bg-card border-bottom border-border/60  shadow-sm relative">
             <div className='absolute left-0 top-0 h-1.5 w-full  bg-secondary' />
             <CardContent className="p-6 md:p-8">
               <KeyInformationSection data={extendedData.keyInformation} />
@@ -64,8 +63,7 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
               {/* All programs use the same component structure */}
               <OutcomesSection outcomes={extendedData.outcomes} />
               <CurriculumSection curriculum={extendedData.curriculum} />
-              <StructureSection steps={extendedData.structure} />
-              <AdmissionsSection
+              <AdmissionsSection 
                 intro={extendedData.admissions.intro}
                 sections={extendedData.admissions.sections}
               />

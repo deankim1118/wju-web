@@ -2,27 +2,13 @@
  * Doctor of Ministry (DMin) Extended Data
  */
 
-import type { ProgramExtendedData } from './program-extended-types';
+import type { ProgramExtendedDataInput } from './program-extended-types';
 
-export const DMIN_EXTENDED: ProgramExtendedData = {
+export const DMIN_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
     creditInfo: {
       creditHours: '68',
-      costPerCredit: '',
-    },
-    studyOptions: [
-      {
-        type: 'Online',
-        options: '',
-      },
-      {
-        type: 'On Campus',
-        options: '',
-      },
-    ],
-    hoursOfInstruction: {
-      semesterHour: 'One Semester Hour represents one hour of class work per week for 15 weeks.',
-      fieldEducation: 'Field Education credits require 30 hours of work per unit.',
+      costPerCredit: '$525.00 per credit hour',
     },
   },
   outcomes: [],
@@ -65,7 +51,6 @@ export const DMIN_EXTENDED: ProgramExtendedData = {
       ],
     },
   ],
-  structure: [],
   admissions: {
     intro: [],
     sections: [],

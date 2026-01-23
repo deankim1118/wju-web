@@ -2,27 +2,13 @@
  * Master of Chaplaincy (MChap) Extended Data
  */
 
-import type { ProgramExtendedData } from './program-extended-types';
+import type { ProgramExtendedDataInput } from './program-extended-types';
 
-export const MCHAP_EXTENDED: ProgramExtendedData = {
+export const MCHAP_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
     creditInfo: {
       creditHours: '66',
-      costPerCredit: '',
-    },
-    studyOptions: [
-      {
-        type: 'Online',
-        options: '',
-      },
-      {
-        type: 'On Campus',
-        options: '',
-      },
-    ],
-    hoursOfInstruction: {
-      semesterHour: 'One Semester Hour represents one hour of class work per week for 15 weeks.',
-      fieldEducation: 'Field Education credits require 30 hours of work per unit.',
+      costPerCredit: '$300.00 per credit hour',
     },
   },
   outcomes: [],
@@ -81,7 +67,6 @@ export const MCHAP_EXTENDED: ProgramExtendedData = {
       ],
     },
   ],
-  structure: [],
   admissions: {
     intro: [],
     sections: [],

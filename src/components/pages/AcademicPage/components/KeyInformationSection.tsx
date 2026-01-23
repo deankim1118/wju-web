@@ -1,81 +1,125 @@
 import type { KeyInformation } from '@/config/academics/program-extended-types';
-import { BookOpen, Clock, Info } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 
 type KeyInformationSectionProps = {
   data: KeyInformation;
 };
 
+function calculateYearsOfStudy(creditHours: string): string {
+  const hours = parseInt(creditHours, 10);
+  if (isNaN(hours)) return 'Contact for details';
+  
+  // Assuming full-time study (12-15 credits per semester, 2 semesters per year)
+  const creditsPerYear = 34; // Conservative estimate
+  const years = Math.ceil(hours / creditsPerYear);
+  return years.toString();
+}
+
+function formatStudyOptions(studyOptions: KeyInformation['studyOptions']): string {
+  return studyOptions
+    .map((option) => option.type)
+    .join(' & ');
+}
+
 export function KeyInformationSection({ data }: KeyInformationSectionProps) {
+  const yearsOfStudy = calculateYearsOfStudy(data.creditInfo.creditHours);
+  const studyMode = formatStudyOptions(data.studyOptions);
+  const semesters = 'Fall (Aug–Dec) & Spring (Jan–May)';
+
   return (
-    <div className="space-y-8">
+    <div className="py-12 px-6 md:px-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-12 md:grid-cols-5">
+          {/* Left Section - Title */}
+          <div className="flex items-start col-span-2">
+            <h2 className="text-2xl font-semibold uppercase tracking-wide text-slate-900 md:text-3xl">
+              Program Snapshot
+            </h2>
+          </div>
 
-      <div className="grid gap-8 md:grid-cols-3 md:divide-x md:divide-border/60">
-        {/* Credit Information */}
-        <div className="space-y-4 md:pr-8">
-          <div className="flex items-center gap-2.5">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <Info className="size-5 text-rose-500" />
-            </div>
-            <h4 className="uppercase tracking-wide text-primary">
-              Credit Information
-            </h4>
-          </div>
-          <div className="space-y-2.5 text-sm text-muted-foreground">
-            <p>
-              <span className="font-medium text-slate-900">Credit hours:</span>{' '}
-              {data.creditInfo.creditHours}
-            </p>
-            <p>{data.creditInfo.costPerCredit}</p>
-          </div>
-        </div>
-
-        {/* Study Options */}
-        <div className="space-y-4 md:px-8">
-          <div className="flex items-center gap-2.5">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <BookOpen className="size-5 text-rose-500" />
-            </div>
-            <h4 className="uppercase tracking-wide text-primary">
-              Study Options
-            </h4>
-          </div>
-          <div className="space-y-4 text-sm">
-            {data.studyOptions.map((option) => {
-              const optionsArray = Array.isArray(option.options)
-                ? option.options
-                : [option.options];
-              return (
-                <div key={option.type}>
-                  <p className="font-medium text-slate-900 mb-2">{option.type}</p>
-                  <ul className="space-y-1.5 text-muted-foreground">
-                    {optionsArray.map((opt) => (
-                      <li
-                        key={opt}
-                        className="relative pl-4 before:absolute before:left-0 before:top-[0.4em] before:block before:size-1 before:rounded-full before:bg-primary/50 before:content-['']"
-                      >
-                        {opt}
-                      </li>
-                    ))}
-                  </ul>
+          {/* Right Section */}
+          <div className="space-y-10 col-span-3">
+            {/* Top Row - Large Number Cards (3 items) */}
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {/* Credits */}
+              <div>
+                <div className="mb-2">
+                  <div className="text-5xl font-bold text-slate-900 md:text-6xl">
+                    {data.creditInfo.creditHours}
+                  </div>
+                  <div className="mt-2 h-px w-full bg-slate-900"></div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
+                <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
+                  Credits
+                </p>
+              </div>
 
-        {/* Hours of Instruction */}
-        <div className="space-y-4 md:pl-8">
-          <div className="flex items-center gap-2.5">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <Clock className="size-5 text-rose-500" />
+              {/* Years of Study */}
+              <div>
+                <div className="mb-2">
+                  <div className="text-5xl font-bold text-slate-900 md:text-6xl">
+                    {yearsOfStudy}
+                  </div>
+                  <div className="mt-2 h-px w-full bg-slate-900"></div>
+                </div>
+                <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
+                  Years of Study
+                </p>
+              </div>
+
+              {/* Semester Hours */}
+              <div>
+                <div className="mb-2">
+                  <div className="text-5xl font-bold text-slate-900 md:text-6xl">
+                    2/3
+                  </div>
+                  <div className="mt-2 h-px w-full bg-slate-900"></div>
+                </div>
+                <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
+                Max Transfer Credits
+                </p>
+              </div>
             </div>
-            <h4 className="uppercase tracking-wide text-primary">
-              Hours of Instruction
-            </h4>
-          </div>
-          <div className="space-y-3 text-sm text-muted-foreground leading-relaxed">
-            <p>{data.hoursOfInstruction.semesterHour}</p>
-            <p>{data.hoursOfInstruction.fieldEducation}</p>
+
+            {/* Bottom Row - Text Information Cards (2 items) */}
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              {/* Semesters */}
+              <div className="border-t border-slate-200 pt-4">
+                <div className="flex items-start gap-3">
+                  <Calendar className="mt-0.5 size-5 shrink-0 text-slate-600" />
+                  <div className="flex-1">
+                    <p className="text-sm uppercase tracking-wider text-slate-500 mb-1.5">
+                      Semesters
+                    </p>
+                    <p className="text-sm font-medium text-slate-900 leading-relaxed">
+                      {semesters}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Study Mode */}
+              <div className="border-t border-slate-200 pt-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="mt-0.5 size-5 shrink-0 text-slate-600" />
+                  <div className="flex-1">
+                    <p className="text-sm uppercase tracking-wider text-slate-500 mb-1.5">
+                      Study Mode
+                    </p>
+                    <p className="text-sm font-medium text-slate-900 leading-relaxed">
+                      {studyMode}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Hours of Instruction - Subtle description */}
+            <div className="border-t border-slate-100 pt-6">
+              <div className="space-y-2 text- text-slate-600 leading-relaxed italic">
+                <span>{data.hoursOfInstruction.semesterHour}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

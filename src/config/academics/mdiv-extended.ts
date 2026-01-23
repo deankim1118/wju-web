@@ -4,31 +4,16 @@
  */
 
 import type {
-  ProgramExtendedData,
-  OutcomeItem,
   CurriculumCategory,
-  SemesterStep,
+  OutcomeItem,
+  ProgramExtendedDataInput,
 } from './program-extended-types';
 
-export const MDIV_EXTENDED = {
+export const MDIV_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
     creditInfo: {
       creditHours: '99',
-      costPerCredit: '$495.90 per credit hour (2025-2026)',
-    },
-    studyOptions: [
-      {
-        type: 'Online',
-        options: 'Full Semesters',
-      },
-      {
-        type: 'On Campus',
-        options: 'Full Semesters',
-      },
-    ],
-    hoursOfInstruction: {
-      semesterHour: 'One Semester Hour represents one hour of class work per week for 15 weeks.',
-      fieldEducation: 'Field Education credits require 30 hours of work per unit.',
+      costPerCredit: '$300.00 per credit hour' ,
     },
   },
   outcomes: [
@@ -139,28 +124,6 @@ export const MDIV_EXTENDED = {
       ],
     },
   ] as CurriculumCategory[],
-  structure: [
-    {
-      id: 'fall',
-      title: 'Fall Semester',
-      description: 'Regular semester (late August–December), 15 to 17 weeks of coursework.',
-    },
-    {
-      id: 'winter',
-      title: 'Winter Intensive',
-      description: 'Two-week intensive term offered during Winter break.',
-    },
-    {
-      id: 'spring',
-      title: 'Spring Semester',
-      description: 'Regular semester (late January–May), 15 to 17 weeks of coursework.',
-    },
-    {
-      id: 'summer',
-      title: 'Summer Intensive',
-      description: 'Two-week intensive term offered during Summer break.',
-    },
-  ] as SemesterStep[],
   admissions: {
     intro: [
       'To be admitted into the Master of Divinity program at Washington Jabez University, applicants must demonstrate a clear calling to ministry and meet the following academic and spiritual criteria:',
@@ -224,4 +187,4 @@ export const MDIV_EXTENDED = {
       },
     ],
   },
-} as const satisfies ProgramExtendedData;
+} as const satisfies ProgramExtendedDataInput;

@@ -29,11 +29,11 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
               key={category.id}
               value={category.id}
               className={cn(
-                'border rounded-lg px-4 bg-card',
+                'border-t border-b px-4 bg-card',
                 isLast && 'border-b!' // 마지막 항목에도 border-bottom 강제 유지
               )}
             >
-              <AccordionTrigger className="text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-muted-foreground">
+              <AccordionTrigger className="text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-muted-foreground text-sm md:text-base">
                 <span>
                   {category.name}{' '}
                   <span className="font-normal">

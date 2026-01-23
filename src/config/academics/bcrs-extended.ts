@@ -2,27 +2,13 @@
  * Bachelor of Comparative Religious Studies (BCRS) Extended Data
  */
 
-import type { ProgramExtendedData } from './program-extended-types';
+import type { ProgramExtendedDataInput } from './program-extended-types';
 
-export const BCRS_EXTENDED: ProgramExtendedData = {
+export const BCRS_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
     creditInfo: {
       creditHours: '123',
-      costPerCredit: '',
-    },
-    studyOptions: [
-      {
-        type: 'Online',
-        options: '',
-      },
-      {
-        type: 'On Campus',
-        options: '',
-      },
-    ],
-    hoursOfInstruction: {
-      semesterHour: 'One Semester Hour represents one hour of class work per week for 15 weeks.',
-      fieldEducation: 'Field Education credits require 30 hours of work per unit.',
+      costPerCredit: '$255.00 per credit hour',
     },
   },
   outcomes: [],
@@ -100,7 +86,6 @@ export const BCRS_EXTENDED: ProgramExtendedData = {
       ],
     },
   ],
-  structure: [],
   admissions: {
     intro: [],
     sections: [],
