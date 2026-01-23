@@ -29,6 +29,7 @@ export function AcademicPage() {
         title={callToActionContent.title}
         description={callToActionContent.description}
         buttonText={callToActionContent.buttonText}
+        subButtonText='Apply'
         href={callToActionContent.href}
       />
 

@@ -1,0 +1,1885 @@
+[
+  {
+    "programName": "Doctoral",
+    "majors": [
+      {
+        "majorName": "DOCTOR OF MINISTRY (DMin)",
+        "totalCredits": 68,
+        "courses": [
+          {
+            "code": "DOM701",
+            "name": "Hermeneutics",
+            "credits": 4,
+            "description": "An exploration of the development and current status of modern biblical theology, and the contemporary recovery of a theological hermeneutics in relation to the biblical theology movement.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM702",
+            "name": "New Testament Backgrounds for Preachers",
+            "credits": 4,
+            "description": "This is a course on historical, sociological, and cultural backgrounds of the New Testament with a focus on how to utilize them for sermon preparation. This course orients students to explore rich textures of a NT text and translate their significance to the contemporary audience.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM703",
+            "name": "New Testament Ecclesiology for Ministers",
+            "credits": 4,
+            "description": "This course is designed to critically examine the New Testament understanding of the Church and her missions. In the course, students will discuss the formation of Christian identities, communities, missions, and ministry practices in and through the Church. The course will also explore the New Testament principles of being and doing a church and their applications in the earliest Christian centuries and the last few centuries.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM704",
+            "name": "Biblical Theology of the Old Testament for Pastors",
+            "credits": 4,
+            "description": "This course will adopt a thematic approach, with an emphasis on Yahweh’s role relationships and expectations. The impact of the Old Testament on the New Testament will be considered throughout. The course will cover the major themes of creation and the Sinai covenant and associated subthemes, namely wisdom as a creation subtheme and Israel’s religion and the Davidic covenant as covenant subthemes, and internationalism as a subtheme of both creation and covenant.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM705",
+            "name": "Pentecost Theology for Pastoral Ministry",
+            "credits": 4,
+            "description": "This course offers a critical examination of Protestant Reformation theology for contemporary pastoral ministry. Based on the fact that many Protestant reformers, such as Martin Luther, Ulrich Zwingli, and John Calvin were indeed pastors/priest in the 16th century, this course will reevaluate the reformers' thoughts from a pastoral perspective, rather than from a purely systematic point of view.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM706",
+            "name": "Personal Health of a Leader",
+            "credits": 4,
+            "description": "This seminar will examine these hazards as they pertain to the holistic health (physical, mental, relational and spiritual) of the leader, attempt to assist the leader in identifying the areas of potential personal vulnerability with an emphasis on prevention, and provide research-based resources for fostering flourishing in ministry.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM707",
+            "name": "Spiritual Formation and Discipleship",
+            "credits": 4,
+            "description": "The focus of this course is on how to aid/encourage/guide the process of transformation in the lives of adults seeking to follow Jesus within the complexities of a postmodern world. The pattern for growth we will consider is based on classical descriptions of the spiritual journey.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM708",
+            "name": "Ethics and Ministry in a Multicultural Context",
+            "credits": 4,
+            "description": "This course studies the ethical and ministerial challenges and opportunities that face Korean/Korean American churches in a pluralistic cultural context. Experiencing a radical transition from a culturally homogeneous society to a postmodern global society, Korean churches in particular sometimes find it challenging to develop a capacious and competent theology and ethics. The goal is to help students to develop their own ministry model that is culturally relevant, as well as biblically and ethically faithful in their local contexts.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM709",
+            "name": "Reinventing Evangelism",
+            "credits": 4,
+            "description": "This course explores the theory, strategy, and methodology of evangelism. It argues that to do effective, wholistic, biblical evangelism that takes seriously the culture and needs of those one seeks to reach, it is necessary to build a proper theoretical foundation (that sees the Bible with fresh eyes), adopt an appropriate strategy (that makes sense to the given situation), and understand the wide range of methodologies that exist for doing evangelism.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM710",
+            "name": "Theology of Urban Ministry",
+            "credits": 4,
+            "description": "In this course, we will seek to gain experience in engaging in a social cultural analysis to understand the nature and context of urban ministry. We will study how the practice of an urban pastoral theology is a fulfillment of the pastoral office and the ongoing work of the urban church.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM711",
+            "name": "Spirituality and Ministry",
+            "credits": 4,
+            "description": "This seminar is designed to give understanding and experience of the spiritual life and its disciplines, as defined by the New Testament and the history of the disciples of Jesus. To do so, it is offered in a retreat setting. The course will include a study of classics in the field of Christian spirituality, along with some historical and systematic treatments.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM712",
+            "name": "Globalization, the Poor, and Christian Mission",
+            "credits": 4,
+            "description": "In this course, students will be introduced to the theology of mission from an evangelical Protestant perspective. Through a survey of key contributors who left a lasting impact on 21st century missiology, students will explore Trinitarian perspectives on the mission Dei, the reign of God, and contextual theology.",
+            "type": "Required"
+          },
+          {
+            "code": "DOM713",
+            "name": "Dissertation",
+            "credits": 8,
+            "description": "A self-supervised research dissertation in which the student develops a research design to test a hypothesis related to a significant church ministry issue in the field of Christian Ministry. The student creates a research design, reviews significant literature, collects and analyzes data using appropriate statistical metrics, and draws a conclusion and makes recommendations for future study. This research dissertation reflects the student's professional competence in ministry and ability to integrate and utilize the counseling field of study.",
+            "type": "Required"
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "programName": "Undergraduate",
+    "majors": [
+      {
+        "majorName": "BACHELOR OF COMPARATIVE RELIGIOUS STUDIES (BCRS)",
+        "totalCredits": 123,
+        "courses": [
+          {
+            "code": "BOT101",
+            "name": "Introduction to the Bible",
+            "credits": 3,
+            "description": "This course lays a foundation for biblical studies as a discipline. It first provides an introduction to the Bible itself and then to hermeneutics; to the basic tools for biblical research, including Bible translations, commentaries, lexicons, Bible dictionaries, and Bible software.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT102",
+            "name": "Biblical Archeology",
+            "credits": 3,
+            "description": "This course is an introduction to the Archaeology of the Near East, especially ancient Mesopotamia, the Levant, and Egypt, with reference to Old Testament history.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT103",
+            "name": "Hebrew I",
+            "credits": 3,
+            "description": "The first part of a two-course series designed to introduce you to the Hebrew language of the Old Testament.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT105",
+            "name": "Greek I",
+            "credits": 3,
+            "description": "This course is to provide a thorough foundation in the Greek language with emphasis on communication. Small class size provides intensive practice in speaking, writing and listening comprehension.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT107",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "description": "This course will introduce you to the fundamental principles of psychology and to the major subjects of psychological inquiry.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT108",
+            "name": "Introduction to Philosophy",
+            "credits": 3,
+            "description": "This course will introduce you to some of the main areas of research in contemporary philosophy. Each module of a different philosopher will talk you through some of the most important questions and issues in their area of expertise.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT109",
+            "name": "Comparative Religious Studies",
+            "credits": 3,
+            "description": "Comparative religion studies provide learners with knowledge of the world’s major religious faiths. As a major, comparative religion provides a framework for a liberal arts education, exploring subjects like science, psychology, literature, and culture in relation to various world religions.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT110",
+            "name": "Bible Hermeneutics",
+            "credits": 3,
+            "description": "This course introduces the process of investigating the meaning and significance of biblical texts. The general, historical, literary, and contextual principles of interpreting texts will be investigated through readings, online lectures, online discussions, assignments, and research projects. A variety of special issues in hermeneutics will be considered.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT111",
+            "name": "Systematic Theology I",
+            "credits": 3,
+            "description": "Christian theology supplies a biblical perspective on reality. Theological reflection is essential for the person who hopes to help others cope with reality; he or she must be able to provide biblically, reasoned, and sensitive responses to the hard questions of faith.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT112",
+            "name": "Systematic Theology II",
+            "credits": 3,
+            "description": "A course completing the study of systematic theology with special attention given to the doctrines of the person and work of Christ, the Holy Spirit, salvation, the church, and last things. Such issues as nature and extent of salvation, the origin, nature, and future of the church, and the eternal state are explored.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT113",
+            "name": "World Church History",
+            "credits": 3,
+            "description": "Church History: From Christ to the Pre-Reformation, taught by Everett Ferguson, offers a unique contextual view of how the Christian church spread and developed. The church did so not in a vacuum but in a setting of times, cultures, and events that both influenced and were influenced by the church. This course looks closely at the integral link between the history of the world and that of the church.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT114",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "This course will study the history of Israel from the pre-state origins of Zionism in the late nineteenth century to the present. It will explore political, military, social and cultural history. We will seek a better historical understanding of many of Israel’s ongoing challenges, such as the place of religion in civil life, the state’s relation to world Jewry, and the Arab-Israeli conflict.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR101",
+            "name": "Philosophy of Religion",
+            "credits": 3,
+            "description": "This course we will explore questions such as the following: if God has foreknowledge of actions, can I still be free and responsible? Can morality depend on God’s will, and if there is no God, does this have an impact on morality? Is there an afterlife, and if not, is death something I should fear? Is it possible to be reincarnated as another person or another animal? Does the vast suffering in the world give us good reason to believe God does not exist? What is faith, and can believing in God on the basis of faith be justified? We will concentrate on developing the skills needed in order to understand the arguments offered by the philosophers we study, to evaluate those arguments, and to formulate cogent philosophical arguments of our own.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT138",
+            "name": "Introduction to Missiology",
+            "credits": 3,
+            "description": "This course serves as a general introduction to Christian missions. It seeks to root missiology in biblical and systematic theology and to analyze missiology through biblical and theological lenses.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR202",
+            "name": "Comparative Analysis: Teaching and Practical Living of Christ",
+            "credits": 3,
+            "description": "This course examines various Christian apologetic methods including classical, evidential, presupposition, reformed, and cumulative case with the goal of providing a comparative analysis for determining each method’s merits and demerits.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR203",
+            "name": "Christianity and Islam",
+            "credits": 3,
+            "description": "This course will offer a comprehensive study of Islam: its main teachings and beliefs. We will study the social and political impact of Islam on our contemporary world. A variety of topics such as the role of women, the struggle in the way of God or jihad will be explored.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR204",
+            "name": "American Culture and Religion",
+            "credits": 3,
+            "description": "This course introduces students to foundational concepts and debates within the humanities and social sciences by studying one of a rotating set of themes (e.g. love, evil, apocalypse) located at the intersection of religion and culture in America. Emphasis on cultural diversity, historical transformation, interdisciplinary inquiry, problem-solving and the application of academic discussions to everyday life situations.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR205",
+            "name": "Religion and Science",
+            "credits": 3,
+            "description": "This course will examine fundamental philosophical, ethical and historical questions at the intersection of religion and science.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR206",
+            "name": "Gender and Religion",
+            "credits": 3,
+            "description": "This course examines the intersection between religion and gender, considering the ways in which religion informs understandings and assumptions about gender and, in turn, how gendered assumptions shape and inform religious practice.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT115",
+            "name": "Gospel of John",
+            "credits": 3,
+            "description": "This course’s main purpose is to enable each student to comprehend and apply the message of the Gospel of John for both personal discipleship and Christian ministry as it relates to the person of Jesus of Nazareth. We will seek to explore the multi-faceted vision of Jesus as Messiah offered in the images, motifs, and narratives of John, both in the biblical text as well as through the film The Gospel of John by Visual Bible International.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR207",
+            "name": "Cults and World Religions",
+            "credits": 3,
+            "description": "Cults and World Religions is an apologetics class to help acquaint Christians with several of the major religious groups that one will likely encounter from time to time. This course will embrace two major kinds of topics: (1) cults, and (2) major world religions.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT118",
+            "name": "Contemporary Theological Controversies",
+            "credits": 3,
+            "description": "This course introduces a variety of approaches to the development of contextual theology including theologies of liberation, feminist theology, and other non-Western theological formulations Emphasis is placed on the evaluation of approaches and the identification of strengths and weaknesses. Perspectives on the similarities between contextual and western theologies will also be addressed.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT119",
+            "name": "Biblical Prophecies",
+            "credits": 3,
+            "description": "This course explores the phenomenon of prophecy in the ancient world, with special attention to the literature by and about prophets in the Old Testament.",
+            "type": "Required"
+          },
+          {
+            "code": "BOT120",
+            "name": "Biblical Interpretation",
+            "credits": 3,
+            "description": "This course is a study of the pivotal methods and interpretive principles involved in discerning the meaning of the biblical text.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR208",
+            "name": "Intro to International Affairs: Regional Cultures and Worldviews",
+            "credits": 3,
+            "description": "This course serves as an introduction to the study of important issues in modern international relations and Regional Cultures and Worldviews.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR209",
+            "name": "Intro to Communications",
+            "credits": 3,
+            "description": "This course is designed to introduce you to the study of human communication. We will explore theories and models of communication and examine human communication in a variety of contexts including interpersonal relationships, groups, intercultural and gender contexts, public speaking, and public communication.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR210",
+            "name": "English I",
+            "credits": 3,
+            "description": "This course covers a variety of writing skills and understanding literary genres as a foundation for the reading and writing required in college coursework.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR211",
+            "name": "English II",
+            "credits": 3,
+            "description": "This course will focus on fostering interest and promoting confidence in the skills required to communicate, especially through the close, thoughtful reading and writing of various genres.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR212",
+            "name": "Biblical Overview",
+            "credits": 3,
+            "description": "An overview course of the entire Bible, this course is designed to acquaint the student with a basic understanding of all 66 books. Specific topics will include authorship, date of writing, major themes and applications.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR213",
+            "name": "Intro to Islam",
+            "credits": 3,
+            "description": "At a time when Islam has a bad press among outsiders and is the subject of considerable contention among its adherents, this course seeks to provide an “empathetic” introduction to the tradition as a whole, balancing the insiders’ and outsiders’ views, the diversity and the unity of the tradition, the historical and the contemporary, and the political/social and the more strictly religious. At all points, though, an effort is made to indicate the current relevance of the material.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR214",
+            "name": "Islam in World Politics",
+            "credits": 3,
+            "description": "Explores the interrelationship of Islam and politics in the contemporary world. Deals with Islam as a political ideology which shapes the structure of political institutions and behavior. Looks at Islam in practice by examining the interaction between Islam and the political systems of Iran, Pakistan, Saudi Arabia, and others.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR215",
+            "name": "Islamic Law in Societies",
+            "credits": 3,
+            "description": "Examination of the relationship between Islamic law and society; the concept of justice in Islam.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR216",
+            "name": "Biblical Characters in the Quran",
+            "credits": 3,
+            "description": "This course focuses on narratives shared between the Bible and the Quran and how major Muslim, Christian, and Jewish scholars have approached the relationship between the texts across the ages.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR217",
+            "name": "Intro to Hinduism",
+            "credits": 3,
+            "description": "This course, the student will learn just some of the foundations of one of the oldest religions in the world. From the origins of Hinduism to the writings that shaped its historical development over centuries, non-Hindu students are introduced to a number of rather ‘foreign’ concepts.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR218",
+            "name": "Intro to Buddhism",
+            "credits": 3,
+            "description": "This course examines the known historical facts of the Buddha’s life. His teachings are introduced, including the Four Noble Truths, the Eightfold Path to Enlightenment, and the Five Noble Precepts.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR219",
+            "name": "Intro to South Asia",
+            "credits": 3,
+            "description": "South Asia has been one of the world’s most dynamic crossroads, a place where cultures met and exchanged ideas, goods, and populations. The region was the site of the most prolonged and intensive colonial encounter in the form of Britain’s Indian empire, and Indian individuals and ideas entered into long conversations with counterparts in Europe, the Middle East, and Southeast Asia, and elsewhere.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR220",
+            "name": "Intro to the Middle East",
+            "credits": 3,
+            "description": "The Middle East is built on a magnificent legacy of civilizations dating back to ancient times. Today, the Middle East continues to offer the world a rich cultural contribution. This course explores the peoples’ and cultures of the Middle East, covering a region stretching from the North African shores of the Atlantic to the Anatolian shores of the Mediterranean.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR221",
+            "name": "Perspectives",
+            "credits": 3,
+            "description": "This course is designed to help the student develop a biblical, historical and cultural analysis of the impact of the world Christian movement. Specific attention is given to strategy and the imperative to bring the gospel to groups that have yet to initially receive it.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR225",
+            "name": "Christianity in the Modern",
+            "credits": 3,
+            "description": "An introduction to Christianity in the Modern, from its beginnings to the present. We will learn about Christian faith and practice through an overview of the religion’s scripture, history, worship, institutions, theology, and teachings, and give attention to many of Christianity’s most important and influential persons, groups, and movements.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR226",
+            "name": "The Crusades",
+            "credits": 3,
+            "description": "This course explores the causes, meanings, meaningfulness, and commemoration of these mass Christian expeditions against Muslims, pagans, Jews, heretics, and other infidels through primary sources, supported by secondary readings and supplemental sources.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR227",
+            "name": "Christian Apologetics",
+            "credits": 3,
+            "description": "This course is designed to be a basic introduction to the biblical, theological, historical, and philosophical foundations of Christian apologetics. Attention is given to the differences between Christian thought and select examples of non-Christian thought. It explores some of the assorted challenges to Christian belief and provides a survey of resources for thinking about those concerns.",
+            "type": "Required"
+          },
+          {
+            "code": "BOR228",
+            "name": "Special Lecture",
+            "credits": 3,
+            "description": "A special lecture course designed to enhance students' understanding of various topics in religious studies.",
+            "type": "Required"
+          }
+        ]
+      },
+      {
+        "majorName": "BACHELOR OF THEOLOGY (ThB)",
+        "totalCredits": 123,
+        "courses": [
+          {
+            "code": "BOT 101",
+            "name": "Introduction to the Bible",
+            "credits": 3,
+            "description": "This course lays a foundation for biblical studies as a discipline. It first provides an introduction to the Bible itself and then to hermeneutics; to the basic tools for biblical research, including Bible translations, commentaries, lexicons, Bible dictionaries, and Bible software."
+          },
+          {
+            "code": "BOT 102",
+            "name": "Biblical archeology",
+            "credits": 3,
+            "description": "This course is an introduction to the Archaeology of the Near East, especially ancient Mesopotamia, the Levant, and Egypt, with reference to Old Testament history."
+          },
+          {
+            "code": "BOT 103",
+            "name": "Hebrew I",
+            "credits": 3,
+            "description": "The first part of a two-course series designed to introduce you to the Hebrew language of the Old Testament."
+          },
+          {
+            "code": "BOT 104",
+            "name": "Hebrew II",
+            "credits": 3,
+            "description": "Fundamentals of grammar, pronunciation, culture and conversation. Reading, writing, listening comprehension, and simple conversational patterns."
+          },
+          {
+            "code": "BOT 105",
+            "name": "Greek I",
+            "credits": 3,
+            "description": "An introduction to New Testament Greek, this course includes an intensive drill in vocabulary, conjugations, declensions, and grammatical constructions, with translation of sentences from the textbook. This course cannot be credited as a Bible elective."
+          },
+          {
+            "code": "BOT 106",
+            "name": "Greek II",
+            "credits": 3,
+            "description": "A continuation of Greek Grammar I, this course marks the completion of Greek Grammar and forms the basis for developing proficiency in translation."
+          },
+          {
+            "code": "BOT 107",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "description": "This course will introduce you to the fundamental principles of psychology and to the major subjects of psychological inquiry."
+          },
+          {
+            "code": "BOT 108",
+            "name": "Introduction to Philosophy",
+            "credits": 3,
+            "description": "This course will introduce you to some of the main areas of research in contemporary philosophy. Each module a different philosopher will talk you through some of the most important questions and issues in their area of expertise."
+          },
+          {
+            "code": "BOT 109",
+            "name": "Comparative Religious Studies",
+            "credits": 3,
+            "description": "Comparative religion studies provide learners with knowledge of the world's major religious faiths. As a major, comparative religion provides a framework for a liberal arts education, exploring subjects like science, psychology, literature and culture in relationship to various world religions."
+          },
+          {
+            "code": "BOT 110",
+            "name": "Bible Hermeneutics",
+            "credits": 3,
+            "description": "This course introduces the process of investigating the meaning and significance of biblical texts. The general, historical, literary, and contextual principles of interpreting texts will be investigated through readings, online lectures, online discussions, assignments, and a research project. A variety of special issues in hermeneutics will be considered."
+          },
+          {
+            "code": "BOT 111",
+            "name": "Bible Geography",
+            "credits": 3,
+            "description": "Biblical Geography is the study of Bible lands, and an examination of the places and features that are within the boundaries of those lands. Becoming familiar with the geographical background of the ancient biblical world is essential for a better understanding of the Bible."
+          },
+          {
+            "code": "BOT 112",
+            "name": "Introduction to the Old Testament",
+            "credits": 3,
+            "description": "A survey of the historical, literary, and cultural context of the Old Testament. This course is a prerequisite for all other Old Testament classes."
+          },
+          {
+            "code": "BOT 123",
+            "name": "The Pentateuch",
+            "credits": 3,
+            "description": "Modern biblical criticism derives in large part from early attempts to resolve the numerous compositional and structural anomalies and discrepancies found in the Mosaic Pentateuch or 'Five Books of Moses'; i.e., Genesis, Exodus, Leviticus, Numbers, and Deuteronomy."
+          },
+          {
+            "code": "BOT 124",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "A study of the history of Israel in light of the Old Testament books of Joshua through Esther. Emphasis will be on God's activities and interventions into the affairs of mankind, as well as on how heroes of faith impacted their culture."
+          },
+          {
+            "code": "BOT 125",
+            "name": "Poetry",
+            "credits": 3,
+            "description": "A study of the nature and techniques of Old Testament poetry, including metrics, line and strophic structure, historical-grammatical exegesis and text criticism. Special introduction to the various poetical books of the OT and samples of exegesis, emphasizing the Psalms."
+          },
+          {
+            "code": "BOT 126",
+            "name": "Prophet",
+            "credits": 3,
+            "description": "An exposition of the pre-exilic, exilic, and postexilic writing prophets (Isaiah through Malachi), excluding Jonah, but including Lamentations with emphasis on the biblical theology of these books, their genre, and application."
+          },
+          {
+            "code": "BOT 127",
+            "name": "Advanced Study: Systematic Theology",
+            "credits": 3,
+            "description": "A variety of topics offered including selected texts or topics from both testaments. Independent student research and writing in addition to a seminar style class."
+          },
+          {
+            "code": "BOT 128",
+            "name": "Introduction to New Testament",
+            "credits": 3,
+            "description": "In this course we will study the diverse writings of the NT as products of their original historical, social, and religious contexts. We will ask how these ancient writings served to interpret and respond to the life situations of the earliest Christians."
+          },
+          {
+            "code": "BOT 129",
+            "name": "Four Gospels",
+            "credits": 3,
+            "description": "This course provides an overview of the scope and content of the four Gospels found in the New Testament, each written for specific communities and purposes. Through close examination, we seek to discern their purposes, reconstruct their communities, and reflect on the meanings of their presentations of Jesus."
+          },
+          {
+            "code": "BOT 130",
+            "name": "Acts",
+            "credits": 3,
+            "description": "This course chronicles the characters and events in the book of Acts to study the early development of the Christian church from its Jewish base to the inclusion of all peoples."
+          },
+          {
+            "code": "BOT 131",
+            "name": "Paul's Epistle",
+            "credits": 3,
+            "description": "An exposition of Acts and 10 of the Pauline Epistles (all except Romans, Ephesians, and Philippians) with emphasis on the biblical theology of these books, their genre, and application."
+          },
+          {
+            "code": "BOT 132",
+            "name": "Applying Scripture in the Contemporary World",
+            "credits": 3,
+            "description": "This course addresses contemporary issues impacting the church through the analysis of biblical texts. Emphasis is placed on the development of action plans to address identified concerns."
+          },
+          {
+            "code": "BOT 133",
+            "name": "Systematic theology I",
+            "credits": 3,
+            "description": "Christian theology supplies a biblical perspective on reality. Theological reflection is essential for the person who hopes to help others cope with reality; he or she must provide biblical, reasoned, and sensitive responses to the hard questions of faith."
+          },
+          {
+            "code": "BOT 134",
+            "name": "Systematic theology II",
+            "credits": 3,
+            "description": "A course completing the study of systematic theology with special attention given to the doctrines of the person and work of Christ, the Holy Spirit, salvation, the church, and last things."
+          },
+          {
+            "code": "BOT 135",
+            "name": "Christian Apologetics",
+            "credits": 3,
+            "description": "A theological and philosophical defense of the Christian faith. Evaluates modern systems of thought and demonstrates the validity and defense of Christian doctrines as truth."
+          },
+          {
+            "code": "BOR 135",
+            "name": "Pastoral Practice I",
+            "credits": 3,
+            "description": "Pastoral Practice course designed to create practical skills in ministry under professional supervision, including hospital visitation, a pastoral internship, and exposure to denominational agencies."
+          },
+          {
+            "code": "BOR 136",
+            "name": "Pastoral Practice II",
+            "credits": 3,
+            "description": "Pastoral Practice course designed to create practical skills in ministry under professional supervision, including hospital visitation, a pastoral internship, and exposure to denominational agencies."
+          },
+          {
+            "code": "BOT 136",
+            "name": "Modern theology",
+            "credits": 3,
+            "description": "From the end of the Reformation period, representative figures and movements are studied in order to better understand current orientations to theology and to the theological task."
+          },
+          {
+            "code": "BOT 137",
+            "name": "World Church History",
+            "credits": 3,
+            "description": "Church History: From Christ to the Pre-Reformation offers a unique contextual view of how the Christian church spread and developed."
+          },
+          {
+            "code": "BOR 138",
+            "name": "Preaching",
+            "credits": 3,
+            "description": "This course is designed to enable the student to construct an expository sermon based upon the skills of exegesis."
+          },
+          {
+            "code": "BOR 139",
+            "name": "Worship",
+            "credits": 3,
+            "description": "This course is designed to help students deepen their theological understanding of Christian worship and broaden their liturgical experience."
+          },
+          {
+            "code": "BOT 138",
+            "name": "Introduction to Missiology",
+            "credits": 3,
+            "description": "This course serves as a general introduction to Christian missions. It seeks to root missiology in biblical and systematic theology."
+          },
+          {
+            "code": "BOT 139",
+            "name": "Multicultural Mission",
+            "credits": 3,
+            "description": "The purpose of this course is to provide an overview of Multicultural mission considerations in the conduction of therapy with families and individuals of different cultural backgrounds."
+          },
+          {
+            "code": "BOC 304",
+            "name": "Pastoral and Behavioral Psychology",
+            "credits": 3,
+            "description": "A course designed to consider the special issues associated with the theory, practice, and administration of counseling in pastoral contexts. Students will receive training for certification in the PREPARE-ENRICH and MBTI assessments, as well as the Strategic Pastoral Counseling model."
+          },
+          {
+            "code": "BOC 137",
+            "name": "Bible teaching method",
+            "credits": 3,
+            "description": "This is a course on the basic principles of biblical teaching. It is designed to give a basic overview of methods and principles of teaching biblical truth. In doing this, the course will attempt to give the student helpful feedback so that he or she can assess with more confidence God's calling in his life."
+          },
+          {
+            "code": "BOC 309",
+            "name": "Belief development by age",
+            "credits": 3,
+            "description": "This course is the undergraduate introductory course in child development. The course covers the following subject areas: Major theories of child development, Research methods in the field of child development, Prenatal development and birth, Infancy and early childhood development, Physical growth, Cognitive development, Intelligence, Language development."
+          },
+          {
+            "code": "BOC 311",
+            "name": "Introduction to Christian Counseling",
+            "credits": 3,
+            "description": "This class is a general introduction to biblical pastoral counseling, including an overview of current trends in counseling theory and practice and the role of counseling in public, private and church settings."
+          },
+          {
+            "code": "BOC 323",
+            "name": "Pastoral Counseling",
+            "credits": 3,
+            "description": "This course provides a foundational orientation to pastoral counseling as a practice of ministry and as a theological bridge discipline connecting ministry and marriage and family therapy."
+          },
+          {
+            "code": "BOC 312",
+            "name": "Home Ministry",
+            "credits": 3,
+            "description": "The purpose of this course is to prepare home ministry majors and minors globally, biblically, theologically, and professionally to work with children in churches, parachurch organizations, and global ministry settings."
+          },
+          {
+            "code": "Special Lecture",
+            "name": "Special Lecture",
+            "credits": 3,
+            "description": "A special lecture course designed to supplement the curriculum and provide advanced insights in theology and ministry."
+          }
+        ]
+      },
+      {
+        "majorName": "BACHELOR OF CHRISTIAN & COUNSELING (BCC)",
+        "totalCredits": 123,
+        "courses": [
+          {
+            "code": "BOT 101",
+            "name": "Introduction to the Bible",
+            "credits": 3,
+            "description": "This course lays a foundation for biblical studies as a discipline. It first provides an introduction to the Bible itself and then to hermeneutics; to the basic tools for biblical research, including Bible translations, commentaries, lexicons, Bible dictionaries, and Bible software."
+          },
+          {
+            "code": "BOT 102",
+            "name": "Biblical archeology",
+            "credits": 3,
+            "description": "This course is an introduction to the Archaeology of the Near East, especially ancient Mesopotamia, the Levant, and Egypt, with reference to Old Testament history."
+          },
+          {
+            "code": "BOT 103",
+            "name": "Hebrew I",
+            "credits": 3,
+            "description": "The first part of a two-course series designed to introduce you to the Hebrew language of the Old Testament."
+          },
+          {
+            "code": "BOT 104",
+            "name": "Hebrew II",
+            "credits": 3,
+            "description": "Fundamentals of grammar, pronunciation, culture and conversation. Reading, writing, listening comprehension and simple conversational patterns."
+          },
+          {
+            "code": "BOT 105",
+            "name": "Greek I",
+            "credits": 3,
+            "description": "Introduction to New Testament Greek, this course includes an intensive drill in vocabulary, conjugations, declensions, and grammatical constructions, with the translation of sentences from the textbook. This course cannot be credited as a Bible elective."
+          },
+          {
+            "code": "BOT 106",
+            "name": "Greek II",
+            "credits": 3,
+            "description": "A continuation of Greek Grammar I, this course marks the completion of Greek Grammar and forms the basis for developing proficiency in translation."
+          },
+          {
+            "code": "BOT 107",
+            "name": "Introduction to Psychology",
+            "credits": 3,
+            "description": "This course will introduce you to the fundamental principles of psychology and to the major subjects of psychological inquiry."
+          },
+          {
+            "code": "BOT 108",
+            "name": "Introduction to Philosophy",
+            "credits": 3,
+            "description": "This course will introduce you to some of the main areas of research in contemporary philosophy. Each module of a different philosopher will talk you through some of the most important questions and issues in their area of expertise."
+          },
+          {
+            "code": "BOT 109",
+            "name": "Comparative Religious Studies",
+            "credits": 3,
+            "description": "Comparative religion studies provide learners with knowledge of the world’s major religious faiths. As a major, comparative religion provides a framework for a liberal arts education, exploring subjects like science, psychology, literature, and culture in relation to various world religions."
+          },
+          {
+            "code": "BOT 110",
+            "name": "Bible Hermeneutics",
+            "credits": 3,
+            "description": "This course introduces the process of investigating the meaning and significance of biblical texts. The general, historical, literary, and contextual principles of interpreting texts will be investigated through readings, online lectures, online discussions, assignments, and a research project. A variety of special issues in hermeneutics will be considered."
+          },
+          {
+            "code": "BOT 111",
+            "name": "Bible Geography",
+            "credits": 3,
+            "description": "Biblical Geography is the study of Bible lands and an examination of the places and features that are within the boundaries of those lands. Becoming familiar with the geographical background of the ancient biblical world is essential for a better understanding of the Bible. The Bible mentions rivers, mountains, details about topography, and even nations and empires that all had geographical boundaries."
+          },
+          {
+            "code": "BOT 112",
+            "name": "Introduction to the Old Testament",
+            "credits": 3,
+            "description": "A survey of the historical, literary, and cultural context of the Old Testament. This course is a prerequisite for all other Old Testament classes."
+          },
+          {
+            "code": "BOT 123",
+            "name": "The Pentateuch",
+            "credits": 3,
+            "description": "The biblical criticism derives in large part from early attempts to resolve the numerous compositional and structural anomalies and discrepancies found in the Mosaic Pentateuch or ‘Five Books of Moses’; i.e., the ‘five books’ of Genesis, Exodus, Leviticus, Numbers, and Deuteronomy."
+          },
+          {
+            "code": "BOT 124",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "A study of the history of Israel in light of the Old Testament books of Joshua through Esther. Emphasis will be on God’s activities and interventions into the affairs of mankind, as well as on how heroes of faith impacted their culture."
+          },
+          {
+            "code": "BOT 125",
+            "name": "Poetry",
+            "credits": 3,
+            "description": "A study of the nature and techniques of Old Testament (hereafter OT) poetry, including metrics, line and strophic structure, historical- grammatical exegesis, and text criticism. Special introduction to the various poetical books of the OT and samples of exegesis, emphasizing the Psalms."
+          },
+          {
+            "code": "BOT 126",
+            "name": "Prophet",
+            "credits": 3,
+            "description": "An exposition of the pre-exilic, exilic, and post-exilic writing prophets (Isaiah through Malachi), excluding Jonah, but including Lamentations with emphasis on the biblical theology of these books, their genre, and application."
+          },
+          {
+            "code": "BOT 127",
+            "name": "Advanced Study: Systematic Theology",
+            "credits": 3,
+            "description": "A variety of topics offered including selected texts or topics from both testaments. Independent student research and writing in addition to a seminar style class."
+          },
+          {
+            "code": "BOT 128",
+            "name": "Introduction to the New Testament",
+            "credits": 3,
+            "description": "In this course we will study the diverse writings of the NT as products of their original historical, social, and religious contexts. We will ask how these ancient writings served to interpret and respond to the life situations of the earliest Christians. By asking this question, we prepare ourselves for thinking critically about the ways the NT writings have been appropriated and interpreted in later contexts."
+          },
+          {
+            "code": "BOT 129",
+            "name": "Four Gospels",
+            "credits": 3,
+            "description": "This course will provide an overview of the scope and content of the four Gospels found in the New Testament, with a little attention to other early gospels. Each of these gospels was written at a specific time and place and for a specific purpose. While using many the same traditions about Jesus, each shapes its presentation to the needs of the particular community for which it was written, resulting in diverse portraits of Jesus. Through a close examination of the texts of the gospels, we will seek to discern their purposes, reconstruct their communities, and reflect on the meanings of their presentations of Jesus. We will conclude by exploring what can be said about Jesus historically."
+          },
+          {
+            "code": "BOT 130",
+            "name": "Acts",
+            "credits": 3,
+            "description": "This course chronicles the characters and events in the book of Acts to study the early development of the Christian church from its Jewish base to the inclusion of all peoples. The lives of the apostle Peter and apostle Paul set the background for studies of the General Epistles and Pauline Epistles."
+          },
+          {
+            "code": "BOT 131",
+            "name": "Paul’s Epistle",
+            "credits": 3,
+            "description": "Exposition of Acts and 10 of the Pauline Epistles (all except Romans, Ephesians, and Philippians) with emphasis on the biblical theology of these books, their genre, and application."
+          },
+          {
+            "code": "BOT 132",
+            "name": "Applying Scripture in the Contemporary World",
+            "credits": 3,
+            "description": "This course will address contemporary issues impacting the church through the analysis of biblical texts. Emphasis is placed on the development of action plans to address identified concerns."
+          },
+          {
+            "code": "BOT 133",
+            "name": "Systematic theology",
+            "credits": 3,
+            "description": "Christian theology supplies a biblical perspective on reality. Theological reflection is essential for the person who hopes to help others cope with reality; he or she must be able to provide biblical, reasoned and sensitive responses to the hard questions of faith."
+          },
+          {
+            "code": "BOT 134",
+            "name": "Systematic theology II",
+            "credits": 3,
+            "description": ""
+          },
+          {
+            "code": "BOT 135",
+            "name": "Christian apologetics",
+            "credits": 3,
+            "description": "Christian apologetics course is a theological and philosophical defense of the Christian faith. The study includes the impact that faith, reason, and experience have on Christianity. It evaluates modern systems of thought and demonstrates the validity and defense of Christian doctrines as truth. It also addresses current societal questions and proposes a proper Christian response."
+          },
+          {
+            "code": "BOT 136",
+            "name": "Modern theology",
+            "credits": 3,
+            "description": "From the end of the Reformation period, representative figures and movements are studied in order to better understand current orientations to theology and to the theological task. The focus is on the development of Protestant theology in the context of modern European thought and culture; including Protestant Orthodoxy, Deism, Protestant Liberalism, and Neo-Orthodoxy."
+          },
+          {
+            "code": "BOC 101",
+            "name": "Multicultural Counseling",
+            "credits": 3,
+            "description": "This course is to provide students an opportunity to gain multicultural competency as professional counselors."
+          },
+          {
+            "code": "BOC 102",
+            "name": "Group Counseling",
+            "credits": 3,
+            "description": "This course is designed to explore the group process by examining theories and research related to group counseling. This course is designed to acquaint students with the implementation of group counseling in the school settings. The courses will also explore group dynamics and group procedures."
+          },
+          {
+            "code": "BOC 103",
+            "name": "Negotiation, Mediation, and Conflict Resolution",
+            "credits": 3,
+            "description": "Conflict is a part of our lives. The study of conflict and its resolution through negotiation is the goal of this course. This course will focus on the concepts and skills necessary to help you identify and resolve conflicts through negotiation."
+          },
+          {
+            "code": "BOC 104",
+            "name": "Pastoral and Behavioral Psychology",
+            "credits": 3,
+            "description": "A course designed to consider the special issues associated with the theory, practice, and administration of counseling in pastoral contexts. Students will receive training for certification in the PREPARE-ENRICH and MBTI assessments, as well as the Strategic Pastoral Counseling model."
+          },
+          {
+            "code": "BOC 105",
+            "name": "Marriage Counseling",
+            "credits": 3,
+            "description": "This course will introduce participants to selected therapy models which seek to reveal both “normal” (functional) and “abnormal” (dysfunctional) coupling patterns and generate a variety of intervention options useful in the assessment and treatment of couples-in-crisis who are experiencing various degrees of danger and opportunity."
+          },
+          {
+            "code": "BOC 106",
+            "name": "Discipline and Mentoring Women",
+            "credits": 3,
+            "description": "In this course the student will study the practice of discipleship and mentoring as it relates to women. Biblical patterns of discipleship and mentoring will be explored with special emphasis on the task of mentoring women."
+          },
+          {
+            "code": "BOC 137",
+            "name": "Bible teaching method",
+            "credits": 3,
+            "description": "This is a course on the basic principles of biblical teaching. It is designed to give a basic overview of methods and principles of teaching biblical truth. In doing this, the course will attempt to give the student helpful feedback so that he or she can assess with more confidence God's calling in his life."
+          },
+          {
+            "code": "BOC 309",
+            "name": "Belief development by age",
+            "credits": 3,
+            "description": "This course is the undergraduate introductory course in child development. The course covers the following subject areas: • Major theories of child development • Research methods in the field of child development • Prenatal development and birth • Infancy and early childhood development • Physical growth • Cognitive development • Intelligence • Language development"
+          },
+          {
+            "code": "BOC 110",
+            "name": "Introduction to Christian Education",
+            "credits": 3,
+            "description": "The purpose of this course is to provide an overview of the Christian education function in the local church. The emphasis of this course is to give pastors, ministers of education and other Christian educators a general background of the history, philosophy, scope, and need for quality Christian education in the local churches of today."
+          },
+          {
+            "code": "BOC 311",
+            "name": "Introduction to Christian Counseling",
+            "credits": 3,
+            "description": "This class is a general introduction to biblical pastoral counseling, including an overview of current trends in counseling theory and practice and the role of counseling in public, private and church settings."
+          },
+          {
+            "code": "BOC 312",
+            "name": "Home Ministry",
+            "credits": 3,
+            "description": "The purpose of this course is to prepare home ministry majors and minors globally, biblically, theologically, and professionally to work with children in churches, parachurch organizations, and global ministry settings."
+          },
+          {
+            "code": "BOC 323",
+            "name": "Pastoral Counseling",
+            "credits": 3,
+            "description": "This course provides a foundational orientation to pastoral counseling as a practice of ministry and as a theological bridge discipline connecting ministry and marriage and family therapy."
+          },
+          {
+            "code": "BOR 135",
+            "name": "Pastoral Practice I",
+            "credits": 3,
+            "description": "Pastoral Practice course designed to create practical skills in ministry under professional supervision, including hospital visitation, a pastoral internship, and exposure to denominational agencies."
+          },
+          {
+            "code": "BOR 136",
+            "name": "Pastoral Practice II",
+            "credits": 3,
+            "description": "Pastoral Practice course designed to create practical skills in ministry under professional supervision, including hospital visitation, a pastoral internship, and exposure to denominational agencies."
+          },
+          {
+            "code": "BOT 137",
+            "name": "World Church History",
+            "credits": 3,
+            "description": "Church History: From Christ to the Pre-Reformation, taught by Everett Ferguson, offers a unique contextual view of how the Christian church spread and developed. The church did so not in a vacuum but in a setting of times, cultures, and events that both influenced and were influenced by the church. This course looks closely at the integral link between the history of the world and that of the church."
+          },
+          {
+            "code": "Special Lecture",
+            "name": "Special Lecture",
+            "credits": 3,
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "programName": "Graduate",
+    "majors": [
+      {
+        "majorName": "MASTER OF THEOLOGY (ThM)",
+        "totalCredits": 96,
+        "courses": [
+          {
+            "code": "MDT 401",
+            "name": "Biblical Hebrew I",
+            "credits": 3,
+            "description": "Introduces students to the basic lexicon and grammatical structures of biblical Hebrew, with an emphasis on the development of a set of useful translation strategies. Students apply skills to translating various biblical texts."
+          },
+          {
+            "code": "MDT 402",
+            "name": "Biblical Hebrew II",
+            "credits": 3,
+            "description": "Development of students’ familiarity with spoken and written Hebrew through grammar review, discussions, and vocabulary building. Includes readings on literary and cultural topics related to modern Israel. Prerequisite: MDT401."
+          },
+          {
+            "code": "MDT 403",
+            "name": "Biblical Greek I",
+            "credits": 3,
+            "description": "Study of grammar, vocabulary, and syntax of Biblical Greek. Prepares students to read the Greek New Testament."
+          },
+          {
+            "code": "MDT 404",
+            "name": "Biblical Greek II",
+            "credits": 3,
+            "description": "Continuation of Biblical Greek I. Further study of grammar, vocabulary, and syntax. Prerequisite: MDT403."
+          },
+          {
+            "code": "MDD 501",
+            "name": "Pastoral Care",
+            "credits": 3,
+            "description": "Builds skills for pastoral care across the lifespan of individuals and families. Considers care for culture and social institutions."
+          },
+          {
+            "code": "MDD 502",
+            "name": "Church Internship I",
+            "credits": 3,
+            "description": "Supervised ministry in a local church to develop understanding of personal ministry gifts with appropriate support and evaluation."
+          },
+          {
+            "code": "MDD 503",
+            "name": "Church Internship II",
+            "credits": 3,
+            "description": "Continuation of Church Internship I with further development and evaluation of personal ministry gifts."
+          },
+          {
+            "code": "MDT 405",
+            "name": "The Pentateuch",
+            "credits": 3,
+            "description": "Study of the compositional and structural anomalies in the Mosaic Pentateuch (Genesis through Deuteronomy) and critical approaches to them."
+          },
+          {
+            "code": "MDT 406",
+            "name": "Prophets I",
+            "credits": 3,
+            "description": "Surveys history, literature, and theology of the prophetic corpus, situating prophets in historical context via 1-2 Kings, Ezra, Nehemiah."
+          },
+          {
+            "code": "MDT 407",
+            "name": "Prophets II",
+            "credits": 3,
+            "description": "In-depth study of Obadiah, Joel, Jonah, Amos, and Hosea in historical context."
+          },
+          {
+            "code": "MDT 408",
+            "name": "The Synoptic Gospel",
+            "credits": 3,
+            "description": "Detailed examination of Matthew, Mark, and Luke with attention to the distinctive portrait of Jesus each presents."
+          },
+          {
+            "code": "MDT 409",
+            "name": "The Gospel of John",
+            "credits": 3,
+            "description": "Current research and interpretation of the Gospel of John, requiring approximately 10 hours of study per week."
+          },
+          {
+            "code": "MDT 410",
+            "name": "The Letters of Paul",
+            "credits": 3,
+            "description": "Introduction to Paul's letters, considering their historical context in the Roman Empire and diaspora Judaism and their ethical and philosophical impact."
+          },
+          {
+            "code": "MDT 411",
+            "name": "The Epistles",
+            "credits": 3,
+            "description": "Study of James, 1 & 2 Peter, and Jude, focusing on theology of God, Christology, hamartiology, pistology, and eschatology."
+          },
+          {
+            "code": "MDT 412",
+            "name": "Revelation",
+            "credits": 3,
+            "description": "Study of the Book of Revelation with focus on literary genre, theological themes, and interpretation schools."
+          },
+          {
+            "code": "MDT 413",
+            "name": "Systematic I",
+            "credits": 3,
+            "description": "Advanced discussions on theological method, Scripture, God, creation, providence, angels, humanity, and sin, emphasizing scriptural arguments and relevance for Christian life."
+          },
+          {
+            "code": "MDT 414",
+            "name": "Systematic II",
+            "credits": 3,
+            "description": "Continuation of Systematic I, covering creation and evil, human nature, sin and grace, salvation, church, sacraments, eschatology, and world religions. Prerequisite: MDT413."
+          },
+          {
+            "code": "MDT 415",
+            "name": "Eschatology I",
+            "credits": 3,
+            "description": "Study of eschatology, including major themes and the order of predicted events in God’s plan of redemption."
+          },
+          {
+            "code": "MDT 416",
+            "name": "Eschatology II",
+            "credits": 3,
+            "description": "Continuation of Eschatology I, examining systems, chiliasm history, themes, problems, and the rapture question. Prerequisite: MDT415."
+          },
+          {
+            "code": "MDT 417",
+            "name": "Contemporary Theology",
+            "credits": 3,
+            "description": "Critical reflection on significant individuals, movements, events, and foundational tenets shaping contemporary theologies."
+          },
+          {
+            "code": "MDD 509",
+            "name": "Leadership and Administration",
+            "credits": 3,
+            "description": "Blends theoretical knowledge and practical skills to improve leadership and administration abilities."
+          },
+          {
+            "code": "MDT 418",
+            "name": "Contemporary Theological Thought",
+            "credits": 3,
+            "description": "Examines major trends in contemporary theological thought in light of their philosophical contexts."
+          },
+          {
+            "code": "MDT 419",
+            "name": "Christian Thought History",
+            "credits": 3,
+            "description": "Survey of early Christian thought, focusing on theological and doctrinal development prior to the Reformation."
+          },
+          {
+            "code": "MDT 420",
+            "name": "Ecclesiology",
+            "credits": 3,
+            "description": "Study of the nature, purpose, and function of the Church."
+          },
+          {
+            "code": "MTD 421",
+            "name": "Soteriology",
+            "credits": 3,
+            "description": "Study of the grace of God in salvation, including election, atonement, justification, regeneration, and the ministry of the Holy Spirit."
+          },
+          {
+            "code": "MDE 701",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "Study of Israel’s history in light of Joshua through Esther, emphasizing God’s interventions and faith heroes’ influence on culture."
+          },
+          {
+            "code": "MDE 702",
+            "name": "Wisdom Literature",
+            "credits": 3,
+            "description": "Detailed examination of Job, Proverbs, Ecclesiastes, and Song of Songs."
+          },
+          {
+            "code": "MDE 703",
+            "name": "Teaching Method of Jesus",
+            "credits": 3,
+            "description": "Examination of Jesus as a teacher, including authority, mission, content, discipline, methodology, and emphasis on the cross and Holy Spirit as teacher."
+          },
+          {
+            "code": "MDE 707",
+            "name": "Evangelism and Communication",
+            "credits": 3,
+            "description": "Focus on biblical imperative of evangelism, witnessing in pluralistic cultures, follow-up, discipleship, and scripture memorization."
+          },
+          {
+            "code": "MDE 808",
+            "name": "Advanced Biblical Themes and Link Analysis",
+            "credits": 3,
+            "description": "Survey and evaluation of various methods of interpreting the Scriptures. Required of all ministerial students."
+          },
+          {
+            "code": "MDR 809",
+            "name": "Approaches to the Study of Religion",
+            "credits": 3,
+            "description": "Thematic and comparative study of religion as human experience, covering ritual, sacred language, ethics, salvation, and problem of evil from various perspectives."
+          },
+          {
+            "code": "Special Lecture I",
+            "name": "Special Lecture I",
+            "credits": 3,
+            "description": ""
+          },
+          {
+            "code": "Special Lecture II",
+            "name": "Special Lecture II",
+            "credits": 3,
+            "description": ""
+          }
+        ]
+      },
+      {
+        "majorName": "MASTER OF DIVINITY (MDiv)",
+        "totalCredits": 99,
+        "courses": [
+          {
+            "code": "MDT 401",
+            "name": "Biblical Hebrew I",
+            "credits": 3,
+            "description": "Introduces students to the basic lexicon and grammatical structures of biblical Hebrew, emphasizing translation strategies. Students apply skills to translating various biblical texts."
+          },
+          {
+            "code": "MDT 402",
+            "name": "Biblical Hebrew II",
+            "credits": 3,
+            "description": "Development of students' familiarity with spoken and written Hebrew through grammar review, discussions, and vocabulary building. Includes readings on literary and cultural topics related to modern Israel. Prerequisite: MDT401."
+          },
+          {
+            "code": "MDT 403",
+            "name": "Biblical Greek I",
+            "credits": 3,
+            "description": "Study of grammar, vocabulary, and syntax of Biblical Greek, preparing students to read the Greek New Testament."
+          },
+          {
+            "code": "MDT 404",
+            "name": "Biblical Greek II",
+            "credits": 3,
+            "description": "Continuation of Biblical Greek I. Further study of grammar, vocabulary, and syntax. Prerequisite: MDT403."
+          },
+          {
+            "code": "MDD 501",
+            "name": "Pastoral Care",
+            "credits": 3,
+            "description": "Builds skills for pastoral care across the lifespan of individuals and families, considering care for culture and social institutions."
+          },
+          {
+            "code": "MDD 502",
+            "name": "Church Internship I",
+            "credits": 3,
+            "description": "Supervised ministry in a local church to develop understanding of personal ministry gifts with support and evaluation."
+          },
+          {
+            "code": "MDD 503",
+            "name": "Church Internship II",
+            "credits": 3,
+            "description": "Continuation of Church Internship I, further developing and evaluating personal ministry gifts. Prerequisite: MDD502."
+          },
+          {
+            "code": "MDD 405",
+            "name": "The Pentateuch",
+            "credits": 3,
+            "description": "Study of compositional and structural anomalies in the Mosaic Pentateuch (Genesis through Deuteronomy) and critical approaches."
+          },
+          {
+            "code": "MDT 406",
+            "name": "Prophets I",
+            "credits": 3,
+            "description": "Surveys history, literature, and theology of the prophetic corpus, situating prophets in historical context via 1-2 Kings, Ezra, Nehemiah."
+          },
+          {
+            "code": "MDT 407",
+            "name": "Prophets II",
+            "credits": 3,
+            "description": "In-depth study of Obadiah, Joel, Jonah, Amos, and Hosea in historical context."
+          },
+          {
+            "code": "MDT 408",
+            "name": "The Synoptic Gospel",
+            "credits": 3,
+            "description": "Detailed examination of Matthew, Mark, and Luke with attention to the distinctive portrait of Jesus each presents."
+          },
+          {
+            "code": "MDT 409",
+            "name": "The Gospel of John",
+            "credits": 3,
+            "description": "Current research and interpretation of the Gospel of John, requiring approximately 10 hours of study per week."
+          },
+          {
+            "code": "MDT 410",
+            "name": "The Letters of Paul",
+            "credits": 3,
+            "description": "Introduction to Paul's letters, considering their historical context in the Roman Empire and diaspora Judaism and their ethical and philosophical impact."
+          },
+          {
+            "code": "MDT 411",
+            "name": "The Epistles",
+            "credits": 3,
+            "description": "Study of James, 1 & 2 Peter, and Jude, focusing on theology of God, Christology, hamartiology, pistology, and eschatology."
+          },
+          {
+            "code": "MDT 412",
+            "name": "Revelation",
+            "credits": 3,
+            "description": "Study of the Book of Revelation with focus on literary genre, theological themes, and schools of interpretation."
+          },
+          {
+            "code": "MDT 413",
+            "name": "Systematic I",
+            "credits": 3,
+            "description": "Advanced discussions on theological method, Scripture, God, creation, providence, angels, humanity, and sin, emphasizing scriptural arguments and relevance for Christian life."
+          },
+          {
+            "code": "MDT 414",
+            "name": "Systematic II",
+            "credits": 3,
+            "description": "Continuation of Systematic I, covering creation and evil, human nature, sin and grace, salvation, church, sacraments, eschatology, and world religions. Prerequisite: MDT413."
+          },
+          {
+            "code": "MDT 417",
+            "name": "Contemporary Theology",
+            "credits": 3,
+            "description": "Critical reflection on significant individuals, movements, events, and foundational tenets shaping contemporary theologies."
+          },
+          {
+            "code": "MDD 506",
+            "name": "Preaching Theory and Method",
+            "credits": 3,
+            "description": "Exposure to various homiletical theories and methods through study of authors and listening to model sermons."
+          },
+          {
+            "code": "MDD 507",
+            "name": "Preaching Practicum",
+            "credits": 3,
+            "description": "Application of homiletical theories and principles learned in Principles of Preaching."
+          },
+          {
+            "code": "MDD 508",
+            "name": "Church Planting and Growth",
+            "credits": 3,
+            "description": "Introduction and systematic overview of church planting and congregational development and nurture."
+          },
+          {
+            "code": "MDD 509",
+            "name": "Leadership and Administration",
+            "credits": 3,
+            "description": "Blend of theoretical knowledge and practical skills to improve leadership and administration abilities."
+          },
+          {
+            "code": "MDD 510",
+            "name": "Worship Planning and Operation",
+            "credits": 3,
+            "description": "Comprehensive administration of Christian worship, including programs, music, budgeting, scheduling, multi-generational arts education, leader training, and staff relationship building."
+          },
+          {
+            "code": "MDD 511",
+            "name": "Unreached People Mission",
+            "credits": 3,
+            "description": "Systematic and practical study of missionary work, emphasizing world evangelization for unreached groups."
+          },
+          {
+            "code": "MDD 512",
+            "name": "Mission and Cross Cultural",
+            "credits": 3,
+            "description": "Overview of cross-cultural considerations for mission work with individuals and churches from different cultural backgrounds."
+          },
+          {
+            "code": "MDD 513",
+            "name": "Discipleship",
+            "credits": 3,
+            "description": "Development of a philosophy of ministry focused on building followers of Christ, particularly among college students."
+          },
+          {
+            "code": "MDE 707",
+            "name": "Evangelism and Communication",
+            "credits": 3,
+            "description": "Focus on evangelism methods, witnessing in pluralistic cultures, follow-up, discipleship, and scripture memorization."
+          },
+          {
+            "code": "MDE 701",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "Study of Israel’s history from Joshua through Esther, emphasizing God’s interventions and faith heroes’ cultural impact."
+          },
+          {
+            "code": "MDE 702",
+            "name": "Wisdom Literature",
+            "credits": 3,
+            "description": "Detailed examination of Job, Proverbs, Ecclesiastes, and Song of Songs."
+          },
+          {
+            "code": "MDE 703",
+            "name": "Teaching Method of Jesus",
+            "credits": 3,
+            "description": "Examination of Jesus as a teacher, including authority, mission, content, discipline, methodology, the cross, and Holy Spirit as teacher."
+          },
+          {
+            "code": "MDC 610",
+            "name": "Mediation and Conflict Resolution",
+            "credits": 3,
+            "description": "Study of conflict and its resolution through negotiation, focusing on concepts and skills for identifying and resolving conflicts."
+          },
+          {
+            "code": "Special Lecture I",
+            "name": "Special Lecture I",
+            "credits": 3,
+            "description": ""
+          },
+          {
+            "code": "Special Lecture II",
+            "name": "Special Lecture II",
+            "credits": 3,
+            "description": ""
+          }
+        ]
+      },
+      {
+        "majorName": "MASTER OF CHRISTIAN COUNSELING (MCC)",
+        "totalCredits": 66,
+        "courses": [
+          {
+            "code": "MDT 405",
+            "name": "The Pentateuch",
+            "credits": 3,
+            "description": "Study of compositional and structural anomalies in the Mosaic Pentateuch (Genesis through Deuteronomy) and critical approaches."
+          },
+          {
+            "code": "MDT 406",
+            "name": "Prophets I",
+            "credits": 3,
+            "description": "Surveys history, literature, and theology of the prophetic corpus, situating prophets in historical context via 1-2 Kings, Ezra, Nehemiah."
+          },
+          {
+            "code": "MDT 407",
+            "name": "Prophets II",
+            "credits": 3,
+            "description": "In-depth study of Obadiah, Joel, Jonah, Amos, and Hosea in historical context."
+          },
+          {
+            "code": "MDT 408",
+            "name": "The Synoptic Gospel",
+            "credits": 3,
+            "description": "Detailed examination of Matthew, Mark, and Luke with attention to the distinctive portrait of Jesus each presents."
+          },
+          {
+            "code": "MDT 409",
+            "name": "The Gospel of John",
+            "credits": 3,
+            "description": "Current research and interpretation of the Gospel of John, requiring approximately 10 hours of study per week."
+          },
+          {
+            "code": "MDT 410",
+            "name": "The Letters of Paul",
+            "credits": 3,
+            "description": "Introduction to Paul's letters, considering their historical context in the Roman Empire and diaspora Judaism and their ethical and philosophical impact."
+          },
+          {
+            "code": "MDT 411",
+            "name": "The Epistles",
+            "credits": 3,
+            "description": "Study of James, 1 & 2 Peter, and Jude, focusing on theology of God, Christology, hamartiology, pistology, and eschatology."
+          },
+          {
+            "code": "MDC 601",
+            "name": "Counseling Terminologies and Methodologies",
+            "credits": 3,
+            "description": "Covers individual and group assessment approaches in a multicultural society, including standardized/non-standardized testing, performance assessment, psychological testing, and behavioral observations."
+          },
+          {
+            "code": "MDC 602",
+            "name": "Theoretical and Practical Application in Counseling",
+            "credits": 3,
+            "description": "Introduces major theoretical systems of counseling and psychotherapy with practical application."
+          },
+          {
+            "code": "MDC 603",
+            "name": "Biblical Counseling",
+            "credits": 3,
+            "description": "Explores foundational statements of biblical counseling, forming methodology based on Scriptural understanding rather than worldly philosophies."
+          },
+          {
+            "code": "MDC 604",
+            "name": "Pastoral and Behavioral Psychology",
+            "credits": 3,
+            "description": "Considers issues in pastoral counseling theory, practice, and administration. Includes PREPARE-ENRICH and MBTI assessment training, and Strategic Pastoral Counseling model."
+          },
+          {
+            "code": "MDC 605",
+            "name": "Age Group Counseling",
+            "credits": 3,
+            "description": "Introduction to social/interpersonal influences, group dynamics, developmental stages, and theoretical approaches to group counseling."
+          },
+          {
+            "code": "MDC 606",
+            "name": "Adolescent Counseling",
+            "credits": 3,
+            "description": "Counseling theories and techniques for children and adolescents, including interventions for emotional and behavioral disorders."
+          },
+          {
+            "code": "MDC 607",
+            "name": "Family Therapy",
+            "credits": 3,
+            "description": "Examination of evaluation and intervention procedures of major family therapy models, emphasizing ethical considerations."
+          },
+          {
+            "code": "MDC 608",
+            "name": "Marriage Counseling",
+            "credits": 3,
+            "description": "Introduces therapy models for understanding functional and dysfunctional coupling patterns, and interventions for couples in crisis."
+          },
+          {
+            "code": "MDC 609",
+            "name": "Group Counseling",
+            "credits": 3,
+            "description": "Concepts and skills for understanding and leading counseling groups in schools and other settings."
+          },
+          {
+            "code": "MDC 610",
+            "name": "Mediation and Conflict Resolution",
+            "credits": 3,
+            "description": "Study of conflict and resolution through negotiation, with focus on identifying and resolving conflicts."
+          },
+          {
+            "code": "MDC 611",
+            "name": "Innovative Approaches to Counseling",
+            "credits": 3,
+            "description": "Orientation to counseling field: assumptions, theories, strategies, ethical/legal considerations, multicultural competencies, employment opportunities, and counselor roles."
+          },
+          {
+            "code": "MDT 415",
+            "name": "Eschatology",
+            "credits": 3,
+            "description": "Study of eschatology, covering various systems, history of chiliasm, major themes, order of predicted events, and the rapture question."
+          },
+          {
+            "code": "MDE 701",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "Study of Israel’s history from Joshua through Esther, emphasizing God’s interventions and faith heroes’ impact."
+          },
+          {
+            "code": "MDE 702",
+            "name": "Wisdom Literature",
+            "credits": 3,
+            "description": "Detailed examination of Job, Proverbs, Ecclesiastes, and Song of Songs."
+          },
+          {
+            "code": "Special Lecture",
+            "name": "Special Lecture",
+            "credits": 3,
+            "description": ""
+          }
+        ]
+      },
+      {
+        "majorName": "MASTER OF CHRISTIAN EDUCATION (MCE) ",
+        "totalCredits": 66,
+        "courses": [
+          {
+            "code": "MDE 701",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "Study of Israel’s history from Joshua through Esther, emphasizing God’s interventions and faith heroes’ impact."
+          },
+          {
+            "code": "MDE 702",
+            "name": "Wisdom Literature",
+            "credits": 3,
+            "description": "Detailed examination of Job, Proverbs, Ecclesiastes, and Song of Songs."
+          },
+          {
+            "code": "MDE 703",
+            "name": "Teaching Method of Jesus",
+            "credits": 3,
+            "description": "Examination of Jesus as a teacher, including authority, mission, content, discipline, teaching acts, methodology, the cross in education, and the Holy Spirit as teacher."
+          },
+          {
+            "code": "MDE 704",
+            "name": "Christian Curriculum Development",
+            "credits": 3,
+            "description": "Introduction to church educational ministry, covering biblical/theological/philosophical foundations, neuroscience, diverse learner needs, teaching spirituality, and Christian education ministry design."
+          },
+          {
+            "code": "MDE 705",
+            "name": "Hamartiology",
+            "credits": 3,
+            "description": "Advanced discussions on Anthropology, Hamartiology, and Soteriology, defining scriptural views, refuting other views, and emphasizing theological relevance to Christian life."
+          },
+          {
+            "code": "MDE 706",
+            "name": "Advanced Teaching and Learning Styles",
+            "credits": 3,
+            "description": "Concepts and practices for successful urban teaching; integrates urban strategies with content methods through seminars and practical hours."
+          },
+          {
+            "code": "MDE 707",
+            "name": "Evangelism and Communication",
+            "credits": 3,
+            "description": "Biblical evangelism, witnessing methods in pluralistic cultures, evangelism follow-up, discipleship, and scripture memorization."
+          },
+          {
+            "code": "MDT 419",
+            "name": "Christian Thought History",
+            "credits": 3,
+            "description": "Survey of early Christian thought, historical and cultural settings, and theological/doctrinal development prior to the Reformation."
+          },
+          {
+            "code": "MDT 410",
+            "name": "The Letters of Paul",
+            "credits": 3,
+            "description": "Introduction to Paul’s letters, their historical context, and influence on ethical and philosophical debates."
+          },
+          {
+            "code": "MDT 411",
+            "name": "The Epistles",
+            "credits": 3,
+            "description": "Study of James, 1 & 2 Peter, and Jude, focusing on theology of God, Christology, hamartiology, pistology, and eschatology."
+          },
+          {
+            "code": "MDT 408",
+            "name": "The Synoptic Gospel",
+            "credits": 3,
+            "description": "Examination of Matthew, Mark, and Luke with focus on the distinctive portrait of Jesus in each gospel."
+          },
+          {
+            "code": "MDT 420",
+            "name": "Ecclesiology",
+            "credits": 3,
+            "description": "Study of the nature, purpose, and future of the Church, answering key questions about its identity and mission."
+          },
+          {
+            "code": "MDT 421",
+            "name": "Soteriology",
+            "credits": 3,
+            "description": "Study of God’s grace in salvation, covering election, Savior’s ministry, Atonement, efficacious grace, justification, regeneration, and Holy Spirit’s role."
+          },
+          {
+            "code": "MDT 422",
+            "name": "Eschatology",
+            "credits": 3,
+            "description": "Study of eschatology including systems, chiliasm history, major themes, event order, and the rapture question."
+          },
+          {
+            "code": "MDT 406",
+            "name": "Prophets I",
+            "credits": 3,
+            "description": "Survey of prophetic history, literature, theology; prophets in context via 1-2 Kings, Ezra, Nehemiah."
+          },
+          {
+            "code": "MDT 407",
+            "name": "Prophets II",
+            "credits": 3,
+            "description": "In-depth study of Obadiah, Joel, Jonah, Amos, and Hosea in historical context."
+          },
+          {
+            "code": "MDE 708",
+            "name": "Christian Ethics and Law",
+            "credits": 3,
+            "description": "Introduction to Christian ethics and law, philosophical/theological foundations, biblical authority, church-culture relationship, moral decision-making, ministerial ethics, ethical issues, and applying the gospel."
+          },
+          {
+            "code": "MDC 610",
+            "name": "Mediation and Conflict Resolution",
+            "credits": 3,
+            "description": "Study of conflict and resolution through negotiation; focus on identifying and resolving conflicts."
+          },
+          {
+            "code": "Special Lecture I",
+            "name": "Special Lecture I",
+            "credits": 3,
+            "description": ""
+          },
+          {
+            "code": "Special Lecture II",
+            "name": "Special Lecture II",
+            "credits": 3,
+            "description": ""
+          },
+          {
+            "code": "Special Lecture III",
+            "name": "Special Lecture III",
+            "credits": 3,
+            "description": ""
+          },
+          {
+            "code": "Special Lecture IV",
+            "name": "Special Lecture IV",
+            "credits": 3,
+            "description": ""
+          }
+        ]
+      },
+      {
+        "majorName": "MASTER OF COMPARATIVE RELIGIOUS STUDIES (MCRS) ",
+        "totalCredits": 66,
+        "courses": [
+          {
+            "code": "MDT 402",
+            "name": "Biblical Hebrew",
+            "credits": 3,
+            "description": "Development of familiarity with spoken and written Biblical Hebrew through grammar review, discussions, vocabulary building, and readings on literary/cultural topics related to modern Israel."
+          },
+          {
+            "code": "MTD 403",
+            "name": "Biblical Greek I",
+            "credits": 3,
+            "description": "Study of grammar, vocabulary, and syntax of Biblical Greek; preparation to read the Greek New Testament."
+          },
+          {
+            "code": "MDCR 801",
+            "name": "Philosophy for Theology",
+            "credits": 3,
+            "description": "Introduces philosophy for various learners; foundational for employment or higher-level theological study."
+          },
+          {
+            "code": "MDE 701",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "Study of Israel’s history from Joshua through Esther, emphasizing God’s interventions and faith heroes’ impact."
+          },
+          {
+            "code": "MDR 802",
+            "name": "American Culture and Religion",
+            "credits": 3,
+            "description": "Survey of the diverse manifestations of religion in American culture."
+          },
+          {
+            "code": "MDR 803",
+            "name": "Philosophy of Religion",
+            "credits": 3,
+            "description": "Introduces systematic and critical reflection on monotheistic belief; explores faith-reason relations, miracles, science, religion, evolution, and religious experience."
+          },
+          {
+            "code": "MDR 804",
+            "name": "Intro to Islam",
+            "credits": 3,
+            "description": "Overview of Islamic beliefs, practices, history, law, and theological orientations; critical analysis of Islam’s impact on society and culture."
+          },
+          {
+            "code": "MDR 805",
+            "name": "Intro to Hinduism",
+            "credits": 3,
+            "description": "Focus on main developments and expressions of Hinduism, from pre-Aryan context to Vedas and early Hindu tradition."
+          },
+          {
+            "code": "MDR 806",
+            "name": "Intro to Buddhism",
+            "credits": 3,
+            "description": "Historical study of Buddha’s life and teachings, Four Noble Truths, Eightfold Path, Five Precepts, Karma, and concepts of rebirth vs reincarnation."
+          },
+          {
+            "code": "MDR 806",
+            "name": "Intro to South Asia",
+            "credits": 3,
+            "description": "Explores South Asia’s cultural exchanges, colonial history, and cross-cultural impacts from India to Europe and beyond."
+          },
+          {
+            "code": "MDR 807",
+            "name": "Intro to the Middle East",
+            "credits": 3,
+            "description": "Anthropological study of Middle Eastern peoples and cultures, societal differences, history, and the impact of colonialism and imperialism."
+          },
+          {
+            "code": "MDT 412",
+            "name": "Revelation",
+            "credits": 3,
+            "description": "Study of the Book of Revelation focusing on literary genre, theological themes, and interpretation schools."
+          },
+          {
+            "code": "MDR 808",
+            "name": "Advanced Biblical Themes and Link Analysis",
+            "credits": 3,
+            "description": "Survey and evaluation of various methods of interpreting Scriptures; required for all ministerial students."
+          },
+          {
+            "code": "MDR 809",
+            "name": "Approaches to the Study of Religion",
+            "credits": 3,
+            "description": "Introduction to academic, objective, and interdisciplinary study of religion from historical, sociological, and philosophical perspectives."
+          },
+          {
+            "code": "MDR 810",
+            "name": "Advanced Analysis: Christianity and Islam",
+            "credits": 3,
+            "description": "Examination of foundational Islamic texts and narratives, their interpretation, historical Muslim-Christian relations, gender issues, and contemporary Muslim movements."
+          },
+          {
+            "code": "COMP535",
+            "name": "Advanced Study of Gender and Religion American Culture",
+            "credits": 3,
+            "description": "Explores religion and gender in American culture, their mutual influence, religion-sexuality dynamics, and the construction of gender norms."
+          },
+          {
+            "code": "MDR 811",
+            "name": "Comparative Study of New Religious Movements",
+            "credits": 3,
+            "description": "Origin, development, and contemporary state of Christianity, including early Judaism, Roman Empire context, and global practice today."
+          },
+          {
+            "code": "MDR 812",
+            "name": "Religions of Indigenous Peoples",
+            "credits": 3,
+            "description": "Study of Native American, African, Australian Aboriginal, and other indigenous religious heritage and worldview."
+          },
+          {
+            "code": "MDR 813",
+            "name": "The Way of the Shaman",
+            "credits": 3,
+            "description": "Explores shamanism as a healing and spiritual practice across cultures, analyzed through psychology and anthropology."
+          },
+          {
+            "code": "MDR 814",
+            "name": "Religious Cults II",
+            "credits": 3,
+            "description": "Examination of religious cults and new religious movements; causes, leadership, purpose, interactions with society, historical and contemporary examples."
+          },
+          {
+            "code": "MDT 422",
+            "name": "Eschatology I",
+            "credits": 3,
+            "description": "Study of eschatology including systems, chiliasm history, major themes, predicted events, and the rapture question."
+          },
+          {
+            "code": "Special Lecture",
+            "name": "Special Lecture",
+            "credits": 3,
+            "description": ""
+          }
+        ]
+      },
+      {
+        "majorName": "MASTER OF CHAPLAINCY (MChap) ",
+        "totalCredits": 66,
+        "courses": [
+          {
+            "code": "MDT 405",
+            "name": "The Pentateuch",
+            "credits": 3,
+            "description": "Study of the Mosaic Pentateuch (Genesis, Exodus, Leviticus, Numbers, Deuteronomy) including compositional and structural analysis."
+          },
+          {
+            "code": "MDE 701",
+            "name": "History of Israel",
+            "credits": 3,
+            "description": "Study of Israel’s history from Joshua through Esther, emphasizing God’s interventions and faith heroes’ impact."
+          },
+          {
+            "code": "MDE 702",
+            "name": "Wisdom Literature",
+            "credits": 3,
+            "description": "Detailed examination of Job, Proverbs, Ecclesiastes, and Song of Songs."
+          },
+          {
+            "code": "MDE 707",
+            "name": "Evangelism and Communication",
+            "credits": 3,
+            "description": "Biblical imperative of evangelism; methods of witnessing in pluralistic cultures, follow-up, discipleship, scripture memorization."
+          },
+          {
+            "code": "MDE 703",
+            "name": "Teaching Method of Jesus",
+            "credits": 3,
+            "description": "Examination of Jesus as a teacher, including authority, mission, teaching acts, cross in education, and the Holy Spirit as teacher."
+          },
+          {
+            "code": "MDT 408",
+            "name": "The Synoptic Gospel",
+            "credits": 3,
+            "description": "Detailed study of Matthew, Mark, and Luke, emphasizing the distinctive portrait of Jesus in each Gospel."
+          },
+          {
+            "code": "MDT 409",
+            "name": "The Gospel of John",
+            "credits": 3,
+            "description": "Introduction to research and interpretation of the Gospel of John; intensive weekly study and research."
+          },
+          {
+            "code": "MDT 422",
+            "name": "Eschatology",
+            "credits": 3,
+            "description": "Study of eschatology including systems, chiliasm history, major themes, predicted events, and rapture."
+          },
+          {
+            "code": "MDCH 901",
+            "name": "Introduction to Chaplaincy",
+            "credits": 3,
+            "description": "Introduction to chaplain ministry contexts, tasks, and challenges in military, workplace, healthcare, correctional, and community settings."
+          },
+          {
+            "code": "MDCH 902",
+            "name": "Chaplaincy: Healthcare",
+            "credits": 3,
+            "description": "Biblical approach to theodicy, suffering, and redemption; Christocentric spiritual care in pluralistic healthcare settings."
+          },
+          {
+            "code": "MDCH 903",
+            "name": "Foundations of Correctional Chaplaincy",
+            "credits": 3,
+            "description": "Overview of correctional chaplaincy; skills, roles, constitutional mandates, ministry of presence, volunteer management, and individualized ministry plans."
+          },
+          {
+            "code": "MTD 421",
+            "name": "Soteriology",
+            "credits": 3,
+            "description": "Study of God’s grace in salvation, election, Savior’s ministry, atonement, justification, regeneration, and Holy Spirit’s ministry."
+          },
+          {
+            "code": "MDCH 904",
+            "name": "Death and Dying",
+            "credits": 3,
+            "description": "Study of dying, bereavement, death, mourning, immortality from psychological, ethical, philosophical, and religious perspectives."
+          },
+          {
+            "code": "MDC 601",
+            "name": "Counseling Terminologies and Methodologies",
+            "credits": 3,
+            "description": "Individual and group counseling assessment, evaluation, standardized and non-standardized testing, environmental assessment, performance assessment, and behavioral observation."
+          },
+          {
+            "code": "MDC 610",
+            "name": "Mediation and Conflict Resolution",
+            "credits": 3,
+            "description": "Concepts and skills for identifying and resolving conflicts through negotiation."
+          },
+          {
+            "code": "MDE 708",
+            "name": "Christian Ethics and Law",
+            "credits": 3,
+            "description": "Study of ethical and legal principles, biblical authority, church-culture relations, moral decision-making, ministerial ethics, and applying gospel to life."
+          },
+          {
+            "code": "MDC 604",
+            "name": "Pastoral and Behavioral Psychology",
+            "credits": 3,
+            "description": "Pastoral counseling theory and practice; PREPARE-ENRICH and MBTI assessments, Strategic Pastoral Counseling model."
+          },
+          {
+            "code": "MDC 606",
+            "name": "Adolescent Counseling",
+            "credits": 3,
+            "description": "Counseling theories and techniques for children and adolescents; interventions for emotional and behavioral disorders."
+          },
+          {
+            "code": "MDC 602",
+            "name": "Theoretical and Practical Application in Counseling",
+            "credits": 3,
+            "description": "Overview of major theoretical systems of counseling and psychotherapy."
+          },
+          {
+            "code": "MDC 611",
+            "name": "Innovative Approaches to Counseling",
+            "credits": 3,
+            "description": "Orientation to counseling; theories, strategies, applications, ethics, legal issues, multicultural competencies, employment opportunities."
+          },
+          {
+            "code": "MDR 803",
+            "name": "Philosophy of Religion",
+            "credits": 3,
+            "description": "Western philosophical tradition; faith and reason, miracles, science and religion, evolution, religious experience, logical and critical thinking."
+          },
+          {
+            "code": "Special Lecture I",
+            "name": "Special Lecture I",
+            "credits": 3,
+            "description": ""
+          },
+          {
+            "code": "Special Lecture II",
+            "name": "Special Lecture II",
+            "credits": 3,
+            "description": ""
+          }
+        ]
+      }
+    ]
+  }
+]

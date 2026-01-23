@@ -24,7 +24,7 @@ export function AcademicsSection({
   className = '',
 }: AcademicsSectionProps) {
   return (
-    <section className={`relative bg-foreground section-padding-bottom ${className}`}>
+    <section className={`relative bg-foreground section-padding-lg ${className}`}>
        {/* Accent Line at Top */}
        
         <div className='absolute left-0 top-0 h-1.5 w-full max-w-2/3 md:max-w-2/5  bg-secondary' />

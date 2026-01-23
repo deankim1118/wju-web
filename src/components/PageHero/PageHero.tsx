@@ -20,7 +20,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className='relative w-full h-[50vh] md:h-[55vh] overflow-hidden'
+      className='relative w-full h-[40vh] md:h-[45vh] overflow-hidden'
       aria-label='Page Hero'
     >
       {/* Background Image Container */}
