@@ -13,7 +13,8 @@ export const MDIV_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
     creditInfo: {
       creditHours: '99',
-      costPerCredit: '$300.00 per credit hour' ,
+      costPerCredit: '$300.00 per credit hour',
+      yearsOfStudy: '3',
     },
   },
   outcomes: [

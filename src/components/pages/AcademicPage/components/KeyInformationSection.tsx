@@ -1,19 +1,9 @@
 import type { KeyInformation } from '@/config/academics/program-extended-types';
-import { Calendar, MapPin } from 'lucide-react';
+import { Banknote, Calendar, MapPin } from 'lucide-react';
 
 type KeyInformationSectionProps = {
   data: KeyInformation;
 };
-
-function calculateYearsOfStudy(creditHours: string): string {
-  const hours = parseInt(creditHours, 10);
-  if (isNaN(hours)) return 'Contact for details';
-  
-  // Assuming full-time study (12-15 credits per semester, 2 semesters per year)
-  const creditsPerYear = 34; // Conservative estimate
-  const years = Math.ceil(hours / creditsPerYear);
-  return years.toString();
-}
 
 function formatStudyOptions(studyOptions: KeyInformation['studyOptions']): string {
   return studyOptions
@@ -22,7 +12,7 @@ function formatStudyOptions(studyOptions: KeyInformation['studyOptions']): strin
 }
 
 export function KeyInformationSection({ data }: KeyInformationSectionProps) {
-  const yearsOfStudy = calculateYearsOfStudy(data.creditInfo.creditHours);
+  const yearsOfStudy = data.creditInfo.yearsOfStudy || 'Contact for details';
   const studyMode = formatStudyOptions(data.studyOptions);
   const semesters = 'Fall (Aug–Dec) & Spring (Jan–May)';
 
@@ -40,7 +30,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
           {/* Right Section */}
           <div className="space-y-10 col-span-3">
             {/* Top Row - Large Number Cards (3 items) */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {/* Credits */}
               <div>
                 <div className="mb-2">
@@ -68,7 +58,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
               </div>
 
               {/* Semester Hours */}
-              <div>
+              {/* <div>
                 <div className="mb-2">
                   <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
                     2/3
@@ -78,11 +68,25 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
                 <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
                 Max Transfer Credits
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* Bottom Row - Text Information Cards (2 items) */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {/* Cost per credit */}
+              <div className="border-t border-slate-200 pt-4">
+                <div className="flex items-start gap-3">
+                  <Banknote className="mt-0.5 size-5 shrink-0 text-slate-600" />
+                  <div className="flex-1">
+                    <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
+                     Cost
+                    </p>
+                    <p className="text-sm font-medium text-slate-900 leading-relaxed">
+                      {data.creditInfo.costPerCredit}
+                    </p>
+                  </div>
+                </div>
+              </div>
               {/* Semesters */}
               <div className="border-t border-slate-200 pt-4">
                 <div className="flex items-start gap-3">

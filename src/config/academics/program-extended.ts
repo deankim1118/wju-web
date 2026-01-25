@@ -45,10 +45,52 @@ const COMMON_KEY_INFORMATION = {
 };
 
 /**
+ * Undergraduate (Bachelor's) admissions data
+ * Used as default for Undergraduate level programs
+ */
+const UNDERGRADUATE_ADMISSIONS = {
+  intro: [
+    'To be admitted into this program at Washington Jabez University, Applicants must meet the following academic and spiritual standards to be considered for admission.',
+  ],
+  sections: [
+    {
+      id: 'academic-qualifications',
+      title: 'Academic Qualifications',
+      items: [
+        'High school diploma or equivalent (e.g., GED).',
+        'Minimum cumulative GPA of 2.0–2.7 on a 4.0 scale, depending on department standards.',
+        'English language proficiency, if English is not the applicant\'s first language.',
+      ],
+    },
+    {
+      id: 'spiritual-character-qualifications',
+      title: 'Spiritual & Character Qualifications',
+      items: [
+        'Personal testimony of Christian faith and spiritual maturity.',
+        'Active participation in a local church or Christian community.',
+      ],
+    },
+    {
+      id: 'application-materials',
+      title: 'Application Materials',
+      items: [
+        'Application for Admission & non-refundable application fee.',
+        'Official High School diploma and Transcript.',
+        'Personal Statement / Faith Statement.',
+        'Letters of Recommendation (1–2) from a church pastor or educator.',
+        'One (1) copy of passport and driver\'s license (for U.S. residents).',
+        'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
+        'Interview (Optional).',
+      ],
+    },
+  ],
+};
+
+/**
  * Graduate (Master's) admissions data
  * Used as default for Graduate level programs
  */
-const GRADUATE_ADMISSIONS = {
+const MASTER_ADMISSIONS = {
   intro: [
     'To be admitted into this program at Washington Jabez University, Applicants must meet the following spiritual and academic standards to be considered for admission.',
   ],
@@ -57,44 +99,244 @@ const GRADUATE_ADMISSIONS = {
       id: 'spiritual-qualifications',
       title: 'Spiritual Qualifications',
       items: [
-        'A personal regeneration experience and baptism with water.',
-        'A confirmed sense of calling from God for Christian ministry.',
-        'Active and fruitful participation in a local church.',
+        'Personal experience of regeneration and water baptism.',
+        'Confirmed sense of calling to Christian ministry.',
+        'Active involvement in a local church or Christian community.',
       ],
     },
     {
       id: 'academic-qualifications',
       title: 'Academic Qualifications',
       items: [
-        "A Bachelor's degree from an approved institution.",
-        'Minimum 2.00 Cumulative GPA.',
-        'Note: M.Div. applicants are not required to have majored in Bible at the undergraduate level.'
+        'Bachelor\'s degree from an accredited institution.',
+        'Minimum cumulative GPA of 2.75 on a 4.0 scale.',
+        'No specific undergraduate major required, though prior biblical/theological coursework is beneficial.',
+        'Washington Jabez University places a strong emphasis on biblical language study (Hebrew and Greek) and research methodology as essential components of its advanced degree programs.',
       ],
     },
     {
-      id: 'academic-checklist',
-      title: 'Application Checklist',
+      id: 'application-materials',
+      title: 'Application Materials',
       items: [
-        'Application for Admission',
-        'Application Fee',
-        'Two recent 2" X 2 1/2" photographs',
-        'Personal Essay (Detailing your sense of calling and ministry vision)',
-        'Official Transcripts & Diploma (Verification of final degree)',
-        'Reference Letter (Recommendation from a pastor or ministry leader)',
-        'Important Note: All applicants are required to complete a personal interview with the faculty committee after document review.',
+        'Application form & fee.',
+        'Official Transcripts & Diploma.',
+        'Personal Essay detailing spiritual journey and ministry vision.',
+        'Reference Letters (at least two).',
+        'Two recent 2"x2.5" photographs.',
+        'One (1) copy of passport and driver\'s license (for U.S. residents).',
+        'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
+        'Personal Interview.',
       ],
     },
   ],
 };
 
 /**
+ * Doctoral admissions data
+ * Used as default for Doctoral level programs
+ */
+const DOCTORAL_ADMISSIONS = {
+  intro: [
+    'To be admitted into this program at Washington Jabez University, Applicants must meet the following academic and ministerial standards to be considered for admission.',
+  ],
+  sections: [
+    {
+      id: 'academic-qualifications',
+      title: 'Academic Qualifications',
+      items: [
+        'Master of Divinity (M.Div.) or equivalent theological master\'s degree from an accredited institution.',
+        'Minimum graduate GPA of 3.0 on a 4.0 scale.',
+        'Official transcripts from all post-secondary institutions attended.',
+        'International applicants are required to demonstrate English language proficiency and may be asked to submit official test scores such as TOEFL or IELTS as part of the admissions process.',
+      ],
+    },
+    {
+      id: 'ministerial-experience',
+      title: 'Ministerial Experience',
+      items: [
+        'At least three (3) years of full-time ministry experience after completing the M.Div. degree.',
+        'Active engagement in a ministry context suitable for the doctoral project.',
+      ],
+    },
+    {
+      id: 'application-materials',
+      title: 'Application Materials',
+      items: [
+        'Application form & non-refundable fee.',
+        'Personal Statement outlining ministry goals and doctoral focus.',
+        'Resume / Curriculum Vitae.',
+        'Three Letters of Recommendation (academic & ministry).',
+        'One (1) copy of passport and driver\'s license (for U.S. residents).',
+        'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
+        'Personal Interview with the admissions committee.',
+        'English language proficiency (if applicable).',
+        'Doctoral Project Proposal or Capstone Plan.',
+      ],
+    },
+  ],
+};
+
+/**
+ * Undergraduate (Bachelor's) graduation requirements
+ * Used as default for Undergraduate level programs
+ */
+const UNDERGRADUATE_GRADUATION = {
+  requirements: [
+    {
+      id: 'credit-hours',
+      label: 'Credit Hours: Completion of a minimum of 120 semester units.',
+    },
+    {
+      id: 'gpa',
+      label: 'GPA: Maintenance of a minimum Cumulative GPA of 2.0 (C).',
+    },
+    {
+      id: 'general-education',
+      label: 'General Education: At least 25% of coursework must be in general education.',
+    },
+    {
+      id: 'residency',
+      label: 'Residency: A minimum of 25% of the credits must be completed at Washington Jabez University.',
+    },
+    {
+      id: 'bible-exam',
+      label: 'Bible Comprehensive Exam: Must pass a written examination covering the Old and New Testaments (Passing Score: 100/150).',
+    },
+    {
+      id: 'exit-interview',
+      label: 'Exit Interview: Candidates must complete an exit interview with the faculty to evaluate their educational experience and ministry readiness.',
+    },
+    {
+      id: 'faculty-board-approval',
+      label: 'Faculty & Board Approval: Candidates must be approved by the faculty and Board of Trustees, demonstrating satisfactory Christian character.',
+    },
+    {
+      id: 'clearance',
+      label: 'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+    },
+  ],
+};
+
+/**
+ * Graduate (Master's) graduation requirements
+ * Used as default for Graduate level programs
+ */
+const MASTER_GRADUATION = {
+  requirements: [
+    {
+      id: 'prerequisite',
+      label: 'Prerequisite: Possession of a Bachelor\'s degree.',
+    },
+    {
+      id: 'gpa',
+      label: 'GPA Requirement: Maintenance of a minimum Cumulative GPA of 3.0 (B).',
+    },
+    {
+      id: 'residency',
+      label: 'Residency: At least two-thirds (2/3) of the credits must be completed at Washington Jabez University.',
+    },
+    {
+      id: 'bible-exam',
+      label: 'Bible Comprehensive Exam: Must pass with a score of 100/150.',
+    },
+    {
+      id: 'graduation-requirement',
+      label: 'Graduation Requirement (Choose One):',
+      details: [
+        'Option A: Graduation Comprehensive Exam (Passing Score: 70%).',
+        'Option B: Thesis / Dissertation (Substitute for the comprehensive exam).',
+      ],
+    },
+    {
+      id: 'exit-interview',
+      label: 'Exit Interview: Candidates must complete an exit interview with the faculty.',
+    },
+    {
+      id: 'faculty-board-approval',
+      label: 'Faculty & Board Approval: Candidates must be approved by the faculty and Board of Trustees, demonstrating spiritual maturity.',
+    },
+    {
+      id: 'clearance',
+      label: 'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+    },
+  ],
+};
+
+/**
+ * Doctoral graduation requirements
+ * Used as default for Doctoral level programs
+ */
+const DOCTORAL_GRADUATION = {
+  requirements: [
+    {
+      id: 'credit-hours',
+      label: 'Credit Hours: Completion of 40 Credits total. (Includes 32 credits of coursework and 8 credits of dissertation).',
+    },
+    {
+      id: 'course-structure',
+      label: 'Course Structure: Designed to be completed in approximately 3 years (4 semesters of coursework + dissertation).',
+    },
+    {
+      id: 'minimum-grade',
+      label: 'Minimum Grade: All courses must be completed with a grade of C- or better.',
+    },
+    {
+      id: 'dissertation-project',
+      label: 'Dissertation Project: Completion of a doctoral dissertation worth 8 Credits.',
+      details: [
+        'Focus: A practical ministry project or research dissertation demonstrating advanced leadership skills.',
+        'Requirement: One major dissertation defense upon completion of coursework.',
+      ],
+    },
+    {
+      id: 'exit-interview',
+      label: 'Exit Interview: Candidates must complete an exit interview regarding their doctoral journey.',
+    },
+    {
+      id: 'faculty-board-approval',
+      label: 'Faculty & Board Approval: Final approval by the faculty and Board of Trustees based on academic and spiritual standing.',
+    },
+    {
+      id: 'clearance',
+      label: 'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+    },
+  ],
+};
+
+/**
  * Get default admissions based on degree level
- * TODO: Add Undergraduate and Doctoral admissions when ready
+ * Returns level-specific admissions or Master's as fallback
  */
 function getDefaultAdmissionsForLevel(level?: string) {
-  // For now, all levels use graduate admissions
-  // This can be expanded later with level-specific admissions
-  return GRADUATE_ADMISSIONS;
+  switch (level) {
+    case 'Undergraduate':
+      return UNDERGRADUATE_ADMISSIONS;
+    case 'Graduate':
+      return MASTER_ADMISSIONS;
+    case 'Doctoral':
+      return DOCTORAL_ADMISSIONS;
+    default:
+      // Fallback to Master's admissions if level is not specified
+      return MASTER_ADMISSIONS;
+  }
+}
+
+/**
+ * Get default graduation requirements based on degree level
+ * Returns level-specific graduation or Master's as fallback
+ */
+function getDefaultGraduationForLevel(level?: string) {
+  switch (level) {
+    case 'Undergraduate':
+      return UNDERGRADUATE_GRADUATION;
+    case 'Graduate':
+      return MASTER_GRADUATION;
+    case 'Doctoral':
+      return DOCTORAL_GRADUATION;
+    default:
+      // Fallback to Master's graduation if level is not specified
+      return MASTER_GRADUATION;
+  }
 }
 
 // Map of program slugs to their extended data (input type - allows optional fields)
@@ -153,22 +395,7 @@ function createDefaultExtendedData(program: DegreeProgram): ProgramExtendedData 
       intro: [],
       sections: [],
     },
-    graduation: {
-      requirements: [
-        {
-          id: 'coursework',
-          label: 'Completion of all required coursework with a minimum grade of C-',
-        },
-        {
-          id: 'gpa',
-          label: 'Maintenance of a cumulative Grade Point Average (GPA) of 2.0 or higher',
-        },
-        {
-          id: 'residency',
-          label: "Satisfaction of the university's residency requirement",
-        },
-      ],
-    },
+    graduation: getDefaultGraduationForLevel(program.level),
   };
 }
 
@@ -198,6 +425,11 @@ function mergeProgramData(
     (programData.admissions.intro.length > 0 ||
       programData.admissions.sections.length > 0);
 
+  const defaultGraduation = getDefaultGraduationForLevel(program?.level);
+  const hasCustomGraduation =
+    programData.graduation &&
+    programData.graduation.requirements.length > 0;
+
   return {
     ...programData,
     keyInformation: {
@@ -217,6 +449,9 @@ function mergeProgramData(
           intro: admissionsIntro,
           sections: defaultAdmissions.sections,
         },
+    graduation: hasCustomGraduation && programData.graduation
+      ? programData.graduation!
+      : defaultGraduation,
   };
 }
 

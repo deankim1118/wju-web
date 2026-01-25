@@ -64,7 +64,10 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
                 intro={extendedData.admissions.intro}
                 sections={extendedData.admissions.sections}
               />
-              <GraduationSection requirements={extendedData.graduation.requirements} />
+              <GraduationSection 
+                requirements={extendedData.graduation.requirements}
+                program={program}
+              />
             </main>
           </div>
         </div>

@@ -9,6 +9,7 @@ export const BCRS_EXTENDED: ProgramExtendedDataInput = {
     creditInfo: {
       creditHours: '123',
       costPerCredit: '$255.00 per credit hour',
+      yearsOfStudy: '4',
     },
   },
   outcomes: [
