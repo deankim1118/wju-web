@@ -6,6 +6,7 @@
 export type CreditInfo = {
   creditHours: string;
   costPerCredit: string;
+  yearsOfStudy?: string; // Optional: years of study (e.g., "3", "4")
 };
 
 export type StudyOption = {
@@ -67,7 +68,7 @@ export type ProgramExtendedDataInput = {
       
     }[];
   };
-  graduation: {
+  graduation?: {
     requirements: GraduationRequirement[];
   };
 };

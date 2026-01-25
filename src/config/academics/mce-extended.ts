@@ -9,6 +9,7 @@ export const MCE_EXTENDED: ProgramExtendedDataInput = {
     creditInfo: {
       creditHours: '66',
       costPerCredit: '$300.00 per credit hour',
+      yearsOfStudy: '2.5',
     },
   },
   outcomes: [

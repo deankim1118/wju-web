@@ -7,8 +7,9 @@ import type { OutcomeItem, ProgramExtendedDataInput } from './program-extended-t
 export const DMIN_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
     creditInfo: {
-      creditHours: '68',
+      creditHours: '40',
       costPerCredit: '$525.00 per credit hour',
+      yearsOfStudy: '3',
     },
   },
   outcomes: [

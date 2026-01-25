@@ -1,11 +1,17 @@
 import type { GraduationRequirement } from '@/config/academics/program-extended-types';
+import type { DegreeProgram } from '@/config/academics-content';
 import { CheckCircle } from 'lucide-react';
 
 type GraduationSectionProps = {
   requirements: GraduationRequirement[];
+  program?: DegreeProgram;
 };
 
-export function GraduationSection({ requirements }: GraduationSectionProps) {
+export function GraduationSection({ requirements, program }: GraduationSectionProps) {
+  const introText = program
+    ? `To qualify for the ${program.title} degree, candidates must fulfill the following requirements:`
+    : 'To qualify for graduation, candidates must fulfill the following requirements:';
+
   return (
     <section aria-labelledby="graduation-heading" className="space-y-8">
       <div className="space-y-2">
@@ -16,7 +22,7 @@ export function GraduationSection({ requirements }: GraduationSectionProps) {
           Graduation Requirements
         </h2>
         <p className="text-sm text-slate-600 leading-relaxed">
-          To qualify for the Master of Divinity degree, candidates must fulfill the following requirements:
+          {introText}
         </p>
       </div>
 

@@ -9,6 +9,7 @@ export const THM_EXTENDED: ProgramExtendedDataInput = {
     creditInfo: {
       creditHours: '96',
       costPerCredit: '$300.00 per credit hour',
+      yearsOfStudy: '3',
     },
   },
   outcomes: [
