@@ -11,6 +11,7 @@ type TitleBodySectionProps = {
   body: React.ReactNode;
   backgroundColor?: string;
   textColor?: string;
+  padding?: string;
   className?: string;
 };
 
@@ -20,13 +21,14 @@ export function TitleBodySection({
   body,
   backgroundColor='bg-primary',
   textColor='text-white',
+  padding='section-padding-lg',
   className,
 }: TitleBodySectionProps) {
   return (
     <section className={cn('relative overflow-hidden', backgroundColor, className)}>
         {/* Accent line */}
         <div className='absolute left-0 top-0 h-1.5 w-full  bg-secondary' />
-      <div className='relative mx-auto max-w-7xl px-6 section-padding-lg'>
+      <div className={cn('relative mx-auto max-w-7xl px-6', padding)}>
 
         <div className='flex flex-col justify-center items-center gap-9'>
           <ScrollReveal variant='fade-up' delay={0} duration={0.7}>

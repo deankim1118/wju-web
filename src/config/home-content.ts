@@ -94,7 +94,7 @@ export const callToActionContent: CallToActionContent = {
   description:
     "WJU is where great stories begin. It's time to start yours. Find out how.",
   buttonText: 'REQUEST INFORMATION',
-  href: ROUTES.PLACEHOLDER,
+  href: ROUTES.SUPPORT,
 };
 
 /**
@@ -201,7 +201,7 @@ export const footerContent: FooterContent = {
       label: 'Apply WJU',
     },
     {
-      href: ROUTES.REQUEST_INFO,
+      href: ROUTES.SUPPORT,
       label: 'Request Information',
     },
   ],

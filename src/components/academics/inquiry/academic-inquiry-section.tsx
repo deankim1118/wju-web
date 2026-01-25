@@ -3,7 +3,13 @@ import { Card } from '@/components/ui/card';
 import { AcademicInquiryForm } from './academic-inquiry-form';
 import { AcademicInquiryInfoPanel } from './academic-inquiry-info-panel';
 
-export function AcademicInquirySection() {
+type AcademicInquirySectionProps = {
+  showContactInfo?: boolean;
+};
+
+export function AcademicInquirySection({
+  showContactInfo = false,
+}: AcademicInquirySectionProps = {}) {
   return (
     <section className='relative bg-primary section-padding-sm'>
       <div className='hidden lg:block absolute -right-16 -top-2 size-120 rounded-full bg-secondary/25 blur-3xl' />
@@ -12,7 +18,7 @@ export function AcademicInquirySection() {
         <Card className='rounded-none border-white/10 bg-white/95 shadow-[0px_30px_80px_rgba(0,0,0,0.25)] overflow-hidden'>
           <div className='grid grid-cols-1 lg:grid-cols-2'>
             <AcademicInquiryForm />
-            <AcademicInquiryInfoPanel />
+            <AcademicInquiryInfoPanel showContactInfo={showContactInfo} />
           </div>
         </Card>
       </div>

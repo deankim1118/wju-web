@@ -73,10 +73,10 @@ export function SocialMediaIcons({ socialMedia }: SocialMediaIconsProps) {
             href={social.href}
             target='_blank'
             rel='noopener noreferrer'
-            className='flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-white/90 text-white/90 hover:text-white hover:border-white transition-all duration-200 hover:scale-105'
+            className='flex items-center justify-center w-9 h-9 lg:w-10 lg:h-10 rounded-full border border-secondary text-white/90 hover:text-white hover:border-white transition-all duration-200 hover:scale-105'
             aria-label={social.ariaLabel}
           >
-            <Icon className='w-5 h-5' strokeWidth={2} />
+            <Icon className='w-5 h-5 text-white/90' strokeWidth={2} />
           </Link>
         );
       })}

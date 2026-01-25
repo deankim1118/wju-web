@@ -409,7 +409,7 @@ export const ACADEMICS_PAGE_CONTENT = {
     description:
       'Request information, explore admissions, and take your next step toward theological education and ministry preparation.',
     buttonText: 'REQUEST INFORMATION',
-    href: ROUTES.REQUEST_INFO,
+    href: ROUTES.SUPPORT,
   },
 } as const;
 

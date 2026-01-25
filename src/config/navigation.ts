@@ -37,7 +37,7 @@ export type AcademicProgramGroup = {
 export const topBarNavigation: NavLink[] = [
   { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
   { label: 'Visit Us', href: ROUTES.VISIT },
-  { label: 'Request Info', href: ROUTES.REQUEST_INFO },
+  { label: 'Request Info', href: ROUTES.SUPPORT },
 ];
 
 // Featured Menu Descriptions (for navigation submenu cards)
@@ -239,7 +239,7 @@ export const footerNavigation: NavSection[] = [
     links: [
       { label: 'Apply Now', href: ROUTES.APPLY },
       { label: 'Visit Us', href: ROUTES.VISIT },
-      { label: 'Request Information', href: ROUTES.REQUEST_INFO },
+      { label: 'Request Information', href: ROUTES.SUPPORT },
     ],
   },
 ];
