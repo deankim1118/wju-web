@@ -98,7 +98,7 @@ export function AcademicInquiryForm() {
   }
 
   return (
-    <div className='p-8 md:p-12 bg-white'>
+    <div className='p-4 md:py-8 md:px-10 bg-white relative z-10'>
       <div className='flex flex-col gap-2'>
         <p className='text-xs uppercase tracking-widest text-muted-foreground'>
           Request information
@@ -223,12 +223,13 @@ export function AcademicInquiryForm() {
                   control={form.control}
                   name='phoneNumber'
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className='relative z-10'>
                       <FormLabel>Phone number</FormLabel>
                       <FormControl>
                         <Input
                           type='tel'
                           placeholder='(555) 123-4567'
+                          className='pointer-events-auto'
                           {...field}
                         />
                       </FormControl>
@@ -261,11 +262,12 @@ export function AcademicInquiryForm() {
                 control={form.control}
                 name='question'
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className='relative z-10'>
                     <FormLabel>Question</FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder='Tell us more about your goals or any questions you have...'
+                        className='pointer-events-auto'
                         {...field}
                       />
                     </FormControl>
@@ -280,14 +282,16 @@ export function AcademicInquiryForm() {
                 </div>
               )}
 
-              <Button
-                type='submit'
-                size='lg'
-                className='rounded-none w-full md:w-fit px-10'
-                disabled={isPending}
-              >
-                {isPending ? 'Sending…' : 'Send message'}
-              </Button>
+              <div className='relative z-10'>
+                <Button
+                  type='submit'
+                  size='lg'
+                  className='rounded-none w-full md:w-fit px-10 cursor-pointer pointer-events-auto' 
+                  disabled={isPending}
+                >
+                  {isPending ? 'Sending…' : 'Send message'}
+                </Button>
+              </div>
             </form>
           </Form>
         )}

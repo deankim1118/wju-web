@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 
 export function AcademicInquiryInfoPanel() {
   return (
-    <div className='relative bg-primary text-white p-10 md:p-12 overflow-hidden'>
+    <div className='relative bg-primary text-white p-4 md:py-8 md:px-10 overflow-hidden'>
       <div className='absolute inset-0 opacity-25 bg-gradient-radial' />
       <div className='absolute -right-24 -top-24 size-80 rounded-full bg-secondary/25 blur-2xl' />
       <div className='absolute -left-24 -bottom-24 size-80 rounded-full bg-white/10 blur-2xl' />
@@ -45,7 +45,7 @@ export function AcademicInquiryInfoPanel() {
         <div className='flex flex-col gap-3'>
           <Button
             variant='outline'
-            className='rounded-none border-white/30 text-white bg-transparent hover:bg-white/10'
+            className='rounded-none border-white/30 text-white bg-transparent hover:bg-white/10 hover:text-rose-500'
             asChild
           >
             <Link href={ROUTES.APPLY}>

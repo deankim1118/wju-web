@@ -7,6 +7,7 @@ import {
 import type { DegreeProgram } from '@/config/academics-content';
 import { getProgramExtendedData } from '@/config/academics/program-extended';
 import { callToActionContent } from '../../../config/home-content';
+import { AcademicInquirySection } from '../../academics/inquiry/academic-inquiry-section';
 import { CallToAction } from '../../CallToAction';
 import { AdmissionsSection } from './components/AdmissionsSection';
 import { CurriculumSection } from './components/CurriculumSection';
@@ -72,6 +73,7 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
           </div>
         </div>
       </div>
+      <AcademicInquirySection />
     </>
   );
 }
