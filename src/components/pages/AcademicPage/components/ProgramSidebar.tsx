@@ -12,6 +12,8 @@ import type { DegreeProgram } from '@/config/academics-content';
 import { academicProgramGroups } from '@/config/navigation';
 import { ROUTES } from '@/config/routes';
 import { cn } from '@/lib/utils';
+import { SidebarLink } from './SidebarLink';
+import { SidebarGroup } from './SidebarGroup';
 
 type ProgramSidebarProps = {
   currentProgram: DegreeProgram;
@@ -24,6 +26,7 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
       aria-label="Degree programs"
     >
       <nav className="sticky top-28 space-y-6 bg-slate-50 px-4 lg:py-4">
+        {/* Mobile View */}
         <div className="lg:hidden">
           <div className="border-b">
             <Link
@@ -49,18 +52,11 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
                       const isCurrent = item.href === currentProgram.href;
                       return (
                         <li key={item.href}>
-                          <Link
+                          <SidebarLink
                             href={item.href}
-                            className={cn(
-                              'block rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
-                              'hover:bg-muted hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                              isCurrent
-                                ? 'bg-slate-200 text-primary border-l-2 border-secondary -ml-[2px] pl-[14px]'
-                                : 'text-slate-500'
-                            )}
-                          >
-                            {item.label}
-                          </Link>
+                            label={item.label}
+                            isActive={isCurrent}
+                          />
                         </li>
                       );
                     })}
@@ -70,6 +66,8 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
             ))}
           </Accordion>
         </div>
+
+        {/* Desktop View */}
         <div className="hidden lg:block space-y-6">
           <div className="border-b border-slate-200 pb-3">
             <Link
@@ -83,34 +81,7 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
               About this Department
             </Link>
           </div>
-          {academicProgramGroups.map((group) => (
-            <div key={group.category}>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">
-                {group.category}
-              </h3>
-              <ul className="space-y-0.5 border-b border-slate-200 pb-3">
-                {group.items.map((item) => {
-                  const isCurrent = item.href === currentProgram.href;
-                  return (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className={cn(
-                          'block rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
-                          'hover:bg-muted hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
-                          isCurrent
-                            ? 'bg-muted text-primary border-l-2 border-secondary -ml-[2px] pl-[14px]'
-                            : 'text-slate-500'
-                        )}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+          <SidebarGroup currentProgram={currentProgram} />
         </div>
       </nav>
     </aside>

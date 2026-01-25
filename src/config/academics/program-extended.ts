@@ -233,7 +233,7 @@ const MASTER_GRADUATION = {
     },
     {
       id: 'residency',
-      label: 'Residency: At least two-thirds (2/3) of the credits must be completed at Washington Jabez University.',
+      label: 'Residency: At least one-thirds (1/3) of the credits must be completed at Washington Jabez University.',
     },
     {
       id: 'bible-exam',

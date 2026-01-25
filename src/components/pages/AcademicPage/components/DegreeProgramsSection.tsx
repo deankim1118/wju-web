@@ -15,6 +15,7 @@ import {
 
 import type { DegreeLevel, DegreeProgram } from '@/config/academics-content';
 import { ScrollReveal } from '../../../scroll-animation/scroll-reveal';
+import { getLevelBadgeClasses } from './program-level-styles';
 
 type ProgramGroup = {
   level: DegreeLevel;
@@ -30,17 +31,6 @@ type DegreeProgramsSectionProps = {
   groups: readonly ProgramGroup[];
   className?: string;
 };
-
-function levelBadgeClasses(level: DegreeLevel) {
-  switch (level) {
-    case 'Undergraduate':
-      return 'bg-amber-600 text-white border border-white/15';
-    case 'Graduate':
-      return 'bg-primary text-white';
-    case 'Doctoral':
-      return 'bg-secondary text-white';
-  }
-}
 
 
 export function DegreeProgramsSection({
@@ -75,7 +65,7 @@ export function DegreeProgramsSection({
             <div key={group.level} className='flex flex-col gap-4'>
               <div className='flex flex-col gap-2'>
                 <div
-                  className={`w-fit rounded-none px-3 py-1 text-xs uppercase tracking-widest ${levelBadgeClasses(
+                  className={`w-fit rounded-none px-3 py-1 text-xs uppercase tracking-widest ${getLevelBadgeClasses(
                     group.level,
                   )}`}
                 >

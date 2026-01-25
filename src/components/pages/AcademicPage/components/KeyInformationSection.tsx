@@ -1,8 +1,15 @@
 import type { KeyInformation } from '@/config/academics/program-extended-types';
-import { Banknote, Calendar, MapPin } from 'lucide-react';
+import { Banknote, Calendar, MapPin, type LucideIcon } from 'lucide-react';
 
 type KeyInformationSectionProps = {
   data: KeyInformation;
+};
+
+type MetricItem = {
+  type: 'number' | 'icon';
+  label: string;
+  value: string;
+  icon?: LucideIcon;
 };
 
 function formatStudyOptions(studyOptions: KeyInformation['studyOptions']): string {
@@ -15,6 +22,41 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
   const yearsOfStudy = data.creditInfo.yearsOfStudy || 'Contact for details';
   const studyMode = formatStudyOptions(data.studyOptions);
   const semesters = 'Fall (Aug–Dec) & Spring (Jan–May)';
+
+  // Data-driven metrics configuration
+  const numberMetrics: MetricItem[] = [
+    {
+      type: 'number',
+      label: 'Credits',
+      value: data.creditInfo.creditHours,
+    },
+    {
+      type: 'number',
+      label: 'Years of Study',
+      value: yearsOfStudy,
+    },
+  ];
+
+  const iconMetrics: MetricItem[] = [
+    {
+      type: 'icon',
+      label: 'Cost',
+      value: data.creditInfo.costPerCredit,
+      icon: Banknote,
+    },
+    {
+      type: 'icon',
+      label: 'Semesters',
+      value: semesters,
+      icon: Calendar,
+    },
+    {
+      type: 'icon',
+      label: 'Study Mode',
+      value: studyMode,
+      icon: MapPin,
+    },
+  ];
 
   return (
     <div className="">
@@ -29,93 +71,45 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
 
           {/* Right Section */}
           <div className="space-y-10 col-span-3">
-            {/* Top Row - Large Number Cards (3 items) */}
+            {/* Top Row - Large Number Cards */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {/* Credits */}
-              <div>
-                <div className="mb-2">
-                  <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
-                    {data.creditInfo.creditHours}
+              {numberMetrics.map((metric) => (
+                <div key={metric.label}>
+                  <div className="mb-2">
+                    <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
+                      {metric.value}
+                    </div>
+                    <div className="mt-2 h-px w-full bg-slate-900"></div>
                   </div>
-                  <div className="mt-2 h-px w-full bg-slate-900"></div>
+                  <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
+                    {metric.label}
+                  </p>
                 </div>
-                <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
-                  Credits
-                </p>
-              </div>
-
-              {/* Years of Study */}
-              <div>
-                <div className="mb-2">
-                  <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
-                    {yearsOfStudy}
-                  </div>
-                  <div className="mt-2 h-px w-full bg-slate-900"></div>
-                </div>
-                <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
-                  Years of Study
-                </p>
-              </div>
-
-              {/* Semester Hours */}
-              {/* <div>
-                <div className="mb-2">
-                  <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
-                    2/3
-                  </div>
-                  <div className="mt-2 h-px w-full bg-slate-900"></div>
-                </div>
-                <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
-                Max Transfer Credits
-                </p>
-              </div> */}
+              ))}
             </div>
 
-            {/* Bottom Row - Text Information Cards (2 items) */}
+            {/* Bottom Row - Text Information Cards with Icons */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-              {/* Cost per credit */}
-              <div className="border-t border-slate-200 pt-4">
-                <div className="flex items-start gap-3">
-                  <Banknote className="mt-0.5 size-5 shrink-0 text-slate-600" />
-                  <div className="flex-1">
-                    <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
-                     Cost
-                    </p>
-                    <p className="text-sm font-medium text-slate-900 leading-relaxed">
-                      {data.creditInfo.costPerCredit}
-                    </p>
+              {iconMetrics.map((metric) => {
+                const Icon = metric.icon;
+                return (
+                  <div key={metric.label} className="border-t border-slate-200 pt-4">
+                    <div className="flex items-start gap-3">
+                      {Icon && (
+                        <Icon className="mt-0.5 size-5 shrink-0 text-slate-600" />
+                      )}
+                      <div className="flex-1">
+                        <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
+                          {metric.label}
+                        </p>
+                        <p className="text-sm font-medium text-slate-900 leading-relaxed">
+                          {metric.value}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              {/* Semesters */}
-              <div className="border-t border-slate-200 pt-4">
-                <div className="flex items-start gap-3">
-                  <Calendar className="mt-0.5 size-5 shrink-0 text-slate-600" />
-                  <div className="flex-1">
-                    <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
-                      Semesters
-                    </p>
-                    <p className="text-sm font-medium text-slate-900 leading-relaxed">
-                      {semesters}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Study Mode */}
-              <div className="border-t border-slate-200 pt-4">
-                <div className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 size-5 shrink-0 text-slate-600" />
-                  <div className="flex-1">
-                    <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
-                      Study Mode
-                    </p>
-                    <p className="text-sm font-medium text-slate-900 leading-relaxed">
-                      {studyMode}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
 
             {/* Hours of Instruction - Subtle description */}

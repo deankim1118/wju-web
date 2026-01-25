@@ -1,4 +1,5 @@
-import { CheckCircle } from "lucide-react";
+import { SectionHeading } from './SectionHeading';
+import { RequirementItem } from './RequirementItem';
 
 type AdmissionsSectionProps = {
   intro: string[];
@@ -17,14 +18,11 @@ export function AdmissionsSection({ intro, sections }: AdmissionsSectionProps) {
 
   return (
     <section aria-labelledby="admissions-heading" className="space-y-8">
-      {/* Header */}
       <div className="space-y-2">
-        <h2
+        <SectionHeading
           id="admissions-heading"
-          className="uppercase tracking-wide text-slate-900"
-        >
-          Admission Requirements
-        </h2>
+          title="Admission Requirements"
+        />
         {intro.length > 0 && (
           <div className="space-y-2">
             {intro.map((paragraph, i) => (
@@ -52,21 +50,9 @@ export function AdmissionsSection({ intro, sections }: AdmissionsSectionProps) {
             </h3>
             <ul className="space-y-3" role="list">
               {section.items.map((item, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-3 text-slate-900"
-                >
-                  <CheckCircle
-              className="size-4 shrink-0 text-secondary mt-1"
-              aria-hidden />
-                  {/* <span className="text-slate-900 font-medium shrink-0">•</span> */}
-                  <span className="text-base leading-relaxed">{item}</span>
-                  {section.note && (
-                    <span className="text-xs text-muted-foreground">
-                      {section.note}
-                    </span>
-                  )}
-                </li>
+                <RequirementItem key={idx} note={section.note}>
+                  {item}
+                </RequirementItem>
               ))}
             </ul>
           </div>
