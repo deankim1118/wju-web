@@ -127,34 +127,6 @@ export const MDIV_EXTENDED: ProgramExtendedDataInput = {
     },
   ] as CurriculumCategory[],
   graduation: {
-    requirements: [
-      {
-        id: 'coursework',
-        label: 'Coursework: Completion of 99 credit hours with a minimum grade of C- in all required courses.',
-      },
-      {
-        id: 'gpa',
-        label: 'Academic Standing: Maintenance of a cumulative Grade Point Average (GPA) of 2.0 or higher.',
-      },
-      {
-        id: 'residency',
-        label: "Residency: Satisfaction of the university's residency requirement.",
-      },
-      {
-        id: 'bible-exam',
-        label: 'Bible Comprehensive Exam: Passing score of at least 100 out of 150 questions (75 OT / 75 NT).',
-      },
-      {
-        id: 'graduation-exam',
-        label: 'Graduation Comprehensive Exam: Passing score of 70% (7 out of 10 questions) covering Biblical, Systematic, Historical, and Practical Theology.',
-        details: [
-          'Note: The Graduation Comprehensive Exam may be substituted by a Thesis or Dissertation (requires approval of subject, outline, and drafts by 2-3 readers).',
-        ],
-      },
-      {
-        id: 'administrative',
-        label: 'Administrative: Completion of the Application for Graduation and settlement of all financial accounts.',
-      },
-    ],
+    requirements: [],
   },
 } as const satisfies ProgramExtendedDataInput;

@@ -37,7 +37,7 @@ export type AcademicProgramGroup = {
 export const topBarNavigation: NavLink[] = [
   { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
   { label: 'Visit Us', href: ROUTES.VISIT },
-  { label: 'Request Info', href: ROUTES.SUPPORT },
+  // { label: 'Request Info', href: ROUTES.SUPPORT },
 ];
 
 // Featured Menu Descriptions (for navigation submenu cards)
@@ -91,16 +91,16 @@ export const mainNavigation: NavItemWithSubmenu[] = [
     href: ROUTES.ACADEMICS.ROOT,
     submenu: [
       {
-        label: 'Degree Programs',
-        href: ROUTES.ACADEMICS.PROGRAMS,
-        description:
-          'Explore our comprehensive programs in theology and ministry.',
-      },
-      {
         label: 'Academic Calendar',
         href: ROUTES.ACADEMICS.CALENDAR,
         description:
           'View important dates, semesters, and academic milestones.',
+      },
+      {
+        label: 'Course List',
+        href: ROUTES.ACADEMICS.COURSELIST,
+        description:
+          'Explore our comprehensive programs in theology and ministry.',
       },
       {
         label: 'Course Catalog',
@@ -219,15 +219,16 @@ export const footerNavigation: NavSection[] = [
   {
     title: 'About Us',
     links: [
+      { label: 'Who We Are', href: ROUTES.ABOUT.ROOT },
       { label: 'Mission of Faith', href: ROUTES.ABOUT.MISSION_FAITH },
-      { label: 'INTEGRITY', href: ROUTES.ABOUT.INTEGRITY },
       { label: 'Faculty & Staff', href: ROUTES.ABOUT.FACULTY_STAFF },
+      { label: 'Integrity', href: ROUTES.ABOUT.INTEGRITY },
     ],
   },
   {
     title: 'Academics',
     links: [
-      { label: 'Degree Programs', href: ROUTES.ACADEMICS.PROGRAMS },
+      { label: 'Academic Programs', href: ROUTES.ACADEMICS.ROOT },
       { label: 'Admissions', href: ROUTES.ADMISSIONS.ROOT },
       { label: 'Scholarships & Aid', href: ROUTES.ADMISSIONS.SCHOLARSHIPS },
       { label: 'Academic Calendar', href: ROUTES.ACADEMICS.CALENDAR },

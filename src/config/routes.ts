@@ -28,7 +28,7 @@ export const ROUTES = {
   // Academics Section
   ACADEMICS: {
     ROOT: '/academics',
-    PROGRAMS: '/academics/programs',
+    COURSELIST: '/academics/course-list',
     CALENDAR: '/academics/calendar',
     CATALOG: '/academics/catalog',
     // Degree Programs (Mega menu)

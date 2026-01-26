@@ -1,4 +1,5 @@
 import type { OutcomeItem } from '@/config/academics/program-extended-types';
+import { SectionHeading } from './SectionHeading';
 
 type OutcomesSectionProps = {
   outcomes: OutcomeItem[];
@@ -25,18 +26,11 @@ export function OutcomesSection({ outcomes }: OutcomesSectionProps) {
 
   return (
     <section aria-labelledby="outcomes-heading" className="space-y-8">
-      {/* Header */}
-      <div className="space-y-2">
-        <h2
-          id="outcomes-heading"
-          className="uppercase tracking-wide text-slate-900"
-        >
-          Learning Outcomes
-        </h2>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          Students will be able to:
-        </p>
-      </div>
+      <SectionHeading
+        id="outcomes-heading"
+        title="Learning Outcomes"
+        subtitle="Students will be able to:"
+      />
 
       {/* Outcomes Grid - Dynamic columns based on count */}
       <div className={`grid ${gridCols} gap-4 md:gap-6 lg:gap-10`}>

@@ -1,6 +1,7 @@
 import type { GraduationRequirement } from '@/config/academics/program-extended-types';
 import type { DegreeProgram } from '@/config/academics-content';
-import { CheckCircle } from 'lucide-react';
+import { SectionHeading } from './SectionHeading';
+import { RequirementItem } from './RequirementItem';
 
 type GraduationSectionProps = {
   requirements: GraduationRequirement[];
@@ -14,28 +15,16 @@ export function GraduationSection({ requirements, program }: GraduationSectionPr
 
   return (
     <section aria-labelledby="graduation-heading" className="space-y-8">
-      <div className="space-y-2">
-        <h2
-          id="graduation-heading"
-          className="uppercase tracking-wide text-slate-900"
-        >
-          Graduation Requirements
-        </h2>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          {introText}
-        </p>
-      </div>
+      <SectionHeading
+        id="graduation-heading"
+        title="Graduation Requirements"
+        subtitle={introText}
+      />
 
       <ul className="space-y-3" role="list">
         {requirements.map((req) => (
-          <li key={req.id} className="">
-            
-            <div className="flex items-start gap-3">
-            <CheckCircle
-              className="size-4 shrink-0 text-secondary mt-1"
-              aria-hidden
-            />
-            <div className="flex flex-col items-start">
+          <RequirementItem key={req.id}>
+            <div className="flex flex-col">
               <span className="text-base leading-relaxed text-slate-900">
                 {req.label}
               </span>
@@ -51,9 +40,8 @@ export function GraduationSection({ requirements, program }: GraduationSectionPr
                   ))}
                 </ul>
               )}
-              </div>
             </div>
-          </li>
+          </RequirementItem>
         ))}
       </ul>
     </section>

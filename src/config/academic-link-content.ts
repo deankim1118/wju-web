@@ -41,8 +41,8 @@ export const ACADEMICS_LINK_CARDS: readonly AcademicLinkCard[] = [
     ctaLabel: 'discover',
   },
   {
-    title: 'Doctor of Ministry',
-    href: ROUTES.ACADEMICS.DMIN,
+    title: 'Course List',
+    href: ROUTES.ACADEMICS.COURSELIST,
     imageUrl: '/wju-hero-img.png',
     imageAlt: 'Institutional integrity at WJU',
     ctaLabel: 'discover',

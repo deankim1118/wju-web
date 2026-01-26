@@ -208,7 +208,7 @@ const UNDERGRADUATE_GRADUATION = {
     },
     {
       id: 'faculty-board-approval',
-      label: 'Faculty & Board Approval: Candidates must be approved by the faculty and Board of Trustees, demonstrating satisfactory Christian character.',
+      label: 'Faculty & Board Approval: Candidates must receive final approval from the Faculty and the Board of Trustees, affirming satisfactory academic performance, Christian character, and commitment to ministry.',
     },
     {
       id: 'clearance',
@@ -233,7 +233,7 @@ const MASTER_GRADUATION = {
     },
     {
       id: 'residency',
-      label: 'Residency: At least two-thirds (2/3) of the credits must be completed at Washington Jabez University.',
+      label: 'Residency: At least one-thirds (1/3) of the credits must be completed at Washington Jabez University.',
     },
     {
       id: 'bible-exam',
