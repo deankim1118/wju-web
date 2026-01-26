@@ -37,7 +37,7 @@ export type AcademicProgramGroup = {
 export const topBarNavigation: NavLink[] = [
   { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
   { label: 'Visit Us', href: ROUTES.VISIT },
-  { label: 'Request Info', href: ROUTES.SUPPORT },
+  // { label: 'Request Info', href: ROUTES.SUPPORT },
 ];
 
 // Featured Menu Descriptions (for navigation submenu cards)

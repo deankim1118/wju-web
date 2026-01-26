@@ -208,7 +208,7 @@ const UNDERGRADUATE_GRADUATION = {
     },
     {
       id: 'faculty-board-approval',
-      label: 'Faculty & Board Approval: Candidates must be approved by the faculty and Board of Trustees, demonstrating satisfactory Christian character.',
+      label: 'Faculty & Board Approval: Candidates must receive final approval from the Faculty and the Board of Trustees, affirming satisfactory academic performance, Christian character, and commitment to ministry.',
     },
     {
       id: 'clearance',
