@@ -7,6 +7,7 @@ import sharp from 'sharp';
 import { fileURLToPath } from 'url';
 import { MediaPayload } from './payload-components/collections/MediaPayload';
 import { UsersPayload } from './payload-components/collections/UsersPayload';
+import { AcademicCalendarPayload } from './payload-components/globals/AcademicCalendarPayload';
 import { ChairmanMessagePayload } from './payload-components/globals/ChairmanMessagePayload';
 import { FooterPayload } from './payload-components/globals/FooterPayload';
 import { HeroPayload } from './payload-components/globals/HeroPayload';
@@ -19,7 +20,7 @@ export default buildConfig({
     user: 'users',
   },
   collections: [UsersPayload, MediaPayload],
-  globals: [HeroPayload, FooterPayload, ChairmanMessagePayload],
+  globals: [HeroPayload, FooterPayload, ChairmanMessagePayload, AcademicCalendarPayload],
 
   // ✅ 공식 문서 기반의 최신 S3 스토리지 설정
   plugins: [
