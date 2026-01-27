@@ -12,8 +12,8 @@ import type { DegreeProgram } from '@/config/academics-content';
 import { academicProgramGroups } from '@/config/navigation';
 import { ROUTES } from '@/config/routes';
 import { cn } from '@/lib/utils';
-import { SidebarLink } from './SidebarLink';
 import { SidebarGroup } from './SidebarGroup';
+import { SidebarLink } from './SidebarLink';
 
 type ProgramSidebarProps = {
   currentProgram: DegreeProgram;
@@ -37,7 +37,7 @@ export function ProgramSidebar({ currentProgram }: ProgramSidebarProps) {
                 'text-slate-500'
               )}
             >
-              About this Department
+              Academic Department
             </Link>
           </div>
           <Accordion type="single" collapsible className="w-full">

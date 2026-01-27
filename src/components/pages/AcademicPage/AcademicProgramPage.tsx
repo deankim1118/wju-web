@@ -6,9 +6,11 @@ import {
 } from '@/components/ui/card';
 import type { DegreeProgram } from '@/config/academics-content';
 import { getProgramExtendedData } from '@/config/academics/program-extended';
-import { callToActionContent } from '../../../config/home-content';
+import { callToActionContent } from '@/config/home-content';
+import { ACADEMICS_LINK_CARDS, ACADEMICS_LINK_CARDS_TITLE } from '../../../config/academic-link-content';
 import { AcademicInquirySection } from '../../academics/inquiry/academic-inquiry-section';
 import { CallToAction } from '../../CallToAction';
+import { LinkCardsCarouselSection } from '../../sections/LinkCardsCarouselSection';
 import { AdmissionsSection } from './components/AdmissionsSection';
 import { CurriculumSection } from './components/CurriculumSection';
 import { GraduationSection } from './components/GraduationSection';
@@ -74,6 +76,11 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
         </div>
       </div>
       <AcademicInquirySection />
+      <LinkCardsCarouselSection
+        title={ACADEMICS_LINK_CARDS_TITLE}
+        items={ACADEMICS_LINK_CARDS}
+        shouldExcludeCurrentPath
+      />
     </>
   );
 }
