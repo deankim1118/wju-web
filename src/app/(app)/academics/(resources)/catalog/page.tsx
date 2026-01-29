@@ -1,17 +1,15 @@
-export default function AcademicCatalogPage() {
+import {
+  CatalogSection,
+  type CatalogData,
+} from '@/components/pages/AcademicPage/components/CatalogSection';
+import { getCatalogData } from '@/lib/payload/queries';
+
+export default async function AcademicCatalogPage() {
+  const catalog = (await getCatalogData({ depth: 1 })) as CatalogData;
+
   return (
-    <article className="space-y-6">
-      <header>
-        <h2 className=" tracking-tight">
-          Academic Catalog
-        </h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Programs, policies, and course descriptions.
-        </p>
-      </header>
-      <div className="rounded-md border border-border bg-card p-6 text-muted-foreground">
-        <p className="text-sm">Content coming soon.</p>
-      </div>
+    <article className='space-y-6'>
+      <CatalogSection catalog={catalog} />
     </article>
   );
 }

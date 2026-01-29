@@ -7,6 +7,19 @@
 
 import { unstable_cache } from 'next/cache';
 
+/** findGlobal 시 글로벌 문서 부재/타이밍 이슈로 나는 Payload 에러 (save 직후 등) */
+const UNDEFINED_ID_RE = /Cannot read properties of undefined \(reading 'id'\)/;
+
+export function isUndefinedIdError(error: unknown): boolean {
+  const msg = error instanceof Error ? error.message : String(error);
+  return UNDEFINED_ID_RE.test(msg);
+}
+
+/** ms 경과 후 resolve */
+export async function delay(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
 type FetchFunction<T> = (options: {
   depth?: number;
   draft?: boolean;

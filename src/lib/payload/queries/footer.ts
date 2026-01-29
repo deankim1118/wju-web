@@ -10,47 +10,59 @@
  */
 
 import { getPayloadClient } from '../payloadClient';
-import { getCachedData } from './cache-utils';
+import { delay, getCachedData, isUndefinedIdError } from './cache-utils';
 
 type FooterQueryOptions = {
   depth?: number;
   draft?: boolean;
 };
 
+const MAX_ATTEMPTS = 3;
+const RETRY_DELAY_MS = 200;
+
 /**
  * 내부 페칭 함수 (캐싱되지 않은 원본)
- * 이 함수가 호출되면 = 캐시 MISS (DB 조회 발생)
+ * 이 함수가 호출되면 = 캐시 MISS (DB 조회 발생).
+ * save 직후 findGlobal 'undefined id' 타이밍 이슈 시 짧은 대기 후 재시도.
  */
 async function fetchFooterData(options: FooterQueryOptions = {}) {
   const { depth = 0, draft = false } = options;
   const startTime = Date.now();
 
-  try {
-    console.log('🔴 [Footer] DB 조회 중...');
-    const payload = await getPayloadClient();
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      console.log('🔴 [Footer] DB 조회 중...');
+      const payload = await getPayloadClient();
 
-    const footerData = await payload.findGlobal({
-      slug: 'footer',
-      depth,
-      draft,
-    });
+      const footerData = await payload.findGlobal({
+        slug: 'footer',
+        depth,
+        draft,
+      });
 
-    const duration = Date.now() - startTime;
+      const duration = Date.now() - startTime;
 
-    if (!footerData) {
-      console.warn('[Footer] Global data not found.');
+      if (!footerData) {
+        console.warn('[Footer] Global data not found.');
+        return null;
+      }
+
+      console.log(`🟢 [Footer] DB 조회 완료 (${duration}ms)`);
+      return footerData;
+    } catch (error) {
+      const canRetry = isUndefinedIdError(error) && attempt < MAX_ATTEMPTS;
+      if (canRetry) {
+        await delay(RETRY_DELAY_MS);
+        continue;
+      }
+      console.error('[Footer Fetch Error]', error);
+      if (error instanceof Error) {
+        console.error('Message:', error.message);
+      }
       return null;
     }
-
-    console.log(`🟢 [Footer] DB 조회 완료 (${duration}ms)`);
-    return footerData;
-  } catch (error) {
-    console.error('[Footer Fetch Error]', error);
-    if (error instanceof Error) {
-      console.error('Message:', error.message);
-    }
-    return null;
   }
+  return null;
 }
 
 /**

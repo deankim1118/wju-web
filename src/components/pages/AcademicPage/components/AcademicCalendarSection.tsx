@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
+import { ResourcePageHeader } from './ResourcePageHeader';
 
 /** Payload Academic Calendar Global에서 오는 학기·일정 구조 */
 export type AcademicCalendarTerm = {
@@ -23,10 +24,7 @@ type AcademicCalendarSectionProps = {
   terms: AcademicCalendarTerm[];
 };
 
-function formatDateRange(
-  startDate: string,
-  endDate?: string | null,
-): string {
+function formatDateRange(startDate: string, endDate?: string | null): string {
   const start = new Date(startDate);
   const format = (d: Date) =>
     d.toLocaleDateString('en-US', {
@@ -47,12 +45,16 @@ export function AcademicCalendarSection({
 }: AcademicCalendarSectionProps) {
   if (!terms?.length) {
     return (
-      <section aria-labelledby="academic-calendar-heading" className="space-y-8">
-        <h2 id="academic-calendar-heading">Academic Calendar</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Dates and schedules for the current academic year.
-        </p>
-        <p className="text-sm text-muted-foreground">
+      <section
+        aria-labelledby='academic-calendar-heading'
+        className='space-y-8'
+      >
+        <ResourcePageHeader
+          title='Academic Calendar'
+          description='Dates and schedules for the current academic year.'
+          id='academic-calendar-heading'
+        />
+        <p className='text-sm text-muted-foreground'>
           No calendar data has been added yet. Add semesters and events in the
           admin.
         </p>
@@ -61,13 +63,13 @@ export function AcademicCalendarSection({
   }
 
   return (
-    <section aria-labelledby="academic-calendar-heading" className="space-y-8">
-      <h2 id="academic-calendar-heading">Academic Calendar</h2>
-      <p className="mt-1 text-sm text-muted-foreground">
-        Dates and schedules for the current academic year.
-      </p>
-
-      <Accordion type="single" collapsible className="w-full">
+    <section aria-labelledby='academic-calendar-heading' className='space-y-8'>
+      <ResourcePageHeader
+        title='Academic Calendar'
+        description='Dates and schedules for the current academic year.'
+        id='academic-calendar-heading'
+      />
+      <Accordion type='single' collapsible className='w-full'>
         {terms.map((term, index) => {
           const value = term.id ?? `term-${index}`;
           const isLast = index === terms.length - 1;
@@ -82,10 +84,10 @@ export function AcademicCalendarSection({
                 isLast && 'border-b!',
               )}
             >
-              <AccordionTrigger className="text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-600 text-sm md:text-base">
+              <AccordionTrigger className='text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-600 text-sm md:text-base'>
                 {term.name}
               </AccordionTrigger>
-              <AccordionContent className="pb-4">
+              <AccordionContent className='pb-4'>
                 <ul
                   className={
                     events.length === 0
@@ -94,7 +96,7 @@ export function AcademicCalendarSection({
                   }
                 >
                   {events.length === 0 ? (
-                    <li className="text-sm text-muted-foreground">
+                    <li className='text-sm text-muted-foreground'>
                       No events for this term.
                     </li>
                   ) : (
@@ -109,10 +111,10 @@ export function AcademicCalendarSection({
                       return (
                         <li
                           key={event.id ?? event.title + event.startDate}
-                          className="flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-muted-foreground first:pt-0"
+                          className='flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-muted-foreground first:pt-0'
                         >
                           <span>{event.title}</span>
-                          <span className="text-muted-foreground/90 tabular-nums">
+                          <span className='text-muted-foreground/90 tabular-nums'>
                             {dateAndTime}
                           </span>
                         </li>

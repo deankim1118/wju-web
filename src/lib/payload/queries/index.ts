@@ -6,6 +6,7 @@
  */
 
 export { getAcademicCalendarData } from './academic-calendar';
+export { getCatalogData } from './catalog';
 export { getChairmanMessageData } from './chairman-message';
 export { getFooterData } from './footer';
 export { getHeroData } from './hero';

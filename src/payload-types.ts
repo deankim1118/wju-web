@@ -92,12 +92,14 @@ export interface Config {
     footer: Footer;
     'chairman-message': ChairmanMessage;
     'academic-calendar': AcademicCalendar;
+    catalog: Catalog;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     'chairman-message': ChairmanMessageSelect<false> | ChairmanMessageSelect<true>;
     'academic-calendar': AcademicCalendarSelect<false> | AcademicCalendarSelect<true>;
+    catalog: CatalogSelect<false> | CatalogSelect<true>;
   };
   locale: null;
   user: User & {
@@ -507,6 +509,29 @@ export interface AcademicCalendar {
   createdAt?: string | null;
 }
 /**
+ * 입학 요강 PDF 파일과 타이틀, 해당 연도를 관리합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "catalog".
+ */
+export interface Catalog {
+  id: number;
+  /**
+   * 예: 학사과정 입학 요강
+   */
+  title: string;
+  /**
+   * 몇 년도 자료인지 표시 (예: 2026 - 2027)
+   */
+  subtitle: string;
+  /**
+   * 오직 PDF 파일만 업로드 가능합니다.
+   */
+  file: number | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
@@ -590,6 +615,18 @@ export interface AcademicCalendarSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "catalog_select".
+ */
+export interface CatalogSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  file?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
