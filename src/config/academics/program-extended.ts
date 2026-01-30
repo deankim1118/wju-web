@@ -8,7 +8,7 @@
  * 3. Import and add it to PROGRAM_EXTENDED_DATA below
  */
 
-import type { DegreeProgram } from '../academics-content';
+import { DEGREE_PROGRAMS, type DegreeProgram } from '../academics-content';
 import { BCC_EXTENDED } from './bcc-extended';
 import { BCRS_EXTENDED } from './bcrs-extended';
 import { DMIN_EXTENDED } from './dmin-extended';
@@ -17,6 +17,7 @@ import { MCE_EXTENDED } from './mce-extended';
 import { MCHAP_EXTENDED } from './mchap-extended';
 import { MCRS_EXTENDED } from './mcrs-extended';
 import { MDIV_EXTENDED } from './mdiv-extended';
+import { normalizeCourseCode } from '../data/courses-loader';
 import type {
   ProgramExtendedData,
   ProgramExtendedDataInput,
@@ -443,6 +444,7 @@ function mergeProgramData(
         ...programData.keyInformation.hoursOfInstruction,
       },
     },
+    curriculum: programData.curriculum,
     admissions: hasCustomAdmissions && programData.admissions
       ? programData.admissions!
       : {
@@ -476,4 +478,89 @@ export function getProgramExtendedData(
   
   // This should not happen in normal flow
   throw new Error(`No extended data found for program: ${slug}`);
+}
+
+/** Single course item from academics curriculum (for course list / detail) */
+export type CurriculumCourseItem = {
+  code: string;
+  normalizedCode: string;
+  name: string;
+  credits: number;
+  description?: string;
+  programSlug?: string;
+};
+
+let allCurriculumCoursesCache: CurriculumCourseItem[] | null = null;
+
+/**
+ * All unique courses from academics (all program curricula), deduped by normalized code.
+ * Loaded from *-extended.ts; descriptions are embedded there (from courses.json).
+ */
+export function getAllCurriculumCourses(): CurriculumCourseItem[] {
+  if (allCurriculumCoursesCache) return allCurriculumCoursesCache;
+  const seen = new Set<string>();
+  const list: CurriculumCourseItem[] = [];
+  for (const program of DEGREE_PROGRAMS) {
+    const extended = getProgramExtendedData(program.slug, program);
+    for (const category of extended.curriculum) {
+      for (const course of category.courses) {
+        const normalized = normalizeCourseCode(course.code);
+        if (seen.has(normalized)) continue;
+        seen.add(normalized);
+        list.push({
+          code: course.code,
+          normalizedCode: normalized,
+          name: course.name,
+          credits: course.credits,
+          description: course.description,
+          programSlug: program.slug,
+        });
+      }
+    }
+  }
+  allCurriculumCoursesCache = list;
+  return list;
+}
+
+/** Courses grouped by program (DEGREE_PROGRAMS order). Each program lists all its curriculum courses. */
+export function getCurriculumCoursesByProgram(): Array<{
+  program: DegreeProgram;
+  courses: CurriculumCourseItem[];
+}> {
+  const result: Array<{ program: DegreeProgram; courses: CurriculumCourseItem[] }> = [];
+  for (const program of DEGREE_PROGRAMS) {
+    const extended = getProgramExtendedData(program.slug, program);
+    const courses: CurriculumCourseItem[] = [];
+    for (const category of extended.curriculum) {
+      for (const course of category.courses) {
+        courses.push({
+          code: course.code,
+          normalizedCode: normalizeCourseCode(course.code),
+          name: course.name,
+          credits: course.credits,
+          description: course.description,
+          programSlug: program.slug,
+        });
+      }
+    }
+    result.push({ program, courses });
+  }
+  return result;
+}
+
+export function getCurriculumCourseByCode(code: string): CurriculumCourseItem | null {
+  const normalized = normalizeCourseCode(code);
+  return getAllCurriculumCourses().find((c) => c.normalizedCode === normalized) ?? null;
+}
+
+export function getAdjacentCurriculumCourses(
+  normalizedCode: string,
+): { prev: CurriculumCourseItem | null; next: CurriculumCourseItem | null } {
+  const list = getAllCurriculumCourses();
+  const idx = list.findIndex((c) => c.normalizedCode === normalizedCode);
+  if (idx < 0) return { prev: null, next: null };
+  return {
+    prev: idx > 0 ? list[idx - 1]! : null,
+    next: idx < list.length - 1 ? list[idx + 1]! : null,
+  };
 }

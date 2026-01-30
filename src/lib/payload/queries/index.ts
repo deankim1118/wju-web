@@ -5,6 +5,8 @@
  * 일관된 import 경로를 제공합니다.
  */
 
+export { getAcademicCalendarData } from './academic-calendar';
+export { getCatalogData } from './catalog';
 export { getChairmanMessageData } from './chairman-message';
 export { getFooterData } from './footer';
 export { getHeroData } from './hero';

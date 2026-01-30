@@ -54,6 +54,34 @@ export function revalidateChairmanMessage() {
 }
 
 /**
+ * Academic Calendar Global 캐시 무효화
+ *
+ * @description 학사 일정 데이터가 변경될 때 호출하여 캐시를 즉시 갱신합니다.
+ */
+export function revalidateAcademicCalendar() {
+  try {
+    revalidateTag('academic-calendar-global');
+    console.log('🔄 [AcademicCalendar] 캐시 무효화 완료 - 다음 요청 시 DB 조회');
+  } catch (error) {
+    console.error('[Cache Revalidation Error] AcademicCalendar:', error);
+  }
+}
+
+/**
+ * Catalog Global 캐시 무효화
+ *
+ * @description 입학 요강 PDF(Catalog) 데이터가 변경될 때 호출하여 캐시를 즉시 갱신합니다.
+ */
+export function revalidateCatalog() {
+  try {
+    revalidateTag('global-catalog');
+    console.log('🔄 [Catalog] 캐시 무효화 완료 - 다음 요청 시 DB 조회');
+  } catch (error) {
+    console.error('[Cache Revalidation Error] Catalog:', error);
+  }
+}
+
+/**
  * 모든 Global 캐시 무효화
  *
  * @description 전체 Global 데이터 캐시를 한 번에 갱신해야 할 때 사용합니다.
@@ -63,6 +91,8 @@ export function revalidateAllGlobals() {
     revalidateFooter();
     revalidateHero();
     revalidateChairmanMessage();
+    revalidateAcademicCalendar();
+    revalidateCatalog();
     console.log('🔄 [All] 모든 캐시 무효화 완료');
   } catch (error) {
     console.error('[Cache Revalidation Error] All globals:', error);

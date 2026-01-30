@@ -20,7 +20,7 @@ export const ACADEMICS_LINK_CARDS_TITLE = 'Academic Departments';
 
 export const ACADEMICS_LINK_CARDS: readonly AcademicLinkCard[] = [
   {
-    title: 'ACADEMICS WJU',
+    title: 'ACADEMIC Programs',
     href: ROUTES.ACADEMICS.ROOT,
     imageUrl: '/wju-hero-img.png',
     imageAlt: 'Washington Jabez University campus',

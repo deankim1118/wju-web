@@ -91,11 +91,15 @@ export interface Config {
     hero: Hero;
     footer: Footer;
     'chairman-message': ChairmanMessage;
+    'academic-calendar': AcademicCalendar;
+    catalog: Catalog;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
     'chairman-message': ChairmanMessageSelect<false> | ChairmanMessageSelect<true>;
+    'academic-calendar': AcademicCalendarSelect<false> | AcademicCalendarSelect<true>;
+    catalog: CatalogSelect<false> | CatalogSelect<true>;
   };
   locale: null;
   user: User & {
@@ -461,6 +465,73 @@ export interface ChairmanMessage {
   createdAt?: string | null;
 }
 /**
+ * 학사 일정(Academic Calendar)과 주요 행사를 학기별로 관리합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "academic-calendar".
+ */
+export interface AcademicCalendar {
+  id: number;
+  /**
+   * 행정 직원이 학기 단위로 일정을 추가할 수 있습니다.
+   */
+  terms?:
+    | {
+        /**
+         * 예: 2026 Spring, Fall 2025
+         */
+        name: string;
+        events?:
+          | {
+              /**
+               * 예: Registration, Classes Begin
+               */
+              title: string;
+              /**
+               * 일정 시작일
+               */
+              startDate: string;
+              /**
+               * 당일 행사인 경우 비워두세요.
+               */
+              endDate?: string | null;
+              /**
+               * 선택 사항. 예: 9:00 AM, 2:00–4:00 PM. 있으면 날짜 옆에 표시됩니다.
+               */
+              time?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * 입학 요강 PDF 파일과 타이틀, 해당 연도를 관리합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "catalog".
+ */
+export interface Catalog {
+  id: number;
+  /**
+   * 예: 학사과정 입학 요강
+   */
+  title: string;
+  /**
+   * 몇 년도 자료인지 표시 (예: 2026 - 2027)
+   */
+  subtitle: string;
+  /**
+   * 오직 PDF 파일만 업로드 가능합니다.
+   */
+  file: number | Media;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
@@ -520,6 +591,42 @@ export interface ChairmanMessageSelect<T extends boolean = true> {
   image?: T;
   author?: T;
   authorTitle?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "academic-calendar_select".
+ */
+export interface AcademicCalendarSelect<T extends boolean = true> {
+  terms?:
+    | T
+    | {
+        name?: T;
+        events?:
+          | T
+          | {
+              title?: T;
+              startDate?: T;
+              endDate?: T;
+              time?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "catalog_select".
+ */
+export interface CatalogSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  file?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

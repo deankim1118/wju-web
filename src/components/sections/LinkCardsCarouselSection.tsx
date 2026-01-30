@@ -91,10 +91,9 @@ export function LinkCardsCarouselSection({
 
       <div className='relative z-10 mx-auto max-w-[1440px] px-6 section-padding-lg'>
         {/* Accent Line (Left) */}
-        
 
         {/* Title */}
-        <div className='flex flex-col items-center gap-6'>
+        <div className='flex flex-col items-center gap-6 text-center'>
           <ScrollReveal variant='fade-up' delay={0} duration={0.7}>
             <h2>{title}</h2>
           </ScrollReveal>
@@ -107,11 +106,11 @@ export function LinkCardsCarouselSection({
             opts={{ align: 'start', loop: cards.length > 2 }}
             className={carouselClassName}
           >
-            <CarouselContent 
+            <CarouselContent
               className={cn(
                 carouselContentClassName, // 기본 -ml-4
                 // 3개 이하면: 중앙 정렬 + 간격 살짝 조정
-                isStaticOnXL ? 'xl:justify-center xl:gap-2' : '' 
+                isStaticOnXL ? 'xl:justify-center xl:gap-2' : '',
               )}
             >
               {cards.map((card) => (
@@ -193,7 +192,7 @@ export function LinkCardsCarouselSection({
                 'hover:bg-white/15',
                 'disabled:hidden',
                 // 👇 아이템이 3개 이하면 XL에서 숨기고, 아니면 보이게 함
-                isStaticOnXL ? 'xl:hidden' : ''
+                isStaticOnXL ? 'xl:hidden' : '',
               )}
             />
             <CarouselNext
@@ -204,7 +203,7 @@ export function LinkCardsCarouselSection({
                 'hover:bg-white/15',
                 'disabled:hidden',
                 // 👇 아이템이 3개 이하면 XL에서 숨기고, 아니면 보이게 함
-                isStaticOnXL ? 'xl:hidden' : ''
+                isStaticOnXL ? 'xl:hidden' : '',
               )}
             />
           </Carousel>
@@ -213,4 +212,3 @@ export function LinkCardsCarouselSection({
     </section>
   );
 }
-

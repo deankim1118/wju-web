@@ -38,14 +38,18 @@ export type OutcomeItem = {
   description: string;
 };
 
+export type CurriculumCourse = {
+  code: string;
+  name: string;
+  credits: number;
+  /** Populated from courses.json by code (normalized) when available */
+  description?: string;
+};
+
 export type CurriculumCategory = {
   id: string;
   name: string;
-  courses: {
-    code: string;
-    name: string;
-    credits: number;
-  }[];
+  courses: CurriculumCourse[];
 };
 
 export type GraduationRequirement = {
