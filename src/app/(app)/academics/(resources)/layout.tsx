@@ -1,4 +1,5 @@
 import { ResourcesSidebar } from '@/components/pages/AcademicPage/components/ResourcesSidebar';
+import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
 import { Button } from '@/components/ui/button';
 import { callToActionContent } from '@/config/home-content';
 import { ArrowRight, CircleAlert } from 'lucide-react';
@@ -42,9 +43,9 @@ export default function ResourcesLayout({
                   href={href}
                   className='flex items-center justify-center gap-2'
                 >
-                  <CircleAlert className='size-4 md:size-5 shrink-0' />
+                  <CircleAlert className='size-4 md:size-5 shrink-0 text-rose-500' />
                   <span className='truncate'>{buttonText}</span>
-                  <ArrowRight className='size-4 md:size-5 shrink-0' />
+                  <ArrowRight className='size-4 md:size-5 shrink-0 ' />
                 </Link>
               </Button>
               <Button
@@ -70,7 +71,9 @@ export default function ResourcesLayout({
           <div className='flex flex-col gap-16 lg:flex-row lg:gap-20'>
             <ResourcesSidebar />
             <main className='min-w-0 flex-1 space-y-20 lg:max-w-208'>
-              {children}
+              <ScrollReveal variant='zoom-in' delay={0} duration={0.5}>
+                {children}
+              </ScrollReveal>
             </main>
           </div>
         </div>

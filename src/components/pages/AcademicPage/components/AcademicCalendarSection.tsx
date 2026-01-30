@@ -1,10 +1,6 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { cn } from '@/lib/utils';
+import { Accordion } from '@/components/ui/accordion';
+import { BorderedAccordionItem } from '@/components/ui/custom/BorderedAccordionItem';
+import { formatDateRange } from '@/lib/date-utils';
 import { ResourcePageHeader } from './ResourcePageHeader';
 
 /** Payload Academic Calendar Global에서 오는 학기·일정 구조 */
@@ -23,22 +19,6 @@ export type AcademicCalendarTerm = {
 type AcademicCalendarSectionProps = {
   terms: AcademicCalendarTerm[];
 };
-
-function formatDateRange(startDate: string, endDate?: string | null): string {
-  const start = new Date(startDate);
-  const format = (d: Date) =>
-    d.toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric',
-    });
-
-  if (!endDate || endDate === startDate) {
-    return format(start);
-  }
-  const end = new Date(endDate);
-  return `${format(start)} – ${format(end)}`;
-}
 
 export function AcademicCalendarSection({
   terms,
@@ -76,52 +56,46 @@ export function AcademicCalendarSection({
           const events = term.events ?? [];
 
           return (
-            <AccordionItem
+            <BorderedAccordionItem
               key={value}
               value={value}
-              className={cn(
-                'border-t border-b px-4 bg-card',
-                isLast && 'border-b!',
-              )}
+              isLast={isLast}
+              triggerClassName='text-slate-900'
+              trigger={term.name}
             >
-              <AccordionTrigger className='text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-900 text-sm md:text-base'>
-                {term.name}
-              </AccordionTrigger>
-              <AccordionContent className='pb-4'>
-                <ul
-                  className={
-                    events.length === 0
-                      ? 'pt-2'
-                      : 'divide-y divide-border/80 pt-2'
-                  }
-                >
-                  {events.length === 0 ? (
-                    <li className='text-sm text-muted-foreground'>
-                      No events for this term.
-                    </li>
-                  ) : (
-                    events.map((event) => {
-                      const dateText = formatDateRange(
-                        event.startDate,
-                        event.endDate,
-                      );
-                      const dateAndTime = event.time
-                        ? `${dateText} · ${event.time}`
-                        : dateText;
-                      return (
-                        <li
-                          key={event.id ?? event.title + event.startDate}
-                          className='flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-slate-500 first:pt-0'
-                        >
-                          <span>{event.title}</span>
-                          <span className=' tabular-nums'>{dateAndTime}</span>
-                        </li>
-                      );
-                    })
-                  )}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
+              <ul
+                className={
+                  events.length === 0
+                    ? 'pt-2'
+                    : 'divide-y divide-border/80 pt-2'
+                }
+              >
+                {events.length === 0 ? (
+                  <li className='text-sm text-muted-foreground'>
+                    No events for this term.
+                  </li>
+                ) : (
+                  events.map((event) => {
+                    const dateText = formatDateRange(
+                      event.startDate,
+                      event.endDate,
+                    );
+                    const dateAndTime = event.time
+                      ? `${dateText} · ${event.time}`
+                      : dateText;
+                    return (
+                      <li
+                        key={event.id ?? event.title + event.startDate}
+                        className='flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-slate-500 first:pt-0'
+                      >
+                        <span>{event.title}</span>
+                        <span className='tabular-nums'>{dateAndTime}</span>
+                      </li>
+                    );
+                  })
+                )}
+              </ul>
+            </BorderedAccordionItem>
           );
         })}
       </Accordion>

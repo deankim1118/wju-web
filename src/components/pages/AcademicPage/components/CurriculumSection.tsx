@@ -1,13 +1,8 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { Accordion } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
+import { BorderedAccordionItem } from '@/components/ui/custom/BorderedAccordionItem';
 import type { CurriculumCategory } from '@/config/academics/program-extended-types';
 import { ROUTES } from '@/config/routes';
-import { cn } from '@/lib/utils';
 import { ArrowRight, List } from 'lucide-react';
 import Link from 'next/link';
 
@@ -42,39 +37,36 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
           );
           const isLast = index === curriculum.length - 1;
           return (
-            <AccordionItem
+            <BorderedAccordionItem
               key={category.id}
               value={category.id}
-              className={cn(
-                'border-t border-b px-4 bg-card',
-                isLast && 'border-b!', // 마지막 항목에도 border-bottom 강제 유지
-              )}
-            >
-              <AccordionTrigger className='text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-600 text-sm md:text-base'>
-                <span>
+              isLast={isLast}
+              trigger={
+                <>
                   {category.name}{' '}
-                  <span className='font-normal'>({totalCredits} credits)</span>
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className='pb-4'>
-                <ul className='space-y-3 pt-2'>
-                  {category.courses.map((course) => (
-                    <li
-                      key={course.code}
-                      className='flex flex-wrap items-baseline gap-2 text-sm text-muted-foreground'
-                    >
-                      <span className='font-mono text-xs'>{course.code}</span>
-                      <span className='font-medium text-slate-700'>
-                        {course.name}
-                      </span>
-                      <span className='text-muted-foreground/90'>
-                        ({course.credits} cr.)
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
+                  <span className='font-normal'>
+                    ({totalCredits} credits)
+                  </span>
+                </>
+              }
+            >
+              <ul className='space-y-3 pt-2'>
+                {category.courses.map((course) => (
+                  <li
+                    key={course.code}
+                    className='flex flex-wrap items-baseline gap-2 text-sm text-muted-foreground'
+                  >
+                    <span className='font-mono text-xs'>{course.code}</span>
+                    <span className='font-medium text-slate-700'>
+                      {course.name}
+                    </span>
+                    <span className='text-muted-foreground/90'>
+                      ({course.credits} cr.)
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </BorderedAccordionItem>
           );
         })}
       </Accordion>

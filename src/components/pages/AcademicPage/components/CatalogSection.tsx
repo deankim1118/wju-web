@@ -10,6 +10,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import { getPdfFilename, getPdfUrl } from '@/lib/file-utils';
 import { Download, ExternalLink, FileText, Maximize2 } from 'lucide-react';
 
 /** Catalog Global에서 오는 데이터 구조 (depth 1 시 file 풀 populated) */
@@ -23,18 +24,28 @@ type CatalogSectionProps = {
   catalog: CatalogData;
 };
 
-type CatalogFile = NonNullable<CatalogData>['file'];
-
-function getPdfUrl(file: CatalogFile): string | null {
-  if (!file || typeof file === 'number') return null;
-  const url = file.url;
-  return typeof url === 'string' && url.length > 0 ? url : null;
-}
-
-function getPdfFilename(file: CatalogFile): string {
-  if (!file || typeof file === 'number') return 'catalog.pdf';
-  const name = file.filename;
-  return typeof name === 'string' && name.length > 0 ? name : 'catalog.pdf';
+function PdfLinkButton({
+  href,
+  download,
+  variant = 'outline',
+  size = 'sm',
+  className,
+  children,
+}: {
+  href: string;
+  download?: string;
+  variant?: 'outline' | 'secondary' | 'ghost';
+  size?: 'sm';
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Button variant={variant} size={size} className={className} asChild>
+      <a href={href} download={download} target='_blank' rel='noopener noreferrer'>
+        {children}
+      </a>
+    </Button>
+  );
 }
 
 export function CatalogSection({ catalog }: CatalogSectionProps) {
@@ -104,63 +115,43 @@ export function CatalogSection({ catalog }: CatalogSectionProps) {
                   />
                 </div>
                 <div className='flex shrink-0 flex-wrap gap-2 border-t border-border px-4 pb-4 pt-4'>
-                  <Button
+                  <PdfLinkButton
+                    href={pdfUrl}
                     variant='outline'
-                    size='sm'
                     className='rounded-md gap-2 text-primary border-primary'
-                    asChild
                   >
-                    <a href={pdfUrl} target='_blank' rel='noopener noreferrer'>
-                      <ExternalLink className='size-4' />
-                      Open in new tab
-                    </a>
-                  </Button>
-                  <Button
+                    <ExternalLink className='size-4' />
+                    Open in new tab
+                  </PdfLinkButton>
+                  <PdfLinkButton
+                    href={pdfUrl}
+                    download={downloadFilename}
                     variant='secondary'
-                    size='sm'
-                    className='rounded-md gap-2 '
-                    asChild
+                    className='rounded-md gap-2'
                   >
-                    <a
-                      href={pdfUrl}
-                      download={downloadFilename}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      <Download className='size-4' />
-                      Download
-                    </a>
-                  </Button>
+                    <Download className='size-4' />
+                    Download
+                  </PdfLinkButton>
                 </div>
               </SheetContent>
             </Sheet>
-            <Button
+            <PdfLinkButton
+              href={pdfUrl}
+              download={downloadFilename}
               variant='outline'
-              size='sm'
               className='rounded-md gap-2 text-primary border-primary'
-              asChild
             >
-              <a
-                href={pdfUrl}
-                download={downloadFilename}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <Download className='size-4' />
-                Download PDF
-              </a>
-            </Button>
-            <Button
+              <Download className='size-4' />
+              Download PDF
+            </PdfLinkButton>
+            <PdfLinkButton
+              href={pdfUrl}
               variant='ghost'
-              size='sm'
               className='rounded-md gap-2 text-primary'
-              asChild
             >
-              <a href={pdfUrl} target='_blank' rel='noopener noreferrer'>
-                <ExternalLink className='size-4' />
-                Open in new tab
-              </a>
-            </Button>
+              <ExternalLink className='size-4' />
+              Open in new tab
+            </PdfLinkButton>
           </div>
           <p className='text-sm text-slate-700'>
             Click &quot;View PDF&quot; to open a larger viewer, or download /
