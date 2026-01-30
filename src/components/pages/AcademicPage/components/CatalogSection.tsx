@@ -72,9 +72,7 @@ export function CatalogSection({ catalog }: CatalogSectionProps) {
       <div className='rounded-md border border-border bg-card overflow-hidden'>
         <div className='border-b border-border bg-muted/40 px-4 py-3 sm:px-6'>
           <h3 className='font-medium text-black'>{catalog.title}</h3>
-          <p className='mt-0.5 text-sm text-muted-foreground'>
-            {catalog.subtitle}
-          </p>
+          <p className='mt-0.5 text-sm text-slate-500'>{catalog.subtitle}</p>
         </div>
 
         <div className='p-4 sm:p-6 space-y-4'>
@@ -164,7 +162,7 @@ export function CatalogSection({ catalog }: CatalogSectionProps) {
               </a>
             </Button>
           </div>
-          <p className='text-sm text-muted-foreground'>
+          <p className='text-sm text-slate-700'>
             Click &quot;View PDF&quot; to open a larger viewer, or download /
             open in a new tab.
           </p>

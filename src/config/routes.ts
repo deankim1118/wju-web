@@ -29,6 +29,7 @@ export const ROUTES = {
   ACADEMICS: {
     ROOT: '/academics',
     COURSELIST: '/academics/course-list',
+    /** Scroll to course on course-list page: COURSELIST + '#' + normalizedCode */
     CALENDAR: '/academics/calendar',
     CATALOG: '/academics/catalog',
     // Degree Programs (Mega menu)

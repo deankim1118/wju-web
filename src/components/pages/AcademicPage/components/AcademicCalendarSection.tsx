@@ -84,7 +84,7 @@ export function AcademicCalendarSection({
                 isLast && 'border-b!',
               )}
             >
-              <AccordionTrigger className='text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-600 text-sm md:text-base'>
+              <AccordionTrigger className='text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-900 text-sm md:text-base'>
                 {term.name}
               </AccordionTrigger>
               <AccordionContent className='pb-4'>
@@ -111,12 +111,10 @@ export function AcademicCalendarSection({
                       return (
                         <li
                           key={event.id ?? event.title + event.startDate}
-                          className='flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-muted-foreground first:pt-0'
+                          className='flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-slate-500 first:pt-0'
                         >
                           <span>{event.title}</span>
-                          <span className='text-muted-foreground/90 tabular-nums'>
-                            {dateAndTime}
-                          </span>
+                          <span className=' tabular-nums'>{dateAndTime}</span>
                         </li>
                       );
                     })

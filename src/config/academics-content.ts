@@ -420,4 +420,3 @@ export function getDegreeProgramBySlug(slug: string) {
 export function getDegreeProgramsByLevel(level: DegreeLevel) {
   return DEGREE_PROGRAMS.filter((p) => p.level === level);
 }
-

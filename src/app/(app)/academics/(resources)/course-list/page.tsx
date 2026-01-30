@@ -1,16 +1,18 @@
 import { ResourcePageHeader } from '@/components/pages/AcademicPage/components/ResourcePageHeader';
+import { getCurriculumCoursesByProgram } from '@/config/academics/program-extended';
+import { CourseListByProgram } from './CourseListByProgram';
 
 export default function CourseListPage() {
+  const byProgram = getCurriculumCoursesByProgram();
+
   return (
-    <article className='space-y-6'>
+    <article className='space-y-6' aria-labelledby='course-list-heading'>
       <ResourcePageHeader
         title='Course List'
-        description='Browse courses by program and term.'
+        description='Browse courses by program. Descriptions are shown under each course.'
         id='course-list-heading'
       />
-      <div className='rounded-md border border-border bg-card p-6 text-muted-foreground'>
-        <p className='text-sm'>Content coming soon.</p>
-      </div>
+      <CourseListByProgram byProgram={byProgram} />
     </article>
   );
 }
