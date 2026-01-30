@@ -10,47 +10,60 @@
  */
 
 import { getPayloadClient } from '../payloadClient';
-import { getCachedData } from './cache-utils';
+import { delay, getCachedData, isUndefinedIdError } from './cache-utils';
 
 type HeroQueryOptions = {
   depth?: number;
   draft?: boolean;
 };
 
+const MAX_ATTEMPTS = 3;
+const RETRY_DELAY_MS = 200;
+
 /**
  * 내부 페칭 함수 (캐싱되지 않은 원본)
- * 이 함수가 호출되면 = 캐시 MISS (DB 조회 발생)
+ * 이 함수가 호출되면 = 캐시 MISS (DB 조회 발생).
+ * save 직후 findGlobal 'undefined id' 타이밍 이슈 시 짧은 대기 후 재시도.
  */
 async function fetchHeroData(options: HeroQueryOptions = {}) {
   const { depth = 1, draft = false } = options;
   const startTime = Date.now();
 
-  try {
-    console.log('🔴 [Hero] DB 조회 중...');
-    const payload = await getPayloadClient();
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      console.log('🔴 [Hero] DB 조회 중...');
+      const payload = await getPayloadClient();
 
-    const heroData = await payload.findGlobal({
-      slug: 'hero',
-      depth,
-      draft,
-    });
+      const heroData = await payload.findGlobal({
+        slug: 'hero',
+        depth,
+        draft,
+      });
 
-    const duration = Date.now() - startTime;
+      const duration = Date.now() - startTime;
 
-    if (!heroData) {
-      console.warn('[Hero] Global data not found.');
+      if (!heroData) {
+        console.warn('[Hero] Global data not found.');
+        return null;
+      }
+
+      console.log(`🟢 [Hero] DB 조회 완료 (${duration}ms)`);
+      return heroData;
+    } catch (error) {
+      const canRetry = isUndefinedIdError(error) && attempt < MAX_ATTEMPTS;
+      if (canRetry) {
+        await delay(RETRY_DELAY_MS);
+        continue;
+      }
+      const err = error ?? new Error('Unknown error');
+      console.error('[Hero Fetch Error]', err);
+      if (err instanceof Error && err.message) {
+        console.error('Message:', err.message);
+      }
       return null;
     }
-
-    console.log(`🟢 [Hero] DB 조회 완료 (${duration}ms)`);
-    return heroData;
-  } catch (error) {
-    console.error('[Hero Fetch Error]', error);
-    if (error instanceof Error) {
-      console.error('Message:', error.message);
-    }
-    return null;
   }
+  return null;
 }
 
 /**

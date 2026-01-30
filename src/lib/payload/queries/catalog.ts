@@ -51,9 +51,10 @@ async function fetchCatalogData(options: CatalogQueryOptions = {}) {
         await delay(RETRY_DELAY_MS);
         continue;
       }
-      console.error('[Catalog Fetch Error]', error);
-      if (error instanceof Error) {
-        console.error('Message:', error.message);
+      const err = error ?? new Error('Unknown error');
+      console.error('[Catalog Fetch Error]', err);
+      if (err instanceof Error && err.message) {
+        console.error('Message:', err.message);
       }
       return null;
     }
