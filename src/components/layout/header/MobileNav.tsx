@@ -13,7 +13,7 @@ import { actionButtons, topBarNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { MobileActionButton, MobileMenuButton } from './buttons';
+import { MobileMenuButton } from './buttons';
 import { MobileMainNav } from './MobileMainNav';
 
 type MobileNavProps = {
@@ -74,13 +74,13 @@ export function MobileNav({
                 </SheetClose>
               </MobileMenuButton>
             ))}
-            <MobileActionButton variant='secondary' asChild>
+            {/* <MobileActionButton variant='secondary' asChild>
               <SheetClose asChild>
                 <Link href={actionButtons.myWju.href}>
                   {actionButtons.myWju.label.toUpperCase()}
                 </Link>
               </SheetClose>
-            </MobileActionButton>
+            </MobileActionButton> */}
             <MobileMenuButton variant='top' asChild>
               <SheetClose asChild>
                 <Link href={actionButtons.language.href}>

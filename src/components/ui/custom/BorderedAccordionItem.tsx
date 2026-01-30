@@ -31,17 +31,12 @@ export function BorderedAccordionItem({
     <AccordionItem
       id={id}
       value={value}
-      className={cn(
-        'border-t border-b px-4 bg-card',
-        isLast && 'border-b!',
-      )}
+      className={cn('border-t border-b px-4 bg-card', isLast && 'border-b!')}
     >
       <AccordionTrigger className={cn(TRIGGER_CLASS, triggerClassName)}>
         {trigger}
       </AccordionTrigger>
-      <AccordionContent className='pb-4'>
-        {children}
-      </AccordionContent>
+      <AccordionContent className='pb-4'>{children}</AccordionContent>
     </AccordionItem>
   );
 }

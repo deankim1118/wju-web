@@ -42,19 +42,17 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
               value={category.id}
               isLast={isLast}
               trigger={
-                <>
+                <div>
                   {category.name}{' '}
-                  <span className='font-normal'>
-                    ({totalCredits} credits)
-                  </span>
-                </>
+                  <span className='font-normal'>({totalCredits} credits)</span>
+                </div>
               }
             >
               <ul className='space-y-3 pt-2'>
                 {category.courses.map((course) => (
                   <li
                     key={course.code}
-                    className='flex flex-wrap items-baseline gap-2 text-sm text-muted-foreground'
+                    className='flex flex-wrap items-baseline gap-2 text-sm text-muted-foreground '
                   >
                     <span className='font-mono text-xs'>{course.code}</span>
                     <span className='font-medium text-slate-700'>

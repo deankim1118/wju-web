@@ -32,7 +32,6 @@ type DegreeProgramsSectionProps = {
   className?: string;
 };
 
-
 export function DegreeProgramsSection({
   id,
   title,
@@ -50,13 +49,18 @@ export function DegreeProgramsSection({
 
       <div className='container mx-auto px-6 max-w-[1440px]'>
         <div className='flex flex-col gap-4 items-center'>
-          <ScrollReveal variant='fade-up' delay={0.1} duration={0.7} animateImmediately>
-          <SectionHeader title={title} padding='pt-0 pb-6 md:pb-10' />
-          {subtitle && (
-            <p className='text-muted-foreground text-center max-w-3xl'>
-              {subtitle}
-            </p>
-          )}
+          <ScrollReveal
+            variant='fade-up'
+            delay={0.1}
+            duration={0.7}
+            animateImmediately
+          >
+            <SectionHeader title={title} padding='pt-0 pb-6 md:pb-10' />
+            {subtitle && (
+              <p className='text-muted-foreground text-center max-w-3xl'>
+                {subtitle}
+              </p>
+            )}
           </ScrollReveal>
         </div>
 
@@ -71,13 +75,18 @@ export function DegreeProgramsSection({
                 >
                   {group.level}
                 </div>
-                <h3 className='font-serif text-primary text-2xl'>{group.title}</h3>
+                <h3 className='font-serif text-primary text-2xl'>
+                  {group.title}
+                </h3>
                 {/* <p className='text-muted-foreground'>{group.description}</p> */}
               </div>
 
               <div className='grid grid-cols-1 gap-4'>
                 {group.programs.map((program) => (
-                  <Card key={program.slug} className='rounded-none h-full md:gap-1'>
+                  <Card
+                    key={program.slug}
+                    className='rounded-none h-full md:gap-1'
+                  >
                     <CardHeader className='gap-2 md:min-h-[88px] lg:min-h-[128px]'>
                       <div className='flex items-baseline justify-between gap-4'>
                         <CardTitle className='font-serif leading-snug line-clamp-2'>
@@ -87,13 +96,13 @@ export function DegreeProgramsSection({
                           {program.credential}
                         </span>
                       </div>
-                      <CardDescription className='leading-6 line-clamp-3 md:min-h-[58px] lg:min-h-[78px]'>
+                      <CardDescription className='leading-6 line-clamp-3 md:min-h-[58px] lg:min-h-[78px] text-slate-700'>
                         {program.summary}
                       </CardDescription>
                     </CardHeader>
 
                     <CardContent className='pt-0'>
-                      <ul className='text-sm text-muted-foreground space-y-2'>
+                      <ul className='text-sm text-slate-700 space-y-2'>
                         {program.highlights.slice(0, 3).map((h) => (
                           <li key={h} className='flex gap-2'>
                             <Dot
@@ -125,4 +134,3 @@ export function DegreeProgramsSection({
     </section>
   );
 }
-

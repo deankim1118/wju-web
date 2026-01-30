@@ -1,7 +1,7 @@
 import { actionButtons, topBarNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { HeaderActionButton, TopMenuButton } from './buttons';
+import { TopMenuButton } from './buttons';
 import { CONTAINER_PADDING, MENU_GAP, TOP_MENU_GAP } from './constants';
 
 type TopBarProps = {
@@ -32,11 +32,11 @@ export function TopBar({ topBarHeight }: TopBarProps) {
           </div>
           {/* Right side elements */}
           <div className={cn('flex', MENU_GAP)}>
-            <HeaderActionButton variant='secondary' asChild>
+            {/* <HeaderActionButton variant='secondary' asChild>
               <Link href={actionButtons.myWju.href}>
                 {actionButtons.myWju.label.toUpperCase()}
               </Link>
-            </HeaderActionButton>
+            </HeaderActionButton> */}
             <TopMenuButton asChild>
               <Link href={actionButtons.language.href}>
                 {actionButtons.language.label.toUpperCase()}
