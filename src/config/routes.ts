@@ -51,7 +51,6 @@ export const ROUTES = {
     APPLY: '/admissions/apply',
     FINANCIAL_AID: '/admissions/financial-aid',
     SCHOLARSHIPS: '/admissions/scholarships',
-    VISIT: '/admissions/visit',
   },
 
   // Other Main Pages

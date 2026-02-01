@@ -134,7 +134,7 @@ export const mainNavigation: NavItemWithSubmenu[] = [
           'Explore financial support options for your theological education.',
       },
       {
-        label: 'Tuition & Financial Aid',
+        label: 'Tuition & Fees',
         href: ROUTES.ADMISSIONS.FINANCIAL_AID,
         description:
           'Discover affordable tuition plans to support your theological journey.',
