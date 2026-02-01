@@ -1,4 +1,4 @@
-import { Footer } from '@/components/Footer';
+import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/header/Header';
 import type { Metadata } from 'next';
 import { EB_Garamond, Inter, Playfair_Display } from 'next/font/google';

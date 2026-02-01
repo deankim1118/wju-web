@@ -1,5 +1,4 @@
 import { CallToAction } from '@/components/CallToAction';
-import { PageHero } from '@/components/PageHero';
 import {
   ACADEMICS_PAGE_CONTENT,
   getDegreeProgramsByLevel,
@@ -7,7 +6,11 @@ import {
 
 import { AcademicInquirySection } from '@/components/academics/inquiry/academic-inquiry-section';
 import { callToActionContent } from '@/config/home-content';
-import { ACADEMICS_LINK_CARDS, ACADEMICS_LINK_CARDS_TITLE } from '../../../config/academic-link-content';
+import {
+  ACADEMICS_LINK_CARDS,
+  ACADEMICS_LINK_CARDS_TITLE,
+} from '../../../config/academic-link-content';
+import { PageHero } from '../../layout/PageHero';
 import { LinkCardsCarouselSection } from '../../sections/LinkCardsCarouselSection';
 import { DegreeProgramsSection } from './components/DegreeProgramsSection';
 
@@ -69,4 +72,3 @@ export function AcademicPage() {
     </>
   );
 }
-

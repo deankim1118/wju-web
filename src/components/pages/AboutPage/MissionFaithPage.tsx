@@ -1,4 +1,3 @@
-import { PageHero } from '@/components/PageHero';
 import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
 import { TitleBodySection } from '@/components/sections/TitleBodySection';
 import { TextWithImageSection } from '@/components/TextWithImageSection';
@@ -7,8 +6,12 @@ import {
   aboutOurMissionContent,
   aboutOurVisionContent,
 } from '@/config/about-content';
-import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-link-content';
+import {
+  ABOUT_LINK_CARDS,
+  ABOUT_LINK_CARDS_TITLE,
+} from '@/config/about-link-content';
 import { STATEMENT_OF_FAITH_CONTENT } from '@/config/statement-of-faith';
+import { PageHero } from '../../layout/PageHero';
 
 export async function MissionFaithPage() {
   return (
@@ -27,15 +30,14 @@ export async function MissionFaithPage() {
         textColor='text-white'
         titleColor='text-white'
       />
-      
-        <TextWithImageSection
-          title={aboutOurMissionContent.title}
-          description={aboutOurMissionContent.description}
-          imagePosition='left'
-          imageUrl={aboutOurMissionContent.imageUrl}
-          imageAlt={aboutOurMissionContent.imageAlt}
 
-        />
+      <TextWithImageSection
+        title={aboutOurMissionContent.title}
+        description={aboutOurMissionContent.description}
+        imagePosition='left'
+        imageUrl={aboutOurMissionContent.imageUrl}
+        imageAlt={aboutOurMissionContent.imageAlt}
+      />
 
       <TitleBodySection
         title={STATEMENT_OF_FAITH_CONTENT.title}
@@ -46,15 +48,13 @@ export async function MissionFaithPage() {
                 <h3 className='font-serif font-semibold leading-7'>
                   {item.heading}
                 </h3>
-                <p className='whitespace-pre-line text-white/80'>
-                  {item.body}
-                </p>
+                <p className='whitespace-pre-line text-white/80'>{item.body}</p>
               </div>
             ))}
           </div>
         }
       />
-      
+
       <LinkCardsCarouselSection
         title={ABOUT_LINK_CARDS_TITLE}
         items={ABOUT_LINK_CARDS}

@@ -1,13 +1,13 @@
-import { PageHero } from '@/components/PageHero';
 import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
 import { TitleBodySection } from '@/components/sections/TitleBodySection';
 import { TwoRowTextSection } from '@/components/TwoTextSection';
+import { aboutIntegritynContent } from '@/config/about-content';
 import {
-  aboutIntegritynContent
-} from '@/config/about-content';
-import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-link-content';
+  ABOUT_LINK_CARDS,
+  ABOUT_LINK_CARDS_TITLE,
+} from '@/config/about-link-content';
 import { INTEGRITY_CONTENT } from '@/config/integrity-content';
-
+import { PageHero } from '../../layout/PageHero';
 
 export async function IntegrityPage() {
   return (
@@ -46,15 +46,13 @@ export async function IntegrityPage() {
                 <h3 className='font-serif font-semibold leading-7'>
                   {item.heading}
                 </h3>
-                <p className='whitespace-pre-line text-white/80'>
-                  {item.body}
-                </p>
+                <p className='whitespace-pre-line text-white/80'>{item.body}</p>
               </div>
             ))}
           </div>
         }
       />
-      
+
       <LinkCardsCarouselSection
         title={ABOUT_LINK_CARDS_TITLE}
         items={ABOUT_LINK_CARDS}

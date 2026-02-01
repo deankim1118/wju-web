@@ -1,6 +1,5 @@
 import { AcademicsSection } from '@/components/AcademicsSection';
 import { CallToAction } from '@/components/CallToAction';
-import { Hero } from '@/components/Hero';
 import { InformationResourcesSection } from '@/components/InformationResourcesSection';
 import { TextWithImageSection } from '@/components/TextWithImageSection';
 import { TwoColumnTextSection } from '@/components/TwoTextSection';
@@ -11,6 +10,7 @@ import {
   whyWjuContent,
 } from '@/config/home-content';
 import { getHeroData } from '@/lib/payload/queries';
+import { Hero } from '../../layout/Hero';
 
 export async function HomePage() {
   // Payload CMS에서 Hero 데이터를 가져옵니다.

@@ -5,7 +5,7 @@ import { ArrowRight, Clock, Mail, MapPin, Phone } from 'lucide-react';
 import { socialMediaLinks } from '@/config/navigation';
 import { ROUTES } from '@/config/routes';
 
-import { SocialMediaIcons } from '@/components/Footer/components/SocialMediaIcons';
+import { SocialMediaIcons } from '@/components/layout/Footer/components/SocialMediaIcons';
 import { Button } from '@/components/ui/button';
 
 type AcademicInquiryInfoPanelProps = {
@@ -31,8 +31,8 @@ export function AcademicInquiryInfoPanel({
             A clear next step for your calling
           </h3>
           <p className='text-white/80 leading-7 max-w-md'>
-            Our programs integrate biblical fidelity, spiritual formation, and ministry
-            practice—so you can serve with confidence and humility.
+            Our programs integrate biblical fidelity, spiritual formation, and
+            ministry practice—so you can serve with confidence and humility.
           </p>
 
           <div className='mt-2 grid gap-3 text-white/85'>
@@ -57,7 +57,7 @@ export function AcademicInquiryInfoPanel({
             <p className='text-xs uppercase tracking-widest text-white/70'>
               Contact Information
             </p>
-            
+
             <div className='grid gap-4'>
               {/* Address */}
               <div className='flex items-start gap-3'>
@@ -75,14 +75,10 @@ export function AcademicInquiryInfoPanel({
               <div className='flex items-start gap-3'>
                 <Phone className='mt-0.5 size-5 shrink-0 text-secondary' />
                 <div className='flex-1 flex flex-col gap-1.5'>
-                  <span
-                    className='text-sm text-white/90'
-                  >
+                  <span className='text-sm text-white/90'>
                     703-489-4168 (Eng)
                   </span>
-                  <span
-                    className='text-sm text-white/90'
-                  >
+                  <span className='text-sm text-white/90'>
                     703-232-5452 (Kor)
                   </span>
                 </div>
@@ -103,24 +99,22 @@ export function AcademicInquiryInfoPanel({
 
               {/* Hours */}
               <div className='flex justify-between items-center'>
-              <div className='flex items-start gap-3'>
-                <Clock className='mt-0.5 size-5 shrink-0 text-secondary' />
-                <div className='flex-1'>
-                  <p className='text-sm text-white/90 leading-relaxed'>
-                    Monday – Friday
-                    <br />
-                    10:00 AM – 4:00 PM
-                  </p>
+                <div className='flex items-start gap-3'>
+                  <Clock className='mt-0.5 size-5 shrink-0 text-secondary' />
+                  <div className='flex-1'>
+                    <p className='text-sm text-white/90 leading-relaxed'>
+                      Monday – Friday
+                      <br />
+                      10:00 AM – 4:00 PM
+                    </p>
+                  </div>
+                </div>
+                {/* Social Media Icons */}
+                <div className='pt-2'>
+                  <SocialMediaIcons socialMedia={socialMediaLinks} />
                 </div>
               </div>
-              {/* Social Media Icons */}
-            <div className='pt-2'>
-              <SocialMediaIcons socialMedia={socialMediaLinks} />
             </div>
-              </div>
-            </div>
-
-            
           </div>
         )}
 
@@ -143,4 +137,3 @@ export function AcademicInquiryInfoPanel({
     </div>
   );
 }
-

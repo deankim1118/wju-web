@@ -1,15 +1,14 @@
-
-import { PageHero } from '@/components/PageHero';
-import {
-  Card,
-  CardContent
-} from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import type { DegreeProgram } from '@/config/academics-content';
 import { getProgramExtendedData } from '@/config/academics/program-extended';
 import { callToActionContent } from '@/config/home-content';
-import { ACADEMICS_LINK_CARDS, ACADEMICS_LINK_CARDS_TITLE } from '../../../config/academic-link-content';
+import {
+  ACADEMICS_LINK_CARDS,
+  ACADEMICS_LINK_CARDS_TITLE,
+} from '../../../config/academic-link-content';
 import { AcademicInquirySection } from '../../academics/inquiry/academic-inquiry-section';
 import { CallToAction } from '../../CallToAction';
+import { PageHero } from '../../layout/PageHero';
 import { LinkCardsCarouselSection } from '../../sections/LinkCardsCarouselSection';
 import { AdmissionsSection } from './components/AdmissionsSection';
 import { CurriculumSection } from './components/CurriculumSection';
@@ -43,31 +42,31 @@ export function AcademicProgramPage({ program }: AcademicProgramPageProps) {
       />
 
       {/* Key Information - Full width card above sidebar */}
-      <div className="bg-background">
-        <div className="mx-auto max-w-7xl px-6 py-8 lg:px-10 xl:px-14">
-          <Card className="w-full rounded-none bg-card border-bottom border-border/60  shadow-sm relative">
+      <div className='bg-background'>
+        <div className='mx-auto max-w-7xl px-6 py-8 lg:px-10 xl:px-14'>
+          <Card className='w-full rounded-none bg-card border-bottom border-border/60  shadow-sm relative'>
             <div className='absolute left-0 top-0 h-1.5 w-full  bg-secondary' />
-            <CardContent className="section-padding-sm px-10 md:px-18">
+            <CardContent className='section-padding-sm px-10 md:px-18'>
               <KeyInformationSection data={extendedData.keyInformation} />
             </CardContent>
           </Card>
         </div>
       </div>
 
-      <div className="bg-background">
-        <div className="mx-auto max-w-7xl px-6 section-padding-sm lg:px-10 xl:px-14">
-          <div className="flex flex-col gap-16 lg:flex-row lg:gap-20">
+      <div className='bg-background'>
+        <div className='mx-auto max-w-7xl px-6 section-padding-sm lg:px-10 xl:px-14'>
+          <div className='flex flex-col gap-16 lg:flex-row lg:gap-20'>
             <ProgramSidebar currentProgram={program} />
 
-            <main className="min-w-0 flex-1 space-y-20 lg:max-w-208">
+            <main className='min-w-0 flex-1 space-y-20 lg:max-w-208'>
               {/* All programs use the same component structure */}
               <OutcomesSection outcomes={extendedData.outcomes} />
               <CurriculumSection curriculum={extendedData.curriculum} />
-              <AdmissionsSection 
+              <AdmissionsSection
                 intro={extendedData.admissions.intro}
                 sections={extendedData.admissions.sections}
               />
-              <GraduationSection 
+              <GraduationSection
                 requirements={extendedData.graduation.requirements}
                 program={program}
               />

@@ -1,6 +1,8 @@
-import { PageHero } from '@/components/PageHero';
 import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
-import { ABOUT_LINK_CARDS, ABOUT_LINK_CARDS_TITLE } from '@/config/about-link-content';
+import {
+  ABOUT_LINK_CARDS,
+  ABOUT_LINK_CARDS_TITLE,
+} from '@/config/about-link-content';
 import { getChairmanMessageData } from '@/lib/payload/queries';
 import {
   aboutChairmanPageContent,
@@ -8,6 +10,7 @@ import {
 } from '../../../config/about-content';
 import { TextWithImageSection } from '../../TextWithImageSection';
 import { TwoRowTextSection } from '../../TwoTextSection';
+import { PageHero } from '../../layout/PageHero';
 
 export async function AboutPage() {
   // Payload에서 Chairman's Message 데이터 가져오기
@@ -20,7 +23,8 @@ export async function AboutPage() {
       : null;
 
   const imageUrl = image?.url || '/wju-hero-img.png';
-  const imageAlt = image?.alt || "Washington Jabez University Chairman's Message";
+  const imageAlt =
+    image?.alt || "Washington Jabez University Chairman's Message";
 
   return (
     <>
