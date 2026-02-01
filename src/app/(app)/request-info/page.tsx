@@ -3,7 +3,7 @@ import { AcademicInquiryInfoPanel } from '@/components/academics/inquiry/academi
 import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
 import { Card } from '@/components/ui/card';
 
-export default function SupportPage() {
+export default function RequestInfoPage() {
   const mapAddress = '4421 Dale BLVD, Woodbridge, VA 22193';
   const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(mapAddress)}&output=embed`;
 
@@ -23,13 +23,15 @@ export default function SupportPage() {
             </h1>
             <div className='flex flex-col gap-4 max-w-3xl'>
               <p className='text-lg text-white/90 leading-relaxed'>
-                We're here to help you take the next step in your theological education journey.
-                Whether you're exploring degree programs, have questions about admissions, or want
-                to learn more about Washington Jabez University, we'd love to hear from you.
+                We're here to help you take the next step in your theological
+                education journey. Whether you're exploring degree programs,
+                have questions about admissions, or want to learn more about
+                Washington Jabez University, we'd love to hear from you.
               </p>
               <p className='text-base text-white/80 leading-relaxed'>
-                Fill out the form below, and our admissions team will reach out with personalized
-                information, program details, and guidance tailored to your calling and goals.
+                Fill out the form below, and our admissions team will reach out
+                with personalized information, program details, and guidance
+                tailored to your calling and goals.
               </p>
             </div>
           </div>
@@ -48,12 +50,13 @@ export default function SupportPage() {
         {/* Google Maps Section */}
         <ScrollReveal variant='fade-up' delay={0.2} duration={0.7}>
           <div className='flex flex-col items-start gap-6 mb-8'>
-            <h2 className='font-serif text-white uppercase'>
-              Our Location
-            </h2>
+            <h2 className='font-serif text-white uppercase'>Our Location</h2>
           </div>
           <Card className='rounded-none border-white/10 bg-white/95 shadow-[0px_30px_80px_rgba(0,0,0,0.25)] overflow-hidden'>
-            <div className='relative w-full' style={{ paddingBottom: '56.25%' }}>
+            <div
+              className='relative w-full'
+              style={{ paddingBottom: '56.25%' }}
+            >
               <iframe
                 src={mapEmbedUrl}
                 width='100%'

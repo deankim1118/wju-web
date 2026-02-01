@@ -8,7 +8,7 @@ import { menuFeatures } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import * as React from 'react';
-import { MainMenuButton } from './buttons';
+import { HeaderActionButton, MainMenuButton } from './buttons';
 import { HEADER_MENU_STYLES } from './constants';
 import { AcademicsMegaMenu } from './mega-menus/AcademicsMenu';
 import { StandardSubmenu } from './submenus/StandardSubmenu';
@@ -51,9 +51,15 @@ export function NavMenuList({ items, textColor, children }: NavMenuListProps) {
           </NavigationMenuItem>
         ) : (
           <NavigationMenuItem key={item.href}>
-            <MainMenuButton asChild>
-              <Link href={item.href}>{item.label.toUpperCase()}</Link>
-            </MainMenuButton>
+            {item.variant === 'action' ? (
+              <HeaderActionButton asChild>
+                <Link href={item.href}>{item.label.toUpperCase()}</Link>
+              </HeaderActionButton>
+            ) : (
+              <MainMenuButton asChild>
+                <Link href={item.href}>{item.label.toUpperCase()}</Link>
+              </MainMenuButton>
+            )}
           </NavigationMenuItem>
         ),
       )}

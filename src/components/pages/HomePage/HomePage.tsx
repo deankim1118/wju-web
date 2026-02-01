@@ -41,6 +41,9 @@ export async function HomePage() {
         description={whyWjuContent.description}
         imageUrl={whyWjuContent.imageUrl}
         imageAlt={whyWjuContent.imageAlt}
+        button={true}
+        buttonText={whyWjuContent.buttonText}
+        buttonHref={whyWjuContent.buttonHref}
       />
       <TwoColumnTextSection
         title={facultyMentorshipContent.title}

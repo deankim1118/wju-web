@@ -9,7 +9,7 @@ type StandardSubmenuProps = {
 };
 
 const SUBMENU_CONTAINER_STYLE =
-  'grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] text-slate-900';
+  'grid gap-3 p-6 md:w-[400px] lg:w-[550px] lg:grid-cols-[.75fr_1fr] text-slate-900';
 
 function FeaturedMenuCard({ feature }: { feature: MenuFeature }) {
   return (
@@ -45,4 +45,3 @@ export function StandardSubmenu({ item, feature }: StandardSubmenuProps) {
     </ul>
   );
 }
-

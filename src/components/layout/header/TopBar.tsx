@@ -1,4 +1,7 @@
-import { actionButtons, topBarNavigation } from '@/config/navigation';
+import {
+  topBarNavigationLeft,
+  topBarNavigationRight,
+} from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { TopMenuButton } from './buttons';
@@ -24,7 +27,7 @@ export function TopBar({ topBarHeight }: TopBarProps) {
         >
           {/* Left side links */}
           <div className={cn('flex', TOP_MENU_GAP)}>
-            {topBarNavigation.map((link) => (
+            {topBarNavigationLeft.map((link) => (
               <TopMenuButton key={link.href} asChild>
                 <Link href={link.href}>{link.label.toUpperCase()}</Link>
               </TopMenuButton>
@@ -33,18 +36,18 @@ export function TopBar({ topBarHeight }: TopBarProps) {
           {/* Right side elements */}
           <div className={cn('flex', MENU_GAP)}>
             {/* <HeaderActionButton variant='secondary' asChild>
-              <Link href={actionButtons.myWju.href}>
-                {actionButtons.myWju.label.toUpperCase()}
+              <Link href={topBarNavigationRight.myWju.href}>
+                {topBarNavigationRight.myWju.label.toUpperCase()}
               </Link>
             </HeaderActionButton> */}
             <TopMenuButton asChild>
-              <Link href={actionButtons.language.href}>
-                {actionButtons.language.label.toUpperCase()}
+              <Link href={topBarNavigationRight.language.href}>
+                {topBarNavigationRight.language.label.toUpperCase()}
               </Link>
             </TopMenuButton>
             <TopMenuButton asChild>
-              <Link href={actionButtons.support.href}>
-                {actionButtons.support.label.toUpperCase()}
+              <Link href={topBarNavigationRight.support.href}>
+                {topBarNavigationRight.support.label.toUpperCase()}
               </Link>
             </TopMenuButton>
           </div>

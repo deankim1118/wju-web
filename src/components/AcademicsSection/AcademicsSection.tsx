@@ -1,7 +1,10 @@
 'use client';
 
 import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
+import Link from 'next/link';
+import { ROUTES } from '../../config/routes';
 import { SectionHeader } from '../layout/SectionHeader';
+import { Button } from '../ui/button';
 import { AcademicCard } from './AcademicCard';
 
 type AcademicProgram = {
@@ -24,12 +27,14 @@ export function AcademicsSection({
   className = '',
 }: AcademicsSectionProps) {
   return (
-    <section className={`relative bg-foreground section-padding-lg ${className}`}>
-       {/* Accent Line at Top */}
-       
-        <div className='absolute left-0 top-0 h-1.5 w-full max-w-2/3 md:max-w-2/5  bg-secondary' />
-   
-      <div className='container mx-auto px-6 max-w-[1440px]'>
+    <section
+      className={`relative bg-foreground section-padding-lg ${className}`}
+    >
+      {/* Accent Line at Top */}
+
+      <div className='absolute left-0 top-0 h-1.5 w-full max-w-2/3 md:max-w-2/5  bg-secondary' />
+
+      <div className='container mx-auto px-6 max-w-[1440px] flex flex-col gap-8'>
         {/* Section Header */}
         <ScrollReveal variant='fade-up' delay={0} duration={1.5}>
           <SectionHeader title={title} />
@@ -55,6 +60,20 @@ export function AcademicsSection({
             </ScrollReveal>
           ))}
         </div>
+        <Link
+          href={ROUTES.ACADEMICS.ROOT}
+          className='flex justify-center w-full pt-6'
+        >
+          <Button
+            variant='outline'
+            size='lg'
+            className='border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground uppercase rounded-none tracking-wider w-full md:w-auto'
+          >
+            <span className='uppercase text-base md:text-lg'>
+              View All Programs
+            </span>
+          </Button>
+        </Link>
       </div>
     </section>
   );

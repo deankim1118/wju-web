@@ -1,4 +1,4 @@
-import { actionButtons, mainNavigation } from '@/config/navigation';
+import { mainNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { HeaderActionButton, MainMenuButton } from './buttons';
@@ -50,18 +50,17 @@ export function MainNav({ bottomBarHeight }: MainNavProps) {
           <ul className={cn('flex items-center justify-start', MENU_GAP)}>
             {rightNavItems.map((link) => (
               <li key={link.href}>
-                <MainMenuButton asChild>
-                  <Link href={link.href}>{link.label.toUpperCase()}</Link>
-                </MainMenuButton>
+                {link.variant === 'action' ? (
+                  <HeaderActionButton asChild>
+                    <Link href={link.href}>{link.label.toUpperCase()}</Link>
+                  </HeaderActionButton>
+                ) : (
+                  <MainMenuButton asChild>
+                    <Link href={link.href}>{link.label.toUpperCase()}</Link>
+                  </MainMenuButton>
+                )}
               </li>
             ))}
-            <li>
-              <HeaderActionButton asChild>
-                <Link href={actionButtons.apply.href}>
-                  {actionButtons.apply.label.toUpperCase()}
-                </Link>
-              </HeaderActionButton>
-            </li>
           </ul>
         </div>
       </div>

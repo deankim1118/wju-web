@@ -9,7 +9,10 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import { actionButtons, topBarNavigation } from '@/config/navigation';
+import {
+  topBarNavigationLeft,
+  topBarNavigationRight,
+} from '@/config/navigation';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
@@ -67,7 +70,7 @@ export function MobileNav({
           {/* Top Navigation Items (from Brand Bar) */}
           <Separator className='my-3' />
           <div className='space-y-1'>
-            {topBarNavigation.map((link) => (
+            {topBarNavigationLeft.map((link) => (
               <MobileMenuButton key={link.href} variant='top' asChild>
                 <SheetClose asChild>
                   <Link href={link.href}>{link.label.toUpperCase()}</Link>
@@ -76,22 +79,22 @@ export function MobileNav({
             ))}
             {/* <MobileActionButton variant='secondary' asChild>
               <SheetClose asChild>
-                <Link href={actionButtons.myWju.href}>
-                  {actionButtons.myWju.label.toUpperCase()}
+                <Link href={topBarNavigationRight.myWju.href}>
+                  {topBarNavigationRight.myWju.label.toUpperCase()}
                 </Link>
               </SheetClose>
             </MobileActionButton> */}
             <MobileMenuButton variant='top' asChild>
               <SheetClose asChild>
-                <Link href={actionButtons.language.href}>
-                  {actionButtons.language.label.toUpperCase()}
+                <Link href={topBarNavigationRight.language.href}>
+                  {topBarNavigationRight.language.label.toUpperCase()}
                 </Link>
               </SheetClose>
             </MobileMenuButton>
             <MobileMenuButton variant='top' asChild>
               <SheetClose asChild>
-                <Link href={actionButtons.support.href}>
-                  {actionButtons.support.label.toUpperCase()}
+                <Link href={topBarNavigationRight.support.href}>
+                  {topBarNavigationRight.support.label.toUpperCase()}
                 </Link>
               </SheetClose>
             </MobileMenuButton>

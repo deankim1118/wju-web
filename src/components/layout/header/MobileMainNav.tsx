@@ -1,13 +1,13 @@
 'use client';
 
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from '@/components/ui/accordion';
 import { SheetClose } from '@/components/ui/sheet';
-import { actionButtons, mainNavigation, menuFeatures } from '@/config/navigation';
+import { mainNavigation, menuFeatures } from '@/config/navigation';
 import Link from 'next/link';
 import { MobileActionButton, MobileMenuButton } from './buttons';
 import { HEADER_MENU_STYLES } from './constants';
@@ -24,7 +24,13 @@ export function MobileMainNav({}: MobileMainNavProps) {
         const feature = menuFeatures[item.label];
 
         if (!item.submenu) {
-          return (
+          return item.variant === 'action' ? (
+            <MobileActionButton key={item.href} asChild>
+              <SheetClose asChild>
+                <Link href={item.href}>{item.label.toUpperCase()}</Link>
+              </SheetClose>
+            </MobileActionButton>
+          ) : (
             <MobileMenuButton key={item.href} variant='main' asChild>
               <SheetClose asChild>
                 <Link href={item.href}>{item.label.toUpperCase()}</Link>
@@ -36,7 +42,9 @@ export function MobileMainNav({}: MobileMainNavProps) {
         return (
           <Accordion key={item.href} type='single' collapsible>
             <AccordionItem value={item.href} className='border-0'>
-              <AccordionTrigger className={HEADER_MENU_STYLES.mobileAccordionTrigger}>
+              <AccordionTrigger
+                className={HEADER_MENU_STYLES.mobileAccordionTrigger}
+              >
                 {item.label.toUpperCase()}
               </AccordionTrigger>
 
@@ -53,15 +61,6 @@ export function MobileMainNav({}: MobileMainNavProps) {
           </Accordion>
         );
       })}
-
-      <MobileActionButton asChild>
-        <SheetClose asChild>
-          <Link href={actionButtons.apply.href}>
-            {actionButtons.apply.label.toUpperCase()}
-          </Link>
-        </SheetClose>
-      </MobileActionButton>
     </div>
   );
 }
-

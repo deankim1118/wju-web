@@ -31,6 +31,8 @@ export type TextWithImageContent = {
   author?: string;
   authorTitle?: string;
   authorColor?: string;
+  buttonText?: string;
+  buttonHref?: string;
 };
 
 export type TwoColumnTextContent = {
@@ -109,6 +111,8 @@ Washington Jabez University is a nondenominational Christian and educational org
 Washington Jabez does not discriminate on the basis of race, sex, age, national or ethnic origin, or handicap in administration of its educational policies, admissions policies, and other school-administered programs.`,
   imageUrl: '/wju-hero-img.png',
   imageAlt: 'Washington Jabez University Campus',
+  buttonText: 'Learn More',
+  buttonHref: ROUTES.ABOUT.ROOT,
 };
 
 /**
@@ -138,7 +142,7 @@ export const academicsContent: AcademicsSectionContent = {
         'Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise',
       imageUrl: '/wju-hero-img.png',
       imageAlt: 'Undergraduate Education',
-      linkHref: ROUTES.PLACEHOLDER,
+      linkHref: ROUTES.ACADEMICS.THB,
     },
     {
       title: 'Graduate Education',
@@ -146,7 +150,7 @@ export const academicsContent: AcademicsSectionContent = {
         'Unsurpassed opportunities to participate in the advancement of entire fields of knowledge',
       imageUrl: '/wju-hero-img.png',
       imageAlt: 'Graduate Education',
-      linkHref: ROUTES.PLACEHOLDER,
+      linkHref: ROUTES.ACADEMICS.MDIV,
     },
     {
       title: 'Doctoral Education',
@@ -154,7 +158,7 @@ export const academicsContent: AcademicsSectionContent = {
         'Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise',
       imageUrl: '/wju-hero-img.png',
       imageAlt: 'Doctoral Education',
-      linkHref: ROUTES.PLACEHOLDER,
+      linkHref: ROUTES.ACADEMICS.DMIN,
     },
   ],
 };
@@ -170,21 +174,21 @@ export const informationResourcesContent: InformationResourcesContent = {
       title: 'Scholarships',
       description:
         'Recognizing your gifts with a wide range of merit-based and ministry-focused awards.',
-      linkHref: ROUTES.PLACEHOLDER,
+      linkHref: ROUTES.ADMISSIONS.SCHOLARSHIPS,
     },
     {
       icon: ClipboardList,
       title: 'Admissions Procedure',
       description:
         'Find all the information, requirements, and deadlines to begin your theological journey.',
-      linkHref: ROUTES.PLACEHOLDER,
+      linkHref: ROUTES.ADMISSIONS.ROOT,
     },
     {
       icon: HeartHandshake,
       title: 'Tuition & Financial Aid',
       description:
         'Discover affordable tuition plans and scholarship opportunities to support your theological journey.',
-      linkHref: ROUTES.PLACEHOLDER,
+      linkHref: ROUTES.ADMISSIONS.FINANCIAL_AID,
     },
   ],
 };

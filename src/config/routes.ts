@@ -15,7 +15,7 @@ export const ROUTES = {
   // Top Bar Quick Links
   QUICK_LINKS: '/quick-links',
   VISIT: '/visit',
-  REQUEST_INFO: '/support',
+  REQUEST_INFO: '/request-info',
 
   // About Section
   ABOUT: {
@@ -49,6 +49,7 @@ export const ROUTES = {
   ADMISSIONS: {
     ROOT: '/admissions',
     APPLY: '/admissions/apply',
+    FINANCIAL_AID: '/admissions/financial-aid',
     SCHOLARSHIPS: '/admissions/scholarships',
     VISIT: '/admissions/visit',
   },

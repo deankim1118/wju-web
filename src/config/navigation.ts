@@ -20,6 +20,8 @@ export type NavItemWithSubmenu = {
   label: string;
   href: string;
   submenu?: NavLink[];
+  /** Use CTA/action button styling (e.g. Apply button in header) */
+  variant?: 'action';
 };
 
 export type MenuFeature = {
@@ -34,11 +36,18 @@ export type AcademicProgramGroup = {
 };
 
 // Top Bar Navigation (Quick access links)
-export const topBarNavigation: NavLink[] = [
+export const topBarNavigationLeft: NavLink[] = [
   { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
   { label: 'Visit Us', href: ROUTES.VISIT },
-  { label: 'Request Info', href: ROUTES.SUPPORT },
+  { label: 'Request Info', href: ROUTES.REQUEST_INFO },
 ];
+
+// Top Bar Right (My WJU, Language, Support - Apply is in mainNavigation)
+export const topBarNavigationRight = {
+  myWju: { label: 'My WJU', href: ROUTES.MY_WJU },
+  language: { label: 'Language', href: ROUTES.LANGUAGE },
+  support: { label: 'Support', href: ROUTES.SUPPORT },
+} as const;
 
 // Featured Menu Descriptions (for navigation submenu cards)
 // These act as "overview" links to the main section page
@@ -119,16 +128,16 @@ export const mainNavigation: NavItemWithSubmenu[] = [
         description: 'Start your journey toward faithful ministry and service.',
       },
       {
-        label: 'Scholarships & Aid',
+        label: 'Scholarships',
         href: ROUTES.ADMISSIONS.SCHOLARSHIPS,
         description:
           'Explore financial support options for your theological education.',
       },
       {
-        label: 'Visit Campus',
-        href: ROUTES.ADMISSIONS.VISIT,
+        label: 'Tuition & Financial Aid',
+        href: ROUTES.ADMISSIONS.FINANCIAL_AID,
         description:
-          'Experience our community and discover life at WJU Seminary.',
+          'Discover affordable tuition plans to support your theological journey.',
       },
     ],
   },
@@ -139,6 +148,11 @@ export const mainNavigation: NavItemWithSubmenu[] = [
   {
     label: 'Church Music',
     href: ROUTES.CHURCH_MUSIC,
+  },
+  {
+    label: 'Apply',
+    href: ROUTES.APPLY,
+    variant: 'action',
   },
 ];
 
@@ -214,44 +228,58 @@ export const academicProgramGroups: AcademicProgramGroup[] = [
   },
 ];
 
-// Footer Navigation Sections
-export const footerNavigation: NavSection[] = [
-  {
-    title: 'About Us',
-    links: [
-      { label: 'Who We Are', href: ROUTES.ABOUT.ROOT },
-      { label: 'Mission of Faith', href: ROUTES.ABOUT.MISSION_FAITH },
-      { label: 'Faculty & Staff', href: ROUTES.ABOUT.FACULTY_STAFF },
-      { label: 'Integrity', href: ROUTES.ABOUT.INTEGRITY },
-    ],
-  },
-  {
-    title: 'Academics',
-    links: [
-      { label: 'Academic Programs', href: ROUTES.ACADEMICS.ROOT },
-      { label: 'Admissions', href: ROUTES.ADMISSIONS.ROOT },
-      { label: 'Scholarships & Aid', href: ROUTES.ADMISSIONS.SCHOLARSHIPS },
-      { label: 'Academic Calendar', href: ROUTES.ACADEMICS.CALENDAR },
-      { label: 'Course Catalog', href: ROUTES.ACADEMICS.CATALOG },
-    ],
-  },
-  {
-    title: 'Get Involved',
-    links: [
-      { label: 'Apply Now', href: ROUTES.APPLY },
-      { label: 'Visit Us', href: ROUTES.VISIT },
-      { label: 'Request Information', href: ROUTES.SUPPORT },
-    ],
-  },
-];
+/**
+ * Footer Navigation (derived from mainNavigation)
+ * Single source of truth: footer links use the same routes as DesktopMainNav.
+ * Only mainNavigation needs to be updated; footer stays in sync automatically.
+ */
+function buildFooterNavigation(): NavSection[] {
+  const about = mainNavigation.find((n) => n.href === ROUTES.ABOUT.ROOT);
+  const academics = mainNavigation.find(
+    (n) => n.href === ROUTES.ACADEMICS.ROOT,
+  );
+  const admissions = mainNavigation.find(
+    (n) => n.href === ROUTES.ADMISSIONS.ROOT,
+  );
 
-// Action Buttons (CTA buttons that appear across the site)
-export const actionButtons = {
-  apply: { label: 'Apply', href: ROUTES.APPLY },
-  myWju: { label: 'My WJU', href: ROUTES.MY_WJU },
-  language: { label: 'Language', href: ROUTES.LANGUAGE },
-  support: { label: 'Support', href: ROUTES.SUPPORT },
-} as const;
+  const toNavLinks = (items: NavLink[] | undefined) =>
+    items?.map(({ label, href }) => ({ label, href })) ?? [];
+
+  return [
+    {
+      title: 'About Us',
+      links: [
+        { label: 'Who We Are', href: ROUTES.ABOUT.ROOT },
+        ...toNavLinks(about?.submenu),
+      ],
+    },
+    {
+      title: 'Academics',
+      links: [
+        { label: 'Academic Programs', href: ROUTES.ACADEMICS.ROOT },
+        { label: 'Church Music', href: ROUTES.CHURCH_MUSIC },
+        ...toNavLinks(academics?.submenu),
+      ],
+    },
+    {
+      title: 'Admissions',
+      links: [
+        { label: 'Admissions', href: ROUTES.ADMISSIONS.ROOT },
+        ...toNavLinks(admissions?.submenu),
+      ],
+    },
+    {
+      title: 'Get Involved',
+      links: [
+        { label: 'WJU Academy', href: ROUTES.WJU_ACADEMY },
+        { label: 'Request Information', href: ROUTES.REQUEST_INFO },
+        { label: 'Support', href: ROUTES.SUPPORT },
+      ],
+    },
+  ];
+}
+
+export const footerNavigation: NavSection[] = buildFooterNavigation();
 
 // Social Media Links (External social media profiles)
 export type SocialMediaLink = {

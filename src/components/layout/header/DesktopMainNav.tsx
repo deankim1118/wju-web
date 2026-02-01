@@ -1,13 +1,14 @@
 import {
   NavigationMenu,
-  NavigationMenuItem,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
-import { actionButtons, mainNavigation } from '@/config/navigation';
+import { mainNavigation } from '@/config/navigation';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import { HeaderActionButton } from './buttons';
-import { CONTAINER_PADDING, LOGO_RESPONSIVE_WIDTH, MENU_GAP } from './constants';
+import {
+  CONTAINER_PADDING,
+  LOGO_RESPONSIVE_WIDTH,
+  MENU_GAP,
+} from './constants';
 import { NavMenuList } from './NavMenuList';
 
 type DesktopMainNavProps = {
@@ -38,15 +39,7 @@ export function DesktopMainNav({ bottomBarHeight }: DesktopMainNavProps) {
 
           <NavigationMenu className='justify-start max-w-none'>
             <NavigationMenuList className={cn('gap-0', MENU_GAP)}>
-              <NavMenuList items={rightNavItems} textColor='text-black'>
-                <NavigationMenuItem>
-                  <HeaderActionButton asChild>
-                    <Link href={actionButtons.apply.href}>
-                      {actionButtons.apply.label.toUpperCase()}
-                    </Link>
-                  </HeaderActionButton>
-                </NavigationMenuItem>
-              </NavMenuList>
+              <NavMenuList items={rightNavItems} textColor='text-black' />
             </NavigationMenuList>
           </NavigationMenu>
         </div>
