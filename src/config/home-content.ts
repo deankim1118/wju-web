@@ -185,10 +185,10 @@ export const informationResourcesContent: InformationResourcesContent = {
     },
     {
       icon: HeartHandshake,
-      title: 'Tuition & Financial Aid',
+      title: 'Tuition & Fees',
       description:
         'Discover affordable tuition plans and scholarship opportunities to support your theological journey.',
-      linkHref: ROUTES.ADMISSIONS.FINANCIAL_AID,
+      linkHref: ROUTES.ADMISSIONS.COSTS,
     },
   ],
 };

@@ -59,15 +59,15 @@ export function CourseListByProgram({ byProgram }: CourseListByProgramProps) {
                 courses.map((course) => (
                   <li
                     key={course.normalizedCode}
-                    className='py-2.5 text-sm text-muted-foreground first:pt-0'
+                    className='py-2.5 text-sm md:text-base first:pt-0'
                   >
-                    <span className='flex flex-wrap items-baseline gap-x-2 gap-y-1 text-slate-700 font-medium'>
+                    <span className='flex flex-wrap items-baseline gap-x-2 gap-y-1 text-slate-800 font-ligth'>
                       <span className=''>{course.code}</span>
                       <span>{course.name}</span>
                       <span>({course.credits} cr.)</span>
                     </span>
                     {course.description && (
-                      <p className='mt-1.5 pl-0 text-sm text-slate-500 leading-relaxed'>
+                      <p className='mt-1.5 pl-0 text-sm md:text-base text-slate-500 leading-relaxed'>
                         {course.description}
                       </p>
                     )}

@@ -55,7 +55,7 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
                     className='flex flex-wrap items-baseline gap-2 text-sm text-muted-foreground '
                   >
                     <span className='font-mono text-xs'>{course.code}</span>
-                    <span className='font-medium text-slate-700'>
+                    <span className='font-medium text-slate-800'>
                       {course.name}
                     </span>
                     <span className='text-muted-foreground/90'>

@@ -8,7 +8,7 @@ import {
 import { cn } from '@/lib/utils';
 
 const TRIGGER_CLASS =
-  'text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-600 text-sm md:text-base';
+  'text-left font-medium hover:no-underline [&[data-state=open]>svg]:rotate-180 text-slate-800 text-base';
 
 type BorderedAccordionItemProps = {
   value: string;

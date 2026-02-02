@@ -174,7 +174,7 @@
 
   /* 본문 태그 - Inter 자동 적용 */
   p {
-    @apply text-base md:text-[1.2rem] leading-7 text-slate-700;
+    @apply text-base md:text-[1.2rem] leading-7 text-slate-800;
   }
 
   /* 작은 텍스트 */

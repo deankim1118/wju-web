@@ -41,7 +41,12 @@ function PdfLinkButton({
 }) {
   return (
     <Button variant={variant} size={size} className={className} asChild>
-      <a href={href} download={download} target='_blank' rel='noopener noreferrer'>
+      <a
+        href={href}
+        download={download}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
         {children}
       </a>
     </Button>
@@ -83,7 +88,7 @@ export function CatalogSection({ catalog }: CatalogSectionProps) {
       <div className='rounded-md border border-border bg-card overflow-hidden'>
         <div className='border-b border-border bg-muted/40 px-4 py-3 sm:px-6'>
           <h3 className='font-medium text-black'>{catalog.title}</h3>
-          <p className='mt-0.5 text-sm text-slate-500'>{catalog.subtitle}</p>
+          <p className='mt-0.5 text-sm text-slate-800'>{catalog.subtitle}</p>
         </div>
 
         <div className='p-4 sm:p-6 space-y-4'>
@@ -153,7 +158,7 @@ export function CatalogSection({ catalog }: CatalogSectionProps) {
               Open in new tab
             </PdfLinkButton>
           </div>
-          <p className='text-sm text-slate-700'>
+          <p className='text-sm text-slate-800'>
             Click &quot;View PDF&quot; to open a larger viewer, or download /
             open in a new tab.
           </p>

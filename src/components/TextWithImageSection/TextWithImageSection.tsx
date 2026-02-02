@@ -40,7 +40,7 @@ export function TextWithImageSection({
   titleColor = 'text-primary',
   textColor = '',
   accentColor = 'bg-secondary',
-  authorColor = 'text-slate-700',
+  authorColor = 'text-slate-800',
   showAccentLine = true,
   hideImageMobile = false,
   className = '',

@@ -49,9 +49,9 @@ export const ROUTES = {
   ADMISSIONS: {
     ROOT: '/admissions',
     APPLY: '/admissions/apply',
-    FINANCIAL_AID: '/admissions/financial-aid',
+    // FINANCIAL_AID: '/admissions/financial-aid',
+    COSTS: '/admissions/costs',
     SCHOLARSHIPS: '/admissions/scholarships',
-    VISIT: '/admissions/visit',
   },
 
   // Other Main Pages

@@ -20,7 +20,7 @@ export function ResourcePageHeader({
       <h2 id={headingId} className='tracking-tight'>
         {title}
       </h2>
-      <p className='mt-1 pl-2 text-sm text-muted-foreground'>{description}</p>
+      <p className='mt-1 pl-2 text-sm text-slate-500'>{description}</p>
     </header>
   );
 }
