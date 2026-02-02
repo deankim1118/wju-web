@@ -12,10 +12,10 @@ type MetricItem = {
   icon?: LucideIcon;
 };
 
-function formatStudyOptions(studyOptions: KeyInformation['studyOptions']): string {
-  return studyOptions
-    .map((option) => option.type)
-    .join(' & ');
+function formatStudyOptions(
+  studyOptions: KeyInformation['studyOptions'],
+): string {
+  return studyOptions.map((option) => option.type).join(' & ');
 }
 
 export function KeyInformationSection({ data }: KeyInformationSectionProps) {
@@ -59,29 +59,29 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
   ];
 
   return (
-    <div className="">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-5">
+    <div className=''>
+      <div className='mx-auto max-w-7xl'>
+        <div className='grid gap-12 md:grid-cols-5'>
           {/* Left Section - Title */}
-          <div className="flex items-start col-span-2">
-            <h2 className="uppercase tracking-wide text-slate-900">
+          <div className='flex items-start col-span-2'>
+            <h2 className='uppercase tracking-wide text-slate-900'>
               Program Snapshot
             </h2>
           </div>
 
           {/* Right Section */}
-          <div className="space-y-10 col-span-3">
+          <div className='space-y-10 col-span-3'>
             {/* Top Row - Large Number Cards */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className='grid grid-cols-1 gap-6 sm:grid-cols-2'>
               {numberMetrics.map((metric) => (
                 <div key={metric.label}>
-                  <div className="mb-2">
-                    <div className="text-5xl font-semibold text-slate-900 md:text-6xl">
+                  <div className='mb-2'>
+                    <div className='text-5xl font-semibold text-slate-900 md:text-6xl'>
                       {metric.value}
                     </div>
-                    <div className="mt-2 h-px w-full bg-slate-900"></div>
+                    <div className='mt-2 h-px w-full bg-slate-900'></div>
                   </div>
-                  <p className="mt-3 text-xs uppercase tracking-wider text-slate-700">
+                  <p className='mt-3 text-xs uppercase tracking-wider text-slate-800'>
                     {metric.label}
                   </p>
                 </div>
@@ -89,20 +89,23 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
             </div>
 
             {/* Bottom Row - Text Information Cards with Icons */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className='grid grid-cols-1 gap-6 sm:grid-cols-3'>
               {iconMetrics.map((metric) => {
                 const Icon = metric.icon;
                 return (
-                  <div key={metric.label} className="border-t border-slate-200 pt-4">
-                    <div className="flex items-start gap-3">
+                  <div
+                    key={metric.label}
+                    className='border-t border-slate-200 pt-4'
+                  >
+                    <div className='flex items-start gap-3'>
                       {Icon && (
-                        <Icon className="mt-0.5 size-5 shrink-0 text-slate-600" />
+                        <Icon className='mt-0.5 size-5 shrink-0 text-slate-600' />
                       )}
-                      <div className="flex-1">
-                        <p className="text-sm uppercase tracking-wider text-slate-700 mb-1.5">
+                      <div className='flex-1'>
+                        <p className='text-sm uppercase tracking-wider text-slate-800 mb-1.5'>
                           {metric.label}
                         </p>
-                        <p className="text-sm font-medium text-slate-900 leading-relaxed">
+                        <p className='text-sm font-medium text-slate-900 leading-relaxed'>
                           {metric.value}
                         </p>
                       </div>
@@ -113,8 +116,8 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
             </div>
 
             {/* Hours of Instruction - Subtle description */}
-            <div className="border-t border-slate-100 pt-6">
-              <div className="space-y-2 text- text-slate-600 leading-relaxed italic">
+            <div className='border-t border-slate-100 pt-6'>
+              <div className='space-y-2 text- text-slate-600 leading-relaxed italic'>
                 <span>{data.hoursOfInstruction.semesterHour}</span>
               </div>
             </div>

@@ -1,8 +1,7 @@
-import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
-import type { LinkCarouselCardItem } from '@/components/sections/LinkCardsCarouselSection';
 import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
+import type { LinkCarouselCardItem } from '@/components/sections/LinkCardsCarouselSection';
+import { LinkCardsCarouselSection } from '@/components/sections/LinkCardsCarouselSection';
 import { Button } from '@/components/ui/button';
-import { callToActionContent } from '@/config/home-content';
 import { ArrowRight, CircleAlert } from 'lucide-react';
 import Link from 'next/link';
 import { SectionSidebar, type SectionSidebarConfig } from './SectionSidebar';
@@ -44,7 +43,7 @@ export function SectionResourcesLayout({
         <div className='mx-auto max-w-7xl px-6 pt-14 pb-10 lg:px-10 xl:px-14 lg:pt-20 lg:pb-14'>
           <div className='flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12'>
             <div>
-              <p className='font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground'>
+              <p className='font-sans text-xs md:text-sm uppercase tracking-[0.2em] text-slate-800'>
                 {sectionLabel}
               </p>
               <h1 className='hero-title-sm text-start font-light tracking-tight text-primary lg:tracking-tighter max-w-2xl'>
@@ -52,7 +51,7 @@ export function SectionResourcesLayout({
               </h1>
               <div className='mt-6 h-0.5 w-12 bg-secondary' aria-hidden />
             </div>
-            <div className='flex flex-wrap gap-0 shrink-0'>
+            <div className='flex flex-wrap gap-2 md:gap-0 shrink-0'>
               <Button
                 variant='outline'
                 size='icon-sm'
@@ -91,7 +90,7 @@ export function SectionResourcesLayout({
           <div className='flex flex-col gap-16 lg:flex-row lg:gap-20'>
             <SectionSidebar config={sidebarConfig} />
             <main className='min-w-0 flex-1 space-y-20 lg:max-w-208'>
-              <ScrollReveal variant='zoom-in' delay={0} duration={0.5}>
+              <ScrollReveal variant='fade-up' delay={0} duration={0.5}>
                 {children}
               </ScrollReveal>
             </main>

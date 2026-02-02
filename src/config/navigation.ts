@@ -135,7 +135,7 @@ export const mainNavigation: NavItemWithSubmenu[] = [
       },
       {
         label: 'Tuition & Fees',
-        href: ROUTES.ADMISSIONS.FINANCIAL_AID,
+        href: ROUTES.ADMISSIONS.COSTS,
         description:
           'Discover affordable tuition plans to support your theological journey.',
       },

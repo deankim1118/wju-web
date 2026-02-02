@@ -96,13 +96,13 @@ export function DegreeProgramsSection({
                           {program.credential}
                         </span>
                       </div>
-                      <CardDescription className='leading-6 line-clamp-3 md:min-h-[58px] lg:min-h-[78px] text-slate-700'>
+                      <CardDescription className='leading-6 line-clamp-3 md:min-h-[58px] lg:min-h-[78px] text-slate-800'>
                         {program.summary}
                       </CardDescription>
                     </CardHeader>
 
                     <CardContent className='pt-0'>
-                      <ul className='text-sm text-slate-700 space-y-2'>
+                      <ul className='text-sm text-slate-800 space-y-2'>
                         {program.highlights.slice(0, 3).map((h) => (
                           <li key={h} className='flex gap-2'>
                             <Dot

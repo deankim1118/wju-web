@@ -10,7 +10,7 @@ const ADMISSIONS_SIDEBAR_CONFIG: SectionSidebarConfig = {
   groupTitle: 'Admissions',
   links: [
     { href: ROUTES.ADMISSIONS.ROOT, label: 'Admissions' },
-    { href: ROUTES.ADMISSIONS.FINANCIAL_AID, label: 'Tuition & Fees' },
+    { href: ROUTES.ADMISSIONS.COSTS, label: 'Tuition & Fees' },
     { href: ROUTES.ADMISSIONS.SCHOLARSHIPS, label: 'Scholarships' },
   ],
 };

@@ -1,6 +1,6 @@
+import { CourseListByProgram } from '@/components/pages/AcademicPage/components/CourseListByProgram';
 import { ResourcePageHeader } from '@/components/pages/AcademicPage/components/ResourcePageHeader';
 import { getCurriculumCoursesByProgram } from '@/config/academics/program-extended';
-import { CourseListByProgram } from './CourseListByProgram';
 
 export default function CourseListPage() {
   const byProgram = getCurriculumCoursesByProgram();

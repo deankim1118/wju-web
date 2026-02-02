@@ -34,7 +34,7 @@ export function AcademicCalendarSection({
           description='Dates and schedules for the current academic year.'
           id='academic-calendar-heading'
         />
-        <p className='text-sm text-muted-foreground'>
+        <p className='text-sm text-slate-800'>
           No calendar data has been added yet. Add semesters and events in the
           admin.
         </p>
@@ -71,7 +71,7 @@ export function AcademicCalendarSection({
                 }
               >
                 {events.length === 0 ? (
-                  <li className='text-sm text-muted-foreground'>
+                  <li className='text-sm text-slate-800'>
                     No events for this term.
                   </li>
                 ) : (
@@ -86,7 +86,7 @@ export function AcademicCalendarSection({
                     return (
                       <li
                         key={event.id ?? event.title + event.startDate}
-                        className='flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-slate-500 first:pt-0'
+                        className='flex flex-wrap items-baseline justify-between gap-2 py-2.5 text-sm text-slate-800 first:pt-0'
                       >
                         <span>{event.title}</span>
                         <span className='tabular-nums'>{dateAndTime}</span>
