@@ -1,26 +1,23 @@
 import { ResourcePageHeader } from '@/components/pages/AcademicPage/components/ResourcePageHeader';
 import { ScholarshipListByCategory } from '@/components/pages/AdmissionsPage/components/ScholarshipListByCategory';
-import {
-  getGeneralSections,
-  getScholarshipCategories,
-  scholarshipConfig,
-} from '@/config/scholarship-content';
+import { normalizeScholarshipData } from '@/lib/adapters/scholarship-adapter';
+import { getScholarshipData } from '@/lib/payload/queries';
 
-export default function ScholarshipsPage() {
-  const categories = getScholarshipCategories();
-  const generalSections = getGeneralSections();
+export default async function ScholarshipsPage() {
+  const payloadData = await getScholarshipData();
+  const data = normalizeScholarshipData(payloadData);
 
   return (
     <article className='space-y-6' aria-labelledby='scholarships-heading'>
       <ResourcePageHeader
         id='scholarships-heading'
-        title={scholarshipConfig.pageTitle}
-        description='Scholarship policy, categories by type, eligibility, and application procedures.'
+        title={data.pageTitle}
+        description={data.pageDescription}
       />
       <ScholarshipListByCategory
-        generalPrinciples={scholarshipConfig.generalPrinciples}
-        categories={categories}
-        generalSections={generalSections}
+        generalPrinciples={data.generalPrinciples}
+        categories={data.categories}
+        generalSections={data.generalSections}
       />
     </article>
   );
