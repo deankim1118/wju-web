@@ -97,37 +97,32 @@ unstable_cache를 활용한 On-demand Revalidation 캐싱 전략을 사용 중�
 다음 정보를 바탕으로 새로운 Payload Global을 생성하고 캐싱을 적용해주세요:
 
 ## Global 정보
-- Slug: "about"
-- Label: "About Page Settings"
-- Description: "About 페이지에 표시될 내용을 관리합니다"
+- Slug: "Scholarship"
+- Label: "Scholarship Page Settings"
+- Description: "Scholarship 페이지에 표시될 내용을 관리합니다"
 
-## 필드 구조
-- title: text (필수) - 페이지 제목
-- description: textarea (선택) - 페이지 설명
-- mission: group
-  - title: text (필수) - 미션 제목
-  - content: textarea (필수) - 미션 내용
-- image: upload (relationTo: 'media', 선택) - 대표 이미지
+## 필드 생성
+ - 지금 만든 페이지에 맞게 필드 생성.
 
 ## 기본 depth
-- 기본 depth: 1 (이미지 관계 포함)
+- 기본 depth: {DEFAULT_DEPTH} (예: 0 또는 1)
 
 # Requirements (엄격 준수)
 
 1. **Global Config 생성**
-   - 파일: `src/payload-components/globals/AboutPayload.ts`
+   - 파일: `src/payload-components/globals/ScholarshipPayload.ts`
    - `GlobalConfig` 타입 사용
-   - slug: 'about', label: 'About Page Settings'
+   - slug: 'Scholarship', label: 'Scholarship Page Settings'
 
 2. **Query 함수 생성**
-   - 파일: `src/lib/payload/queries/about.ts`
+   - 파일: `src/lib/payload/queries/Scholarship-query.ts`
    - `getCachedData` 유틸리티 사용
-   - `fetchAboutData` 내부 함수 생성
-   - `getAboutData` export 함수 생성
+   - `fetchScholarshipData` 내부 함수 생성
+   - `getScholarshipData` export 함수 생성
    - 기본 depth: 1
 
 3. **Revalidate 함수 추가**
-   - `src/lib/payload/revalidate.ts`에 `revalidateAbout()` 추가
+   - `src/lib/payload/revalidate.ts`에 `revalidateScholarship()` 추가
    - `revalidateAllGlobals()`에 추가
 
 4. **Payload Config 등록**
@@ -137,7 +132,8 @@ unstable_cache를 활용한 On-demand Revalidation 캐싱 전략을 사용 중�
    - `src/lib/payload/queries/index.ts`에 export 추가
 
 6. **Payload Config Hook 추가**
-   - `AboutPayload`에 `afterChange` 훅 추가
+   - Global Config에 `afterChange` 훅 추가
+   - `revalidate{Name}()` 호출
 
 7. **타입 생성**
    - `npx payload generate:types` 실행 안내

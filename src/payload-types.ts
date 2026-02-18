@@ -93,6 +93,7 @@ export interface Config {
     'chairman-message': ChairmanMessage;
     'academic-calendar': AcademicCalendar;
     catalog: Catalog;
+    scholarship: Scholarship;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
@@ -100,6 +101,7 @@ export interface Config {
     'chairman-message': ChairmanMessageSelect<false> | ChairmanMessageSelect<true>;
     'academic-calendar': AcademicCalendarSelect<false> | AcademicCalendarSelect<true>;
     catalog: CatalogSelect<false> | CatalogSelect<true>;
+    scholarship: ScholarshipSelect<false> | ScholarshipSelect<true>;
   };
   locale: null;
   user: User & {
@@ -532,6 +534,95 @@ export interface Catalog {
   createdAt?: string | null;
 }
 /**
+ * Scholarship 페이지에 표시될 내용을 관리합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "scholarship".
+ */
+export interface Scholarship {
+  id: number;
+  /**
+   * 페이지 최상단에 표시되는 제목입니다.
+   */
+  pageTitle: string;
+  /**
+   * 페이지 제목 아래에 표시되는 짧은 설명 문구입니다.
+   */
+  pageDescription?: string | null;
+  /**
+   * 장학금 정책의 일반 원칙 본문입니다. 개행(
+   * )을 사용하여 단락을 구분합니다.
+   */
+  generalPrinciples: string;
+  /**
+   * 장학금 유형별 카테고리를 관리합니다. 순서를 드래그하여 변경할 수 있습니다.
+   */
+  categories?:
+    | {
+        /**
+         * 예: Family & Relationship Scholarships
+         */
+        title: string;
+        /**
+         * 이 카테고리에 속하는 장학금 항목들입니다.
+         */
+        scholarships?:
+          | {
+              /**
+               * 예: Student Couple Scholarship
+               */
+              title: string;
+              /**
+               * 장학금 지원 목적 (선택 사항)
+               */
+              purpose?: string | null;
+              /**
+               * 수혜 대상 조건 (선택 사항)
+               */
+              eligibility?: string | null;
+              /**
+               * 지급 방식 또는 규정 (선택 사항)
+               */
+              policy?: string | null;
+              /**
+               * 실제 지급되는 혜택 내용 (필수)
+               */
+              benefit: string;
+              /**
+               * 추가 요건 (선택 사항, 예: GPA 기준)
+               */
+              requirement?: string | null;
+              /**
+               * 갱신 조건 등 기타 조건 (선택 사항)
+               */
+              condition?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * 자격 요건, 행정 절차, 면책 조항 등 일반 정책 섹션을 관리합니다.
+   */
+  generalSections?:
+    | {
+        /**
+         * 예: General Qualifications & Compliance
+         */
+        title: string;
+        /**
+         * 섹션 본문입니다. 개행(
+         * )으로 단락을 구분합니다.
+         */
+        content: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
@@ -627,6 +718,43 @@ export interface CatalogSelect<T extends boolean = true> {
   title?: T;
   subtitle?: T;
   file?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "scholarship_select".
+ */
+export interface ScholarshipSelect<T extends boolean = true> {
+  pageTitle?: T;
+  pageDescription?: T;
+  generalPrinciples?: T;
+  categories?:
+    | T
+    | {
+        title?: T;
+        scholarships?:
+          | T
+          | {
+              title?: T;
+              purpose?: T;
+              eligibility?: T;
+              policy?: T;
+              benefit?: T;
+              requirement?: T;
+              condition?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  generalSections?:
+    | T
+    | {
+        title?: T;
+        content?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -12,6 +12,7 @@ import { CatalogPayload } from './payload-components/globals/CatalogPayload';
 import { ChairmanMessagePayload } from './payload-components/globals/ChairmanMessagePayload';
 import { FooterPayload } from './payload-components/globals/FooterPayload';
 import { HeroPayload } from './payload-components/globals/HeroPayload';
+import { ScholarshipPayload } from './payload-components/globals/ScholarshipPayload';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -21,7 +22,14 @@ export default buildConfig({
     user: 'users',
   },
   collections: [UsersPayload, MediaPayload],
-  globals: [HeroPayload, FooterPayload, ChairmanMessagePayload, AcademicCalendarPayload, CatalogPayload],
+  globals: [
+    HeroPayload,
+    FooterPayload,
+    ChairmanMessagePayload,
+    AcademicCalendarPayload,
+    CatalogPayload,
+    ScholarshipPayload,
+  ],
 
   // ✅ 공식 문서 기반의 최신 S3 스토리지 설정
   plugins: [
@@ -54,7 +62,9 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || 'YOUR_SECRET_HERE',
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URL || '',
+      // Direct는 이 네트워크에서 ENOENT → 풀러만 사용. 비밀번호는 Restore 후 한 번 더 리셋 후 Session mode URI 전체 복사.
+      connectionString:
+        process.env.DATABASE_URL || process.env.DIRECT_URL || '',
     },
   }),
   sharp,
