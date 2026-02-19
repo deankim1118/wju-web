@@ -13,7 +13,7 @@ export const ROUTES = {
   HOME: '/',
 
   // Top Bar Quick Links
-  QUICK_LINKS: '/quick-links',
+  // QUICK_LINKS: '/quick-links',
   VISIT: '/visit',
   REQUEST_INFO: '/request-info',
 
