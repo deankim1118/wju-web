@@ -37,7 +37,7 @@ export type AcademicProgramGroup = {
 
 // Top Bar Navigation (Quick access links)
 export const topBarNavigationLeft: NavLink[] = [
-  { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
+  // { label: 'Quick Links', href: ROUTES.QUICK_LINKS },
   { label: 'Visit Us', href: ROUTES.VISIT },
   { label: 'Request Info', href: ROUTES.REQUEST_INFO },
 ];

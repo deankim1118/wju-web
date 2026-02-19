@@ -257,6 +257,10 @@
     @apply pb-16 md:pb-24 lg:pb-32;
   }
 
+  .section-padding-top {
+    @apply pt-16 pb-8 md:pt-24 lg:pt-32;
+  }
+
   /* Section Header Padding */
   .section-header-padding {
     @apply pt-16 pb-6 md:pt-24 md:pb-10 lg:pt-32;
