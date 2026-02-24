@@ -10,6 +10,7 @@ import { UsersPayload } from './payload-components/collections/UsersPayload';
 import { AcademicCalendarPayload } from './payload-components/globals/AcademicCalendarPayload';
 import { CatalogPayload } from './payload-components/globals/CatalogPayload';
 import { ChairmanMessagePayload } from './payload-components/globals/ChairmanMessagePayload';
+import { FacultyStaffPayload } from './payload-components/globals/FacultyStaffPayload';
 import { FooterPayload } from './payload-components/globals/FooterPayload';
 import { HeroPayload } from './payload-components/globals/HeroPayload';
 import { ScholarshipPayload } from './payload-components/globals/ScholarshipPayload';
@@ -29,6 +30,7 @@ export default buildConfig({
     AcademicCalendarPayload,
     CatalogPayload,
     ScholarshipPayload,
+    FacultyStaffPayload,
   ],
 
   // ✅ 공식 문서 기반의 최신 S3 스토리지 설정
