@@ -1,6 +1,5 @@
 import { Badge } from '@/components/ui/badge';
 import {
-  PROGRAM_TUITION_RATES,
   TUITION_NON_REFUNDABLE_NOTE,
   formatCurrency,
   type ProgramTuitionRate,
@@ -26,7 +25,11 @@ function TuitionRateCard({ rate }: { rate: ProgramTuitionRate }) {
   );
 }
 
-export function TuitionRatesSection() {
+type TuitionRatesSectionProps = {
+  rates: ProgramTuitionRate[];
+};
+
+export function TuitionRatesSection({ rates }: TuitionRatesSectionProps) {
   return (
     <PageSection
       id='tuition-by-program'
@@ -34,7 +37,7 @@ export function TuitionRatesSection() {
       description='Tuition is calculated per unit (credit hour).'
     >
       <div className='grid grid-cols-1 gap-3 pt-1 sm:grid-cols-3'>
-        {PROGRAM_TUITION_RATES.map((rate) => (
+        {rates.map((rate) => (
           <TuitionRateCard key={rate.level} rate={rate} />
         ))}
       </div>

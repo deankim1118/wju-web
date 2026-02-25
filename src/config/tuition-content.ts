@@ -205,7 +205,7 @@ export const PAYMENT_METHODS: PaymentMethod[] = [
     title: 'Online Payment (Student Portal)',
     description:
       'Log in to your Student Dashboard to make a secure payment using a credit or debit card. Payments are securely processed via Stripe.',
-    note: 'A 2.9% convenience fee will be added to all credit/debit card transactions.',
+    note: 'Note: 2.9% convenience fee will be added to all credit/debit card transactions.',
     hasConvenienceFee: true,
   },
   {

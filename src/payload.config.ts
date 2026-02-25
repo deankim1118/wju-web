@@ -14,6 +14,7 @@ import { FacultyStaffPayload } from './payload-components/globals/FacultyStaffPa
 import { FooterPayload } from './payload-components/globals/FooterPayload';
 import { HeroPayload } from './payload-components/globals/HeroPayload';
 import { ScholarshipPayload } from './payload-components/globals/ScholarshipPayload';
+import { TuitionPayload } from './payload-components/globals/TuitionPayload';
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -31,6 +32,7 @@ export default buildConfig({
     CatalogPayload,
     ScholarshipPayload,
     FacultyStaffPayload,
+    TuitionPayload,
   ],
 
   // ✅ 공식 문서 기반의 최신 S3 스토리지 설정

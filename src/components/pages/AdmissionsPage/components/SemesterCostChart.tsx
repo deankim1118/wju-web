@@ -7,7 +7,6 @@ import {
 } from '@/components/ui/chart';
 import {
   APPLICATION_FEE_NOTE,
-  SEMESTER_COST_ESTIMATES,
   SEMESTER_ESTIMATE_NOTE,
   formatCurrency,
   type SemesterEstimate,
@@ -121,8 +120,12 @@ function yAxisTickFormatter(value: number): string {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export function SemesterCostChart() {
-  const data = toChartRows(SEMESTER_COST_ESTIMATES);
+type SemesterCostChartProps = {
+  estimates: SemesterEstimate[];
+};
+
+export function SemesterCostChart({ estimates }: SemesterCostChartProps) {
+  const data = toChartRows(estimates);
 
   return (
     <div className='space-y-3'>

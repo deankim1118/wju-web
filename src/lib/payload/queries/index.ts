@@ -12,4 +12,5 @@ export { getFacultyStaffData } from './faculty-staff';
 export { getFooterData } from './footer';
 export { getHeroData } from './hero';
 export { getScholarshipData } from './scholarship-query';
+export { getTuitionData } from './tuition';
 

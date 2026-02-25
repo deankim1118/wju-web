@@ -95,6 +95,7 @@ export interface Config {
     catalog: Catalog;
     scholarship: Scholarship;
     'faculty-staff': FacultyStaff;
+    tuition: Tuition;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
@@ -104,6 +105,7 @@ export interface Config {
     catalog: CatalogSelect<false> | CatalogSelect<true>;
     scholarship: ScholarshipSelect<false> | ScholarshipSelect<true>;
     'faculty-staff': FacultyStaffSelect<false> | FacultyStaffSelect<true>;
+    tuition: TuitionSelect<false> | TuitionSelect<true>;
   };
   locale: null;
   user: User;
@@ -694,6 +696,110 @@ export interface FacultyStaff {
   createdAt?: string | null;
 }
 /**
+ * Tuition & Fees 페이지에 표시되는 학비, 수수료 정보를 관리합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuition".
+ */
+export interface Tuition {
+  id: number;
+  /**
+   * 차트에 표시되는 프로그램별 예상 학기 비용입니다. 순서를 드래그하여 변경할 수 있습니다.
+   */
+  semesterEstimates?:
+    | {
+        /**
+         * 예: B.A. Program, Master's Program, Doctoral Program
+         */
+        program: string;
+        /**
+         * 예: 12 Units, 8 Units
+         */
+        fullTimeLoad: string;
+        /**
+         * 학기 전체 등록금 (단위: 달러). 예: 3000
+         */
+        tuitionTotal: number;
+        /**
+         * 단위당 등록금 (달러). 예: 250 → $250/unit
+         */
+        tuitionPerUnit: number;
+        /**
+         * 예상 교재비 (달러). 차트에서 별도 표시됩니다.
+         */
+        estimatedBooks: number;
+        /**
+         * 등록금 + 교재비 합계. 차트 툴팁에 표시됩니다.
+         */
+        totalEstimated: number;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * "Tuition by Program" 섹션에 표시되는 프로그램별 단위당 등록금 카드입니다.
+   */
+  programTuitionRates?:
+    | {
+        /**
+         * 프로그램 레벨. 카드 정렬 및 식별에 사용됩니다.
+         */
+        level: 'ba' | 'masters' | 'doctoral';
+        /**
+         * 카드에 표시될 프로그램 이름. 예: B.A. Programs
+         */
+        program: string;
+        /**
+         * 단위(학점)당 등록금 (달러). 예: 250 → $250.00 per unit
+         */
+        pricePerUnit: number;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * 수수료 테이블 섹션들을 관리합니다. 각 섹션은 독립된 카드로 표시됩니다.
+   */
+  feeSections?:
+    | {
+        /**
+         * 예: Admissions & Academic Fees
+         */
+        title: string;
+        /**
+         * 섹션 제목 아래에 표시되는 안내 문구. 예: These fees are non-refundable after the official cancellation period.
+         */
+        subtitle?: string | null;
+        /**
+         * 이 섹션에 속하는 수수료 항목들입니다.
+         */
+        fees?:
+          | {
+              /**
+               * 예: Application Fee, Graduation Fee (B.A.)
+               */
+              name: string;
+              /**
+               * 금액 (달러) 또는 비율 (%). isPercentage가 체크된 경우 비율로 처리됩니다.
+               */
+              amount: number;
+              /**
+               * 체크하면 amount를 % 로 표시합니다. 예: 2.9 → 2.9%
+               */
+              isPercentage?: boolean | null;
+              /**
+               * 수수료 설명. 예: One-time fee for all applicants
+               */
+              description: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
@@ -863,6 +969,51 @@ export interface FacultyStaffSelect<T extends boolean = true> {
         name?: T;
         title?: T;
         image?: T;
+        id?: T;
+      };
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tuition_select".
+ */
+export interface TuitionSelect<T extends boolean = true> {
+  semesterEstimates?:
+    | T
+    | {
+        program?: T;
+        fullTimeLoad?: T;
+        tuitionTotal?: T;
+        tuitionPerUnit?: T;
+        estimatedBooks?: T;
+        totalEstimated?: T;
+        id?: T;
+      };
+  programTuitionRates?:
+    | T
+    | {
+        level?: T;
+        program?: T;
+        pricePerUnit?: T;
+        id?: T;
+      };
+  feeSections?:
+    | T
+    | {
+        title?: T;
+        subtitle?: T;
+        fees?:
+          | T
+          | {
+              name?: T;
+              amount?: T;
+              isPercentage?: T;
+              description?: T;
+              id?: T;
+            };
         id?: T;
       };
   _status?: T;

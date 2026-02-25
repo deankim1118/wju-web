@@ -1,11 +1,20 @@
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import {
   PAYMENT_METHODS,
   PAYMENT_REGISTRATION_NOTE,
   type PaymentMethod,
 } from '@/config/tuition-content';
-import { BanknoteIcon, CreditCard, FileText, type LucideIcon } from 'lucide-react';
+import { ROUTES } from '@/config/routes';
+import { ArrowRight } from 'lucide-react';
+import {
+  BanknoteIcon,
+  CreditCard,
+  FileText,
+  type LucideIcon,
+} from 'lucide-react';
+import Link from 'next/link';
 import { PageSection } from './PageSection';
 
 const PAYMENT_METHOD_ICONS: Record<string, LucideIcon> = {
@@ -26,7 +35,7 @@ function PaymentMethodItem({ method }: { method: PaymentMethod }) {
         <div className='flex items-center gap-2'>
           <p className='text-sm font-semibold text-slate-900'>{method.title}</p>
           {method.hasConvenienceFee && (
-            <Badge variant='destructive' className='text-xs'>
+            <Badge variant='destructive' className='text-xs bg-destructive'>
               +2.9% fee
             </Badge>
           )}
@@ -51,11 +60,27 @@ export function PaymentMethodsList() {
         {PAYMENT_METHODS.map((method, idx) => (
           <div key={method.id}>
             <PaymentMethodItem method={method} />
-            {idx < PAYMENT_METHODS.length - 1 && (
-              <Separator className='my-4' />
-            )}
+            {idx < PAYMENT_METHODS.length - 1 && <Separator className='my-4' />}
           </div>
         ))}
+      </div>
+
+      <Separator className='mt-6' />
+      <div className='mt-4 flex items-center justify-between'>
+        <p className='text-sm text-muted-foreground'>
+          Ready to pay your tuition?
+        </p>
+        <Button
+          asChild
+          variant='default'
+          size='sm'
+          className='rounded-none bg-secondary hover:bg-secondary/80'
+        >
+          <Link href={ROUTES.ADMISSIONS.PAYMENT}>
+            Go to Payment Portal
+            <ArrowRight className='ml-1.5 size-4' />
+          </Link>
+        </Button>
       </div>
     </PageSection>
   );
