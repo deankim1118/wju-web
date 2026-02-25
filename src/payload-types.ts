@@ -94,6 +94,7 @@ export interface Config {
     'academic-calendar': AcademicCalendar;
     catalog: Catalog;
     scholarship: Scholarship;
+    'faculty-staff': FacultyStaff;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
@@ -102,6 +103,7 @@ export interface Config {
     'academic-calendar': AcademicCalendarSelect<false> | AcademicCalendarSelect<true>;
     catalog: CatalogSelect<false> | CatalogSelect<true>;
     scholarship: ScholarshipSelect<false> | ScholarshipSelect<true>;
+    'faculty-staff': FacultyStaffSelect<false> | FacultyStaffSelect<true>;
   };
   locale: null;
   user: User;
@@ -391,6 +393,7 @@ export interface Hero {
         id?: string | null;
       }[]
     | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -427,6 +430,7 @@ export interface Footer {
      */
     address: string;
   };
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -462,6 +466,7 @@ export interface ChairmanMessage {
    * 작성자의 직책을 입력하세요 (예: Chairman of the Board)
    */
   authorTitle?: string | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -506,6 +511,7 @@ export interface AcademicCalendar {
         id?: string | null;
       }[]
     | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -529,6 +535,7 @@ export interface Catalog {
    * 오직 PDF 파일만 업로드 가능합니다.
    */
   file: number | Media;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -549,8 +556,7 @@ export interface Scholarship {
    */
   pageDescription?: string | null;
   /**
-   * 장학금 정책의 일반 원칙 본문입니다. 개행(
-   * )을 사용하여 단락을 구분합니다.
+   * 장학금 정책의 일반 원칙 본문입니다. 개행(\n)을 사용하여 단락을 구분합니다.
    */
   generalPrinciples: string;
   /**
@@ -611,13 +617,79 @@ export interface Scholarship {
          */
         title: string;
         /**
-         * 섹션 본문입니다. 개행(
-         * )으로 단락을 구분합니다.
+         * 섹션 본문입니다. 개행(\n)으로 단락을 구분합니다.
          */
         content: string;
         id?: string | null;
       }[]
     | null;
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * 학교의 교수진 및 행정 직원 정보를 관리합니다. TRACS 요건(학위 및 수여 기관)을 포함합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faculty-staff".
+ */
+export interface FacultyStaff {
+  id: number;
+  /**
+   * 교수진 목록입니다. (TRACS 요건 충족을 위해 Title에 전임/겸임 여부를 명시할 수 있습니다.)
+   */
+  faculty?:
+    | {
+        name: string;
+        /**
+         * 예: Adjunct Professor of Theology
+         */
+        title: string;
+        /**
+         * 짧은 소개 또는 인용구 (선택)
+         */
+        bio?: string | null;
+        /**
+         * 교수 프로필 사진을 업로드하세요
+         */
+        image: number | Media;
+        /**
+         * TRACS 인증 요건에 따라 학위와 수여 기관을 정확히 입력하세요.
+         */
+        degrees?:
+          | {
+              /**
+               * 예: Ph.D. in Intercultural Studies
+               */
+              degree: string;
+              /**
+               * 예: Biola University
+               */
+              school: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * 행정 및 지원 부서 직원 목록입니다.
+   */
+  staff?:
+    | {
+        name: string;
+        /**
+         * 예: Director of Admissions
+         */
+        title: string;
+        /**
+         * 직원 프로필 사진을 업로드하세요
+         */
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -648,6 +720,7 @@ export interface HeroSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -666,6 +739,7 @@ export interface FooterSelect<T extends boolean = true> {
         email?: T;
         address?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -681,6 +755,7 @@ export interface ChairmanMessageSelect<T extends boolean = true> {
   image?: T;
   author?: T;
   authorTitle?: T;
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -705,6 +780,7 @@ export interface AcademicCalendarSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -717,6 +793,7 @@ export interface CatalogSelect<T extends boolean = true> {
   title?: T;
   subtitle?: T;
   file?: T;
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -754,6 +831,41 @@ export interface ScholarshipSelect<T extends boolean = true> {
         content?: T;
         id?: T;
       };
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faculty-staff_select".
+ */
+export interface FacultyStaffSelect<T extends boolean = true> {
+  faculty?:
+    | T
+    | {
+        name?: T;
+        title?: T;
+        bio?: T;
+        image?: T;
+        degrees?:
+          | T
+          | {
+              degree?: T;
+              school?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  staff?:
+    | T
+    | {
+        name?: T;
+        title?: T;
+        image?: T;
+        id?: T;
+      };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

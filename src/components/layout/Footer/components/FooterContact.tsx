@@ -31,18 +31,12 @@ export function FooterContact({
         )}
       </h5>
       <address className='not-italic flex flex-col gap-1.5 text-sm leading-6'>
-        <a
-          href={`tel:${phoneEn.replace(/[^0-9]/g, '')}`}
-          className='hover:text-gray-300 transition-colors'
-        >
+        <span className='hover:text-gray-300 transition-colors'>
           {phoneEn} (En)
-        </a>
-        <a
-          href={`tel:${phoneKo.replace(/[^0-9]/g, '')}`}
-          className='hover:text-gray-300 transition-colors'
-        >
+        </span>
+        <span className='hover:text-gray-300 transition-colors'>
           {phoneKo} (Ko)
-        </a>
+        </span>
         <a
           href={`mailto:${email}`}
           className='hover:text-gray-300 transition-colors'

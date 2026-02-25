@@ -8,6 +8,7 @@
 export { getAcademicCalendarData } from './academic-calendar';
 export { getCatalogData } from './catalog';
 export { getChairmanMessageData } from './chairman-message';
+export { getFacultyStaffData } from './faculty-staff';
 export { getFooterData } from './footer';
 export { getHeroData } from './hero';
 export { getScholarshipData } from './scholarship-query';
