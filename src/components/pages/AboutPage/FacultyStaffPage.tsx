@@ -13,14 +13,8 @@ import {
 } from '@/config/faculty-staff-content';
 import { getFacultyStaffData } from '@/lib/payload/queries';
 import { PageHero } from '../../layout/PageHero';
-import {
-  FacultyCard,
-  type PayloadFaculty,
-} from './components/FacultyCard';
-import {
-  StaffCard,
-  type PayloadStaff,
-} from './components/StaffCard';
+import { FacultyCard, type PayloadFaculty } from './components/FacultyCard';
+import { StaffCard, type PayloadStaff } from './components/StaffCard';
 
 export async function FacultyStaffPage() {
   const data = await getFacultyStaffData({ depth: 1 });
@@ -59,7 +53,10 @@ export async function FacultyStaffPage() {
           >
             <span
               className='text-4xl font-serif font-bold text-gray-100 uppercase tracking-[0.35em]'
-              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+              style={{
+                writingMode: 'vertical-rl',
+                transform: 'rotate(180deg)',
+              }}
             >
               {FACULTY_SECTION_TITLE}
             </span>

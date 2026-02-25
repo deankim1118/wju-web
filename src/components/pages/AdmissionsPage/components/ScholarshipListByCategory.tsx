@@ -8,6 +8,7 @@ import type {
 } from '@/config/scholarship-content';
 import { useHashScroll } from '@/hooks/use-hash-scroll';
 import { ScholarshipItemContent } from './ScholarshipItemContent';
+import { PageSection } from './PageSection';
 import { ScholarshipPageSection } from './ScholarshipPageSection';
 
 type ScholarshipListByCategoryProps = {

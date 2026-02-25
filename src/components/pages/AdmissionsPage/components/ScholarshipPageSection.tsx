@@ -21,7 +21,7 @@ export function ScholarshipPageSection({
     <section
       id={id}
       className={cn(
-        'rounded-lg border border-border/80 bg-card px-5 py-5 shadow-sm md:px-6 md:py-6',
+        'rounded-none border border-border/80 bg-card px-5 py-5 shadow-sm md:px-6 md:py-6',
         className,
       )}
       aria-labelledby={id ? `${id}-heading` : undefined}
