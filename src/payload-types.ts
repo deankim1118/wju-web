@@ -393,6 +393,7 @@ export interface Hero {
         id?: string | null;
       }[]
     | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -429,6 +430,7 @@ export interface Footer {
      */
     address: string;
   };
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -464,6 +466,7 @@ export interface ChairmanMessage {
    * 작성자의 직책을 입력하세요 (예: Chairman of the Board)
    */
   authorTitle?: string | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -508,6 +511,7 @@ export interface AcademicCalendar {
         id?: string | null;
       }[]
     | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -531,6 +535,7 @@ export interface Catalog {
    * 오직 PDF 파일만 업로드 가능합니다.
    */
   file: number | Media;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -551,8 +556,7 @@ export interface Scholarship {
    */
   pageDescription?: string | null;
   /**
-   * 장학금 정책의 일반 원칙 본문입니다. 개행(
-   * )을 사용하여 단락을 구분합니다.
+   * 장학금 정책의 일반 원칙 본문입니다. 개행(\n)을 사용하여 단락을 구분합니다.
    */
   generalPrinciples: string;
   /**
@@ -613,13 +617,13 @@ export interface Scholarship {
          */
         title: string;
         /**
-         * 섹션 본문입니다. 개행(
-         * )으로 단락을 구분합니다.
+         * 섹션 본문입니다. 개행(\n)으로 단락을 구분합니다.
          */
         content: string;
         id?: string | null;
       }[]
     | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -685,6 +689,7 @@ export interface FacultyStaff {
         id?: string | null;
       }[]
     | null;
+  _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -715,6 +720,7 @@ export interface HeroSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -733,6 +739,7 @@ export interface FooterSelect<T extends boolean = true> {
         email?: T;
         address?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -748,6 +755,7 @@ export interface ChairmanMessageSelect<T extends boolean = true> {
   image?: T;
   author?: T;
   authorTitle?: T;
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -772,6 +780,7 @@ export interface AcademicCalendarSelect<T extends boolean = true> {
             };
         id?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -784,6 +793,7 @@ export interface CatalogSelect<T extends boolean = true> {
   title?: T;
   subtitle?: T;
   file?: T;
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -821,6 +831,7 @@ export interface ScholarshipSelect<T extends boolean = true> {
         content?: T;
         id?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;
@@ -854,6 +865,7 @@ export interface FacultyStaffSelect<T extends boolean = true> {
         image?: T;
         id?: T;
       };
+  _status?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

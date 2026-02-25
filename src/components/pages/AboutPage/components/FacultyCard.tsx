@@ -40,9 +40,9 @@ export function FacultyCard({ member, index }: FacultyCardProps) {
         accentBg,
       )}
     >
-      <p className='text-white/50 text-xs uppercase tracking-[0.25em] mb-4 font-sans'>
+      {/* <p className='text-white/50 text-xs uppercase tracking-[0.25em] mb-4 font-sans'>
         {String(index + 1).padStart(2, '0')}
-      </p>
+      </p> */}
       <h3 className='font-serif text-white text-2xl md:text-3xl lg:text-4xl font-semibold uppercase tracking-wide leading-tight'>
         {member.name}
       </h3>
@@ -78,12 +78,12 @@ export function FacultyCard({ member, index }: FacultyCardProps) {
   );
 
   const photoBlock = (
-    <div className='relative min-h-[280px] lg:min-h-0 overflow-hidden'>
+    <div className='relative min-h-[280px] lg:min-h-0 overflow-hidden group'>
       <Image
         src={imageUrl}
         alt={imageAlt}
         fill
-        className='object-cover grayscale'
+        className='object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105'
         sizes='(max-width: 1024px) 100vw, 33vw'
       />
     </div>
