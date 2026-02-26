@@ -4,6 +4,7 @@ import { ScrollReveal } from '@/components/scroll-animation/scroll-reveal';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CircleAlert } from 'lucide-react';
 import Link from 'next/link';
+import { ROUTES } from '../../config/routes';
 
 type CallToActionProps = {
   title?: string;
@@ -11,6 +12,7 @@ type CallToActionProps = {
   buttonText?: string;
   subButtonText?: string;
   href?: string;
+  applyHref?: string;
 };
 
 export function CallToAction({
@@ -18,7 +20,8 @@ export function CallToAction({
   description = "WJU is where great stories begin. It's time to start yours. Find out how.",
   buttonText = 'REQUEST INFORMATION',
   subButtonText = '',
-  href = '#',
+  href = ROUTES.REQUEST_INFO,
+  applyHref = ROUTES.APPLY,
 }: CallToActionProps) {
   return (
     <section className='bg-primary text-primary-foreground py-8 w-full'>
@@ -82,7 +85,7 @@ export function CallToAction({
                   asChild
                 >
                   <Link
-                    href={href}
+                    href={applyHref}
                     className='flex items-center justify-center gap-2'
                   >
                     <span>{subButtonText}</span>

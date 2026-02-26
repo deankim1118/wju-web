@@ -23,16 +23,16 @@ const ACADEMICS_SIDEBAR_CONFIG: SectionSidebarConfig = {
 export default function ResourcesLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const { href, buttonText } = callToActionContent;
+  const { href, buttonText, applyHref } = callToActionContent;
 
   return (
     <SectionResourcesLayout
-      sectionLabel="Academics"
-      title="Academic Resources"
+      sectionLabel='Academics'
+      title='Academic Resources'
       sidebarConfig={ACADEMICS_SIDEBAR_CONFIG}
       primaryCtaHref={href}
       primaryCtaLabel={buttonText}
-      applyHref={href}
+      applyHref={applyHref}
       linkCardsSection={{
         title: ACADEMICS_LINK_CARDS_TITLE,
         items: ACADEMICS_LINK_CARDS,

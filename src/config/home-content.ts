@@ -20,6 +20,7 @@ export type CallToActionContent = {
   description: string;
   buttonText: string;
   href: string;
+  applyHref: string;
 };
 
 export type TextWithImageContent = {
@@ -97,6 +98,7 @@ export const callToActionContent: CallToActionContent = {
     "WJU is where great stories begin. It's time to start yours. Find out how.",
   buttonText: 'REQUEST INFORMATION',
   href: ROUTES.REQUEST_INFO,
+  applyHref: ROUTES.APPLY,
 };
 
 /**
