@@ -96,6 +96,7 @@ export interface Config {
     scholarship: Scholarship;
     'faculty-staff': FacultyStaff;
     tuition: Tuition;
+    admissions: Admission;
   };
   globalsSelect: {
     hero: HeroSelect<false> | HeroSelect<true>;
@@ -106,6 +107,7 @@ export interface Config {
     scholarship: ScholarshipSelect<false> | ScholarshipSelect<true>;
     'faculty-staff': FacultyStaffSelect<false> | FacultyStaffSelect<true>;
     tuition: TuitionSelect<false> | TuitionSelect<true>;
+    admissions: AdmissionsSelect<false> | AdmissionsSelect<true>;
   };
   locale: null;
   user: User;
@@ -800,6 +802,62 @@ export interface Tuition {
   createdAt?: string | null;
 }
 /**
+ * Admissions 페이지의 필요 서류 목록과 입학 정책 항목을 관리합니다.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "admissions".
+ */
+export interface Admission {
+  id: number;
+  /**
+   * "Submit Documents" 탭에 표시되는 입학 필요 서류 목록입니다. 순서를 드래그하여 변경할 수 있습니다.
+   */
+  requiredDocuments?:
+    | {
+        /**
+         * 예: Identification (ID), Academic Records, Personal Statements
+         */
+        category: string;
+        /**
+         * 이 분류에 속하는 구체적인 서류 항목들입니다.
+         */
+        items?:
+          | {
+              /**
+               * 예: Copy of Passport, Official Transcripts
+               */
+              item: string;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * "General Policies" 섹션의 아코디언 항목들입니다. 순서를 드래그하여 변경할 수 있습니다.
+   */
+  admissionPolicies?:
+    | {
+        /**
+         * 소문자 영어 슬러그. 예: transfer, challenge, readmission
+         */
+        value: string;
+        /**
+         * 예: Transfer Students, The Challenge Examination
+         */
+        trigger: string;
+        /**
+         * 아코디언을 열었을 때 표시되는 정책 설명입니다.
+         */
+        content: string;
+        id?: string | null;
+      }[]
+    | null;
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "hero_select".
  */
@@ -1014,6 +1072,36 @@ export interface TuitionSelect<T extends boolean = true> {
               description?: T;
               id?: T;
             };
+        id?: T;
+      };
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "admissions_select".
+ */
+export interface AdmissionsSelect<T extends boolean = true> {
+  requiredDocuments?:
+    | T
+    | {
+        category?: T;
+        items?:
+          | T
+          | {
+              item?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  admissionPolicies?:
+    | T
+    | {
+        value?: T;
+        trigger?: T;
+        content?: T;
         id?: T;
       };
   _status?: T;

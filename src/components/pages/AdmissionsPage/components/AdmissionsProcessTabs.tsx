@@ -17,12 +17,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
 import { ROUTES } from '@/config/routes';
 import {
-  REQUIRED_DOCUMENTS,
   STEPS,
+  type RequiredDocument,
   type StepValue,
 } from '@/config/admissions-content';
 
-export function AdmissionsProcessTabs() {
+type AdmissionsProcessTabsProps = {
+  requiredDocuments: RequiredDocument[];
+};
+
+export function AdmissionsProcessTabs({
+  requiredDocuments,
+}: AdmissionsProcessTabsProps) {
   const [tab, setTab] = useState<StepValue>('apply');
 
   const currentIndex = STEPS.findIndex((s) => s.value === tab);
@@ -129,7 +135,7 @@ export function AdmissionsProcessTabs() {
               </div>
 
               <ul className='space-y-2 rounded-md border border-slate-100 bg-slate-50 px-4 py-3'>
-                {REQUIRED_DOCUMENTS.map((doc) => (
+                {requiredDocuments.map((doc) => (
                   <li
                     key={doc.category}
                     className='flex items-start gap-2.5 text-sm'

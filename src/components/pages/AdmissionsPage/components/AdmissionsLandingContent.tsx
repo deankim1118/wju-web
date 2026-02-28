@@ -8,14 +8,22 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ROUTES } from '@/config/routes';
-import { ADMISSION_POLICIES } from '@/config/admissions-content';
+import type { NormalizedAdmissionsData } from '@/lib/adapters/admissions-adapter';
 import { AdmissionsProcessTabs } from './AdmissionsProcessTabs';
 
-export function AdmissionsLandingContent() {
+type AdmissionsLandingContentProps = {
+  data: NormalizedAdmissionsData;
+};
+
+export function AdmissionsLandingContent({
+  data,
+}: AdmissionsLandingContentProps) {
+  const { requiredDocuments, admissionPolicies } = data;
+
   return (
     <div className='space-y-8'>
       {/* Section 1: 4-Step Admissions Process (Client Component) */}
-      <AdmissionsProcessTabs />
+      <AdmissionsProcessTabs requiredDocuments={requiredDocuments} />
 
       {/* Section 2: Explore Academic Programs CTA */}
       <section aria-labelledby='programs-cta-heading'>
@@ -51,7 +59,7 @@ export function AdmissionsLandingContent() {
               General Policies
             </h2>
             <Accordion type='single' collapsible className='w-full'>
-              {ADMISSION_POLICIES.map((policy) => (
+              {admissionPolicies.map((policy) => (
                 <AccordionItem key={policy.value} value={policy.value}>
                   <AccordionTrigger className='text-sm font-medium text-slate-800'>
                     {policy.trigger}

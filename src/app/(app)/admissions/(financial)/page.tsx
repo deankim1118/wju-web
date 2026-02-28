@@ -1,7 +1,12 @@
 import { ResourcePageHeader } from '@/components/pages/AcademicPage/components/ResourcePageHeader';
 import { AdmissionsLandingContent } from '@/components/pages/AdmissionsPage/components/AdmissionsLandingContent';
+import { normalizeAdmissionsData } from '@/lib/adapters/admissions-adapter';
+import { getAdmissionsData } from '@/lib/payload/queries';
 
-export default function AdmissionsPage() {
+export default async function AdmissionsPage() {
+  const payloadData = await getAdmissionsData();
+  const data = normalizeAdmissionsData(payloadData);
+
   return (
     <article className='space-y-6' aria-labelledby='admissions-heading'>
       <ResourcePageHeader
@@ -9,7 +14,7 @@ export default function AdmissionsPage() {
         title='Admissions'
         description='Welcome to Washington Jabez University admissions. Learn how to apply, submit documents, and begin your journey in ministry.'
       />
-      <AdmissionsLandingContent />
+      <AdmissionsLandingContent data={data} />
     </article>
   );
 }
