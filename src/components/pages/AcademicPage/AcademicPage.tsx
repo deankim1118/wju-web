@@ -18,6 +18,7 @@ export function AcademicPage() {
   const undergraduate = getDegreeProgramsByLevel('Undergraduate');
   const graduate = getDegreeProgramsByLevel('Graduate');
   const doctoral = getDegreeProgramsByLevel('Doctoral');
+  const churchMusic = getDegreeProgramsByLevel('Church Music');
 
   return (
     <>
@@ -60,6 +61,14 @@ export function AcademicPage() {
             description:
               'Doctoral-level professional formation for experienced ministry leaders.',
             programs: doctoral,
+          },
+          {
+            level: 'Church Music',
+            title: 'Church Music Programs',
+            description:
+              'Develop musical excellence and spiritual depth for worship leadership and church music ministry.',
+            programs: churchMusic,
+            featured: true,
           },
         ]}
       />

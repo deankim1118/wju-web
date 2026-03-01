@@ -14,7 +14,8 @@ export function AcademicsMegaMenu({ item }: AcademicsMegaMenuProps) {
   type AcademicCategory = (typeof academicProgramGroups)[number]['category'];
 
   const defaultCategory: AcademicCategory =
-    academicProgramGroups.find((g) => g.category === 'Graduate')?.category ??
+    academicProgramGroups.find((g) => g.category === 'Church Music')
+      ?.category ??
     academicProgramGroups[0]?.category ??
     'Undergraduate';
 
@@ -35,7 +36,9 @@ export function AcademicsMegaMenu({ item }: AcademicsMegaMenuProps) {
               href={item.href}
               className='flex flex-1 min-h-[200px] w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md hover:text-secondary'
             >
-              <div className='mb-2 mt-4 text-lg font-medium'>Academic Programs</div>
+              <div className='mb-2 mt-4 text-lg font-medium'>
+                Academic Programs
+              </div>
               <p className='text-sm leading-tight text-muted-foreground'>
                 Explore our academic programs.
               </p>
@@ -79,7 +82,7 @@ export function AcademicsMegaMenu({ item }: AcademicsMegaMenuProps) {
                   onClick={() => setActiveCategory(group.category)}
                   onMouseEnter={() => setActiveCategory(group.category)}
                   className={cn(
-                    'group flex items-center justify-between gap-2 rounded-md px-3 py-2 text-sm font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-primary',
+                    'group flex items-center justify-between gap-2 rounded-md px-3 py-2 text-xs font-medium transition-all outline-none focus-visible:ring-2 focus-visible:ring-primary',
                     isActive
                       ? 'bg-secondary/10 text-secondary shadow-sm ring-1 ring-secondary/20'
                       : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900',
@@ -134,4 +137,3 @@ export function AcademicsMegaMenu({ item }: AcademicsMegaMenuProps) {
     </div>
   );
 }
-
