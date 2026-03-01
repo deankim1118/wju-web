@@ -31,7 +31,7 @@ export type MenuFeature = {
 };
 
 export type AcademicProgramGroup = {
-  category: 'Undergraduate' | 'Graduate' | 'Doctoral';
+  category: 'Undergraduate' | 'Graduate' | 'Doctoral' | 'Church Music';
   items: NavLink[];
 };
 
@@ -161,6 +161,28 @@ export const mainNavigation: NavItemWithSubmenu[] = [
  * Single source of truth for the Academics mega menu UI.
  */
 export const academicProgramGroups: AcademicProgramGroup[] = [
+  {
+    category: 'Church Music',
+    items: [
+      {
+        label: 'Bachelor of Church Music (BACM)',
+        href: ROUTES.ACADEMICS.BACM,
+        description:
+          'Undergraduate training in sacred music and worship leadership.',
+      },
+      {
+        label: 'Master of Church Music (MACM)',
+        href: ROUTES.ACADEMICS.MACM,
+        description: 'Advanced study in church music ministry and performance.',
+      },
+      {
+        label: 'Graduate Diploma in Church Music (GDCM)',
+        href: ROUTES.ACADEMICS.GDCM,
+        description:
+          'Focused graduate-level credential in sacred music practice.',
+      },
+    ],
+  },
   {
     category: 'Undergraduate',
     items: [

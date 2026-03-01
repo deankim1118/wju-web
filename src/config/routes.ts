@@ -43,6 +43,10 @@ export const ROUTES = {
     BCRS: '/academics/bcrs',
     THB: '/academics/thb',
     BCC: '/academics/bcc',
+    // Church Music Programs
+    BACM: '/academics/bacm',
+    MACM: '/academics/macm',
+    GDCM: '/academics/gdcm',
   },
 
   // Admissions Section
