@@ -1,7 +1,7 @@
 /**
  * Program Extended Data Registry
  * Maps program slugs to their extended data files
- * 
+ *
  * To add extended data for a new program:
  * 1. Create a new file: `{slug}-extended.ts`
  * 2. Export the data as `export const {SLUG_UPPER}_EXTENDED = { ... } satisfies ProgramExtendedData`
@@ -9,9 +9,12 @@
  */
 
 import { DEGREE_PROGRAMS, type DegreeProgram } from '../academics-content';
+import { BACM_EXTENDED } from './bacm-extended';
 import { BCC_EXTENDED } from './bcc-extended';
 import { BCRS_EXTENDED } from './bcrs-extended';
 import { DMIN_EXTENDED } from './dmin-extended';
+import { GDCM_EXTENDED } from './gdcm-extended';
+import { MACM_EXTENDED } from './macm-extended';
 import { MCC_EXTENDED } from './mcc-extended';
 import { MCE_EXTENDED } from './mce-extended';
 import { MCHAP_EXTENDED } from './mchap-extended';
@@ -41,7 +44,8 @@ const COMMON_KEY_INFORMATION = {
     },
   ],
   hoursOfInstruction: {
-    semesterHour: 'One Semester Hour represents one hour of class work per week for 15 weeks.',
+    semesterHour:
+      'One Semester Hour represents one hour of class work per week for 15 weeks.',
   },
 };
 
@@ -60,7 +64,7 @@ const UNDERGRADUATE_ADMISSIONS = {
       items: [
         'High school diploma or equivalent (e.g., GED).',
         'Minimum cumulative GPA of 2.0–2.7 on a 4.0 scale, depending on department standards.',
-        'English language proficiency, if English is not the applicant\'s first language.',
+        "English language proficiency, if English is not the applicant's first language.",
       ],
     },
     {
@@ -79,7 +83,7 @@ const UNDERGRADUATE_ADMISSIONS = {
         'Official High School diploma and Transcript.',
         'Personal Statement / Faith Statement.',
         'Letters of Recommendation (1–2) from a church pastor or educator.',
-        'One (1) copy of passport and driver\'s license (for U.S. residents).',
+        "One (1) copy of passport and driver's license (for U.S. residents).",
         'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
         'Interview (Optional).',
       ],
@@ -109,7 +113,7 @@ const MASTER_ADMISSIONS = {
       id: 'academic-qualifications',
       title: 'Academic Qualifications',
       items: [
-        'Bachelor\'s degree from an accredited institution.',
+        "Bachelor's degree from an accredited institution.",
         'Minimum cumulative GPA of 2.75 on a 4.0 scale.',
         'No specific undergraduate major required, though prior biblical/theological coursework is beneficial.',
         'Washington Jabez University places a strong emphasis on biblical language study (Hebrew and Greek) and research methodology as essential components of its advanced degree programs.',
@@ -124,7 +128,7 @@ const MASTER_ADMISSIONS = {
         'Personal Essay detailing spiritual journey and ministry vision.',
         'Reference Letters (at least two).',
         'Two recent 2"x2.5" photographs.',
-        'One (1) copy of passport and driver\'s license (for U.S. residents).',
+        "One (1) copy of passport and driver's license (for U.S. residents).",
         'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
         'Personal Interview.',
       ],
@@ -145,7 +149,7 @@ const DOCTORAL_ADMISSIONS = {
       id: 'academic-qualifications',
       title: 'Academic Qualifications',
       items: [
-        'Master of Divinity (M.Div.) or equivalent theological master\'s degree from an accredited institution.',
+        "Master of Divinity (M.Div.) or equivalent theological master's degree from an accredited institution.",
         'Minimum graduate GPA of 3.0 on a 4.0 scale.',
         'Official transcripts from all post-secondary institutions attended.',
         'International applicants are required to demonstrate English language proficiency and may be asked to submit official test scores such as TOEFL or IELTS as part of the admissions process.',
@@ -167,7 +171,7 @@ const DOCTORAL_ADMISSIONS = {
         'Personal Statement outlining ministry goals and doctoral focus.',
         'Resume / Curriculum Vitae.',
         'Three Letters of Recommendation (academic & ministry).',
-        'One (1) copy of passport and driver\'s license (for U.S. residents).',
+        "One (1) copy of passport and driver's license (for U.S. residents).",
         'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
         'Personal Interview with the admissions committee.',
         'English language proficiency (if applicable).',
@@ -193,27 +197,33 @@ const UNDERGRADUATE_GRADUATION = {
     },
     {
       id: 'general-education',
-      label: 'General Education: At least 25% of coursework must be in general education.',
+      label:
+        'General Education: At least 25% of coursework must be in general education.',
     },
     {
       id: 'residency',
-      label: 'Residency: A minimum of 25% of the credits must be completed at Washington Jabez University.',
+      label:
+        'Residency: A minimum of 25% of the credits must be completed at Washington Jabez University.',
     },
     {
       id: 'bible-exam',
-      label: 'Bible Comprehensive Exam: Must pass a written examination covering the Old and New Testaments (Passing Score: 100/150).',
+      label:
+        'Bible Comprehensive Exam: Must pass a written examination covering the Old and New Testaments (Passing Score: 100/150).',
     },
     {
       id: 'exit-interview',
-      label: 'Exit Interview: Candidates must complete an exit interview with the faculty to evaluate their educational experience and ministry readiness.',
+      label:
+        'Exit Interview: Candidates must complete an exit interview with the faculty to evaluate their educational experience and ministry readiness.',
     },
     {
       id: 'faculty-board-approval',
-      label: 'Faculty & Board Approval: Candidates must receive final approval from the Faculty and the Board of Trustees, affirming satisfactory academic performance, Christian character, and commitment to ministry.',
+      label:
+        'Faculty & Board Approval: Candidates must receive final approval from the Faculty and the Board of Trustees, affirming satisfactory academic performance, Christian character, and commitment to ministry.',
     },
     {
       id: 'clearance',
-      label: 'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+      label:
+        'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
     },
   ],
 };
@@ -226,15 +236,17 @@ const MASTER_GRADUATION = {
   requirements: [
     {
       id: 'prerequisite',
-      label: 'Prerequisite: Possession of a Bachelor\'s degree.',
+      label: "Prerequisite: Possession of a Bachelor's degree.",
     },
     {
       id: 'gpa',
-      label: 'GPA Requirement: Maintenance of a minimum Cumulative GPA of 3.0 (B).',
+      label:
+        'GPA Requirement: Maintenance of a minimum Cumulative GPA of 3.0 (B).',
     },
     {
       id: 'residency',
-      label: 'Residency: At least one-thirds (1/3) of the credits must be completed at Washington Jabez University.',
+      label:
+        'Residency: At least one-thirds (1/3) of the credits must be completed at Washington Jabez University.',
     },
     {
       id: 'bible-exam',
@@ -250,15 +262,18 @@ const MASTER_GRADUATION = {
     },
     {
       id: 'exit-interview',
-      label: 'Exit Interview: Candidates must complete an exit interview with the faculty.',
+      label:
+        'Exit Interview: Candidates must complete an exit interview with the faculty.',
     },
     {
       id: 'faculty-board-approval',
-      label: 'Faculty & Board Approval: Candidates must be approved by the faculty and Board of Trustees, demonstrating spiritual maturity.',
+      label:
+        'Faculty & Board Approval: Candidates must be approved by the faculty and Board of Trustees, demonstrating spiritual maturity.',
     },
     {
       id: 'clearance',
-      label: 'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+      label:
+        'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
     },
   ],
 };
@@ -271,19 +286,23 @@ const DOCTORAL_GRADUATION = {
   requirements: [
     {
       id: 'credit-hours',
-      label: 'Credit Hours: Completion of 40 Credits total. (Includes 32 credits of coursework and 8 credits of dissertation).',
+      label:
+        'Credit Hours: Completion of 40 Credits total. (Includes 32 credits of coursework and 8 credits of dissertation).',
     },
     {
       id: 'course-structure',
-      label: 'Course Structure: Designed to be completed in approximately 3 years (4 semesters of coursework + dissertation).',
+      label:
+        'Course Structure: Designed to be completed in approximately 3 years (4 semesters of coursework + dissertation).',
     },
     {
       id: 'minimum-grade',
-      label: 'Minimum Grade: All courses must be completed with a grade of C- or better.',
+      label:
+        'Minimum Grade: All courses must be completed with a grade of C- or better.',
     },
     {
       id: 'dissertation-project',
-      label: 'Dissertation Project: Completion of a doctoral dissertation worth 8 Credits.',
+      label:
+        'Dissertation Project: Completion of a doctoral dissertation worth 8 Credits.',
       details: [
         'Focus: A practical ministry project or research dissertation demonstrating advanced leadership skills.',
         'Requirement: One major dissertation defense upon completion of coursework.',
@@ -291,24 +310,275 @@ const DOCTORAL_GRADUATION = {
     },
     {
       id: 'exit-interview',
-      label: 'Exit Interview: Candidates must complete an exit interview regarding their doctoral journey.',
+      label:
+        'Exit Interview: Candidates must complete an exit interview regarding their doctoral journey.',
     },
     {
       id: 'faculty-board-approval',
-      label: 'Faculty & Board Approval: Final approval by the faculty and Board of Trustees based on academic and spiritual standing.',
+      label:
+        'Faculty & Board Approval: Final approval by the faculty and Board of Trustees based on academic and spiritual standing.',
     },
     {
       id: 'clearance',
-      label: 'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+      label:
+        'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
     },
   ],
 };
 
 /**
- * Get default admissions based on degree level
- * Returns level-specific admissions or Master's as fallback
+ * Bachelor of Church Music (BACM) admissions data
  */
-function getDefaultAdmissionsForLevel(level?: string) {
+const BACM_ADMISSIONS = {
+  intro: [
+    'To be admitted into the Bachelor of Church Music program at Washington Jabez University, Applicants must meet the following academic and spiritual standards to be considered for admission.',
+  ],
+  sections: [
+    {
+      id: 'academic-qualifications',
+      title: 'Academic Qualifications',
+      items: [
+        'High school diploma or equivalent (e.g., GED).',
+        'Minimum cumulative GPA of 2.0–2.7 on a 4.0 scale, depending on department standards.',
+        "English language proficiency, if English is not the applicant's first language.",
+      ],
+    },
+    {
+      id: 'spiritual-character-qualifications',
+      title: 'Spiritual & Character Qualifications',
+      items: [
+        'Personal testimony of Christian faith and spiritual maturity.',
+        'Active participation in a local church or Christian community.',
+      ],
+    },
+    {
+      id: 'application-materials',
+      title: 'Application Materials',
+      items: [
+        'Application for Admission & non-refundable application fee.',
+        'Official High School diploma and Transcript.',
+        'Personal Statement / Faith Statement.',
+        'Letters of Recommendation (1–2) from a church pastor or educator.',
+        "One (1) copy of passport and driver's license (for U.S. residents).",
+        'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
+        'Interview and/or Audition/Portfolio (Depending on the major concentration).',
+      ],
+    },
+  ],
+};
+
+/**
+ * Graduate Diploma in Church Music (GDCM) admissions data
+ */
+const GDCM_ADMISSIONS = {
+  intro: [
+    'To be admitted into the Graduate Diploma in Church Music program at Washington Jabez University, Applicants must meet the following spiritual and academic standards to be considered for admission.',
+  ],
+  sections: [
+    {
+      id: 'spiritual-qualifications',
+      title: 'Spiritual Qualifications',
+      items: [
+        'Personal experience of regeneration and water baptism.',
+        'Confirmed sense of calling to Christian ministry and music.',
+        'Active involvement in a local church or Christian community.',
+      ],
+    },
+    {
+      id: 'academic-qualifications',
+      title: 'Academic Qualifications',
+      items: [
+        "Bachelor's degree from an accredited institution.",
+        'Minimum cumulative GPA of 2.75 on a 4.0 scale.',
+      ],
+    },
+    {
+      id: 'application-materials',
+      title: 'Application Materials',
+      items: [
+        'Application form & fee.',
+        'Official Transcripts & Diploma.',
+        'Personal Essay detailing spiritual journey and ministry vision.',
+        'Reference Letters (at least two).',
+        'Two recent 2"x2.5" photographs.',
+        "One (1) copy of passport and driver's license (for U.S. residents).",
+        'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
+        'Personal Interview and/or Audition/Portfolio (Depending on the major concentration).',
+      ],
+    },
+  ],
+};
+
+/**
+ * Master of Church Music (MACM) admissions data
+ */
+const MACM_ADMISSIONS = {
+  intro: [
+    'To be admitted into the Master of Church Music program at Washington Jabez University, Applicants must meet the following spiritual and academic standards to be considered for admission.',
+  ],
+  sections: [
+    {
+      id: 'spiritual-qualifications',
+      title: 'Spiritual Qualifications',
+      items: [
+        'Personal experience of regeneration and water baptism.',
+        'Confirmed sense of calling to Christian ministry and music.',
+        'Active involvement in a local church or Christian community.',
+      ],
+    },
+    {
+      id: 'academic-qualifications',
+      title: 'Academic Qualifications',
+      items: [
+        "Bachelor's degree from an accredited institution.",
+        'Minimum cumulative GPA of 2.75 on a 4.0 scale.',
+        'Prior musical training or undergraduate coursework in music is highly beneficial.',
+      ],
+    },
+    {
+      id: 'application-materials',
+      title: 'Application Materials',
+      items: [
+        'Application form & fee.',
+        'Official Transcripts & Diploma.',
+        'Personal Essay detailing spiritual journey and ministry vision.',
+        'Reference Letters (at least two).',
+        'Two recent 2"x2.5" photographs.',
+        "One (1) copy of passport and driver's license (for U.S. residents).",
+        'One (1) copy of passport and resident registration certificate (for Residents Outside the United States).',
+        'Personal Interview and/or Audition/Portfolio (Depending on the major concentration).',
+      ],
+    },
+  ],
+};
+
+/**
+ * Bachelor of Church Music (BACM) graduation requirements
+ */
+const BACM_GRADUATION = {
+  requirements: [
+    {
+      id: 'credit-hours',
+      label:
+        'Credit Hours: Completion of 123 semester units (including a minimum of 46 music-related credit hours).',
+    },
+    {
+      id: 'gpa',
+      label: 'GPA: Maintenance of a minimum Cumulative GPA of 2.8.',
+    },
+    {
+      id: 'general-education',
+      label:
+        'General Education: At least 25% of coursework must be in general education.',
+    },
+    {
+      id: 'residency',
+      label:
+        'Residency: Transfer credits must be negotiated and approved by the institution.',
+    },
+    {
+      id: 'graduation-recital',
+      label:
+        'Graduation Recital / Project: Candidates must successfully complete a Graduation Project Presentation or a Graduation Recital according to their major concentration.',
+    },
+    {
+      id: 'faculty-board-approval',
+      label:
+        'Faculty & Board Approval: Candidates must receive final approval from the Faculty and the Board of Trustees, affirming satisfactory academic/musical performance and Christian character.',
+    },
+    {
+      id: 'clearance',
+      label:
+        'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+    },
+  ],
+};
+
+/**
+ * Graduate Diploma in Church Music (GDCM) graduation requirements
+ */
+const GDCM_GRADUATION = {
+  requirements: [
+    {
+      id: 'credit-hours',
+      label: 'Credit Hours: Completion of 23 semester units.',
+    },
+    {
+      id: 'gpa',
+      label: 'GPA Requirement: Maintenance of a minimum Cumulative GPA of 2.8.',
+    },
+    {
+      id: 'residency',
+      label:
+        'Residency: Transfer credits must be negotiated and approved by the institution.',
+    },
+    {
+      id: 'graduation-recital',
+      label:
+        'Graduation Requirement: Candidates must successfully complete a Graduation Project Presentation or a Graduation Recital according to their chosen major concentration.',
+    },
+    {
+      id: 'clearance',
+      label:
+        'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+    },
+  ],
+};
+
+/**
+ * Master of Church Music (MACM) graduation requirements
+ */
+const MACM_GRADUATION = {
+  requirements: [
+    {
+      id: 'credit-hours',
+      label: 'Credit Hours: Completion of 38 semester units.',
+    },
+    {
+      id: 'gpa',
+      label: 'GPA Requirement: Maintenance of a minimum Cumulative GPA of 2.8.',
+    },
+    {
+      id: 'residency',
+      label:
+        'Residency: Transfer credits must be negotiated and approved by the institution.',
+    },
+    {
+      id: 'graduation-recital',
+      label:
+        'Graduation Requirement: Candidates must successfully complete a Graduation Project Presentation or a Graduation Recital according to their chosen major concentration.',
+    },
+    {
+      id: 'exit-interview',
+      label:
+        'Exit Interview: Candidates must complete an exit interview with the faculty.',
+    },
+    {
+      id: 'faculty-board-approval',
+      label:
+        'Faculty & Board Approval: Candidates must be approved by the faculty and Board of Trustees, demonstrating spiritual maturity and musical excellence.',
+    },
+    {
+      id: 'clearance',
+      label:
+        'Clearance: All financial obligations must be cleared, and the graduation fee paid.',
+    },
+  ],
+};
+
+/**
+ * Get default admissions based on degree level or slug
+ * Returns program-specific admissions, then level-specific, then Master's as fallback
+ */
+function getDefaultAdmissionsForLevel(level?: string, slug?: string) {
+  switch (slug) {
+    case 'bacm':
+      return BACM_ADMISSIONS;
+    case 'macm':
+      return MACM_ADMISSIONS;
+    case 'gdcm':
+      return GDCM_ADMISSIONS;
+  }
   switch (level) {
     case 'Undergraduate':
       return UNDERGRADUATE_ADMISSIONS;
@@ -317,16 +587,23 @@ function getDefaultAdmissionsForLevel(level?: string) {
     case 'Doctoral':
       return DOCTORAL_ADMISSIONS;
     default:
-      // Fallback to Master's admissions if level is not specified
       return MASTER_ADMISSIONS;
   }
 }
 
 /**
- * Get default graduation requirements based on degree level
- * Returns level-specific graduation or Master's as fallback
+ * Get default graduation requirements based on degree level or slug
+ * Returns program-specific graduation, then level-specific, then Master's as fallback
  */
-function getDefaultGraduationForLevel(level?: string) {
+function getDefaultGraduationForLevel(level?: string, slug?: string) {
+  switch (slug) {
+    case 'bacm':
+      return BACM_GRADUATION;
+    case 'macm':
+      return MACM_GRADUATION;
+    case 'gdcm':
+      return GDCM_GRADUATION;
+  }
   switch (level) {
     case 'Undergraduate':
       return UNDERGRADUATE_GRADUATION;
@@ -335,7 +612,6 @@ function getDefaultGraduationForLevel(level?: string) {
     case 'Doctoral':
       return DOCTORAL_GRADUATION;
     default:
-      // Fallback to Master's graduation if level is not specified
       return MASTER_GRADUATION;
   }
 }
@@ -352,13 +628,18 @@ const PROGRAM_EXTENDED_DATA: Record<string, ProgramExtendedDataInput> = {
   mcrs: MCRS_EXTENDED,
   mchap: MCHAP_EXTENDED,
   dmin: DMIN_EXTENDED,
+  bacm: BACM_EXTENDED,
+  macm: MACM_EXTENDED,
+  gdcm: GDCM_EXTENDED,
 };
 
 /**
  * Create default extended data from basic program data
  * Used when a program doesn't have custom extended data
  */
-function createDefaultExtendedData(program: DegreeProgram): ProgramExtendedData {
+function createDefaultExtendedData(
+  program: DegreeProgram,
+): ProgramExtendedData {
   return {
     keyInformation: {
       creditInfo: {
@@ -372,7 +653,8 @@ function createDefaultExtendedData(program: DegreeProgram): ProgramExtendedData 
         },
       ],
       hoursOfInstruction: {
-        semesterHour: 'One Semester Hour represents one hour of class work per week for 15 weeks.',
+        semesterHour:
+          'One Semester Hour represents one hour of class work per week for 15 weeks.',
       },
     },
     outcomes: program.outcomes.map((outcome, index) => ({
@@ -414,7 +696,10 @@ function mergeProgramData(
     programData.keyInformation.studyOptions.length > 0;
 
   // Use program title in intro if available, otherwise use generic text
-  const defaultAdmissions = getDefaultAdmissionsForLevel(program?.level);
+  const defaultAdmissions = getDefaultAdmissionsForLevel(
+    program?.level,
+    program?.slug,
+  );
   const admissionsIntro = program
     ? [
         `To be admitted into the ${program.title} program at Washington Jabez University, Applicants must meet the following spiritual and academic standards to be considered for admission.`,
@@ -426,10 +711,12 @@ function mergeProgramData(
     (programData.admissions.intro.length > 0 ||
       programData.admissions.sections.length > 0);
 
-  const defaultGraduation = getDefaultGraduationForLevel(program?.level);
+  const defaultGraduation = getDefaultGraduationForLevel(
+    program?.level,
+    program?.slug,
+  );
   const hasCustomGraduation =
-    programData.graduation &&
-    programData.graduation.requirements.length > 0;
+    programData.graduation && programData.graduation.requirements.length > 0;
 
   return {
     ...programData,
@@ -445,15 +732,17 @@ function mergeProgramData(
       },
     },
     curriculum: programData.curriculum,
-    admissions: hasCustomAdmissions && programData.admissions
-      ? programData.admissions!
-      : {
-          intro: admissionsIntro,
-          sections: defaultAdmissions.sections,
-        },
-    graduation: hasCustomGraduation && programData.graduation
-      ? programData.graduation!
-      : defaultGraduation,
+    admissions:
+      hasCustomAdmissions && programData.admissions
+        ? programData.admissions!
+        : {
+            intro: admissionsIntro,
+            sections: defaultAdmissions.sections,
+          },
+    graduation:
+      hasCustomGraduation && programData.graduation
+        ? programData.graduation!
+        : defaultGraduation,
   };
 }
 
@@ -470,12 +759,12 @@ export function getProgramExtendedData(
   if (PROGRAM_EXTENDED_DATA[slug]) {
     return mergeProgramData(PROGRAM_EXTENDED_DATA[slug], program);
   }
-  
+
   // Fallback: create default extended data from program data (should not happen)
   if (program) {
     return createDefaultExtendedData(program);
   }
-  
+
   // This should not happen in normal flow
   throw new Error(`No extended data found for program: ${slug}`);
 }
@@ -527,7 +816,10 @@ export function getCurriculumCoursesByProgram(): Array<{
   program: DegreeProgram;
   courses: CurriculumCourseItem[];
 }> {
-  const result: Array<{ program: DegreeProgram; courses: CurriculumCourseItem[] }> = [];
+  const result: Array<{
+    program: DegreeProgram;
+    courses: CurriculumCourseItem[];
+  }> = [];
   for (const program of DEGREE_PROGRAMS) {
     const extended = getProgramExtendedData(program.slug, program);
     const courses: CurriculumCourseItem[] = [];
@@ -548,14 +840,20 @@ export function getCurriculumCoursesByProgram(): Array<{
   return result;
 }
 
-export function getCurriculumCourseByCode(code: string): CurriculumCourseItem | null {
+export function getCurriculumCourseByCode(
+  code: string,
+): CurriculumCourseItem | null {
   const normalized = normalizeCourseCode(code);
-  return getAllCurriculumCourses().find((c) => c.normalizedCode === normalized) ?? null;
+  return (
+    getAllCurriculumCourses().find((c) => c.normalizedCode === normalized) ??
+    null
+  );
 }
 
-export function getAdjacentCurriculumCourses(
-  normalizedCode: string,
-): { prev: CurriculumCourseItem | null; next: CurriculumCourseItem | null } {
+export function getAdjacentCurriculumCourses(normalizedCode: string): {
+  prev: CurriculumCourseItem | null;
+  next: CurriculumCourseItem | null;
+} {
   const list = getAllCurriculumCourses();
   const idx = list.findIndex((c) => c.normalizedCode === normalizedCode);
   if (idx < 0) return { prev: null, next: null };

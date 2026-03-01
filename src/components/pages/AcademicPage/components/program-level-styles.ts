@@ -7,6 +7,7 @@ export const PROGRAM_LEVEL_STYLES: Record<
   Undergraduate: 'bg-amber-600 text-white border border-white/15',
   Graduate: 'bg-primary text-white',
   Doctoral: 'bg-secondary text-white',
+  'Church Music': 'bg-violet-700 text-white',
 };
 
 export function getLevelBadgeClasses(level: DegreeLevel): string {

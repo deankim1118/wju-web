@@ -10,6 +10,7 @@ type MetricItem = {
   label: string;
   value: string;
   icon?: LucideIcon;
+  note?: string;
 };
 
 function formatStudyOptions(
@@ -29,6 +30,7 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
       type: 'number',
       label: 'Credits',
       value: data.creditInfo.creditHours,
+      note: data.creditInfo.creditNote,
     },
     {
       type: 'number',
@@ -81,8 +83,13 @@ export function KeyInformationSection({ data }: KeyInformationSectionProps) {
                     </div>
                     <div className='mt-2 h-px w-full bg-slate-900'></div>
                   </div>
-                  <p className='mt-3 text-xs uppercase tracking-wider text-slate-800'>
+                  <p className='mt-3 flex items-baseline gap-0 text-xs uppercase tracking-wider text-slate-800 flex-col'>
                     {metric.label}
+                    {metric.note && (
+                      <span className='normal-case tracking-normal text-rose-500 text-xs font-normal'>
+                        {metric.note}
+                      </span>
+                    )}
                   </p>
                 </div>
               ))}

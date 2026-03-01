@@ -1,6 +1,6 @@
 import { ROUTES } from './routes';
 
-export type DegreeLevel = 'Undergraduate' | 'Graduate' | 'Doctoral';
+export type DegreeLevel = 'Undergraduate' | 'Graduate' | 'Doctoral' | 'Church Music';
 
 export type DegreeProgram = {
   /** short program code shown in UI (e.g. MDiv) */
@@ -30,6 +30,109 @@ export type DegreeProgram = {
 };
 
 export const DEGREE_PROGRAMS: readonly DegreeProgram[] = [
+  {
+    code: 'BACM',
+    slug: 'bacm',
+    title: 'Bachelor of Church Music',
+    credential: 'BACM',
+    level: 'Church Music',
+    href: ROUTES.ACADEMICS.BACM,
+    summary:
+      'A comprehensive undergraduate program integrating musical excellence with spiritual formation to equip effective worship leaders and church musicians.',
+    highlights: [
+      'Applied studio & musical concentrations',
+      'Music theory & performance practice',
+      'Spiritual formation & worship leadership',
+    ],
+    format: 'On-Campus / Hybrid (as available)',
+    typicalLength: '4 years (123 credit hours)',
+    outcomes: [
+      'Demonstrate technical and artistic proficiency in a primary musical discipline.',
+      'Apply foundational music theory, ear training, and historical contexts to church music.',
+      'Lead and plan worship services effectively, integrating spiritual depth with musical excellence.',
+      'Communicate clearly and serve the local church through dedicated, pastoral music ministry.',
+    ],
+    curriculum: [
+      'Music and Spiritual Formation',
+      'Music Ministry and Communication',
+      'Worship and Hymnology',
+      'Applied Major Studio (Organ, Piano, Composition, etc.)',
+      'Music Theory & Basic Counterpoint',
+      'Graduation Recital or Project',
+    ],
+    whoItsFor: [
+      'Students aspiring to become worship leaders, church accompanists, or music directors',
+      'Musicians seeking to combine their artistic talents with solid biblical and theological training',
+    ],
+  },
+  {
+    code: 'MACM',
+    slug: 'macm',
+    title: 'Master of Church Music',
+    credential: 'MACM',
+    level: 'Church Music',
+    href: ROUTES.ACADEMICS.MACM,
+    summary:
+      'Advanced theological and musical training designed to equip professional church musicians, worship pastors, and academic scholars for high-level ministry.',
+    highlights: [
+      'Advanced artistry & musical pedagogy',
+      'Specialized applied studio tracks',
+      'Liturgical theology & pastoral communication',
+    ],
+    format: 'On-Campus / Hybrid (as available)',
+    typicalLength: '2 years (38 credit hours)',
+    outcomes: [
+      'Exhibit advanced mastery and professional artistry in a specialized musical field.',
+      'Design and direct complex worship services, integrating profound theological understanding with musical pedagogy.',
+      'Analyze, arrange, and compose music tailored for diverse church, ensemble, and liturgical settings.',
+      'Demonstrate strong spiritual leadership and pastoral communication skills within a professional music ministry context.',
+    ],
+    curriculum: [
+      'Advanced Music and Spiritual Formation',
+      'Worship and Worship Music (Liturgical Year)',
+      'Advanced Applied Studio & Pedagogy',
+      'Analytical Technique for Worship Leaders',
+      'Advanced Arrangement (Choral, Orchestral, or Band)',
+      'Master Graduation Recital',
+    ],
+    whoItsFor: [
+      'Current worship pastors seeking advanced artistic and theological development',
+      'Professional musicians preparing for senior church leadership or academic teaching roles',
+    ],
+  },
+  {
+    code: 'GDCM',
+    slug: 'gdcm',
+    title: 'Graduate Diploma in Church Music',
+    credential: 'GDCM',
+    level: 'Church Music',
+    href: ROUTES.ACADEMICS.GDCM,
+    summary:
+      'A focused, intensive program offering advanced musical and spiritual training for those seeking to enhance their ministry skills in a streamlined timeframe.',
+    highlights: [
+      'Streamlined graduate-level curriculum',
+      'Worship planning & ministry application',
+      'Focused applied studio training',
+    ],
+    format: 'On-Campus / Hybrid (as available)',
+    typicalLength: '1 year (23 credit hours)',
+    outcomes: [
+      'Enhance technical and artistic proficiency in a chosen musical discipline at the graduate level.',
+      'Apply core principles of music ministry and spiritual formation directly to local church contexts.',
+      'Effectively execute worship planning, musical arrangement, and congregational communication.',
+    ],
+    curriculum: [
+      'Music and Spiritual Formation',
+      'Music Ministry and Communication',
+      'Applied Studio Courses (Selected Major)',
+      'Worship Planning and Organization',
+      'Graduation Recital or Project',
+    ],
+    whoItsFor: [
+      'Working church musicians seeking a recognized graduate-level credential without the full master\u2019s degree commitment',
+      'Individuals looking for focused, practical enhancement of their worship leadership and musical skills',
+    ],
+  },
   {
     code: 'ThB',
     slug: 'thb',

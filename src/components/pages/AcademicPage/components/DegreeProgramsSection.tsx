@@ -22,6 +22,8 @@ type ProgramGroup = {
   title: string;
   description: string;
   programs: readonly DegreeProgram[];
+  /** Renders as a full-width featured band below the standard grid */
+  featured?: boolean;
 };
 
 type DegreeProgramsSectionProps = {
@@ -39,6 +41,9 @@ export function DegreeProgramsSection({
   groups,
   className = '',
 }: DegreeProgramsSectionProps) {
+  const standardGroups = groups.filter((g) => !g.featured);
+  const featuredGroups = groups.filter((g) => g.featured);
+
   return (
     <section
       id={id}
@@ -64,73 +69,101 @@ export function DegreeProgramsSection({
           </ScrollReveal>
         </div>
 
-        <div className='mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8'>
-          {groups.map((group) => (
-            <div key={group.level} className='flex flex-col gap-4'>
-              <div className='flex flex-col gap-2'>
+        {/* Featured full-width band: Church Music */}
+        {featuredGroups.map((group) => (
+          <div
+            key={group.level}
+            className='mt-12 border-b border-slate-100 pb-12'
+          >
+            <ScrollReveal variant='fade-up' delay={0.1} duration={0.6}>
+              <div className='mb-8 flex flex-col gap-2'>
                 <div
-                  className={`w-fit rounded-none px-3 py-1 text-xs uppercase tracking-widest ${getLevelBadgeClasses(
-                    group.level,
-                  )}`}
+                  className={`w-fit rounded-none px-3 py-1 text-xs uppercase tracking-widest ${getLevelBadgeClasses(group.level)}`}
                 >
                   {group.level}
                 </div>
                 <h3 className='font-serif text-primary text-2xl'>
                   {group.title}
                 </h3>
-                {/* <p className='text-muted-foreground'>{group.description}</p> */}
               </div>
+            </ScrollReveal>
 
-              <div className='grid grid-cols-1 gap-4'>
-                {group.programs.map((program) => (
-                  <Card
-                    key={program.slug}
-                    className='rounded-none h-full md:gap-1'
-                  >
-                    <CardHeader className='gap-2 md:min-h-[88px] lg:min-h-[128px]'>
-                      <div className='flex items-baseline justify-between gap-4'>
-                        <CardTitle className='font-serif leading-snug line-clamp-2'>
-                          {program.title}
-                        </CardTitle>
-                        <span className='text-xs uppercase tracking-widest text-muted-foreground'>
-                          {program.credential}
-                        </span>
-                      </div>
-                      <CardDescription className='leading-6 line-clamp-3 md:min-h-[58px] lg:min-h-[78px] text-slate-800'>
-                        {program.summary}
-                      </CardDescription>
-                    </CardHeader>
-
-                    <CardContent className='pt-0'>
-                      <ul className='text-sm text-slate-800 space-y-2'>
-                        {program.highlights.slice(0, 3).map((h) => (
-                          <li key={h} className='flex gap-2'>
-                            <Dot
-                              aria-hidden='true'
-                              className='mt-0.5 size-5 text-muted-foreground/60 shrink-0'
-                            />
-                            <span className='line-clamp-1 leading-6'>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-
-                    <CardFooter className='lg:pt-5 mt-auto'>
-                      <Button
-                        variant='outline'
-                        className='rounded-none w-full'
-                        asChild
-                      >
-                        <Link href={program.href}>View program</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                ))}
-              </div>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+              {group.programs.map((program) => (
+                <ProgramCard key={program.slug} program={program} />
+              ))}
             </div>
+          </div>
+        ))}
+
+        {/* Standard 3-col grid: Undergraduate / Graduate / Doctoral */}
+        <div className='mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8'>
+          {standardGroups.map((group) => (
+            <ProgramGroupColumn key={group.level} group={group} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ProgramGroupColumn({ group }: { group: ProgramGroup }) {
+  return (
+    <div className='flex flex-col gap-4'>
+      <div className='flex flex-col gap-2'>
+        <div
+          className={`w-fit rounded-none px-3 py-1 text-xs uppercase tracking-widest ${getLevelBadgeClasses(group.level)}`}
+        >
+          {group.level}
+        </div>
+        <h3 className='font-serif text-primary text-2xl'>{group.title}</h3>
+      </div>
+
+      <div className='grid grid-cols-1 gap-4'>
+        {group.programs.map((program) => (
+          <ProgramCard key={program.slug} program={program} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ProgramCard({ program }: { program: DegreeProgram }) {
+  return (
+    <Card className='rounded-none h-full md:gap-1'>
+      <CardHeader className='gap-2 md:min-h-[88px] lg:min-h-[128px]'>
+        <div className='flex items-baseline justify-between gap-4'>
+          <CardTitle className='font-serif leading-snug line-clamp-2'>
+            {program.title}
+          </CardTitle>
+          <span className='text-xs uppercase tracking-widest text-muted-foreground'>
+            {program.credential}
+          </span>
+        </div>
+        <CardDescription className='leading-6 line-clamp-3 md:min-h-[58px] lg:min-h-[78px] text-slate-800'>
+          {program.summary}
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent className='pt-0'>
+        <ul className='text-sm text-slate-800 space-y-2'>
+          {program.highlights.slice(0, 3).map((h) => (
+            <li key={h} className='flex gap-2'>
+              <Dot
+                aria-hidden='true'
+                className='mt-0.5 size-5 text-muted-foreground/60 shrink-0'
+              />
+              <span className='line-clamp-2 leading-6'>{h}</span>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+
+      <CardFooter className='lg:pt-5 mt-auto'>
+        <Button variant='outline' className='rounded-none w-full' asChild>
+          <Link href={program.href}>View program</Link>
+        </Button>
+      </CardFooter>
+    </Card>
   );
 }
