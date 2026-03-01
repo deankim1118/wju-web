@@ -6,7 +6,9 @@
 export type CreditInfo = {
   creditHours: string;
   costPerCredit: string;
-  yearsOfStudy?: string; // Optional: years of study (e.g., "3", "4")
+  yearsOfStudy?: string;
+  /** Optional small note displayed next to the Credits label (e.g. "music-related credit hours") */
+  creditNote?: string;
 };
 
 export type StudyOption = {

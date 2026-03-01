@@ -10,9 +10,10 @@ import type {
 export const BACM_EXTENDED: ProgramExtendedDataInput = {
   keyInformation: {
     creditInfo: {
-      creditHours: '123/46',
+      creditHours: '123',
       costPerCredit: '$255.00 per credit hour',
       yearsOfStudy: '4',
+      creditNote: '! 46 music-related credit hours required',
     },
   },
   outcomes: [
