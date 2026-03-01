@@ -153,7 +153,7 @@ function ProgramCard({ program }: { program: DegreeProgram }) {
                 aria-hidden='true'
                 className='mt-0.5 size-5 text-muted-foreground/60 shrink-0'
               />
-              <span className='line-clamp-1 leading-6'>{h}</span>
+              <span className='line-clamp-2 leading-6'>{h}</span>
             </li>
           ))}
         </ul>
